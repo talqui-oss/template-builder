@@ -39,6 +39,12 @@ importers:
         specifier: ^6.0.3
         version: 6.0.3
 
+  examples/validate:
+    dependencies:
+      '@talqui-oss/template-builder':
+        specifier: workspace:*
+        version: link:../../packages/template-builder
+
   packages/template-builder:
     devDependencies:
       '@template-builder/tsconfig':

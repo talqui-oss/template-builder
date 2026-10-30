@@ -1,0 +1,39 @@
+name: guard
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  guard:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check tracked files
+        env:
+          GUARD_TERMS: ${{ vars.GUARD_TERMS }}
+        run: |
+          if [ -z "$GUARD_TERMS" ]; then
+            echo "::error::Repository variable GUARD_TERMS is not set"
+            exit 1
+          fi
+          if [ -n "$(git ls-files TALQUI_GUIDELINES.md)" ]; then
+            echo "::error::TALQUI_GUIDELINES.md must not be committed"
+            exit 1
+          fi
+          status=0
+          IFS=',' read -ra terms <<< "$GUARD_TERMS"
+          for term in "${terms[@]}"; do
+            term="$(echo "$term" | xargs)"
+            [ -z "$term" ] && continue
+            # list files only: printing the matched line would leak the term into public logs
+            if git grep -l -i -F -e "$term"; then
+              echo "::error::Found a forbidden term in the files listed above"
+              status=1
+            fi
+          done
+          exit $status

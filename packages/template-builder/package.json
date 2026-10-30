@@ -26,18 +26,21 @@
       "import": "./dist/index.js",
       "require": "./dist/index.cjs"
     },
+    "./schema.json": "./dist/schema.json",
     "./package.json": "./package.json"
   },
   "files": [
     "dist"
   ],
   "scripts": {
-    "build": "tsup",
+    "build": "tsup && pnpm schema",
     "dev": "tsup --watch",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "schema": "ts-json-schema-generator --path src/schema/types.ts --type Template --no-type-check --out dist/schema.json"
   },
   "devDependencies": {
     "@template-builder/tsconfig": "workspace:*",
+    "ts-json-schema-generator": "^2.9.0",
     "tsup": "^9.0.0",
     "typescript": "^6.0.3"
   }

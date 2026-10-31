@@ -26,6 +26,18 @@
       "import": "./dist/index.js",
       "require": "./dist/index.cjs"
     },
+    "./adapters/meta": {
+      "import": "./dist/adapters/meta.js",
+      "require": "./dist/adapters/meta.cjs"
+    },
+    "./adapters/twilio": {
+      "import": "./dist/adapters/twilio.js",
+      "require": "./dist/adapters/twilio.cjs"
+    },
+    "./adapters/talqui": {
+      "import": "./dist/adapters/talqui.js",
+      "require": "./dist/adapters/talqui.cjs"
+    },
     "./schema.json": "./dist/schema.json",
     "./package.json": "./package.json"
   },

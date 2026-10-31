@@ -8,3 +8,6 @@ export type {
   ValidationResult,
 } from "./validate";
 export { extractVariables } from "./variables";
+export { toRequests, toCurl, TemplateValidationError } from "./requests";
+export { defineAdapter, UnsupportedByProviderError } from "./adapters/types";
+export type { Adapter, HttpRequest } from "./adapters/types";

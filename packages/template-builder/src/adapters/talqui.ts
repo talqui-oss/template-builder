@@ -22,6 +22,13 @@ export type TalquiOptions = {
 };
 
 const NAME = "talqui";
+const EMPTY_HEADER = {
+  type: null,
+  content: {},
+  preview: "",
+  text: "",
+  variables: [],
+};
 const CHANNELS = {
   "whatsapp-cloud": "urn:talqui:whatsapp-cloud:0",
   "whatsapp-gup": "urn:talqui:whatsapp-gup:0",
@@ -58,6 +65,7 @@ export const talqui = defineAdapter<TalquiOptions>({
           campaignModelType: template.category,
           campaignModelChannel: CHANNELS[channel],
           campaignModelChannelID: channelId,
+          campaignModelMeta: { allowedToStartSession: "denied" },
           campaignModelGatewayMeta:
             template.category !== "AUTHENTICATION" && template.displayFormat
               ? { displayFormat: template.displayFormat }
@@ -76,6 +84,54 @@ export const talqui = defineAdapter<TalquiOptions>({
 const spaced = (text: string) =>
   replacePlaceholders(text, (name) => `{{ ${name} }}`);
 
+const escapeHtml = (text: string) =>
+  text
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;");
+
+// The app's editor (Tiptap) loads `content`, not `text`: one <p> per line, variables as <span class="variable">.
+const editorHtml = (text: string, variables: Variables = {}) =>
+  text
+    .split("\n")
+    .map(
+      (line) =>
+        `<p>${replacePlaceholders(
+          escapeHtml(line),
+          (name) =>
+            `<span class="variable" data-type="variable" data-id="${name}" data-key="${name}" data-label="${name}" data-default-value="${escapeHtml(variables[name]?.example ?? "")}">${name}</span>`,
+        )}</p>`,
+    )
+    .join("");
+
+// Text headers keep the editor document as Tiptap JSON.
+const editorDoc = (text: string, variables: Variables = {}) => ({
+  type: "doc",
+  content: [
+    {
+      type: "paragraph",
+      content: text
+        .split(/(\{\{.*?\}\})/)
+        .filter(Boolean)
+        .map((part) => {
+          const name = /^\{\{(.*?)\}\}$/.exec(part)?.[1];
+          return name
+            ? {
+                type: "variable",
+                attrs: {
+                  id: name,
+                  key: name,
+                  label: name,
+                  defaultValue: variables[name]?.example ?? "",
+                },
+              }
+            : { type: "text", text: part };
+        }),
+    },
+  ],
+});
+
 const slotVariables = (text: string, variables: Variables = {}) =>
   [...new Set(placeholders(text).map((p) => p.name))].map((name) => ({
     id: name,
@@ -93,6 +149,7 @@ function standard(t: StandardTemplate) {
   return {
     header: header(t),
     body: {
+      content: editorHtml(t.body.text, t.variables),
       text: spaced(t.body.text),
       variables: slotVariables(t.body.text, t.variables),
     },
@@ -104,16 +161,19 @@ function standard(t: StandardTemplate) {
 }
 
 function header({ header: h, variables }: StandardTemplate) {
-  if (!h) return {};
+  if (!h) return EMPTY_HEADER;
   if (h.type === "TEXT")
     return {
       type: "text",
+      content: editorDoc(h.text, variables),
+      preview: editorHtml(h.text, variables),
       text: spaced(h.text),
       variables: slotVariables(h.text, variables),
     };
   if (h.type === "IMAGE" || h.type === "VIDEO" || h.type === "DOCUMENT") {
     const type = h.type.toLowerCase();
     return {
+      ...EMPTY_HEADER,
       type,
       variables: [{ id: "header", key: "header", type, fallback: h.url }],
     };
@@ -155,7 +215,7 @@ function authentication(t: AuthenticationTemplate) {
   if (t.button.otpType !== "COPY_CODE")
     unsupported(NAME, "button.otpType", `The ${t.button.otpType} OTP button`);
   return {
-    header: {},
+    header: EMPTY_HEADER,
     // Meta writes the authentication body; Talqui only requires a non-empty text.
     body: { text: "Verification code", variables: [] },
     buttons: [{ type: "OTP", otp_type: "COPY_CODE" }],

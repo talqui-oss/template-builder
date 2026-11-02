@@ -91,6 +91,22 @@ const escapeHtml = (text: string) =>
     .replace(/>/g, "&gt;")
     .replace(/"/g, "&quot;");
 
+// Same palette and pick as the app's editor, so variable chips get their background color.
+const CHIP_COLORS = [
+  "ab7df6",
+  "7f8fa4",
+  "26c1c9",
+  "fd7b1f",
+  "e0102b",
+  "40b630",
+  "0079c4",
+];
+const chipColor = (name: string) =>
+  CHIP_COLORS[
+    [...name].reduce((sum, char) => sum + char.charCodeAt(0), 0) %
+      CHIP_COLORS.length
+  ];
+
 // The app's editor (Tiptap) loads `content`, not `text`: one <p> per line, variables as <span class="variable">.
 const editorHtml = (text: string, variables: Variables = {}) =>
   text
@@ -100,7 +116,7 @@ const editorHtml = (text: string, variables: Variables = {}) =>
         `<p>${replacePlaceholders(
           escapeHtml(line),
           (name) =>
-            `<span class="variable" data-type="variable" data-id="${name}" data-key="${name}" data-label="${name}" data-default-value="${escapeHtml(variables[name]?.example ?? "")}">${name}</span>`,
+            `<span class="variable" data-type="variable" data-id="${name}" data-key="${name}" data-label="${name}" data-default-value="${escapeHtml(variables[name]?.example ?? "")}" style="background-color: #${chipColor(name)};">${name}</span>`,
         )}</p>`,
     )
     .join("");

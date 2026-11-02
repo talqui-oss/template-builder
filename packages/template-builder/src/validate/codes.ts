@@ -71,6 +71,7 @@ export const codes = {
 
   CALL_PERMISSION_NOT_COMBINABLE: "error",
   ORDER_DETAILS_MISMATCH: "error",
+  BUTTON_ORDER_DETAILS_TEXT: "error",
 
   OTP_CODE_EXPIRATION_RANGE: "error",
   OTP_BUTTON_TEXT_TOO_LONG: "error",

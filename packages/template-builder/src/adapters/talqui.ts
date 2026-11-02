@@ -22,6 +22,8 @@ export type TalquiOptions = {
 };
 
 const NAME = "talqui";
+// What Meta sends for a pt_BR authentication template, with a sample code.
+const AUTHENTICATION_PREVIEW = "*123456* é o seu código de verificação.";
 const EMPTY_HEADER = {
   type: null,
   content: {},
@@ -51,6 +53,13 @@ export const talqui = defineAdapter<TalquiOptions>({
       unsupported(NAME, "language", `The ${template.language} language`);
     if (template.messageSendTtlSeconds !== undefined)
       unsupported(NAME, "messageSendTtlSeconds", "A message TTL");
+    // Talqui always sends a body text to Meta, which Meta refuses for authentication on Cloud API.
+    if (template.category === "AUTHENTICATION" && channel === "whatsapp-cloud")
+      unsupported(
+        NAME,
+        "category",
+        "Authentication on the whatsapp-cloud channel",
+      );
     return [
       {
         method: "POST",
@@ -107,19 +116,29 @@ const chipColor = (name: string) =>
       CHIP_COLORS.length
   ];
 
-// The app's editor (Tiptap) loads `content`, not `text`: one <p> per line, variables as <span class="variable">.
-const editorHtml = (text: string, variables: Variables = {}) =>
-  text
-    .split("\n")
-    .map(
-      (line) =>
-        `<p>${replacePlaceholders(
-          escapeHtml(line),
-          (name) =>
-            `<span class="variable" data-type="variable" data-id="${name}" data-key="${name}" data-label="${name}" data-default-value="${escapeHtml(variables[name]?.example ?? "")}" style="background-color: #${chipColor(name)};">${name}</span>`,
-        )}</p>`,
-    )
-    .join("");
+const MARKS: [RegExp, string, string][] = [
+  [/\*([^*\n]+)\*/g, "strong", "t-attribute-bold"],
+  [/_([^_\n]+)_/g, "em", "t-attribute-italic"],
+  [/~([^~\n]+)~/g, "s", "t-attribute-strike"],
+];
+
+// The app's editor (Tiptap) loads `content`, not `text`: one <p>, lines joined by <br>,
+// WhatsApp formatting as marks and variables as <span class="variable">.
+const editorHtml = (text: string, variables: Variables = {}) => {
+  const names: string[] = [];
+  // Variables become underscore-free tokens first, so `_` in their names is not read as italic.
+  let html = replacePlaceholders(
+    escapeHtml(text),
+    (name) => `\uE000${names.push(name) - 1}\uE000`,
+  );
+  for (const [pattern, tag, className] of MARKS)
+    html = html.replace(pattern, `<${tag} class="${className}">$1</${tag}>`);
+  html = html.replace(/\uE000(\d+)\uE000/g, (_, index: string) => {
+    const name = names[Number(index)] ?? "";
+    return `<span class="variable" data-type="variable" data-id="${name}" data-key="${name}" data-label="${name}" data-default-value="${escapeHtml(variables[name]?.example ?? "")}" style="background-color: #${chipColor(name)};">${name}</span>`;
+  });
+  return `<p>${html.replace(/\n/g, "<br>")}</p>`;
+};
 
 // Text headers keep the editor document as Tiptap JSON.
 const editorDoc = (text: string, variables: Variables = {}) => ({
@@ -232,8 +251,12 @@ function authentication(t: AuthenticationTemplate) {
     unsupported(NAME, "button.otpType", `The ${t.button.otpType} OTP button`);
   return {
     header: EMPTY_HEADER,
-    // Meta writes the authentication body; Talqui only requires a non-empty text.
-    body: { text: "Verification code", variables: [] },
+    // Meta writes the authentication body; Talqui only requires a non-empty text, shown in its preview.
+    body: {
+      content: editorHtml(AUTHENTICATION_PREVIEW),
+      text: AUTHENTICATION_PREVIEW,
+      variables: [],
+    },
     buttons: [{ type: "OTP", otp_type: "COPY_CODE" }],
     footer: {},
   };

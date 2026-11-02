@@ -16,7 +16,10 @@ export type TwilioOptions = {
 const NAME = "twilio";
 const CONTENT_SID = "$CONTENT_SID";
 
-/** Twilio Content API: creates the content, then asks WhatsApp to approve it. */
+/**
+ * Twilio Content API: creates the content, then asks WhatsApp to approve it.
+ * Unverified: built from Twilio's docs, not yet run against a real account.
+ */
 export const twilio = defineAdapter<TwilioOptions>({
   name: NAME,
   toRequests(

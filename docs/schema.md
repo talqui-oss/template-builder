@@ -126,7 +126,7 @@ Notes:
 - **Media headers on Meta.** Meta expects a `header_handle` from its Resumable Upload API, not a URL. The Meta adapter puts a placeholder (`$MEDIA_HANDLE`) in the generated request and the docs show the upload step.
 - **Twilio needs two requests.** One creates the content, the other asks WhatsApp to approve it. `toCurl` prints both, in order.
 - **Talqui channel options.** The channel and connection the template belongs to (`campaignModelChannel`, `campaignModelChannelID`) are adapter options, not template fields.
-- The Twilio column is confirmed field by field when the Twilio adapter ships. Until then it describes the intended mapping.
+- **The Twilio column is unverified.** It follows Twilio's Content API docs but has not been run against a real Twilio account yet. If a request fails, please [open an issue](https://github.com/talqui-oss/template-builder/issues/new) with the error.
 
 ## Support by release
 

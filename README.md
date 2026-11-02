@@ -101,9 +101,9 @@ Missing yours? [Request an adapter](https://github.com/talqui-oss/template-build
 
 Every template type is checked against the rules Meta applies before review, and every preview is compared with the real app.
 
-| Android    | iOS        | Web        | Desktop    | Meta       | Twilio     | Talqui     |
-| ---------- | ---------- | ---------- | ---------- | ---------- | ---------- | ---------- |
-| In testing | In testing | In testing | In testing | In testing | In testing | In testing |
+| Android    | iOS        | Web        | Desktop    | Meta     | Twilio     | Talqui   |
+| ---------- | ---------- | ---------- | ---------- | -------- | ---------- | -------- |
+| In testing | In testing | In testing | In testing | Verified | Unverified | Verified |
 
 ## Development workflow
 

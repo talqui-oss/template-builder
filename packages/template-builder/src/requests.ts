@@ -27,7 +27,9 @@ export function toRequests(
 
 // Double quotes keep `$VAR` placeholders expandable by the shell.
 const doubleQuoted = (value: string) => `"${value.replace(/["\\`]/g, "\\$&")}"`;
-const singleQuoted = (value: string) => `'${value.replace(/'/g, "'\\''")}'`;
+// Single quotes keep the JSON literal; values that are only a `$VAR` placeholder are left expandable.
+const singleQuoted = (value: string) =>
+  `'${value.replace(/'/g, "'\\''").replace(/"(\$[A-Z][A-Z0-9_]*)"/g, `"'"$1"'"`)}'`;
 
 /** Prints requests as `curl` commands, in order, ready to paste in a shell. */
 export function toCurl(requests: HttpRequest | HttpRequest[]): string {

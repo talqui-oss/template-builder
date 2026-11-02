@@ -52,13 +52,9 @@ export const talqui = defineAdapter<TalquiOptions>({
           Authorization: `${auth === "operator" ? "Bearer" : "PluginConnection"} ${token}`,
           "Content-Type": "application/json",
         },
-        comments: channelId.startsWith("$")
-          ? [
-              `Replace ${channelId} with the ID of the WhatsApp channel connection.`,
-            ]
-          : undefined,
         body: {
-          campaignModelName: template.name,
+          // Talqui slugifies the name (dropping `_`) and turns `-` back into `_` for Meta.
+          campaignModelName: template.name.replaceAll("_", "-"),
           campaignModelType: template.category,
           campaignModelChannel: CHANNELS[channel],
           campaignModelChannelID: channelId,

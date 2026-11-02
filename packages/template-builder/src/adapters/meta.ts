@@ -49,7 +49,7 @@ export const meta = defineAdapter<MetaOptions>({
         comments:
           media.length > 0
             ? [
-                `Upload each sample file with the Resumable Upload API and replace ${MEDIA_HANDLE} with the handle it returns:`,
+                `Upload each sample file with the Resumable Upload API and set ${MEDIA_HANDLE} to the handle it returns:`,
                 "https://developers.facebook.com/docs/graph-api/guides/upload",
                 ...media.map((url) => `- ${url}`),
               ]

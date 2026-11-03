@@ -93,7 +93,7 @@ ${paths
     const priority =
       path === "/"
         ? "1.0"
-        : path === "/playground" || path === "/catalog"
+        : path === "/playground" || path === "/whatsapp-template"
           ? "0.9"
           : "0.7";
     return `  <url><loc>${SITE}${path === "/" ? "/" : path}</loc><lastmod>${today}</lastmod><priority>${priority}</priority></url>`;

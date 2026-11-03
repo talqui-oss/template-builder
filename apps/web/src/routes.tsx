@@ -84,7 +84,7 @@ function facetRoute(kind: FacetKind, slug: string): Route | undefined {
     kind === "industry"
       ? `Free WhatsApp templates for ${facet.label.toLowerCase()}`
       : `Free ${facet.label.toLowerCase()} WhatsApp templates`;
-  const path = `/catalog/${kind}/${slug}`;
+  const path = `/whatsapp-template/${kind}/${slug}`;
   return {
     head: {
       title: `${heading}: examples ready for approval`,
@@ -92,7 +92,7 @@ function facetRoute(kind: FacetKind, slug: string): Route | undefined {
       path,
       jsonLd: [
         breadcrumbs([
-          ["Catalog", "/catalog"],
+          ["WhatsApp templates", "/whatsapp-template"],
           [facet.label, path],
         ]),
       ],
@@ -112,10 +112,10 @@ function templateRoute(slug: string): Route | undefined {
       path,
       jsonLd: [
         breadcrumbs([
-          ["Catalog", "/catalog"],
+          ["WhatsApp templates", "/whatsapp-template"],
           [
             facetLabel(INDUSTRIES, entry.industry),
-            `/catalog/industry/${entry.industry}`,
+            `/whatsapp-template/industry/${entry.industry}`,
           ],
           [entry.title, path],
         ]),
@@ -181,20 +181,24 @@ export function resolveRoute(rawPath: string): Route {
       },
       element: <Agents />,
     };
-  if (path === "/catalog")
+  if (path === "/whatsapp-template")
     return {
       head: {
         title: `${CATALOG.length}+ free WhatsApp template examples, ready for approval`,
         description:
           "A free catalog of WhatsApp message templates for marketing campaigns, utility updates and verification codes. Search by industry, preview, copy and download.",
         path,
-        jsonLd: [breadcrumbs([["Catalog", "/catalog"]])],
+        jsonLd: [breadcrumbs([["WhatsApp templates", "/whatsapp-template"]])],
       },
       element: (
         <CatalogPage filter={{}} heading="Free WhatsApp template examples" />
       ),
     };
-  if (parts[0] === "catalog" && parts.length === 3 && parts[1]! in FACETS) {
+  if (
+    `/${parts[0]}` === TEMPLATE_BASE &&
+    parts.length === 3 &&
+    parts[1]! in FACETS
+  ) {
     const route = facetRoute(parts[1] as FacetKind, parts[2]!);
     if (route) return route;
   }
@@ -219,7 +223,7 @@ export function allPaths() {
     "/",
     "/playground",
     "/agents",
-    "/catalog",
+    "/whatsapp-template",
     ...(Object.keys(FACETS) as FacetKind[]).flatMap((kind) =>
       FACETS[kind]
         .filter((facet) =>
@@ -227,7 +231,7 @@ export function allPaths() {
             matches(entry, facetFilter(kind, facet.slug)),
           ),
         )
-        .map((facet) => `/catalog/${kind}/${facet.slug}`),
+        .map((facet) => `/whatsapp-template/${kind}/${facet.slug}`),
     ),
     ...CATALOG.map((entry) => templatePath(entry.slug)),
   ];

@@ -45,9 +45,9 @@ export function TemplatePage({ entry }: { entry: CatalogEntry }) {
         <Header />
         <section className="lp-rails ct-detail">
           <nav className="ct-crumbs" aria-label="Breadcrumb">
-            <a href="/catalog">Catalog</a>
+            <a href="/whatsapp-template">WhatsApp templates</a>
             <span>/</span>
-            <a href={`/catalog/industry/${entry.industry}`}>
+            <a href={`/whatsapp-template/industry/${entry.industry}`}>
               {facetLabel(INDUSTRIES, entry.industry)}
             </a>
             <span>/</span>
@@ -108,7 +108,7 @@ export function TemplatePage({ entry }: { entry: CatalogEntry }) {
                 <div>
                   <dt>Category</dt>
                   <dd>
-                    <a href={`/catalog/category/${category}`}>
+                    <a href={`/whatsapp-template/category/${category}`}>
                       {facetLabel(CATEGORIES, category)}
                     </a>
                   </dd>
@@ -116,7 +116,7 @@ export function TemplatePage({ entry }: { entry: CatalogEntry }) {
                 <div>
                   <dt>Industry</dt>
                   <dd>
-                    <a href={`/catalog/industry/${entry.industry}`}>
+                    <a href={`/whatsapp-template/industry/${entry.industry}`}>
                       {facetLabel(INDUSTRIES, entry.industry)}
                     </a>
                   </dd>
@@ -124,7 +124,7 @@ export function TemplatePage({ entry }: { entry: CatalogEntry }) {
                 <div>
                   <dt>Use case</dt>
                   <dd>
-                    <a href={`/catalog/use-case/${entry.useCase}`}>
+                    <a href={`/whatsapp-template/use-case/${entry.useCase}`}>
                       {facetLabel(USE_CASES, entry.useCase)}
                     </a>
                   </dd>

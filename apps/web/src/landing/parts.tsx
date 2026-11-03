@@ -38,7 +38,7 @@ export function Header() {
         <a className="lp-chip lp-chip--outline" href="/agents">
           for agents
         </a>
-        <a className="lp-chip" href="/catalog">
+        <a className="lp-chip" href="/whatsapp-template">
           catalog
         </a>
         <a className="lp-chip" href={GITHUB}>
@@ -131,7 +131,7 @@ export function Footer() {
         <a className="lp-chip lp-chip--outline" href="/agents">
           for agents
         </a>
-        <a className="lp-chip" href="/catalog">
+        <a className="lp-chip" href="/whatsapp-template">
           catalog
         </a>
         <a className="lp-chip" href={NPM}>

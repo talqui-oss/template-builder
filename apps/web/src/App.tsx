@@ -31,7 +31,7 @@ export function App() {
           Template Builder
         </a>
         <nav className="pg-topbar__links">
-          <a href="/catalog">Catalog</a>
+          <a href="/whatsapp-template">Catalog</a>
           <a href="/agents">For agents</a>
           <a href="https://github.com/talqui-oss/template-builder">GitHub</a>
           <a href="https://www.npmjs.com/package/@talqui-oss/template-builder">

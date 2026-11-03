@@ -16,7 +16,7 @@ import {
 } from "./data";
 
 type Props = {
-  /** Fixed by the page: `/catalog/industry/retail` starts filtered by retail. */
+  /** Fixed by the page: `/whatsapp-template/industry/retail` starts filtered by retail. */
   filter: CatalogFilter;
   heading: string;
 };
@@ -131,7 +131,7 @@ export function CatalogPage({ filter: preset, heading }: Props) {
                     return (
                       <li key={facet.slug}>
                         <a
-                          href={`/catalog/${group.path}/${facet.slug}`}
+                          href={`/whatsapp-template/${group.path}/${facet.slug}`}
                           className={`ct-filters__item${active ? " is-active" : ""}`}
                           aria-current={active ? "true" : undefined}
                           onClick={toggle(group.key, facet.slug)}

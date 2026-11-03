@@ -115,9 +115,9 @@ export function Agents() {
         <h2>* CATALOG</h2>
         <p>
           Hundreds of ready templates by industry and use case at{" "}
-          <a href="/catalog">/catalog</a>. Each one is also plain JSON at{" "}
-          <code>/whatsapp-template/&lt;slug&gt;.json</code>, listed in{" "}
-          <a href="/llms.txt">/llms.txt</a>.
+          <a href="/whatsapp-template">/whatsapp-template</a>. Each one is also
+          plain JSON at <code>/whatsapp-template/&lt;slug&gt;.json</code>,
+          listed in <a href="/llms.txt">/llms.txt</a>.
         </p>
 
         <h2>* SCHEMA</h2>
@@ -193,7 +193,8 @@ export function Agents() {
           <span className="ag-muted">|</span> <a href="/llms.txt">llms.txt</a>{" "}
           <span className="ag-muted">|</span>{" "}
           <a href="/llms-full.txt">llms-full.txt</a>{" "}
-          <span className="ag-muted">|</span> <a href="/catalog">catalog</a>{" "}
+          <span className="ag-muted">|</span>{" "}
+          <a href="/whatsapp-template">catalog</a>{" "}
           <span className="ag-muted">|</span>{" "}
           <a href="/playground">playground</a>{" "}
           <span className="ag-muted">|</span> <a href="/">for humans</a>

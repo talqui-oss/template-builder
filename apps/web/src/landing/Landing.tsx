@@ -349,7 +349,7 @@ function Templates() {
         ))}
       </ul>
       <div className="lp-carousel__controls">
-        <a className="lp-link lp-carousel__all" href="/catalog">
+        <a className="lp-link lp-carousel__all" href="/whatsapp-template">
           Browse {CATALOG.length} free templates <ArrowIcon />
         </a>
         <p className="lp-progress">

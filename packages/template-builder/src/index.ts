@@ -21,3 +21,5 @@ export type {
   PreviewOptions,
 } from "./preview/model";
 export type { Line, Span } from "./preview/format";
+export { previewTree } from "./preview/tree";
+export type { Platform, PreviewNode, TreeOptions } from "./preview/tree";

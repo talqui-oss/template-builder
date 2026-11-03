@@ -1,0 +1,231 @@
+/*
+ * Template Builder preview.
+ *
+ * One CSS pixel equals one iOS point. Every value below was measured on native
+ * 3x screenshots of an iPhone (440pt wide screen, default text size, light mode).
+ * Override the custom properties to adapt the look without touching the markup.
+ */
+
+.tb-preview {
+  --tb-font:
+    -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Arial,
+    sans-serif;
+  --tb-wallpaper: #f8f6f2;
+  --tb-bubble-bg: #ffffff;
+  --tb-text: #0a0a0a;
+  --tb-muted: #666666;
+  --tb-action: #408559;
+  --tb-divider: #e5e5e5;
+
+  --tb-bubble-width: 335.67px;
+  --tb-bubble-radius: 10.67px;
+  /* Text starts closer to the left edge than it ends on the right one. */
+  --tb-padding-x: 9.17px;
+  --tb-padding-right: 10.5px;
+  --tb-padding-top: 6.5px;
+  --tb-header-gap: 12px;
+  --tb-footer-gap: 8.5px;
+  --tb-padding-bottom: 6.67px;
+  --tb-button-height: 44px;
+
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 0 16.67px;
+  font-family: var(--tb-font);
+  color: var(--tb-text);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+.tb-preview *,
+.tb-preview *::before,
+.tb-preview *::after {
+  box-sizing: inherit;
+  margin: 0;
+}
+
+/* Bubble: fixed width, square bottom-left corner where the tail joins. */
+.tb-bubble {
+  position: relative;
+  width: var(--tb-bubble-width);
+  background: var(--tb-bubble-bg);
+  border-radius: var(--tb-bubble-radius) var(--tb-bubble-radius)
+    var(--tb-bubble-radius) 0;
+}
+
+.tb-bubble__tail {
+  position: absolute;
+  bottom: 0;
+  left: -5.67px;
+  width: 6.17px;
+  height: 10.33px;
+  fill: var(--tb-bubble-bg);
+}
+
+.tb-bubble__content {
+  padding: var(--tb-padding-top) var(--tb-padding-right)
+    var(--tb-padding-bottom) var(--tb-padding-x);
+  overflow-wrap: anywhere;
+}
+
+/* Text */
+
+.tb-header--text {
+  font-size: 17px;
+  line-height: 22px;
+  font-weight: 600;
+  margin-bottom: var(--tb-header-gap);
+}
+
+.tb-bubble__body {
+  font-size: 16px;
+  line-height: 21px;
+}
+
+.tb-line {
+  white-space: pre-wrap;
+}
+
+.tb-line--bullet,
+.tb-line--numbered {
+  position: relative;
+  padding-left: 1.2em;
+}
+
+.tb-line--bullet::before,
+.tb-line--numbered::before {
+  position: absolute;
+  left: 0;
+}
+
+.tb-line--bullet::before {
+  content: "•";
+}
+
+.tb-line--numbered::before {
+  content: attr(data-marker);
+}
+
+.tb-line--quote {
+  padding-left: 10px;
+  border-left: 3px solid var(--tb-divider);
+}
+
+.tb-line--code,
+.tb-mono,
+.tb-code {
+  font-family: ui-monospace, Menlo, monospace;
+  font-size: 0.92em;
+}
+
+.tb-line--code {
+  white-space: pre-wrap;
+}
+
+.tb-code {
+  padding: 0 3px;
+  border-radius: 4px;
+  background: rgba(0, 0, 0, 0.06);
+}
+
+.tb-bold {
+  font-weight: 600;
+}
+
+.tb-italic {
+  font-style: italic;
+}
+
+.tb-strike {
+  text-decoration: line-through;
+}
+
+/* Footer and time share the last row; the time sits right, slightly lower. */
+.tb-bubble__meta {
+  display: flex;
+  align-items: flex-end;
+  gap: 8px;
+  margin-top: var(--tb-footer-gap);
+  color: var(--tb-muted);
+}
+
+.tb-bubble__footer {
+  flex: 1;
+  font-size: 14px;
+  line-height: 18px;
+}
+
+.tb-bubble__time {
+  font-size: 11px;
+  line-height: 13px;
+  letter-spacing: 1.2px;
+  margin-right: -1.2px;
+  margin-bottom: -1.17px;
+  white-space: nowrap;
+}
+
+/* Buttons: one 44pt row each, separated by a hairline. */
+.tb-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8.67px;
+  height: var(--tb-button-height);
+  /* Labels sit 0.67pt above the row's center. */
+  padding: 0 var(--tb-padding-x) 1.33px;
+  border-top: 0.33px solid var(--tb-divider);
+  color: var(--tb-action);
+  font-size: 14px;
+  line-height: 18px;
+}
+
+.tb-button__icon {
+  flex: none;
+  overflow: visible;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.1;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* Headers with media */
+
+.tb-header--media {
+  display: block;
+  width: calc(100% + 2 * var(--tb-padding-x) - 8px);
+  margin: calc(4px - var(--tb-padding-top)) calc(4px - var(--tb-padding-x))
+    var(--tb-header-gap);
+  aspect-ratio: 1.91;
+  object-fit: cover;
+  border-radius: calc(var(--tb-bubble-radius) - 4px);
+  background: var(--tb-divider);
+}
+
+.tb-header--document,
+.tb-header--location,
+.tb-header--product {
+  min-height: 56px;
+  margin-bottom: var(--tb-header-gap);
+  padding: 12px;
+  border-radius: 6px;
+  background: rgba(0, 0, 0, 0.04);
+  font-size: 14px;
+}
+
+/* Carousel cards scroll sideways under the bubble. */
+.tb-card {
+  width: 260px;
+  background: var(--tb-bubble-bg);
+  border-radius: var(--tb-bubble-radius);
+  overflow: hidden;
+}
+
+.tb-offer {
+  margin-bottom: var(--tb-header-gap);
+  font-size: 15px;
+  font-weight: 600;
+}

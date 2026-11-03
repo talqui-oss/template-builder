@@ -41,7 +41,14 @@
   },
   "devDependencies": {
     "@template-builder/tsconfig": "workspace:*",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "react": "^19",
+    "react-dom": "^19.3.1",
     "tsup": "^9.0.0",
     "typescript": "^6.0.3"
+  },
+  "dependencies": {
+    "@talqui-oss/template-builder": "workspace:*"
   }
 }

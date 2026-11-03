@@ -4,6 +4,8 @@ name: release
 # - main: when the packages carry a version that has no tag yet (a merged `pnpm release`),
 #   publish it to `latest` and tag the commit.
 # - a pushed `v*` tag: publish that version, so `v0.2.0-beta.1` from any branch goes to `beta`.
+# A stable version also deploys template-builder.dev from the same commit, so the site always
+# shows the published packages.
 on:
   push:
     branches: [main]
@@ -22,6 +24,8 @@ jobs:
   publish:
     runs-on: ubuntu-latest
     environment: npm
+    outputs:
+      tag: ${{ steps.version.outputs.tag }}
     steps:
       - uses: actions/checkout@v4
         with:
@@ -77,3 +81,26 @@ jobs:
             awk '/^##? \[?[0-9]/{if (found) exit; found=1; next} found' CHANGELOG.md > notes.md
             gh release create "$TAG" --verify-tag --latest --notes-file notes.md
           fi
+
+  site:
+    needs: publish
+    if: needs.publish.outputs.tag && !contains(needs.publish.outputs.tag, '-')
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    env:
+      VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+      VERCEL_PROJECT_ID: ${{ vars.VERCEL_PROJECT_ID }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: npm install --global vercel@latest
+      # Built here and uploaded as is, like talqui-app-web; the Vercel project has no Git deploys.
+      - run: vercel pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }}
+      - run: vercel build --prod --token=${{ secrets.VERCEL_TOKEN }}
+      - run: vercel deploy --prebuilt --prod --token=${{ secrets.VERCEL_TOKEN }}

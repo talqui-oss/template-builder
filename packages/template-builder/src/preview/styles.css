@@ -25,7 +25,7 @@
   --tb-padding-top: 6.5px;
   --tb-header-gap: 12px;
   --tb-footer-gap: 8.5px;
-  --tb-padding-bottom: 6.67px;
+  --tb-padding-bottom: 6.33px;
   --tb-button-height: 44px;
 
   box-sizing: border-box;
@@ -167,7 +167,7 @@
   white-space: nowrap;
 }
 
-/* Buttons: one 44pt row each, separated by a hairline. */
+/* Buttons: one 44pt row each, separated by a 1pt line. */
 .tb-button {
   display: flex;
   align-items: center;
@@ -176,7 +176,7 @@
   height: var(--tb-button-height);
   /* Labels sit 0.67pt above the row's center. */
   padding: 0 var(--tb-padding-x) 1.33px;
-  border-top: 0.33px solid var(--tb-divider);
+  border-top: 1px solid var(--tb-divider);
   color: var(--tb-action);
   font-size: 14px;
   line-height: 18px;

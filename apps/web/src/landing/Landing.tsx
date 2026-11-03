@@ -1,8 +1,18 @@
+import {
+  codes,
+  toCurl,
+  toRequests,
+  validate,
+  type Template,
+} from "@talqui-oss/template-builder";
+import { meta } from "@talqui-oss/template-builder/adapters/meta";
+import { TemplateEditor } from "@talqui-oss/template-builder-react";
 import { useEffect, useRef, useState } from "react";
 import { CATALOG } from "../catalog/data";
 import { EXAMPLES } from "../examples";
 import { templateLink } from "../state";
 import { AsciiArt } from "./AsciiArt";
+import { HeroStack } from "./HeroStack";
 import { ArrowIcon, GitHubIcon } from "./icons";
 import {
   ChatScreen,
@@ -34,7 +44,9 @@ export function Landing() {
         <Header />
         <Hero />
         <Joint />
-        <PreviewSection />
+        <CapabilityStrip />
+        <Joint />
+        <CapabilitiesSection />
         <Joint />
         <BuildingBlocks />
         <Joint />
@@ -67,8 +79,6 @@ function Hero() {
     );
     return () => clearInterval(id);
   }, []);
-  const hero = EXAMPLES[0]!;
-
   return (
     <section className="lp-rails lp-hero">
       <h1 className="lp-hero__title">
@@ -81,9 +91,9 @@ function Hero() {
         <em className="lp-serif">exactly as they arrive</em>
       </h1>
       <p className="lp-hero__lead">
-        Add template creation, preview and validation to your product, and
+        Embed template creation in your product, validate against Meta's
         <br />
-        create templates on Meta from your backend. One open-source library.
+        review rules, preview in React or Vue and create on Meta from your API.
       </p>
       <div className="lp-hero__actions">
         <InstallCommand />
@@ -92,56 +102,130 @@ function Hero() {
         </a>
       </div>
 
-      <div className="lp-hero__visual">
-        <div className="lp-dots" aria-hidden="true" />
-        <article className="lp-idcard">
-          <header className="lp-idcard__head">
-            <span>Template</span>
-            <span className="lp-idcard__badge">Approved</span>
-          </header>
-          <dl className="lp-idcard__meta">
-            <div>
-              <dt>Name</dt>
-              <dd>{hero.template.name}</dd>
-            </div>
-            <div>
-              <dt>Category</dt>
-              <dd>Utility</dd>
-            </div>
-            <div>
-              <dt>Language</dt>
-              <dd>en_US</dd>
-            </div>
-          </dl>
-          <ChatScreen template={hero.template} className="lp-screen--hero" />
-        </article>
-      </div>
+      <figure className="lp-hero__visual">
+        <AsciiArt
+          scene="signal"
+          cols={260}
+          rows={64}
+          className="lp-hero__ascii"
+        />
+        <HeroStack />
+        <figcaption className="lp-hero__caption">
+          <span>fig. 01 — rendering</span>
+          <span>
+            [ json <span className="lp-accent">·</span> renders as{" "}
+            <span className="lp-accent">·</span> whatsapp ]
+          </span>
+        </figcaption>
+      </figure>
     </section>
   );
 }
 
-const PREVIEW_TABS = [EXAMPLES[0]!, EXAMPLES[1]!, EXAMPLES[3]!];
+/** The four things the package does, in the order a template goes through them. */
+const CAPABILITIES = [
+  {
+    title: "Embed template creation",
+    text: "A form your users fill in, inside your app.",
+  },
+  {
+    title: "Validate against Meta's rules",
+    text: "73 review checks, while they type.",
+  },
+  {
+    title: "Preview in React or Vue",
+    text: "Exactly as it arrives on the phone.",
+  },
+  {
+    title: "Create on Meta from your API",
+    text: "The Cloud API request, built for you.",
+  },
+];
 
-function PreviewSection() {
-  const [active, setActive] = useState(0);
-  const example = PREVIEW_TABS[active]!;
+/** A strip under the hero naming every capability, so the first screen tells the whole story. */
+function CapabilityStrip() {
+  return (
+    <section className="lp-rails lp-strip" aria-label="What it does">
+      {CAPABILITIES.map((capability, index) => (
+        <p key={capability.title} className="lp-strip__item">
+          <span className="lp-strip__index">0{index + 1}</span>
+          {capability.title}
+        </p>
+      ))}
+    </section>
+  );
+}
+
+/** One template moves through all four tabs: edit it in the first, see the effect in the rest. */
+function CapabilitiesSection() {
+  const [active, setActive] = useState(2);
+  const [template, setTemplate] = useState<Template>(EXAMPLES[0]!.template);
+  const { issues } = validate(template);
+  let curl: string;
+  try {
+    curl = toCurl(toRequests(template, meta()));
+  } catch {
+    curl = "# Fix the errors in the Validate tab to build the request.";
+  }
+
+  const panels = [
+    <div className="lp-cap__editor" key="edit">
+      <TemplateEditor
+        template={template}
+        onChange={setTemplate}
+        className="lp-editor"
+      />
+    </div>,
+    <ul className="lp-cap__issues" key="validate">
+      {issues.length === 0 && (
+        <li className="lp-cap__ok">
+          ✓ Ready for review: no issues found across {Object.keys(codes).length}{" "}
+          checks.
+        </li>
+      )}
+      {issues.map((issue) => (
+        <li key={issue.code + issue.path}>
+          <span
+            className={
+              issue.severity === "error"
+                ? "lp-mini-issues__error"
+                : "lp-mini-issues__warn"
+            }
+          >
+            {issue.severity}
+          </span>{" "}
+          <code>{issue.code}</code>
+          <span className="lp-muted">{issue.message}</span>
+        </li>
+      ))}
+    </ul>,
+    <ChatScreen
+      template={template}
+      className="lp-screen--window"
+      key="preview"
+    />,
+    <pre className="lp-cap__code" key="create">
+      {curl}
+    </pre>,
+  ];
 
   return (
     <section className="lp-rails lp-section lp-split">
       <div className="lp-split__text">
-        <Eyebrow index="01">The preview</Eyebrow>
+        <Eyebrow index="01">What it does</Eyebrow>
         <h2 className="lp-h2">
-          Free WhatsApp preview,
+          Everything a template needs,
           <br />
-          <em className="lp-serif">inside your app</em>
+          <em className="lp-serif">in one free package</em>
         </h2>
         <p className="lp-lead">
-          Show your users the exact message their customers will get: the
-          bubble, line breaks and buttons match a real iPhone, point by point.
+          Let your users create WhatsApp templates in your product, catch what
+          Meta would reject before they submit, show the exact message their
+          customers will get, and create it from your backend.
         </p>
-        <ul className="lp-tabs" role="tablist" aria-label="Examples">
-          {PREVIEW_TABS.map((tab, index) => (
-            <li key={tab.slug}>
+        <ul className="lp-tabs" role="tablist" aria-label="Capabilities">
+          {CAPABILITIES.map((capability, index) => (
+            <li key={capability.title}>
               <button
                 type="button"
                 role="tab"
@@ -150,7 +234,10 @@ function PreviewSection() {
                 onClick={() => setActive(index)}
               >
                 <span className="lp-tabs__index">0{index + 1}</span>
-                {tab.title}
+                <span className="lp-tabs__text">
+                  {capability.title}
+                  <span className="lp-tabs__note">{capability.text}</span>
+                </span>
               </button>
             </li>
           ))}
@@ -159,13 +246,33 @@ function PreviewSection() {
       <div className="lp-window">
         <div className="lp-window__bar">
           <span className="lp-window__dots" aria-hidden="true" />
-          <span>{example.template.name}.json</span>
-          <span className="lp-window__live">● valid</span>
+          <span>{template.name || "template"}.json</span>
+          <span
+            className={
+              issues.some((issue) => issue.severity === "error")
+                ? "lp-window__live lp-window__live--error"
+                : "lp-window__live"
+            }
+          >
+            ●{" "}
+            {issues.some((issue) => issue.severity === "error")
+              ? "errors"
+              : "valid"}
+          </span>
         </div>
-        <ChatScreen template={example.template} className="lp-screen--window" />
+        <div className="lp-cap__panel">{panels[active]}</div>
         <p className="lp-window__foot">
-          <span className="lp-accent">&lt;TemplatePreview /&gt;</span> · React
-          and Vue
+          <span className="lp-accent">
+            {
+              [
+                "<TemplateEditor />",
+                "validate()",
+                "<TemplatePreview />",
+                "toRequests(template, meta())",
+              ][active]
+            }
+          </span>{" "}
+          · edit the template in tab 01, the others follow
         </p>
       </div>
     </section>

@@ -9,16 +9,26 @@ const CELL_ASPECT = 0.6;
 type Props = {
   cols?: number;
   rows?: number;
+  /** `phone`: a phone receiving a template. `signal`: rings spreading from the bottom center. */
+  scene?: "phone" | "signal";
   className?: string;
 };
 
 /**
- * A phone receiving a template, drawn with text characters. The scene is computed, not an image,
+ * A scene drawn with text characters. The scene is computed, not an image,
  * so it stays sharp at any size and renders the same on the server. Two layers: the neutral
  * scene and the message bubbles in the accent color.
  */
-export function AsciiArt({ cols = 244, rows = 54, className }: Props) {
-  const { scene, accent } = useMemo(() => drawScene(cols, rows), [cols, rows]);
+export function AsciiArt({
+  cols = 244,
+  rows = 54,
+  scene: kind = "phone",
+  className,
+}: Props) {
+  const { scene, accent } = useMemo(
+    () => (kind === "signal" ? drawSignal(cols, rows) : drawScene(cols, rows)),
+    [cols, rows, kind],
+  );
   return (
     <div className={`lp-ascii ${className ?? ""}`} aria-hidden="true">
       <pre className="lp-ascii__layer">{scene}</pre>
@@ -82,6 +92,44 @@ function drawScene(cols: number, rows: number) {
 
       scene += bubble > 0 ? " " : char(ink, grain);
       accent += bubble > 0 ? char(bubble, grain) : " ";
+    }
+    scene += "\n";
+    accent += "\n";
+  }
+  return { scene, accent };
+}
+
+/**
+ * Rings spreading from below the bottom center, like a message going out. The middle stays
+ * dim so whatever sits on top of it reads clearly; one ring carries the accent color.
+ */
+function drawSignal(cols: number, rows: number) {
+  const width = cols * CELL_ASPECT;
+  const origin = { x: width / 2, y: rows * 1.15 };
+  let scene = "";
+  let accent = "";
+  for (let row = 0; row < rows; row++) {
+    for (let col = 0; col < cols; col++) {
+      const x = col * CELL_ASPECT;
+      const distance = Math.hypot(x - origin.x, row - origin.y);
+      const grain = hash(col, row);
+      // Rings every 7 units with a soft edge; faint dust between them.
+      const ring = Math.max(0, 1 - Math.abs((distance % 7) - 3.5) / 1.8);
+      const fade = Math.min(1, Math.max(0, 1.5 - distance / (width * 0.42)));
+      // Dim a column in the middle, brighter toward the sides.
+      const side = Math.min(1, Math.abs(x - origin.x) / (width * 0.2));
+      const dust = grain > 0.94 ? 0.18 : 0;
+      const ink =
+        Math.max(ring * (grain > 0.25 ? 1 : 0.45), dust) *
+        fade *
+        (0.3 + 0.7 * side);
+      const accented =
+        Math.floor(distance / 7) === 3 &&
+        ring > 0.5 &&
+        side > 0.5 &&
+        grain > 0.45;
+      scene += accented ? " " : char(ink, grain);
+      accent += accented ? char(Math.max(ink, 0.5), grain) : " ";
     }
     scene += "\n";
     accent += "\n";

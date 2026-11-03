@@ -121,7 +121,7 @@ export const callbackRequest = {
   language: "en_US",
   category: "UTILITY",
   body: {
-    text: "Hi {{name}}, can our support team call you about ticket {{ticket}}?",
+    text: "Hi {{name}}, can our support team call you about ticket {{ticket}} today?",
   },
   callPermissionRequest: true,
   variables: { name: { example: "Maria" }, ticket: { example: "8812" } },

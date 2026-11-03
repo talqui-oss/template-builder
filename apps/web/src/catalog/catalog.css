@@ -571,3 +571,35 @@ h3.ct-block__title {
 .ct-note p:last-child {
   margin-top: 8px;
 }
+
+.ct-detail__author {
+  margin: 16px 0 0;
+  color: var(--lp-faint);
+  font: 11px/1 var(--lp-mono);
+}
+
+.ct-detail__author a {
+  color: var(--lp-accent);
+}
+
+.ct-contribute {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: 12px;
+  padding: 18px 24px;
+  border: 1px dashed var(--lp-border-strong);
+  border-radius: 14px;
+  color: var(--lp-text);
+  font-size: 14px;
+}
+
+.ct-contribute strong {
+  font-weight: 400;
+}
+
+.ct-contribute:hover {
+  border-color: rgba(255, 92, 48, 0.5);
+  color: var(--lp-accent);
+}

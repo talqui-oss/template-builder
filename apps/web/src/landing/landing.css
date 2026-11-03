@@ -1416,3 +1416,55 @@
 body:has(.lp-page) {
   background: #000;
 }
+
+/* 05 With AI */
+
+.lp-ai__actions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+  margin-top: 32px;
+}
+
+.lp-ai__links {
+  display: flex;
+  gap: 20px;
+  margin: 0;
+}
+
+.lp-ai__lines {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 0;
+  padding: 20px 16px 24px;
+  list-style: none;
+  font: 12px/1.5 var(--lp-mono);
+}
+
+.lp-ai__line {
+  display: grid;
+  grid-template-columns: 48px 1fr;
+  gap: 8px;
+  color: var(--lp-muted);
+}
+
+.lp-ai__who {
+  color: var(--lp-faint);
+}
+
+.lp-ai__line--you {
+  padding: 10px 12px;
+  border-radius: 8px;
+  background: var(--lp-raised);
+  color: var(--lp-text);
+}
+
+.lp-ai__line--tool {
+  color: #6fcf97;
+}
+
+.lp-ai__line--agent:last-child {
+  color: var(--lp-text);
+}

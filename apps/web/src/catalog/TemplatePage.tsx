@@ -60,6 +60,22 @@ export function TemplatePage({ entry }: { entry: CatalogEntry }) {
             <em className="lp-serif">free example, ready for approval</em>
           </h1>
           <p className="lp-lead ct-detail__lead">{entry.description}</p>
+          <p className="ct-detail__author">
+            {entry.author ? (
+              <>
+                Contributed by{" "}
+                {entry.author.url ? (
+                  <a href={entry.author.url} rel="nofollow ugc">
+                    {entry.author.name}
+                  </a>
+                ) : (
+                  entry.author.name
+                )}
+              </>
+            ) : (
+              "Official template, maintained by Talqui"
+            )}
+          </p>
 
           <div className="ct-detail__grid">
             <div className="ct-detail__preview">

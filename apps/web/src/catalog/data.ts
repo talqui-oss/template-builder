@@ -15,6 +15,8 @@ export type CatalogFile = {
    * shortcut: mocked values for now, replace with the real backfill.
    */
   approvalRate?: number;
+  /** Who contributed the entry; entries without one are maintained by Talqui. */
+  author?: { name: string; url?: string };
   template: Template;
 };
 

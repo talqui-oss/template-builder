@@ -82,18 +82,18 @@ export function useCopy() {
   return { copied, copy };
 }
 
-export function InstallCommand() {
+export function InstallCommand({ command = INSTALL }: { command?: string }) {
   const { copied, copy } = useCopy();
   return (
     <div className="lp-command">
       <code>
-        <span className="lp-command__prompt">$</span> {INSTALL}
+        <span className="lp-command__prompt">$</span> {command}
       </code>
       <button
         type="button"
         className="lp-command__copy"
-        aria-label={copied ? "Copied" : "Copy install command"}
-        onClick={() => copy(INSTALL)}
+        aria-label={copied ? "Copied" : "Copy command"}
+        onClick={() => copy(command)}
       >
         <CopyIcon />
       </button>

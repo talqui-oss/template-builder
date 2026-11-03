@@ -44,6 +44,8 @@ for (const file of files) {
       !(entry.approvalRate >= 0 && entry.approvalRate <= 100)
     )
       problems.push("approvalRate must be a number from 0 to 100");
+    if (entry.author !== undefined && typeof entry.author?.name !== "string")
+      problems.push('author must be { "name": string, "url"?: string }');
     if (entry.industry && !industries.has(entry.industry))
       problems.push(`unknown industry "${entry.industry}"`);
     if (entry.useCase && !useCases.has(entry.useCase))

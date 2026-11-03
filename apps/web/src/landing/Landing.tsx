@@ -42,6 +42,8 @@ export function Landing() {
         <Joint />
         <Integrations />
         <Joint />
+        <WithAi />
+        <Joint />
         <OpenSource />
         <Joint />
         <Faq />
@@ -191,9 +193,9 @@ const BLOCKS = [
     title: "Validate in the browser and the API",
     text: "Run the 73 checks Meta applies at review while users type, and again on your server before submitting.",
     rows: [
-      ["Typed issues with a path", "ts"],
-      ["Errors and warnings", "73"],
-      ["Runs in the browser or Node", "0 deps"],
+      ["Review linter", "73 rules"],
+      ["Category check", "copy code"],
+      ["Variable examples", "required"],
     ],
     visual: (
       <ul className="lp-mini-issues">
@@ -512,6 +514,63 @@ function Integrations() {
   );
 }
 
+const SKILL_COMMAND = "npx skills add talqui-oss/template-builder";
+
+/** The agent session shown next to the skill install, line by line. */
+const AGENT_SESSION = [
+  ["you", "Create an abandoned cart template for Acme with a 10% coupon."],
+  ["agent", "Reading skill template-builder…"],
+  ["agent", "Wrote abandoned_cart.json · MARKETING · en_US"],
+  ["tool", "validate(template) → 0 errors, 0 warnings"],
+  ["tool", "toCurl(toRequests(template, meta())) → 1 request"],
+  ["agent", "Ready to create on Meta. Want me to run it?"],
+] as const;
+
+function WithAi() {
+  return (
+    <section className="lp-rails lp-section lp-split">
+      <div className="lp-split__text">
+        <Eyebrow index="05">With AI</Eyebrow>
+        <h2 className="lp-h2">
+          Build templates
+          <br />
+          <em className="lp-serif">with any AI, free</em>
+        </h2>
+        <p className="lp-lead">
+          Install the skill and your coding agent knows the schema, the review
+          rules and the catalog. It works with Claude Code, Cursor, Codex and
+          any agent that reads skills or llms.txt.
+        </p>
+        <div className="lp-ai__actions">
+          <InstallCommand command={SKILL_COMMAND} />
+          <p className="lp-ai__links">
+            <a className="lp-link" href="/llms.txt">
+              llms.txt <ArrowIcon />
+            </a>
+            <a className="lp-link" href="/agents">
+              For agents <ArrowIcon />
+            </a>
+          </p>
+        </div>
+      </div>
+      <div className="lp-window lp-ai__session">
+        <div className="lp-window__bar">
+          <span className="lp-window__dots" aria-hidden="true" />
+          <span>agent session</span>
+        </div>
+        <ol className="lp-ai__lines">
+          {AGENT_SESSION.map(([who, text]) => (
+            <li key={text} className={`lp-ai__line lp-ai__line--${who}`}>
+              <span className="lp-ai__who">{who === "tool" ? "›" : who}</span>
+              <span>{text}</span>
+            </li>
+          ))}
+        </ol>
+      </div>
+    </section>
+  );
+}
+
 const PRINCIPLES = [
   [
     "Nothing leaves your app.",
@@ -532,7 +591,7 @@ function OpenSource() {
     <section className="lp-rails lp-open">
       <div className="lp-open__hero">
         <div className="lp-open__rays" aria-hidden="true" />
-        <Eyebrow index="05">Open source</Eyebrow>
+        <Eyebrow index="06">Open source</Eyebrow>
         <h2 className="lp-h2 lp-h2--center">
           <span className="lp-dim">Free and open source.</span>{" "}
           <em className="lp-serif">Ship thousands</em> of templates with
@@ -599,7 +658,7 @@ function Faq() {
   return (
     <section className="lp-rails lp-section lp-faq">
       <div>
-        <Eyebrow index="06">FAQ</Eyebrow>
+        <Eyebrow index="07">FAQ</Eyebrow>
         <h2 className="lp-h2">
           Questions,
           <br />

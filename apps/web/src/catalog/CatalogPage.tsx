@@ -34,6 +34,9 @@ const GROUPS: {
   { key: "useCase", path: "use-case", title: "Use case", facets: USE_CASES },
 ];
 
+const CONTRIBUTE =
+  "https://github.com/talqui-oss/template-builder/tree/main/apps/web/catalog";
+
 const QUERY_KEYS: Record<FilterKey | "query", string> = {
   category: "category",
   industry: "industry",
@@ -214,6 +217,15 @@ export function CatalogPage({ filter: preset, heading }: Props) {
                 </li>
               ))}
             </ol>
+            <a className="ct-contribute" href={CONTRIBUTE}>
+              <span>
+                <strong>Missing a template?</strong>{" "}
+                <span className="lp-muted">
+                  Add one with a JSON file and a pull request.
+                </span>
+              </span>
+              <ArrowIcon />
+            </a>
             {!results.length && (
               <p className="lp-muted ct-empty">
                 No template matches. Try fewer words or clear the filters.

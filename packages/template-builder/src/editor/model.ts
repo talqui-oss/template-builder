@@ -6,6 +6,7 @@ import type {
   Header,
   StandardTemplate,
   Template,
+  Variables,
 } from "../schema/types";
 
 /**
@@ -348,11 +349,15 @@ function codeSection(template: AuthenticationTemplate): EditorSection {
  * The template after an edit. `value` is the new text or option for inputs and selects, a
  * boolean for checkboxes, and nothing for actions. Placeholders added or removed in the text
  * are synced into `variables`, keeping the examples already typed.
+ *
+ * `remembered` holds examples of variables seen earlier: while someone types `{{name}}` the
+ * placeholder is briefly incomplete, and its example comes back from here once it is whole.
  */
 export function applyEdit(
   template: Template,
   id: string,
   value?: string | boolean,
+  remembered: Variables = {},
 ): Template {
   const text = typeof value === "string" ? value : "";
   if (id === "name") return { ...template, name: text };
@@ -388,7 +393,7 @@ export function applyEdit(
         [id.slice("variables.".length)]: { example: text },
       },
     };
-  return syncVariables(editStandard(template, id, text));
+  return syncVariables(editStandard(template, id, text), remembered);
 }
 
 function editStandard(
@@ -459,12 +464,15 @@ export function changeCategory(
 }
 
 /** Keeps `variables` in step with the placeholders used in the text, preserving typed examples. */
-export function syncVariables(template: StandardTemplate): StandardTemplate {
+export function syncVariables(
+  template: StandardTemplate,
+  remembered: Variables = {},
+): StandardTemplate {
   const current = template.variables ?? {};
   const variables = Object.fromEntries(
     extractVariables(template).map((name) => [
       name,
-      current[name] ?? { example: "" },
+      current[name] ?? remembered[name] ?? { example: "" },
     ]),
   );
   return {

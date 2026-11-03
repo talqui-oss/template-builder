@@ -8,12 +8,14 @@ import {
   type Platform,
   type PreviewNode,
   type Template,
+  type Variables,
 } from "@talqui-oss/template-builder";
 import {
   createElement,
   useEffect,
   useId,
   useMemo,
+  useRef,
   type ChangeEvent,
   type KeyboardEvent,
   type ReactNode,
@@ -90,9 +92,13 @@ export function TemplateEditor({
   className,
 }: TemplateEditorProps) {
   const idPrefix = `tb${useId().replace(/[^a-zA-Z0-9]/g, "")}`;
+  // Every example typed so far, so a placeholder retyped gets its example back.
+  const remembered = useRef<Variables>({});
+  if (template.category !== "AUTHENTICATION")
+    Object.assign(remembered.current, template.variables);
   const tree = editorTree(template, { idPrefix, languages });
   const edit = (id: string, value?: string | boolean) =>
-    onChange(applyEdit(template, id, value));
+    onChange(applyEdit(template, id, value, remembered.current));
   return toEditorElement(
     { ...tree, class: [tree.class, className].filter(Boolean).join(" ") },
     edit,

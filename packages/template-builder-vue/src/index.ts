@@ -8,6 +8,7 @@ import {
   type Platform,
   type PreviewNode,
   type Template,
+  type Variables,
 } from "@talqui-oss/template-builder";
 import { defineComponent, h, type PropType, type VNodeChild } from "vue";
 
@@ -73,13 +74,25 @@ export const TemplateEditor = defineComponent({
   },
   data() {
     // Element ids for label/input pairs, unique per editor on the page.
-    return { idPrefix: `tb-editor-${++editors}` };
+    return {
+      idPrefix: `tb-editor-${++editors}`,
+      // Every example typed so far, so a placeholder retyped gets its example back.
+      seen: {} as Variables,
+    };
   },
   /** Emitted with the next template on every edit. */
   emits: { "update:template": (template: Template) => Boolean(template) },
   methods: {
     edit(id: string, value?: string | boolean) {
-      this.$emit("update:template", applyEdit(this.template, id, value));
+      this.$emit(
+        "update:template",
+        applyEdit(this.template, id, value, this.remembered()),
+      );
+    },
+    remembered(): Variables {
+      if (this.template.category !== "AUTHENTICATION")
+        Object.assign(this.seen, this.template.variables);
+      return this.seen;
     },
   },
   render() {

@@ -48,6 +48,7 @@ export function BasicsCard({ template, onChange }: Props) {
           {() => (
             <Segment
               label="Category"
+              block
               items={CATEGORIES}
               value={template.category}
               onChange={(category) =>

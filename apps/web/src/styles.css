@@ -249,6 +249,7 @@ code {
 
 .pg-input {
   width: 100%;
+  /* 18px line + 16px padding + 2px border = 36px, the height every control shares. */
   min-height: 36px;
   padding: 8px 10px;
   border: 1px solid var(--pg-border-strong);
@@ -256,6 +257,7 @@ code {
   background: var(--pg-bg);
   color: var(--pg-text);
   font: inherit;
+  line-height: 18px;
   outline: none;
   transition: border-color 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -376,6 +378,21 @@ code {
   border: 1px solid var(--pg-border);
 }
 
+/* Form variant: same 36px height as .pg-input, items share the width. */
+.pg-segment--block {
+  display: flex;
+  height: 36px;
+  border-color: var(--pg-border-strong);
+  border-radius: var(--pg-radius-control);
+}
+
+.pg-segment--block .pg-segment__item {
+  flex: 1 1 0;
+  justify-content: center;
+  height: 100%;
+  border-radius: 5px;
+}
+
 .pg-segment__item {
   display: inline-flex;
   align-items: center;
@@ -448,14 +465,29 @@ code {
 
 /* Chat wallpaper behind the message; this node is what gets exported. */
 .pg-phone__screen {
+  position: relative;
+  isolation: isolate;
   flex: none;
   width: 440px;
   padding: 24px 0;
   border-radius: 12px;
   overflow: hidden;
   background: var(--tb-wallpaper, #f8f6f2);
-  background-image: var(--tb-wallpaper-image, none);
-  background-size: 640px auto;
+}
+
+/*
+ * WhatsApp's doodle wallpaper, loaded from its public URL (not stored in this
+ * repository). The file is drawn on the classic #e5ddd5 beige; the filter lifts
+ * it to the lighter iOS tone measured on device.
+ */
+.pg-phone__screen::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: url("https://user-images.githubusercontent.com/15075759/28719144-86dc0f70-73b1-11e7-911d-60d70fcded21.png")
+    0 0 / 640px auto repeat;
+  filter: saturate(0.55) brightness(1.1);
 }
 
 .pg-code {

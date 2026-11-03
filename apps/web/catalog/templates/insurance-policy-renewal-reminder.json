@@ -9,6 +9,7 @@
     "insurance expiry notification"
   ],
   "notes": "Tie the message to a specific policy number and date to keep it utility. Add cross-sell and it becomes marketing.",
+  "approvalRate": 79,
   "template": {
     "name": "insurance_policy_renewal_reminder",
     "language": "en_US",

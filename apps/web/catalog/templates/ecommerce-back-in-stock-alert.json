@@ -9,6 +9,7 @@
     "product available again message"
   ],
   "notes": "Only send to people who explicitly subscribed to that product alert and say so in the text. Stock sells out fast, so send immediately.",
+  "approvalRate": 80,
   "template": {
     "name": "ecommerce_back_in_stock_alert",
     "language": "en_US",

@@ -9,6 +9,7 @@
     "spa first visit message"
   ],
   "notes": "Offer one useful tip (arrival time, patch test). A warm, practical tone helps utility approval.",
+  "approvalRate": 75,
   "template": {
     "name": "beauty_welcome_new_client",
     "language": "en_US",

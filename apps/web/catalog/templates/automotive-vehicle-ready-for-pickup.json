@@ -9,6 +9,7 @@
     "service complete notification"
   ],
   "notes": "Include the final amount and closing time; this saves calls. Don't promote extra services in the text.",
+  "approvalRate": 89,
   "template": {
     "name": "automotive_vehicle_ready_for_pickup",
     "language": "en_US",

@@ -9,6 +9,7 @@
     "policy confirmation template"
   ],
   "notes": "Link to the document portal instead of attaching files; media headers need an approved sample and slow review.",
+  "approvalRate": 88,
   "template": {
     "name": "insurance_policy_documents_issued",
     "language": "en_US",

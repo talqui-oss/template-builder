@@ -9,6 +9,7 @@
     "store pickup notification"
   ],
   "notes": "State the pickup deadline and what to bring. No promotions in the text so it stays utility.",
+  "approvalRate": 78,
   "template": {
     "name": "retail_store_pickup_ready",
     "language": "en_US",

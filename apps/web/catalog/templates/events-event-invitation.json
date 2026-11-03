@@ -9,6 +9,7 @@
     "conference invite message"
   ],
   "notes": "Give date, place and the value of attending. Quick replies simplify counting.",
+  "approvalRate": 92,
   "template": {
     "name": "events_event_invitation",
     "language": "en_US",

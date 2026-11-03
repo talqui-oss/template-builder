@@ -9,6 +9,7 @@
     "seasonal salon template"
   ],
   "notes": "Send 3 weeks before the holiday; calendars fill early. Mention gift cards as an easy last-minute option.",
+  "approvalRate": 93,
   "template": {
     "name": "beauty_holiday_glow_campaign",
     "language": "en_US",

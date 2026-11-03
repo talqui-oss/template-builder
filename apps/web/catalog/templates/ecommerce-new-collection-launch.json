@@ -9,6 +9,7 @@
     "early access message ecommerce"
   ],
   "notes": "Lead with what is new and why they get early access. Send once; repeated launch blasts drive blocks and lower your quality rating.",
+  "approvalRate": 80,
   "template": {
     "name": "ecommerce_new_collection_launch",
     "language": "en_US",

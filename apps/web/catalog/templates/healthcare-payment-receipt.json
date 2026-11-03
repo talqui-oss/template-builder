@@ -9,6 +9,7 @@
     "payment confirmed template"
   ],
   "notes": "Reference the invoice number, not the treatment. Keeps the message transactional and privacy-friendly.",
+  "approvalRate": 92,
   "template": {
     "name": "healthcare_payment_receipt",
     "language": "en_US",

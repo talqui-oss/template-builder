@@ -9,6 +9,7 @@
     "safety recall template"
   ],
   "notes": "Recalls are safety-critical and not promotional, so utility fits. State the free repair and avoid sales language.",
+  "approvalRate": 90,
   "template": {
     "name": "automotive_recall_notice",
     "language": "en_US",

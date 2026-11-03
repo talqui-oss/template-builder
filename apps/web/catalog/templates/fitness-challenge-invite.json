@@ -9,6 +9,7 @@
     "community challenge template"
   ],
   "notes": "Give the start date, duration and prize or benefit. A yes/no quick reply makes sign-ups easy to count.",
+  "approvalRate": 98,
   "template": {
     "name": "fitness_challenge_invite",
     "language": "en_US",

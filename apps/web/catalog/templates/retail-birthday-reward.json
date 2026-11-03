@@ -9,6 +9,7 @@
     "loyalty birthday template"
   ],
   "notes": "Birthday offers have strong open rates. State the validity window clearly and how to redeem it.",
+  "approvalRate": 92,
   "template": {
     "name": "retail_birthday_reward",
     "language": "en_US",

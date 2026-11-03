@@ -9,6 +9,7 @@
     "in store receipt whatsapp"
   ],
   "notes": "Only send it to customers who gave their number at checkout and agreed to receive receipts. Keep marketing out of it.",
+  "approvalRate": 86,
   "template": {
     "name": "retail_purchase_receipt",
     "language": "en_US",

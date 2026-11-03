@@ -9,6 +9,7 @@
     "lease renewal reminder template"
   ],
   "notes": "Keep it about their existing lease. Do not advertise other units or promotions in the same message.",
+  "approvalRate": 76,
   "template": {
     "name": "real_estate_lease_renewal_offer",
     "language": "en_US",

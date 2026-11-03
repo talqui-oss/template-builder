@@ -9,6 +9,7 @@
     "booking reminder message"
   ],
   "notes": "Send 3 to 24 hours ahead. A confirm button gives you time to release tables that will not show.",
+  "approvalRate": 75,
   "template": {
     "name": "restaurants_reservation_reminder",
     "language": "en_US",

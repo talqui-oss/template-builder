@@ -9,6 +9,7 @@
     "first visit instructions template"
   ],
   "notes": "Add practical items to bring. Phone button lets patients reach reception without leaving WhatsApp.",
+  "approvalRate": 90,
   "template": {
     "name": "healthcare_welcome_new_patient",
     "language": "en_US",

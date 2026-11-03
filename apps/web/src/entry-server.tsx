@@ -9,6 +9,7 @@ export {
   USE_CASES,
   CATEGORIES,
   templateText,
+  templatePath,
 } from "./catalog/data";
 
 export function render(path: string) {

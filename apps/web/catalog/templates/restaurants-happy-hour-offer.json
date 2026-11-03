@@ -9,6 +9,7 @@
     "restaurant offer message"
   ],
   "notes": "Send early afternoon on the day. Make the time window explicit so the offer is verifiably real.",
+  "approvalRate": 91,
   "template": {
     "name": "restaurants_happy_hour_offer",
     "language": "en_US",

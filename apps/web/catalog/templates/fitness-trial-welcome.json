@@ -9,6 +9,7 @@
     "new member message fitness"
   ],
   "notes": "Tell them what to bring and how to book their first class. Mention expiry of the trial.",
+  "approvalRate": 97,
   "template": {
     "name": "fitness_trial_welcome",
     "language": "en_US",

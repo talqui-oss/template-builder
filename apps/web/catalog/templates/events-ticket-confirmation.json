@@ -9,6 +9,7 @@
     "booking confirmation event template"
   ],
   "notes": "List ticket count and event date so the message is clearly transactional.",
+  "approvalRate": 80,
   "template": {
     "name": "events_ticket_confirmation",
     "language": "en_US",

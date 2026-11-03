@@ -9,6 +9,7 @@
     "payment reminder healthcare"
   ],
   "notes": "Use a courteous tone and cite the invoice and due date. Avoid threats; they hurt delivery and reviews.",
+  "approvalRate": 80,
   "template": {
     "name": "healthcare_outstanding_balance",
     "language": "en_US",

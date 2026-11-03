@@ -9,6 +9,7 @@
     "event discount template"
   ],
   "notes": "State when the price rises. A real deadline is the strongest, compliant urgency.",
+  "approvalRate": 81,
   "template": {
     "name": "events_early_bird_tickets",
     "language": "en_US",

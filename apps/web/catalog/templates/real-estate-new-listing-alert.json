@@ -9,6 +9,7 @@
     "property alert template"
   ],
   "notes": "Reference the criteria the user saved so it feels relevant, and keep the opt-out. Include price and bedrooms for scannability.",
+  "approvalRate": 90,
   "template": {
     "name": "real_estate_new_listing_alert",
     "language": "en_US",

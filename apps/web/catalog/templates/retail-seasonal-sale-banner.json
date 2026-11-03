@@ -9,6 +9,7 @@
     "retail promotion whatsapp"
   ],
   "notes": "Put the sale dates and discount range up front. Seasonal blasts do best when sent in the morning of the first day.",
+  "approvalRate": 82,
   "template": {
     "name": "retail_seasonal_sale_banner",
     "language": "en_US",

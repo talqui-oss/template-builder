@@ -9,6 +9,7 @@
     "fintech onboarding whatsapp"
   ],
   "notes": "Send it right after account approval, while the customer expects contact. Welcome messages tied to an account the user just opened are accepted as utility.",
+  "approvalRate": 93,
   "template": {
     "name": "finance_welcome_new_account",
     "language": "en_US",

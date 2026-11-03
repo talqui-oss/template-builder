@@ -9,6 +9,7 @@
     "dining rewards template"
   ],
   "notes": "State how to redeem and when it expires. Rewards messages do best right after a visit.",
+  "approvalRate": 86,
   "template": {
     "name": "restaurants_loyalty_free_meal",
     "language": "en_US",

@@ -9,6 +9,7 @@
     "fitness reminder template"
   ],
   "notes": "Send 2 to 3 hours before. Short messages are read; long ones are skipped.",
+  "approvalRate": 78,
   "template": {
     "name": "fitness_class_reminder",
     "language": "en_US",

@@ -9,6 +9,7 @@
     "payment reminder template ecommerce"
   ],
   "notes": "Keep it a reminder about their own order, no discount offers. Include the order number so Meta sees a transactional context.",
+  "approvalRate": 74,
   "template": {
     "name": "ecommerce_payment_reminder_pending",
     "language": "en_US",

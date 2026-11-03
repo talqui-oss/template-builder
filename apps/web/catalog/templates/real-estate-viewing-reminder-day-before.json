@@ -9,6 +9,7 @@
     "showing reminder template"
   ],
   "notes": "Send 18 to 24 hours ahead. Add parking or entry instructions; practical details keep it utility.",
+  "approvalRate": 93,
   "template": {
     "name": "real_estate_viewing_reminder_day_before",
     "language": "en_US",

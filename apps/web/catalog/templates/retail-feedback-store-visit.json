@@ -9,6 +9,7 @@
     "rate your visit template"
   ],
   "notes": "Send the same day or the next morning while the visit is fresh. One question with button answers beats a long survey link.",
+  "approvalRate": 96,
   "template": {
     "name": "retail_feedback_store_visit",
     "language": "en_US",

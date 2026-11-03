@@ -9,6 +9,7 @@
     "claim update template"
   ],
   "notes": "Use a variable for the status instead of writing several templates. Do not promise payout timing the claims team cannot guarantee.",
+  "approvalRate": 87,
   "template": {
     "name": "insurance_claim_status_update",
     "language": "en_US",

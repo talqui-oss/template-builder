@@ -9,6 +9,7 @@
     "reverse logistics message"
   ],
   "notes": "Use the return reference number and set a timeframe; do not mention exchange deals.",
+  "approvalRate": 93,
   "template": {
     "name": "logistics_warehouse_return_received",
     "language": "en_US",

@@ -9,6 +9,7 @@
     "saas payment confirmation"
   ],
   "notes": "Keep it purely a receipt with an invoice ID; no upsell.",
+  "approvalRate": 96,
   "template": {
     "name": "saas_payment_receipt_subscription",
     "language": "en_US",

@@ -9,6 +9,7 @@
     "payment failed message"
   ],
   "notes": "Keep it factual and give a direct update-payment link. Utility only if there is no promotional text.",
+  "approvalRate": 86,
   "template": {
     "name": "fitness_payment_failed",
     "language": "en_US",

@@ -10,6 +10,11 @@ export type CatalogFile = {
   keywords?: string[];
   /** Advice for getting this template approved or performing well. */
   notes?: string;
+  /**
+   * Share of submissions of this template approved by Meta, 0 to 100.
+   * shortcut: mocked values for now, replace with the real backfill.
+   */
+  approvalRate?: number;
   template: Template;
 };
 
@@ -55,6 +60,10 @@ export const CATALOG: CatalogEntry[] = Object.entries(files)
     slug: path.slice(path.lastIndexOf("/") + 1, -".json".length),
   }))
   .sort((a, b) => a.title.localeCompare(b.title));
+
+/** Template pages live at the root, keyword first: `/whatsapp-template/<slug>`. */
+export const TEMPLATE_BASE = "/whatsapp-template";
+export const templatePath = (slug: string) => `${TEMPLATE_BASE}/${slug}`;
 
 export const entryBySlug = (slug: string) =>
   CATALOG.find((entry) => entry.slug === slug);

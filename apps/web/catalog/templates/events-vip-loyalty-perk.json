@@ -9,6 +9,7 @@
     "repeat attendee reward"
   ],
   "notes": "Name the perk and how to claim it. Reward programs are marketing, so keep the opt-out.",
+  "approvalRate": 93,
   "template": {
     "name": "events_vip_loyalty_perk",
     "language": "en_US",

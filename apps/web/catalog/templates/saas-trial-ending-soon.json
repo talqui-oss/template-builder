@@ -9,6 +9,7 @@
     "saas trial reminder template"
   ],
   "notes": "Treat as marketing since it nudges a purchase. State the exact end date and what the user will lose.",
+  "approvalRate": 85,
   "template": {
     "name": "saas_trial_ending_soon",
     "language": "en_US",

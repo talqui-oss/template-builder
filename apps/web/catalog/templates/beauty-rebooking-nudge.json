@@ -9,6 +9,7 @@
     "beauty re-engagement template"
   ],
   "notes": "Trigger it from the service interval (for example 6 weeks after a colour). Timing matters more than discount.",
+  "approvalRate": 79,
   "template": {
     "name": "beauty_rebooking_nudge",
     "language": "en_US",

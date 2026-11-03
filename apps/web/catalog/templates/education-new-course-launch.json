@@ -9,6 +9,7 @@
     "education launch template"
   ],
   "notes": "Say who the course is for and when it starts. Send to people who showed interest in a related topic.",
+  "approvalRate": 79,
   "template": {
     "name": "education_new_course_launch",
     "language": "en_US",

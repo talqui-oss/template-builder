@@ -9,6 +9,7 @@
     "check-in instructions template"
   ],
   "notes": "Send 24 hours before arrival. Practical info like late arrival and parking keeps it transactional.",
+  "approvalRate": 97,
   "template": {
     "name": "travel_hotel_check_in_details",
     "language": "en_US",

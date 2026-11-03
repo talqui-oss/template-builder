@@ -9,6 +9,7 @@
     "retail return notification"
   ],
   "notes": "Include the refund amount and expected timing; these are the details customers ask support about afterward.",
+  "approvalRate": 72,
   "template": {
     "name": "retail_exchange_return_update",
     "language": "en_US",

@@ -9,6 +9,7 @@
     "seasonal car service message"
   ],
   "notes": "Seasonal offers perform when sent before the first cold snap. Use a coupon code to track redemptions.",
+  "approvalRate": 93,
   "template": {
     "name": "automotive_seasonal_tire_offer",
     "language": "en_US",

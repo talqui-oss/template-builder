@@ -9,6 +9,7 @@
     "property viewing survey"
   ],
   "notes": "Send the same evening or next morning while the visit is fresh. Branch the next message based on the quick reply.",
+  "approvalRate": 98,
   "template": {
     "name": "real_estate_feedback_after_viewing",
     "language": "en_US",

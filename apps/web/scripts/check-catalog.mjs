@@ -39,6 +39,11 @@ for (const file of files) {
       if (!entry[field]) problems.push(`missing "${field}"`);
     if (entry.description && entry.description.length > 160)
       problems.push("description over 160 characters");
+    if (
+      entry.approvalRate !== undefined &&
+      !(entry.approvalRate >= 0 && entry.approvalRate <= 100)
+    )
+      problems.push("approvalRate must be a number from 0 to 100");
     if (entry.industry && !industries.has(entry.industry))
       problems.push(`unknown industry "${entry.industry}"`);
     if (entry.useCase && !useCases.has(entry.useCase))

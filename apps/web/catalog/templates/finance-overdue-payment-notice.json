@@ -9,6 +9,7 @@
     "collections whatsapp message"
   ],
   "notes": "Keep the tone neutral and avoid threats or legal wording; Meta rejects aggressive collection copy. Offer a human contact button so customers can negotiate.",
+  "approvalRate": 71,
   "template": {
     "name": "finance_overdue_payment_notice",
     "language": "en_US",

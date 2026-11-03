@@ -9,6 +9,7 @@
     "saas launch message"
   ],
   "notes": "Lead with the user benefit, not the feature name. Send only to users who opted in to product news.",
+  "approvalRate": 86,
   "template": {
     "name": "saas_new_feature_launch",
     "language": "en_US",

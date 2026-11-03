@@ -9,6 +9,7 @@
     "dealership product launch"
   ],
   "notes": "Show the model name and one differentiator (range, price, safety). Prior buyers respond better to launches.",
+  "approvalRate": 75,
   "template": {
     "name": "automotive_new_model_launch",
     "language": "en_US",

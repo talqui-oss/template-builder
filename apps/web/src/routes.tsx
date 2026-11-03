@@ -11,6 +11,8 @@ import {
   entryBySlug,
   facetLabel,
   matches,
+  TEMPLATE_BASE,
+  templatePath,
   templateText,
 } from "./catalog/data";
 import { TemplatePage } from "./catalog/TemplatePage";
@@ -102,10 +104,10 @@ function facetRoute(kind: FacetKind, slug: string): Route | undefined {
 function templateRoute(slug: string): Route | undefined {
   const entry = entryBySlug(slug);
   if (!entry) return undefined;
-  const path = `/catalog/${slug}`;
+  const path = templatePath(slug);
   return {
     head: {
-      title: `${entry.title}: free WhatsApp template example`,
+      title: `${entry.title} WhatsApp template: free example`,
       description: entry.description,
       path,
       jsonLd: [
@@ -196,7 +198,7 @@ export function resolveRoute(rawPath: string): Route {
     const route = facetRoute(parts[1] as FacetKind, parts[2]!);
     if (route) return route;
   }
-  if (parts[0] === "catalog" && parts.length === 2) {
+  if (`/${parts[0]}` === TEMPLATE_BASE && parts.length === 2) {
     const route = templateRoute(parts[1]!);
     if (route) return route;
   }
@@ -227,6 +229,6 @@ export function allPaths() {
         )
         .map((facet) => `/catalog/${kind}/${facet.slug}`),
     ),
-    ...CATALOG.map((entry) => `/catalog/${entry.slug}`),
+    ...CATALOG.map((entry) => templatePath(entry.slug)),
   ];
 }

@@ -9,6 +9,7 @@
     "january fitness campaign"
   ],
   "notes": "Be specific about the discount and sign-up deadline. January is your highest-volume window, so segment past leads.",
+  "approvalRate": 85,
   "template": {
     "name": "fitness_new_year_promo",
     "language": "en_US",

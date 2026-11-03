@@ -9,6 +9,7 @@
     "verify phone number whatsapp"
   ],
   "notes": "Rate-limit code requests to prevent abuse, and avoid sending marketing content in the same thread right after.",
+  "approvalRate": 76,
   "template": {
     "name": "saas_signup_verification_code",
     "language": "en_US",

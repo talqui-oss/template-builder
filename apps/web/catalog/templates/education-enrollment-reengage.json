@@ -9,6 +9,7 @@
     "student re-engagement template"
   ],
   "notes": "Mention the exact course they started. Reach out within 48 hours of drop-off.",
+  "approvalRate": 89,
   "template": {
     "name": "education_enrollment_reengage",
     "language": "en_US",

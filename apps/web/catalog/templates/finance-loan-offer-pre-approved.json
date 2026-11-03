@@ -9,6 +9,7 @@
     "personal loan whatsapp marketing"
   ],
   "notes": "Disclose the key term (rate or APR) in the message and keep opt-out in the footer; credit offers with vague claims are often rejected.",
+  "approvalRate": 79,
   "template": {
     "name": "finance_loan_offer_pre_approved",
     "language": "en_US",

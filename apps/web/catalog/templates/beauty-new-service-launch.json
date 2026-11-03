@@ -9,6 +9,7 @@
     "beauty launch template"
   ],
   "notes": "Say what the treatment does in plain terms and give an introductory price. Avoid health claims.",
+  "approvalRate": 87,
   "template": {
     "name": "beauty_new_service_launch",
     "language": "en_US",

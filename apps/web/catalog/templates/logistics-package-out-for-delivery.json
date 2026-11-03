@@ -9,6 +9,7 @@
     "parcel delivery message"
   ],
   "notes": "A time window is more useful than a date. Keep marketing out of it to stay in utility.",
+  "approvalRate": 91,
   "template": {
     "name": "logistics_package_out_for_delivery",
     "language": "en_US",

@@ -5,6 +5,7 @@
   "useCase": "shipping-update",
   "keywords": ["order shipped", "tracking link", "shipping notification"],
   "notes": "Utility templates must stay transactional: no discount or upsell in the text, or Meta recategorizes them as marketing.",
+  "approvalRate": 91,
   "template": {
     "name": "order_shipped",
     "language": "en_US",

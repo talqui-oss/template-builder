@@ -9,6 +9,7 @@
     "churn prevention template"
   ],
   "notes": "Reference concrete progress (projects saved) to make it personal. Ask a question; it beats pushing a login.",
+  "approvalRate": 70,
   "template": {
     "name": "saas_inactive_user_reengagement",
     "language": "en_US",

@@ -9,6 +9,7 @@
     "fitness renewal template"
   ],
   "notes": "Renewal notices tied to an existing plan are utility when they avoid upsell wording. State the amount and date.",
+  "approvalRate": 83,
   "template": {
     "name": "fitness_membership_renewal",
     "language": "en_US",

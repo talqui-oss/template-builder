@@ -9,6 +9,7 @@
     "beauty booking message"
   ],
   "notes": "Add your cancellation policy window; it sets expectations and lowers no-shows.",
+  "approvalRate": 88,
   "template": {
     "name": "beauty_booking_confirmed",
     "language": "en_US",

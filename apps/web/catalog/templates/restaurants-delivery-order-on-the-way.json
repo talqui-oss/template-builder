@@ -9,6 +9,7 @@
     "restaurant delivery notification"
   ],
   "notes": "Keep the ETA in minutes and the order number visible. Do not add upsells, which would reclassify it.",
+  "approvalRate": 94,
   "template": {
     "name": "restaurants_delivery_order_on_the_way",
     "language": "en_US",

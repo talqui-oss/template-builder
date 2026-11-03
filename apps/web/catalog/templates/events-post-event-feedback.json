@@ -9,6 +9,7 @@
     "attendee rating template"
   ],
   "notes": "Send within 24 hours while memories are fresh. One tap beats a long form.",
+  "approvalRate": 90,
   "template": {
     "name": "events_post_event_feedback",
     "language": "en_US",

@@ -9,6 +9,7 @@
     "hotel reservation template"
   ],
   "notes": "Include check-in and check-out dates and a reference; booking details are the clearest utility signal.",
+  "approvalRate": 80,
   "template": {
     "name": "travel_booking_confirmation_hotel",
     "language": "en_US",

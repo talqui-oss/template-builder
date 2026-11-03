@@ -9,6 +9,7 @@
     "policy payment reminder template"
   ],
   "notes": "Mention the grace period if one exists; it explains the urgency without sounding promotional. Send 5 days and 1 day before due date.",
+  "approvalRate": 81,
   "template": {
     "name": "insurance_premium_payment_due",
     "language": "en_US",

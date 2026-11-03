@@ -9,6 +9,7 @@
     "restaurant launch template"
   ],
   "notes": "Highlight one hero dish by name. Link to the menu rather than pasting it in full.",
+  "approvalRate": 98,
   "template": {
     "name": "restaurants_new_menu_launch",
     "language": "en_US",

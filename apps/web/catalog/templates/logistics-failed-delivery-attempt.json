@@ -9,6 +9,7 @@
     "reschedule delivery template"
   ],
   "notes": "Say why it failed and offer concrete reschedule choices through quick replies.",
+  "approvalRate": 88,
   "template": {
     "name": "logistics_failed_delivery_attempt",
     "language": "en_US",

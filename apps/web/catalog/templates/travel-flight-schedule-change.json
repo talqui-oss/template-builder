@@ -9,6 +9,7 @@
     "airline schedule change"
   ],
   "notes": "Be exact about the new time and offer a way to rebook. Never mix promotions into disruption notices.",
+  "approvalRate": 72,
   "template": {
     "name": "travel_flight_schedule_change",
     "language": "en_US",

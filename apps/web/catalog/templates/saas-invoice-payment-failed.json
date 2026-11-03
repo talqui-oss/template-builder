@@ -9,6 +9,7 @@
     "dunning message template"
   ],
   "notes": "State the amount, last 4 digits and retry date. A single update-card link is all you need.",
+  "approvalRate": 97,
   "template": {
     "name": "saas_invoice_payment_failed",
     "language": "en_US",

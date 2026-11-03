@@ -9,6 +9,7 @@
     "delivery time window selection"
   ],
   "notes": "Offer up to three slots; the interaction is transactional so it stays utility.",
+  "approvalRate": 88,
   "template": {
     "name": "logistics_delivery_slot_selection",
     "language": "en_US",

@@ -9,6 +9,7 @@
     "annual plan renewal message"
   ],
   "notes": "Annual renewals should be sent 7 to 14 days ahead; monthly ones 3 days. Link to manage plan for easy cancellation.",
+  "approvalRate": 87,
   "template": {
     "name": "saas_subscription_renewal_upcoming",
     "language": "en_US",

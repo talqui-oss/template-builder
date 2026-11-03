@@ -10,6 +10,7 @@ import {
   categorySlug,
   facetLabel,
   matches,
+  templatePath,
   type CatalogFilter,
   type Facet,
 } from "./data";
@@ -164,9 +165,11 @@ export function CatalogPage({ filter: preset, heading }: Props) {
                 <li key={entry.slug} className="ct-card">
                   <a
                     className="ct-card__visual"
-                    href={`/catalog/${entry.slug}`}
+                    href={templatePath(entry.slug)}
                     tabIndex={-1}
+                    aria-hidden="true"
                   >
+                    <span className="lp-screen__wallpaper" />
                     <ChatScreen
                       template={entry.template}
                       className="lp-screen--list"
@@ -186,13 +189,18 @@ export function CatalogPage({ filter: preset, heading }: Props) {
                       <span className="lp-tag">
                         {facetLabel(USE_CASES, entry.useCase)}
                       </span>
+                      {entry.approvalRate !== undefined && (
+                        <span className="lp-tag ct-tag--rate">
+                          {entry.approvalRate}% approval
+                        </span>
+                      )}
                     </p>
                     <h2 className="lp-h3">
-                      <a href={`/catalog/${entry.slug}`}>{entry.title}</a>
+                      <a href={templatePath(entry.slug)}>{entry.title}</a>
                     </h2>
                     <p className="lp-muted">{entry.description}</p>
                     <p className="ct-card__links">
-                      <a className="lp-link" href={`/catalog/${entry.slug}`}>
+                      <a className="lp-link" href={templatePath(entry.slug)}>
                         View template <ArrowIcon />
                       </a>
                       <a

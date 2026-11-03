@@ -9,6 +9,7 @@
     "attendee reminder template"
   ],
   "notes": "Include doors-open time and venue. Send the evening before for the best read rate.",
+  "approvalRate": 81,
   "template": {
     "name": "events_event_reminder",
     "language": "en_US",

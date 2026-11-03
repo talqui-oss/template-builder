@@ -9,6 +9,7 @@
     "inactive customer offer"
   ],
   "notes": "Target buyers inactive for 60 to 120 days and honor opt-outs strictly. Personalize with the last category they bought.",
+  "approvalRate": 91,
   "template": {
     "name": "ecommerce_winback_offer",
     "language": "en_US",

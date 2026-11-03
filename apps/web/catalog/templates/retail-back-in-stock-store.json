@@ -9,6 +9,7 @@
     "restock alert retail"
   ],
   "notes": "Name the specific item and store; generic restock notes get low engagement. Only send to people who requested the alert.",
+  "approvalRate": 90,
   "template": {
     "name": "retail_back_in_stock_store",
     "language": "en_US",

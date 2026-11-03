@@ -9,6 +9,7 @@
     "time change notification"
   ],
   "notes": "Say clearly what changed and what, if anything, attendees must do. Time-sensitive alerts suit utility.",
+  "approvalRate": 79,
   "template": {
     "name": "events_schedule_change",
     "language": "en_US",

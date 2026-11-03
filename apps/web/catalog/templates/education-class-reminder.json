@@ -9,6 +9,7 @@
     "school reminder template"
   ],
   "notes": "Send 1 hour before online classes and the evening before in-person ones.",
+  "approvalRate": 92,
   "template": {
     "name": "education_class_reminder",
     "language": "en_US",

@@ -9,6 +9,7 @@
     "insurance lead follow up message"
   ],
   "notes": "Quote follow-ups are marketing unless the user explicitly asked for a quote by message. Include the validity period to add urgency honestly.",
+  "approvalRate": 82,
   "template": {
     "name": "insurance_auto_insurance_quote",
     "language": "en_US",

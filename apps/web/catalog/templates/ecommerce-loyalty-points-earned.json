@@ -9,6 +9,7 @@
     "customer loyalty template"
   ],
   "notes": "Mention the actual balance and what it unlocks. Loyalty updates count as marketing, so include an opt-out footer.",
+  "approvalRate": 77,
   "template": {
     "name": "ecommerce_loyalty_points_earned",
     "language": "en_US",

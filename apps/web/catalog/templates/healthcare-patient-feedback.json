@@ -9,6 +9,7 @@
     "visit rating message"
   ],
   "notes": "Send the next day. Ask only about the experience (wait time, staff), never about health outcomes.",
+  "approvalRate": 94,
   "template": {
     "name": "healthcare_patient_feedback",
     "language": "en_US",

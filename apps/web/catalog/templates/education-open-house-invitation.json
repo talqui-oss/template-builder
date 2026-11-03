@@ -9,6 +9,7 @@
     "admissions event template"
   ],
   "notes": "Include date, time and venue. RSVP buttons help with headcount.",
+  "approvalRate": 70,
   "template": {
     "name": "education_open_house_invitation",
     "language": "en_US",

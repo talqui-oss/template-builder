@@ -9,6 +9,7 @@
     "payment due template education"
   ],
   "notes": "Use the amount, due date and invoice reference. Be courteous and avoid late-fee threats in the first reminder.",
+  "approvalRate": 98,
   "template": {
     "name": "education_tuition_payment_reminder",
     "language": "en_US",

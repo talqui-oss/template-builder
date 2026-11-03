@@ -9,6 +9,7 @@
     "car parts notification"
   ],
   "notes": "Reference the order and part name; follow up with an installation slot via a quick reply.",
+  "approvalRate": 70,
   "template": {
     "name": "automotive_parts_order_arrived",
     "language": "en_US",

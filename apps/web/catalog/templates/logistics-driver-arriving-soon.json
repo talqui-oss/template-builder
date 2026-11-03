@@ -9,6 +9,7 @@
     "courier arriving soon template"
   ],
   "notes": "Send when the driver is 10 to 15 minutes away. Driver name and vehicle info build trust.",
+  "approvalRate": 96,
   "template": {
     "name": "logistics_driver_arriving_soon",
     "language": "en_US",

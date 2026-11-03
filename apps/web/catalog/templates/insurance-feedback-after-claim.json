@@ -9,6 +9,7 @@
     "nps whatsapp template"
   ],
   "notes": "Send within 48 hours of closing the claim. Quick replies keep the survey inside the chat, which lifts response rates.",
+  "approvalRate": 74,
   "template": {
     "name": "insurance_feedback_after_claim",
     "language": "en_US",

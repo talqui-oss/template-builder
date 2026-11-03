@@ -9,6 +9,7 @@
     "payment receipt template"
   ],
   "notes": "Include a receipt or transaction ID as a variable; it makes the message clearly transactional and helps customers file support requests.",
+  "approvalRate": 92,
   "template": {
     "name": "finance_payment_received_receipt",
     "language": "en_US",

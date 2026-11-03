@@ -9,6 +9,7 @@
     "bank balance alert message"
   ],
   "notes": "This works as utility only because the customer opted into the alert; do not add loan or overdraft offers to the text.",
+  "approvalRate": 98,
   "template": {
     "name": "finance_account_balance_low",
     "language": "en_US",

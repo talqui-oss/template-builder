@@ -9,6 +9,7 @@
     "car papers expiring message"
   ],
   "notes": "Use the plate number and exact expiry to keep it utility. Add a booking link as the single call to action.",
+  "approvalRate": 90,
   "template": {
     "name": "automotive_insurance_expiry_vehicle",
     "language": "en_US",

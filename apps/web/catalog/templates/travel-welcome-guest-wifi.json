@@ -9,6 +9,7 @@
     "airbnb welcome message"
   ],
   "notes": "Triggered at check-in and tied to a stay in progress, so it qualifies as utility. Skip spa or restaurant promotions here.",
+  "approvalRate": 89,
   "template": {
     "name": "travel_welcome_guest_wifi",
     "language": "en_US",

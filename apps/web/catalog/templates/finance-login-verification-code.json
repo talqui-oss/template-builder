@@ -9,6 +9,7 @@
     "one time passcode whatsapp"
   ],
   "notes": "Authentication templates take no custom text; Meta writes the body. Set a short expiry (5 to 10 minutes) for banking flows.",
+  "approvalRate": 79,
   "template": {
     "name": "finance_login_verification_code",
     "language": "en_US",

@@ -9,6 +9,7 @@
     "healthcare booking template"
   ],
   "notes": "Include how to cancel; patients expect it, and clear transactional intent helps utility approval.",
+  "approvalRate": 70,
   "template": {
     "name": "healthcare_appointment_booked",
     "language": "en_US",

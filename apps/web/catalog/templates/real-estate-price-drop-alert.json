@@ -9,6 +9,7 @@
     "real estate promotion message"
   ],
   "notes": "Show both prices so the saving is concrete. Honest urgency like viewings scheduled this week works better than vague pressure.",
+  "approvalRate": 79,
   "template": {
     "name": "real_estate_price_drop_alert",
     "language": "en_US",

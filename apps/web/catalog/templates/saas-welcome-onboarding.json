@@ -9,6 +9,7 @@
     "new user welcome message"
   ],
   "notes": "Keep it to one action. Welcome messages triggered by sign-up are typically utility, but extra feature promotion can flip them to marketing.",
+  "approvalRate": 72,
   "template": {
     "name": "saas_welcome_onboarding",
     "language": "en_US",

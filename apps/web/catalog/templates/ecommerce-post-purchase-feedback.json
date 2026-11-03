@@ -9,6 +9,7 @@
     "rate your order whatsapp"
   ],
   "notes": "Quick replies lift response rates versus asking for a link click. Send 3 to 5 days after delivery so the product has been used.",
+  "approvalRate": 87,
   "template": {
     "name": "ecommerce_post_purchase_feedback",
     "language": "en_US",

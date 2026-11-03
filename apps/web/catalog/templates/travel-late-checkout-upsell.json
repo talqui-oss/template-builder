@@ -9,6 +9,7 @@
     "hotel upgrade template"
   ],
   "notes": "Time it the evening before checkout. Quick-reply acceptance keeps the experience conversational and easy to track.",
+  "approvalRate": 71,
   "template": {
     "name": "travel_late_checkout_upsell",
     "language": "en_US",

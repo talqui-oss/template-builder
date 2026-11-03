@@ -9,6 +9,7 @@
     "loan installment reminder whatsapp"
   ],
   "notes": "Keep it strictly informational: mention the amount and due date only, no cross-sell or discount, or Meta may move it to marketing. Send 2 to 3 days before the due date for best pay rates.",
+  "approvalRate": 97,
   "template": {
     "name": "finance_payment_due_reminder",
     "language": "en_US",

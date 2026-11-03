@@ -9,6 +9,7 @@
     "recurring event template"
   ],
   "notes": "Past attendees convert best. Lead with date and city.",
+  "approvalRate": 93,
   "template": {
     "name": "events_next_event_announcement",
     "language": "en_US",

@@ -9,6 +9,7 @@
     "class rating template"
   ],
   "notes": "Send within 48 hours of the last class. Rating buttons raise response rates.",
+  "approvalRate": 92,
   "template": {
     "name": "education_course_feedback",
     "language": "en_US",

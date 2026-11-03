@@ -13,8 +13,15 @@ import { fileURLToPath } from "node:url";
 const app = join(dirname(fileURLToPath(import.meta.url)), "..");
 const dist = join(app, "dist");
 const server = await import(join(app, "dist-ssr/entry-server.js"));
-const { SITE, CATALOG, INDUSTRIES, USE_CASES, CATEGORIES, templateText } =
-  server;
+const {
+  SITE,
+  CATALOG,
+  INDUSTRIES,
+  USE_CASES,
+  CATEGORIES,
+  templateText,
+  templatePath,
+} = server;
 
 const shell = readFileSync(join(dist, "index.html"), "utf8");
 const escape = (text) =>
@@ -67,7 +74,7 @@ writePage("/404", "404.html");
 // Raw JSON next to each template page, for agents and scripts.
 for (const entry of CATALOG)
   writeFileSync(
-    join(dist, "catalog", `${entry.slug}.json`),
+    join(dist, `${templatePath(entry.slug).slice(1)}.json`),
     JSON.stringify(entry.template, null, 2),
   );
 
@@ -142,7 +149,7 @@ writeFileSync(
 
 ## Catalog
 
-${CATALOG.map((entry) => `- [${entry.title}](${SITE}/catalog/${entry.slug}): ${entry.description} JSON: ${SITE}/catalog/${entry.slug}.json`).join("\n")}
+${CATALOG.map((entry) => `- [${entry.title}](${SITE}${templatePath(entry.slug)}): ${entry.description} JSON: ${SITE}${templatePath(entry.slug)}.json`).join("\n")}
 `,
 );
 
@@ -172,7 +179,7 @@ import "@talqui-oss/template-builder/styles.css";
 ${CATALOG.map(
   (entry) => `### ${entry.title}
 
-URL: ${SITE}/catalog/${entry.slug}
+URL: ${SITE}${templatePath(entry.slug)}
 Category: ${category(entry.template)} · Industry: ${label(INDUSTRIES, entry.industry)} · Use case: ${label(USE_CASES, entry.useCase)}
 ${entry.description}
 ${entry.notes ? `Tip: ${entry.notes}\n` : ""}

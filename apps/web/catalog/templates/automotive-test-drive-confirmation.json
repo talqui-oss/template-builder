@@ -9,6 +9,7 @@
     "car test drive template"
   ],
   "notes": "Tell the customer to bring a driver license; practical instruction supports the utility category.",
+  "approvalRate": 77,
   "template": {
     "name": "automotive_test_drive_confirmation",
     "language": "en_US",

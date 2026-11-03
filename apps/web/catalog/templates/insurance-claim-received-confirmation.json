@@ -9,6 +9,7 @@
     "claim submitted template"
   ],
   "notes": "Always include the claim number; it is the strongest signal that this is transactional. Set a realistic review time to cut follow-up chats.",
+  "approvalRate": 88,
   "template": {
     "name": "insurance_claim_received_confirmation",
     "language": "en_US",

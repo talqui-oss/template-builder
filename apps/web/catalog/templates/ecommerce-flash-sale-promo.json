@@ -9,6 +9,7 @@
     "discount code whatsapp message"
   ],
   "notes": "Name the real end date and percentage in the body so reviewers see a concrete offer. COPY_CODE buttons are marketing-only.",
+  "approvalRate": 80,
   "template": {
     "name": "ecommerce_flash_sale_promo",
     "language": "en_US",

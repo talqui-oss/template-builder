@@ -9,6 +9,7 @@
     "claim inspection message"
   ],
   "notes": "Give a time window and ask for a reply to reschedule; Meta likes clear transactional actions tied to an existing claim.",
+  "approvalRate": 72,
   "template": {
     "name": "insurance_appointment_inspection_reminder",
     "language": "en_US",

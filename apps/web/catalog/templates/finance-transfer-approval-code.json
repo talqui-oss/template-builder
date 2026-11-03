@@ -9,6 +9,7 @@
     "2fa code whatsapp template"
   ],
   "notes": "Send the code only after the user starts the transfer, and invalidate it on expiry. Use a separate template from login codes so you can track them.",
+  "approvalRate": 75,
   "template": {
     "name": "finance_transfer_approval_code",
     "language": "en_US",

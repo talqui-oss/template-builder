@@ -9,6 +9,7 @@
     "courier satisfaction survey"
   ],
   "notes": "Send 1 to 2 hours after delivery. Short question plus three buttons gets the highest response.",
+  "approvalRate": 83,
   "template": {
     "name": "logistics_delivery_feedback_request",
     "language": "en_US",

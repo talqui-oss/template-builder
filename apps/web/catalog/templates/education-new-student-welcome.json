@@ -9,6 +9,7 @@
     "school welcome template"
   ],
   "notes": "Include where to be, when, and who to contact. Practical information keeps it utility.",
+  "approvalRate": 76,
   "template": {
     "name": "education_new_student_welcome",
     "language": "en_US",

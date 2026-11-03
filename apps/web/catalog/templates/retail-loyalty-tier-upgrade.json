@@ -9,6 +9,7 @@
     "retail rewards template"
   ],
   "notes": "Spell out the new perks in the body. Reviewers approve concrete benefit statements faster than vague congratulations.",
+  "approvalRate": 74,
   "template": {
     "name": "retail_loyalty_tier_upgrade",
     "language": "en_US",

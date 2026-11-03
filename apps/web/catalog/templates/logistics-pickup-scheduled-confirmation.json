@@ -9,6 +9,7 @@
     "freight pickup template"
   ],
   "notes": "Add the pickup address and a driver contact when available. Instructions about packaging are welcome if short.",
+  "approvalRate": 90,
   "template": {
     "name": "logistics_pickup_scheduled_confirmation",
     "language": "en_US",

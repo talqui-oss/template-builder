@@ -9,6 +9,7 @@
     "broker re-engagement message"
   ],
   "notes": "Offer one clear action, like booking a 15-minute call. Mentioning that the review is free and non-binding lowers opt-out rates.",
+  "approvalRate": 87,
   "template": {
     "name": "insurance_coverage_review_offer",
     "language": "en_US",

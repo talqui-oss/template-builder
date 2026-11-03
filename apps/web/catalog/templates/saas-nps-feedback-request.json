@@ -9,6 +9,7 @@
     "customer satisfaction message"
   ],
   "notes": "Trigger after a meaningful milestone, such as 30 days of use. Keep it to one question.",
+  "approvalRate": 88,
   "template": {
     "name": "saas_nps_feedback_request",
     "language": "en_US",

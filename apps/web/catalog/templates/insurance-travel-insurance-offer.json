@@ -9,6 +9,7 @@
     "trip protection template"
   ],
   "notes": "Tie the offer to the traveler's booking to feel relevant. Keep it to one price and one link.",
+  "approvalRate": 87,
   "template": {
     "name": "insurance_travel_insurance_offer",
     "language": "en_US",

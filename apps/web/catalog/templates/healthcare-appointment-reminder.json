@@ -9,6 +9,7 @@
     "patient reminder message"
   ],
   "notes": "Never include diagnosis or treatment details in the message; keep it to logistics. Send 24 hours before.",
+  "approvalRate": 78,
   "template": {
     "name": "healthcare_appointment_reminder",
     "language": "en_US",

@@ -9,6 +9,7 @@
     "boarding pass message"
   ],
   "notes": "Send 24 hours before departure. A direct check-in link is the one call to action you need.",
+  "approvalRate": 78,
   "template": {
     "name": "travel_online_check_in_open",
     "language": "en_US",

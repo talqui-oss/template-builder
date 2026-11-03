@@ -9,6 +9,7 @@
     "event marketing template"
   ],
   "notes": "Reference the event they attended. Personal context beats generic announcements.",
+  "approvalRate": 89,
   "template": {
     "name": "events_reengage_attendees",
     "language": "en_US",

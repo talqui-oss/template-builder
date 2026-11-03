@@ -9,6 +9,7 @@
     "school registration template"
   ],
   "notes": "Include start date and where classes happen. Utility approval relies on it confirming a student action.",
+  "approvalRate": 97,
   "template": {
     "name": "education_enrollment_confirmed",
     "language": "en_US",

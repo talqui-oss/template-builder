@@ -116,7 +116,7 @@ export function Agents() {
         <p>
           Hundreds of ready templates by industry and use case at{" "}
           <a href="/catalog">/catalog</a>. Each one is also plain JSON at{" "}
-          <code>/catalog/&lt;slug&gt;.json</code>, listed in{" "}
+          <code>/whatsapp-template/&lt;slug&gt;.json</code>, listed in{" "}
           <a href="/llms.txt">/llms.txt</a>.
         </p>
 

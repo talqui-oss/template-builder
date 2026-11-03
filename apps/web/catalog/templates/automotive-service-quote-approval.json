@@ -9,6 +9,7 @@
     "car repair estimate message"
   ],
   "notes": "Itemize in one line and link to the full quote. Explicit approval buttons create a record and reduce disputes.",
+  "approvalRate": 95,
   "template": {
     "name": "automotive_service_quote_approval",
     "language": "en_US",

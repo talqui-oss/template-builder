@@ -9,6 +9,7 @@
     "fitness loyalty template"
   ],
   "notes": "Use the real visit count so it feels personal. Pair it with a small, concrete perk.",
+  "approvalRate": 73,
   "template": {
     "name": "fitness_workout_milestone_reward",
     "language": "en_US",

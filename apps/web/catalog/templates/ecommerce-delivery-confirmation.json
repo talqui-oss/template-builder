@@ -9,6 +9,7 @@
     "order delivered notification"
   ],
   "notes": "Utility works here because it reports a completed event. Offer a quick reply for problems rather than a review ask, which is promotional.",
+  "approvalRate": 77,
   "template": {
     "name": "ecommerce_delivery_confirmation",
     "language": "en_US",

@@ -9,6 +9,7 @@
     "real estate event invite"
   ],
   "notes": "Opt-in matters: only send to leads who asked for listing updates. Mention light refreshments or tours to add a reason to come.",
+  "approvalRate": 74,
   "template": {
     "name": "real_estate_open_house_invitation",
     "language": "en_US",

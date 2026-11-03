@@ -9,6 +9,7 @@
     "win back gym members"
   ],
   "notes": "Send around 14 to 21 days of inactivity. Supportive wording works far better than guilt.",
+  "approvalRate": 89,
   "template": {
     "name": "fitness_inactive_member_checkin",
     "language": "en_US",

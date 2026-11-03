@@ -9,6 +9,7 @@
     "we miss you template"
   ],
   "notes": "Segment guests who have not visited in 45 days or more. A small, specific perk beats a deep discount.",
+  "approvalRate": 90,
   "template": {
     "name": "restaurants_winback_regulars",
     "language": "en_US",

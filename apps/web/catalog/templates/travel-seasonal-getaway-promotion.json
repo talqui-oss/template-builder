@@ -9,6 +9,7 @@
     "vacation offer whatsapp"
   ],
   "notes": "A copy-code button with a real-looking code improves redemption. State the offer end date in the body.",
+  "approvalRate": 80,
   "template": {
     "name": "travel_seasonal_getaway_promotion",
     "language": "en_US",

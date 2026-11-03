@@ -9,6 +9,7 @@
     "salon promotion template"
   ],
   "notes": "Show the price and the number of sessions in the body. Reviewers favor clear offers over vague 'special deals'.",
+  "approvalRate": 87,
   "template": {
     "name": "beauty_package_promo",
     "language": "en_US",

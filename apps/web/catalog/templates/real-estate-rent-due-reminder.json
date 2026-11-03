@@ -9,6 +9,7 @@
     "property management reminder"
   ],
   "notes": "Do not include late fee threats; state the amount and due date plainly. Send 3 days before the first of the month.",
+  "approvalRate": 91,
   "template": {
     "name": "real_estate_rent_due_reminder",
     "language": "en_US",

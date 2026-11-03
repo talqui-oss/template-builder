@@ -9,6 +9,7 @@
     "vehicle service reminder template"
   ],
   "notes": "Mention the vehicle and service type so it reads as booking-specific. Confirm and reschedule buttons cut no-shows.",
+  "approvalRate": 98,
   "template": {
     "name": "automotive_service_appointment_reminder",
     "language": "en_US",

@@ -9,6 +9,7 @@
     "logistics marketing template"
   ],
   "notes": "Lead with a number (percent or amount) and an end date. Offer a coupon code via copy-code button.",
+  "approvalRate": 89,
   "template": {
     "name": "logistics_shipping_rate_promotion",
     "language": "en_US",

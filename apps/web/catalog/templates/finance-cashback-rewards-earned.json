@@ -9,6 +9,7 @@
     "loyalty points notification bank"
   ],
   "notes": "Rewards messaging counts as marketing, so keep the opt-out line. Showing the exact amount earned improves click-through more than generic copy.",
+  "approvalRate": 93,
   "template": {
     "name": "finance_cashback_rewards_earned",
     "language": "en_US",

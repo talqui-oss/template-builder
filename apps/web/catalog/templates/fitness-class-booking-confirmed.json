@@ -9,6 +9,7 @@
     "studio booking template"
   ],
   "notes": "Include your late-cancel window in the body; it is the most common support question.",
+  "approvalRate": 97,
   "template": {
     "name": "fitness_class_booking_confirmed",
     "language": "en_US",

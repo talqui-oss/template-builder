@@ -9,6 +9,7 @@
     "parcel delivered notification"
   ],
   "notes": "Include who signed and when. It reduces not-received claims.",
+  "approvalRate": 79,
   "template": {
     "name": "logistics_delivery_confirmation_proof",
     "language": "en_US",

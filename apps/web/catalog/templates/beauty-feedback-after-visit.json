@@ -9,6 +9,7 @@
     "client satisfaction template"
   ],
   "notes": "Send a few hours after the visit. Ask for a rating first; ask for a public review only to happy clients.",
+  "approvalRate": 71,
   "template": {
     "name": "beauty_feedback_after_visit",
     "language": "en_US",

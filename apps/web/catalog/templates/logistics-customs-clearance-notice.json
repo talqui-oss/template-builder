@@ -9,6 +9,7 @@
     "import duty notice template"
   ],
   "notes": "Name the exact action required and deadline. It is a high-value utility message because delays cost money.",
+  "approvalRate": 81,
   "template": {
     "name": "logistics_customs_clearance_notice",
     "language": "en_US",

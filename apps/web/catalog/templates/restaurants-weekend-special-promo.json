@@ -9,6 +9,7 @@
     "menu offer whatsapp"
   ],
   "notes": "Name the dish and price in the body. Food photos cannot be included in the header here, so describe the dish vividly.",
+  "approvalRate": 94,
   "template": {
     "name": "restaurants_weekend_special_promo",
     "language": "en_US",

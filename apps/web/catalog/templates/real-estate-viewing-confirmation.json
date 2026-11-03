@@ -9,6 +9,7 @@
     "house viewing template"
   ],
   "notes": "Include the exact address and agent contact. Quick replies for confirm and reschedule reduce no-shows.",
+  "approvalRate": 71,
   "template": {
     "name": "real_estate_viewing_confirmation",
     "language": "en_US",

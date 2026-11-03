@@ -9,6 +9,7 @@
     "dealership lead nurturing"
   ],
   "notes": "Send within 24 hours. Ask how it felt before pitching; one question beats a hard sell.",
+  "approvalRate": 91,
   "template": {
     "name": "automotive_test_drive_follow_up",
     "language": "en_US",

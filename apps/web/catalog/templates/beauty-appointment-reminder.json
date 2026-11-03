@@ -9,6 +9,7 @@
     "reduce salon no shows"
   ],
   "notes": "Send one reminder a day ahead; two feels naggy. Quick replies let clients free up a slot early.",
+  "approvalRate": 73,
   "template": {
     "name": "beauty_appointment_reminder",
     "language": "en_US",

@@ -9,6 +9,7 @@
     "guest satisfaction message"
   ],
   "notes": "Send within a few hours. Route happy guests to a review link in the next message to stay compliant with in-template rules.",
+  "approvalRate": 92,
   "template": {
     "name": "restaurants_feedback_after_dining",
     "language": "en_US",

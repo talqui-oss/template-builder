@@ -9,6 +9,7 @@
     "retail event template"
   ],
   "notes": "Quick-reply RSVPs give you a clean count and keep the template compact. Include date, time and store location in the body.",
+  "approvalRate": 83,
   "template": {
     "name": "retail_in_store_event_invite",
     "language": "en_US",

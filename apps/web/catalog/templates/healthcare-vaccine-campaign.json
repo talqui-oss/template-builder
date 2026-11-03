@@ -9,6 +9,7 @@
     "health campaign template"
   ],
   "notes": "Public-health promotions are marketing. Keep claims factual and avoid medical advice in the template.",
+  "approvalRate": 77,
   "template": {
     "name": "healthcare_vaccine_campaign",
     "language": "en_US",

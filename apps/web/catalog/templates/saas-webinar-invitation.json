@@ -9,6 +9,7 @@
     "product training invitation"
   ],
   "notes": "Include date, time zone and the single outcome attendees get. Send once, then a reminder 1 hour before.",
+  "approvalRate": 95,
   "template": {
     "name": "saas_webinar_invitation",
     "language": "en_US",

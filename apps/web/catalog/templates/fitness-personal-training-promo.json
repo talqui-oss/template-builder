@@ -9,6 +9,7 @@
     "gym upsell template"
   ],
   "notes": "Spell out the package contents and price. Existing-member segments convert best.",
+  "approvalRate": 88,
   "template": {
     "name": "fitness_personal_training_promo",
     "language": "en_US",

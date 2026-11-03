@@ -9,6 +9,7 @@
     "retail launch message"
   ],
   "notes": "Mention a specific item or category rather than just 'new arrivals'. Frequent generic blasts hurt your quality rating.",
+  "approvalRate": 70,
   "template": {
     "name": "retail_new_arrivals_launch",
     "language": "en_US",

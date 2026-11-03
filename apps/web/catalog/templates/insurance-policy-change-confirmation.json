@@ -9,6 +9,7 @@
     "policy amendment message"
   ],
   "notes": "List exactly what changed and the effective date; summaries that read like a receipt are reliably categorized as utility.",
+  "approvalRate": 95,
   "template": {
     "name": "insurance_policy_change_confirmation",
     "language": "en_US",

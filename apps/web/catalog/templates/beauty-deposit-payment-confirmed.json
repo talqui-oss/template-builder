@@ -9,6 +9,7 @@
     "salon payment confirmation"
   ],
   "notes": "Mention the amount, booking date and refund policy to keep it transactional.",
+  "approvalRate": 87,
   "template": {
     "name": "beauty_deposit_payment_confirmed",
     "language": "en_US",

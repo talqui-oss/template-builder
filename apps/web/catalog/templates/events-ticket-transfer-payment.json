@@ -9,6 +9,7 @@
     "ticket receipt message"
   ],
   "notes": "Include amount and order number. Avoid add-on offers to keep it utility.",
+  "approvalRate": 70,
   "template": {
     "name": "events_ticket_transfer_payment",
     "language": "en_US",

@@ -9,6 +9,7 @@
     "card bill reminder message"
   ],
   "notes": "State the total and minimum due so the message stands on its own; do not promote installment plans in the same text.",
+  "approvalRate": 71,
   "template": {
     "name": "finance_credit_card_statement_ready",
     "language": "en_US",

@@ -9,6 +9,7 @@
     "food order received template"
   ],
   "notes": "List the items summary or order number so the template reads as a receipt, not an ad.",
+  "approvalRate": 91,
   "template": {
     "name": "restaurants_order_received",
     "language": "en_US",

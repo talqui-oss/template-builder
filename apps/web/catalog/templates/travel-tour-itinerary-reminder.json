@@ -9,6 +9,7 @@
     "activity booking reminder"
   ],
   "notes": "Include a phone number for the guide. Meeting-point info is what customers search for, so put it in the first line.",
+  "approvalRate": 88,
   "template": {
     "name": "travel_tour_itinerary_reminder",
     "language": "en_US",

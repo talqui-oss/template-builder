@@ -9,6 +9,7 @@
     "card transaction alert"
   ],
   "notes": "Never ask for a PIN, password or full card number in the message. Quick replies like It was me / Not me give a fast, safe response path.",
+  "approvalRate": 81,
   "template": {
     "name": "finance_suspicious_transaction_alert",
     "language": "en_US",

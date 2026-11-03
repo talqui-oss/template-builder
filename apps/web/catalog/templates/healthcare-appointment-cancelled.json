@@ -9,6 +9,7 @@
     "reschedule appointment template"
   ],
   "notes": "Apologize briefly and offer a one-tap path to rebook. Avoid reasons that reveal health information.",
+  "approvalRate": 76,
   "template": {
     "name": "healthcare_appointment_cancelled",
     "language": "en_US",

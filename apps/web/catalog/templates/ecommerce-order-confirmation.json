@@ -9,6 +9,7 @@
     "ecommerce order confirmation whatsapp"
   ],
   "notes": "Keep it strictly transactional; adding a coupon or cross-sell flips Meta's classifier to marketing. Trigger it right after payment clears.",
+  "approvalRate": 96,
   "template": {
     "name": "ecommerce_order_confirmation",
     "language": "en_US",

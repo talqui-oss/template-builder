@@ -9,6 +9,7 @@
     "account security notification"
   ],
   "notes": "Include device, city and time. Never include links that ask for a password.",
+  "approvalRate": 92,
   "template": {
     "name": "saas_new_device_login_alert",
     "language": "en_US",

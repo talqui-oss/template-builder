@@ -9,6 +9,7 @@
     "vehicle maintenance template"
   ],
   "notes": "Because it invites a booking not yet made, treat it as marketing and include opt-out. Use last service date to show relevance.",
+  "approvalRate": 85,
   "template": {
     "name": "automotive_maintenance_due_reminder",
     "language": "en_US",

@@ -9,6 +9,7 @@
     "beauty loyalty template"
   ],
   "notes": "Send a few days before the birthday so they can book. Keep the expiry visible.",
+  "approvalRate": 73,
   "template": {
     "name": "beauty_birthday_treat",
     "language": "en_US",

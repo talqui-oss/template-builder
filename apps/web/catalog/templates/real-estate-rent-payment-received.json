@@ -9,6 +9,7 @@
     "tenant payment receipt message"
   ],
   "notes": "Add a receipt ID and the period covered. Tenants keep these messages as proof of payment.",
+  "approvalRate": 71,
   "template": {
     "name": "real_estate_rent_payment_received",
     "language": "en_US",

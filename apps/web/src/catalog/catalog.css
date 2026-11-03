@@ -180,40 +180,35 @@
   }
 }
 
+/* The chat wallpaper fills the whole frame and the message floats in the middle of it. */
 .ct-card__visual {
   position: relative;
+  isolation: isolate;
   display: flex;
+  align-items: safe center;
   justify-content: center;
   height: 260px;
-  padding-top: 16px;
+  padding: 16px 0;
   overflow: hidden;
-  border-bottom: 1px solid var(--lp-border);
-  background: radial-gradient(
-    60% 60% at 50% 0%,
-    rgba(255, 92, 48, 0.1),
-    transparent 70%
-  );
-}
-
-/* Long templates fade out instead of stretching the card. */
-.ct-card__visual::after {
-  content: "";
-  position: absolute;
-  inset: auto 0 0;
-  height: 56px;
-  background: linear-gradient(transparent, var(--lp-card));
+  background: var(--tb-wallpaper, #f8f6f2);
 }
 
 @media (min-width: 640px) {
   .ct-card__visual {
     border-right: 1px solid var(--lp-border);
-    border-bottom: 0;
   }
 }
 
+/* The frame draws the wallpaper, so the preview inside is transparent. */
 .lp-screen--list {
+  flex: none;
   zoom: 0.58;
-  align-self: flex-start;
+  padding: 0;
+  background: none;
+}
+
+.lp-screen--list .lp-screen__wallpaper {
+  display: none;
 }
 
 .ct-card__body {
@@ -511,4 +506,68 @@
 .ct-related .lp-link {
   margin-top: auto;
   padding-top: 8px;
+}
+
+/* Headings that look like the small labels around them. */
+h2.ct-block__title,
+h3.ct-block__title {
+  font-weight: 400;
+}
+
+.ct-tag--rate {
+  border-color: rgba(111, 207, 151, 0.35);
+  color: #6fcf97;
+}
+
+.ct-rate {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 16px;
+  border: 1px solid var(--lp-border);
+  border-radius: 10px;
+  background: var(--lp-card);
+}
+
+.ct-rate__value {
+  margin: 0;
+  font-size: 32px;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: -0.04em;
+}
+
+.ct-rate__label {
+  color: var(--lp-muted);
+  font-size: 15px;
+  letter-spacing: -0.01em;
+}
+
+.ct-rate__bar {
+  display: block;
+  height: 4px;
+  border-radius: 2px;
+  background: var(--lp-border-strong);
+  overflow: hidden;
+}
+
+.ct-rate__bar span {
+  display: block;
+  height: 100%;
+  background: #6fcf97;
+}
+
+.ct-rate .lp-muted {
+  font-size: 13px;
+}
+
+.ct-note__title {
+  margin: 12px 0 0;
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+}
+
+.ct-note p:last-child {
+  margin-top: 8px;
 }

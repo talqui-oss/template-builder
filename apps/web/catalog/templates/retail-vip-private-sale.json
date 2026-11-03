@@ -9,6 +9,7 @@
     "early access sale retail"
   ],
   "notes": "Exclusivity wording is fine when true; make sure the segment really is VIP-only. Include the offer end date.",
+  "approvalRate": 86,
   "template": {
     "name": "retail_vip_private_sale",
     "language": "en_US",

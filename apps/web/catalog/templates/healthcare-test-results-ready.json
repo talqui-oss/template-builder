@@ -9,6 +9,7 @@
     "patient portal message"
   ],
   "notes": "Never put results in the message. Point to the secure portal only; this is also a privacy requirement.",
+  "approvalRate": 74,
   "template": {
     "name": "healthcare_test_results_ready",
     "language": "en_US",

@@ -9,6 +9,7 @@
     "travel refund template"
   ],
   "notes": "State the refund amount and expected days to arrive; vague refund copy drives support tickets.",
+  "approvalRate": 72,
   "template": {
     "name": "travel_trip_cancellation_refund",
     "language": "en_US",

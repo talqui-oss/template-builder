@@ -9,6 +9,7 @@
     "agent introduction message"
   ],
   "notes": "Send within minutes of the enquiry form; it is a response to the user's own request and is typically approved as utility.",
+  "approvalRate": 84,
   "template": {
     "name": "real_estate_welcome_new_lead",
     "language": "en_US",

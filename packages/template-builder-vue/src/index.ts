@@ -1,6 +1,9 @@
 import {
+  applyEdit,
+  editorTree,
   previewTree,
   toPreviewModel,
+  type EditorOption,
   type Issue,
   type Platform,
   type PreviewNode,
@@ -55,4 +58,87 @@ function toVNode(node: PreviewNode | string): VNodeChild {
   );
 }
 
-export type { Issue, Platform, Template };
+let editors = 0;
+
+/**
+ * A form that edits a WhatsApp template. Import `@talqui-oss/template-builder/editor.css` once.
+ * Use it with `v-model:template`.
+ */
+export const TemplateEditor = defineComponent({
+  name: "TemplateEditor",
+  props: {
+    template: { type: Object as PropType<Template>, required: true },
+    /** Languages offered in the language select. */
+    languages: { type: Array as PropType<EditorOption[]> },
+  },
+  data() {
+    // Element ids for label/input pairs, unique per editor on the page.
+    return { idPrefix: `tb-editor-${++editors}` };
+  },
+  /** Emitted with the next template on every edit. */
+  emits: { "update:template": (template: Template) => Boolean(template) },
+  methods: {
+    edit(id: string, value?: string | boolean) {
+      this.$emit("update:template", applyEdit(this.template, id, value));
+    },
+  },
+  render() {
+    const tree = editorTree(this.template, {
+      idPrefix: this.idPrefix,
+      languages: this.languages,
+    });
+    return toEditorVNode(tree, this.edit);
+  },
+});
+
+type Edit = (id: string, value?: string | boolean) => void;
+
+function toEditorVNode(node: PreviewNode | string, edit: Edit): VNodeChild {
+  if (typeof node === "string") return node;
+  const props: Record<string, unknown> = {
+    ...(node.class && { class: node.class }),
+    ...node.attrs,
+  };
+  const id = node.attrs?.["data-edit"];
+  if (id && node.tag === "button")
+    props.onClick = () => edit(id, node.attrs?.["data-value"]);
+  else if (id && node.attrs?.type === "checkbox")
+    props.onChange = (event: Event) =>
+      edit(id, (event.target as HTMLInputElement).checked);
+  else if (id)
+    props[node.tag === "select" ? "onChange" : "onInput"] = (event: Event) =>
+      edit(id, (event.target as HTMLInputElement).value);
+  if (node.attrs?.role === "radiogroup")
+    props.onKeydown = (event: KeyboardEvent) => moveRadio(event, edit);
+  return h(
+    node.tag,
+    props,
+    (node.children ?? []).map((child) => toEditorVNode(child, edit)),
+  );
+}
+
+/** Arrow keys, Home and End move the selection inside a radio group. */
+function moveRadio(event: KeyboardEvent, edit: Edit) {
+  const group = event.currentTarget as HTMLElement;
+  const radios = [
+    ...group.querySelectorAll<HTMLButtonElement>('[role="radio"]'),
+  ];
+  const current = radios.findIndex(
+    (radio) => radio.getAttribute("aria-checked") === "true",
+  );
+  const next = {
+    ArrowRight: current + 1,
+    ArrowDown: current + 1,
+    ArrowLeft: current - 1,
+    ArrowUp: current - 1,
+    Home: 0,
+    End: radios.length - 1,
+  }[event.key];
+  if (next === undefined) return;
+  event.preventDefault();
+  const target = radios[(next + radios.length) % radios.length]!;
+  target.focus();
+  edit(target.dataset.edit!, target.dataset.value);
+}
+
+export type { EditorOption, Issue, Platform, Template };

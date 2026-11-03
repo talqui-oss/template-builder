@@ -42,13 +42,14 @@
     },
     "./styles.css": "./dist/styles.css",
     "./schema.json": "./dist/schema.json",
+    "./editor.css": "./dist/editor.css",
     "./package.json": "./package.json"
   },
   "files": [
     "dist"
   ],
   "scripts": {
-    "build": "tsup && pnpm schema && cp src/preview/styles.css dist/styles.css",
+    "build": "tsup && pnpm schema && cp src/preview/styles.css dist/styles.css && cp src/editor/editor.css dist/editor.css",
     "dev": "tsup --watch",
     "typecheck": "tsc --noEmit",
     "schema": "ts-json-schema-generator --path src/schema/types.ts --type Template --id https://template-builder.dev/schema.json --no-type-check --out dist/schema.json"

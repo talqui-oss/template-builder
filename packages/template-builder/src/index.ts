@@ -23,3 +23,17 @@ export type {
 export type { Line, Span } from "./preview/format";
 export { previewTree } from "./preview/tree";
 export type { Platform, PreviewNode, TreeOptions } from "./preview/tree";
+export {
+  applyEdit,
+  changeCategory,
+  editorSections,
+  syncVariables,
+} from "./editor/model";
+export type {
+  EditorField,
+  EditorOption,
+  EditorOptions,
+  EditorRow,
+  EditorSection,
+} from "./editor/model";
+export { editorTree } from "./editor/tree";

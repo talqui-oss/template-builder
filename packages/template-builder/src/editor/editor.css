@@ -1,0 +1,274 @@
+/*
+ * Styles for <TemplateEditor>. Import once: `@talqui-oss/template-builder/editor.css`.
+ * Theme it by overriding the custom properties on `.tb-editor` (or any ancestor).
+ */
+
+.tb-editor {
+  --tb-editor-font: system-ui, -apple-system, "Segoe UI", sans-serif;
+  --tb-editor-mono: ui-monospace, SFMono-Regular, Menlo, monospace;
+  --tb-editor-text: #1c1c1c;
+  --tb-editor-muted: #6b6b6b;
+  --tb-editor-faint: #9a9a9a;
+  --tb-editor-surface: #ffffff;
+  --tb-editor-control: #ffffff;
+  --tb-editor-hover: #f2f2f2;
+  --tb-editor-border: #e6e6e6;
+  --tb-editor-border-strong: #d4d4d4;
+  --tb-editor-accent: #1f8f4e;
+  --tb-editor-radius: 14px;
+  --tb-editor-radius-control: 7px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  color: var(--tb-editor-text);
+  font: 14px/1.5 var(--tb-editor-font);
+}
+
+.tb-editor *,
+.tb-editor *::before,
+.tb-editor *::after {
+  box-sizing: border-box;
+}
+
+/* Sections */
+
+.tb-editor__section {
+  border: 1px solid var(--tb-editor-border);
+  border-radius: var(--tb-editor-radius);
+  background: var(--tb-editor-surface);
+}
+
+.tb-editor__title {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  min-height: 52px;
+  margin: 0;
+  padding: 16px 20px 14px;
+  border-bottom: 1px solid var(--tb-editor-border);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.tb-editor__index {
+  color: var(--tb-editor-faint);
+  font: 12px var(--tb-editor-mono);
+}
+
+.tb-editor__body {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 20px;
+}
+
+.tb-editor__note {
+  margin: -8px 0 0;
+  color: var(--tb-editor-faint);
+  font-size: 12px;
+}
+
+/* Rows: fields side by side, wrapping on narrow widths. */
+
+.tb-editor__row {
+  display: grid;
+  /* 220px fits the three category labels; narrower rows stack their fields. */
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+}
+
+/* A button in the list: type, one or two values, remove. Labels are kept for screen readers only. */
+.tb-editor__row--list {
+  display: flex;
+  gap: 8px;
+}
+
+.tb-editor__row--list > .tb-editor__field {
+  flex: 1 1 0;
+}
+
+.tb-editor__row--list > .tb-editor__field:first-child {
+  flex: 0 0 132px;
+}
+
+.tb-editor__row--list > .tb-editor__action {
+  flex: 0 0 36px;
+}
+
+.tb-editor__row--list .tb-editor__head {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+}
+
+.tb-editor__field {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+}
+
+.tb-editor__head {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  /* One line only, so every control in a row starts at the same height. */
+  white-space: nowrap;
+}
+
+.tb-editor__label {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: var(--tb-editor-muted);
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.tb-editor__hint {
+  flex: none;
+  color: var(--tb-editor-faint);
+  font: 11px var(--tb-editor-mono);
+}
+
+/* Controls share one height: 18px line + 16px padding + 2px border = 36px. */
+
+.tb-editor__input {
+  width: 100%;
+  min-height: 36px;
+  padding: 8px 10px;
+  border: 1px solid var(--tb-editor-border-strong);
+  border-radius: var(--tb-editor-radius-control);
+  background: var(--tb-editor-control);
+  color: var(--tb-editor-text);
+  font: inherit;
+  line-height: 18px;
+  outline: none;
+  transition: border-color 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.tb-editor__input:hover {
+  border-color: var(--tb-editor-faint);
+}
+
+.tb-editor__input:focus-visible {
+  border-color: var(--tb-editor-accent);
+}
+
+.tb-editor__input--mono {
+  font-family: var(--tb-editor-mono);
+  font-size: 13px;
+}
+
+.tb-editor__input--area {
+  min-height: 140px;
+  resize: vertical;
+  line-height: 1.55;
+}
+
+.tb-editor__input--select {
+  appearance: none;
+  padding-right: 28px;
+  background-image:
+    linear-gradient(45deg, transparent 50%, currentColor 50%),
+    linear-gradient(135deg, currentColor 50%, transparent 50%);
+  background-position:
+    calc(100% - 15px) 50%,
+    calc(100% - 10px) 50%;
+  background-size: 5px 5px;
+  background-repeat: no-repeat;
+}
+
+.tb-editor__check {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+}
+
+.tb-editor__check input {
+  accent-color: var(--tb-editor-accent);
+}
+
+/* Segmented control, the same height as the inputs. */
+
+.tb-editor__segment {
+  display: flex;
+  gap: 2px;
+  height: 36px;
+  padding: 2px;
+  border: 1px solid var(--tb-editor-border-strong);
+  border-radius: var(--tb-editor-radius-control);
+  background: var(--tb-editor-control);
+}
+
+/* Items grow from their label width, so a long label gets the room it needs. */
+.tb-editor__segment-item {
+  flex: 1 1 auto;
+  min-width: 0;
+  padding: 0 8px;
+  border: 0;
+  border-radius: 5px;
+  background: transparent;
+  color: var(--tb-editor-muted);
+  font: 500 12px var(--tb-editor-font);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  cursor: pointer;
+  transition:
+    background-color 0.2s cubic-bezier(0.4, 0, 0.2, 1),
+    color 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.tb-editor__segment-item:hover {
+  color: var(--tb-editor-text);
+}
+
+.tb-editor__segment-item[aria-checked="true"] {
+  background: var(--tb-editor-hover);
+  color: var(--tb-editor-text);
+}
+
+.tb-editor__segment-item:focus-visible {
+  outline: 2px solid var(--tb-editor-accent);
+  outline-offset: 1px;
+}
+
+/* Add and remove buttons */
+
+.tb-editor__action {
+  min-height: 36px;
+  border: 1px solid var(--tb-editor-border-strong);
+  border-radius: var(--tb-editor-radius-control);
+  background: transparent;
+  color: var(--tb-editor-muted);
+  font: inherit;
+  cursor: pointer;
+  transition:
+    background-color 0.2s cubic-bezier(0.4, 0, 0.2, 1),
+    color 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.tb-editor__action:hover:not(:disabled) {
+  background: var(--tb-editor-hover);
+  color: var(--tb-editor-text);
+}
+
+.tb-editor__action--add {
+  grid-column: 1 / -1;
+  border-style: dashed;
+}
+
+.tb-editor__action--remove {
+  font-size: 18px;
+  line-height: 1;
+}
+
+.tb-editor__action:disabled {
+  opacity: 0.4;
+  cursor: default;
+}

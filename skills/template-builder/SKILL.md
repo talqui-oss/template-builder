@@ -1,6 +1,6 @@
 ---
 name: template-builder
-description: Use when writing, reviewing, previewing or creating WhatsApp message templates (HSM) for the Meta Cloud API, Twilio or Talqui. Covers marketing campaigns, utility updates and one-time passwords, such as order confirmations, shipping updates, abandoned carts, appointment reminders, payment reminders, verification codes, promotions and feedback requests. Also use when adding a WhatsApp template preview, validation or a "create template on Meta" step to an app or backend.
+description: Use when writing, reviewing, previewing, editing or creating WhatsApp message templates (HSM) for the Meta Cloud API, Twilio or Talqui. Covers marketing campaigns, utility updates and one-time passwords, such as order confirmations, shipping updates, abandoned carts, appointment reminders, payment reminders, verification codes, promotions and feedback requests. Also use when adding a WhatsApp template preview, validation or a "create template on Meta" step to an app or backend.
 license: MIT
 metadata:
   homepage: https://template-builder.dev
@@ -107,6 +107,20 @@ import "@talqui-oss/template-builder/styles.css";
 ```
 
 The preview is calibrated against a real iPhone: same line breaks, bubble and buttons. The Vue component takes the same props and emits `issues` instead of `onIssues`.
+
+## Editor in an app
+
+```tsx
+import { TemplateEditor, TemplatePreview } from "@talqui-oss/template-builder-react";
+import "@talqui-oss/template-builder/styles.css";
+import "@talqui-oss/template-builder/editor.css";
+
+const [template, setTemplate] = useState(initial);
+<TemplateEditor template={template} onChange={setTemplate} />
+<TemplatePreview template={template} />
+```
+
+In Vue: `<TemplateEditor v-model:template="template" />`. Theme it with the `--tb-editor-*` custom properties. Without a UI framework, `editorSections(template)` and `applyEdit(template, id, value)` from the core package give the same form as data.
 
 ## Links
 

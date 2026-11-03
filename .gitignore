@@ -11,3 +11,4 @@ coverage/
 TALQUI_GUIDELINES.md
 .release/
 .vercel/
+packages/*/README.md

@@ -1,12 +1,22 @@
-![Template Builder cover](./.github/assets/cover.png)
+![Template Builder cover](https://raw.githubusercontent.com/talqui-oss/template-builder/main/.github/assets/cover.png)
 
 <div align="center"><strong>Template Builder</strong></div>
 <div align="center">Preview, validate and create WhatsApp message templates.<br />One JSON object, every provider.</div>
 <br />
 <div align="center">
+
+[![npm](https://img.shields.io/npm/v/@talqui-oss/template-builder?color=cb3837&logo=npm)](https://www.npmjs.com/package/@talqui-oss/template-builder)
+[![Node](https://img.shields.io/badge/node-%3E%3D24-339933?logo=node.js&logoColor=white)](https://github.com/talqui-oss/template-builder/blob/main/.nvmrc)
+[![TypeScript](https://img.shields.io/badge/typescript-6.0-3178C6?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/talqui-oss/template-builder/blob/main/LICENSE.md)
+
+</div>
+<div align="center">
 <a href="https://template-builder.dev">Website</a>
 <span> · </span>
 <a href="https://github.com/talqui-oss/template-builder">GitHub</a>
+<span> · </span>
+<a href="https://www.npmjs.com/package/@talqui-oss/template-builder">npm</a>
 </div>
 
 ## Introduction
@@ -24,8 +34,6 @@ npm i @talqui-oss/template-builder @talqui-oss/template-builder-react
 ```
 
 Using Vue? Install `@talqui-oss/template-builder-vue` instead of the React package.
-
-> The first release is on its way. Watch this repository to be notified when it lands on npm.
 
 ## Getting started
 
@@ -107,14 +115,14 @@ Every template type is checked against the rules Meta applies before review, and
 
 ## Development workflow
 
-1. [Setting up your development environment](./CONTRIBUTING.md#setup)
-2. [Running the commands](./CONTRIBUTING.md#commands)
-3. [Opening a pull request](./CONTRIBUTING.md#pull-requests)
-4. [Reporting a Meta rule change](./CONTRIBUTING.md#meta-rule-changes)
+1. [Setting up your development environment](https://github.com/talqui-oss/template-builder/blob/main/CONTRIBUTING.md#setup)
+2. [Running the commands](https://github.com/talqui-oss/template-builder/blob/main/CONTRIBUTING.md#commands)
+3. [Opening a pull request](https://github.com/talqui-oss/template-builder/blob/main/CONTRIBUTING.md#pull-requests)
+4. [Reporting a Meta rule change](https://github.com/talqui-oss/template-builder/blob/main/CONTRIBUTING.md#meta-rule-changes)
 
 ## Contributing
 
-- [Contribution Guide](./CONTRIBUTING.md)
+- [Contribution Guide](https://github.com/talqui-oss/template-builder/blob/main/CONTRIBUTING.md)
 
 ---
 

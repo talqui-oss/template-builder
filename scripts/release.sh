@@ -36,13 +36,18 @@ mkdir -p "$out"
 
 # The tarballs carry the tag's version, so a test tag needs no release commit.
 packages=(template-builder template-builder-react template-builder-vue)
-trap 'git checkout --quiet -- "${packages[@]/#/packages/}"' EXIT
+trap 'git checkout --quiet -- "${packages[@]/#/packages/}"; rm -f packages/*/README.md' EXIT
 
 for package in "${packages[@]}"; do
   (cd "packages/$package" && npm version "$version" --no-git-tag-version --allow-same-version >/dev/null)
 done
 
 pnpm turbo run build --filter="./packages/*"
+
+# npm shows the README inside each tarball: every package gets the repository README.
+for package in "${packages[@]}"; do
+  cp README.md "packages/$package/README.md"
+done
 
 # pnpm pack rewrites `workspace:*` to the real version; npm publish then handles OIDC and provenance.
 for package in "${packages[@]}"; do

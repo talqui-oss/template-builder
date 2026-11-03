@@ -1,0 +1,45 @@
+{
+  "title": "Personal training offer",
+  "description": "Offer a discounted personal training package to existing members. Promotion WhatsApp template for gyms. Free to copy and edit.",
+  "industry": "fitness",
+  "useCase": "promotion",
+  "keywords": [
+    "personal training promotion whatsapp",
+    "pt package offer message",
+    "gym upsell template"
+  ],
+  "notes": "Spell out the package contents and price. Existing-member segments convert best.",
+  "approvalRate": 88,
+  "template": {
+    "name": "fitness_personal_training_promo",
+    "language": "en_US",
+    "category": "MARKETING",
+    "body": {
+      "text": "Hi {{first_name}}, work 1-on-1 with {{trainer}} and get 5 personal training sessions for just {{amount}}, a saving of {{percent}}%. Limited spots this month."
+    },
+    "footer": {
+      "text": "Reply STOP to opt out"
+    },
+    "buttons": [
+      {
+        "type": "URL",
+        "text": "Book a session",
+        "url": "https://acmefit.example.com/pt"
+      }
+    ],
+    "variables": {
+      "first_name": {
+        "example": "Maria"
+      },
+      "trainer": {
+        "example": "Marcus"
+      },
+      "amount": {
+        "example": "$49.90"
+      },
+      "percent": {
+        "example": "20"
+      }
+    }
+  }
+}

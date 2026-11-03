@@ -1,0 +1,51 @@
+{
+  "title": "Subscription payment receipt",
+  "description": "Send a payment receipt on WhatsApp after a subscription charge, with amount, plan and invoice number. Utility template. Copy it and adapt the brand.",
+  "industry": "saas",
+  "useCase": "payment-confirmation",
+  "keywords": [
+    "subscription receipt whatsapp",
+    "invoice receipt message",
+    "saas payment confirmation"
+  ],
+  "notes": "Keep it purely a receipt with an invoice ID; no upsell.",
+  "approvalRate": 96,
+  "template": {
+    "name": "saas_payment_receipt_subscription",
+    "language": "en_US",
+    "category": "UTILITY",
+    "body": {
+      "text": "Thanks, {{first_name}}! We charged *{{amount}}* for your {{plan}} subscription on {{date}}. Your invoice number is {{invoice_id}}, and you can download the full invoice any time using the button below."
+    },
+    "footer": {
+      "text": "Lumen Billing"
+    },
+    "buttons": [
+      {
+        "type": "URL",
+        "text": "Download invoice",
+        "url": "https://lumen.app/invoices/{{ref}}"
+      }
+    ],
+    "variables": {
+      "first_name": {
+        "example": "Ben"
+      },
+      "amount": {
+        "example": "$49.00"
+      },
+      "plan": {
+        "example": "Lumen Pro"
+      },
+      "date": {
+        "example": "Nov 1"
+      },
+      "invoice_id": {
+        "example": "INV-30291"
+      },
+      "ref": {
+        "example": "INV30291"
+      }
+    }
+  }
+}

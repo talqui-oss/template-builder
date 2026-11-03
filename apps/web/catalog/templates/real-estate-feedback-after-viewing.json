@@ -1,0 +1,46 @@
+{
+  "title": "Feedback after property viewing",
+  "description": "Ask buyers what they thought after a property viewing, with quick replies. Marketing WhatsApp template for real estate follow-ups.",
+  "industry": "real-estate",
+  "useCase": "feedback-request",
+  "keywords": [
+    "post viewing feedback whatsapp",
+    "real estate follow up message",
+    "property viewing survey"
+  ],
+  "notes": "Send the same evening or next morning while the visit is fresh. Branch the next message based on the quick reply.",
+  "approvalRate": 98,
+  "template": {
+    "name": "real_estate_feedback_after_viewing",
+    "language": "en_US",
+    "category": "MARKETING",
+    "body": {
+      "text": "Hi {{first_name}}, thanks for visiting *{{property}}* today. How did you like it?"
+    },
+    "footer": {
+      "text": "Reply STOP to opt out"
+    },
+    "buttons": [
+      {
+        "type": "QUICK_REPLY",
+        "text": "Loved it"
+      },
+      {
+        "type": "QUICK_REPLY",
+        "text": "Maybe"
+      },
+      {
+        "type": "QUICK_REPLY",
+        "text": "Not for me"
+      }
+    ],
+    "variables": {
+      "first_name": {
+        "example": "Noah"
+      },
+      "property": {
+        "example": "45 Lakeview Road"
+      }
+    }
+  }
+}

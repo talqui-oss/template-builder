@@ -1,0 +1,42 @@
+{
+  "title": "Post-stay review request",
+  "description": "Ask guests for a review after checkout with a one-tap link. Marketing WhatsApp template for hotels, hostels and rentals.",
+  "industry": "travel",
+  "useCase": "feedback-request",
+  "keywords": [
+    "hotel review request whatsapp",
+    "guest feedback message",
+    "post stay survey template"
+  ],
+  "notes": "Send the morning after checkout. Thank first, ask second, and avoid incentives that breach review-site rules.",
+  "approvalRate": 89,
+  "template": {
+    "name": "travel_post_stay_review_request",
+    "language": "en_US",
+    "category": "MARKETING",
+    "body": {
+      "text": "Thank you for staying with us, {{first_name}}! We hope you enjoyed your time at {{hotel}}. Would you share a quick review? It takes less than a minute and helps future guests."
+    },
+    "footer": {
+      "text": "Reply STOP to opt out"
+    },
+    "buttons": [
+      {
+        "type": "URL",
+        "text": "Leave a review",
+        "url": "https://acmegrand.com/review/{{review_id}}"
+      }
+    ],
+    "variables": {
+      "first_name": {
+        "example": "Emma"
+      },
+      "hotel": {
+        "example": "Acme Grand Hotel"
+      },
+      "review_id": {
+        "example": "RV3321"
+      }
+    }
+  }
+}

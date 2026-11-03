@@ -1,0 +1,51 @@
+{
+  "title": "Credit card statement ready",
+  "description": "Tell cardholders their monthly statement is ready, with total due and due date. A transactional WhatsApp template for card issuers.",
+  "industry": "finance",
+  "useCase": "account-alert",
+  "keywords": [
+    "credit card statement whatsapp",
+    "statement ready notification",
+    "card bill reminder message"
+  ],
+  "notes": "State the total and minimum due so the message stands on its own; do not promote installment plans in the same text.",
+  "approvalRate": 71,
+  "template": {
+    "name": "finance_credit_card_statement_ready",
+    "language": "en_US",
+    "category": "UTILITY",
+    "body": {
+      "text": "Hi {{first_name}}, your {{month}} credit card statement is ready. Total due: *{{total}}*, minimum payment: {{minimum}}, due on {{due_date}}. You can pay from the app."
+    },
+    "footer": {
+      "text": "Northwind Card"
+    },
+    "buttons": [
+      {
+        "type": "URL",
+        "text": "View statement",
+        "url": "https://northwindcard.com/statements/{{stmt_id}}"
+      }
+    ],
+    "variables": {
+      "first_name": {
+        "example": "Daniel"
+      },
+      "month": {
+        "example": "October"
+      },
+      "total": {
+        "example": "$1,284.30"
+      },
+      "minimum": {
+        "example": "$65.00"
+      },
+      "due_date": {
+        "example": "Nov 20"
+      },
+      "stmt_id": {
+        "example": "ST1029"
+      }
+    }
+  }
+}

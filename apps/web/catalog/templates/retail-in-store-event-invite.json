@@ -1,0 +1,48 @@
+{
+  "title": "In-store event invitation",
+  "description": "Invite loyal customers to an in-store event or private shopping night with RSVP buttons. Event invitation WhatsApp template for retail.",
+  "industry": "retail",
+  "useCase": "event-invitation",
+  "keywords": [
+    "in store event invitation whatsapp",
+    "private shopping night message",
+    "retail event template"
+  ],
+  "notes": "Quick-reply RSVPs give you a clean count and keep the template compact. Include date, time and store location in the body.",
+  "approvalRate": 83,
+  "template": {
+    "name": "retail_in_store_event_invite",
+    "language": "en_US",
+    "category": "MARKETING",
+    "body": {
+      "text": "Hi {{first_name}}, you're invited to our private shopping night at {{store_name}} on {{date}} at {{time}}. Enjoy drinks, styling tips and member-only prices."
+    },
+    "footer": {
+      "text": "Reply STOP to opt out"
+    },
+    "buttons": [
+      {
+        "type": "QUICK_REPLY",
+        "text": "I'll be there"
+      },
+      {
+        "type": "QUICK_REPLY",
+        "text": "Can't make it"
+      }
+    ],
+    "variables": {
+      "first_name": {
+        "example": "Maria"
+      },
+      "store_name": {
+        "example": "Acme Store"
+      },
+      "date": {
+        "example": "March 14"
+      },
+      "time": {
+        "example": "3:30 PM"
+      }
+    }
+  }
+}

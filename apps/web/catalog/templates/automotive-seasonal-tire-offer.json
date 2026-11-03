@@ -1,0 +1,50 @@
+{
+  "title": "Seasonal tire change offer",
+  "description": "Promote a winter or summer tire change with a discount via WhatsApp. Marketing template for tire shops and workshops. Copy it and adapt the brand.",
+  "industry": "automotive",
+  "useCase": "seasonal-campaign",
+  "keywords": [
+    "tire change offer whatsapp",
+    "winter tires promotion",
+    "seasonal car service message"
+  ],
+  "notes": "Seasonal offers perform when sent before the first cold snap. Use a coupon code to track redemptions.",
+  "approvalRate": 93,
+  "template": {
+    "name": "automotive_seasonal_tire_offer",
+    "language": "en_US",
+    "category": "MARKETING",
+    "header": {
+      "type": "TEXT",
+      "text": "Winter tire offer"
+    },
+    "body": {
+      "text": "Winter is coming, {{first_name}}! Switch to winter tires before {{deadline}} and get *{{discount}} off* installation and balancing at Acme Auto."
+    },
+    "footer": {
+      "text": "Reply STOP to opt out"
+    },
+    "buttons": [
+      {
+        "type": "COPY_CODE",
+        "example": "WINTER25"
+      },
+      {
+        "type": "URL",
+        "text": "Book now",
+        "url": "https://acmeauto.com/tires"
+      }
+    ],
+    "variables": {
+      "first_name": {
+        "example": "Paul"
+      },
+      "deadline": {
+        "example": "Nov 30"
+      },
+      "discount": {
+        "example": "25%"
+      }
+    }
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "title": "Repair quote approval request",
+  "description": "Ask customers to approve extra repair work on WhatsApp with itemized cost and a quick approval. Utility template for workshops.",
+  "industry": "automotive",
+  "useCase": "booking-confirmation",
+  "keywords": [
+    "repair quote whatsapp",
+    "workshop approval request",
+    "car repair estimate message"
+  ],
+  "notes": "Itemize in one line and link to the full quote. Explicit approval buttons create a record and reduce disputes.",
+  "approvalRate": 95,
+  "template": {
+    "name": "automotive_service_quote_approval",
+    "language": "en_US",
+    "category": "UTILITY",
+    "header": {
+      "type": "TEXT",
+      "text": "Approval needed"
+    },
+    "body": {
+      "text": "Hi {{first_name}}, during service on your {{vehicle}} we found {{issue}}. The repair would cost *{{price}}*. Do you approve this work?"
+    },
+    "footer": {
+      "text": "Acme Auto"
+    },
+    "buttons": [
+      {
+        "type": "QUICK_REPLY",
+        "text": "Approve"
+      },
+      {
+        "type": "QUICK_REPLY",
+        "text": "Decline"
+      },
+      {
+        "type": "PHONE_NUMBER",
+        "text": "Call workshop",
+        "phoneNumber": "+15550199"
+      }
+    ],
+    "variables": {
+      "first_name": {
+        "example": "Paul"
+      },
+      "vehicle": {
+        "example": "Ford Focus"
+      },
+      "issue": {
+        "example": "worn front brake pads"
+      },
+      "price": {
+        "example": "$240.00"
+      }
+    }
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "title": "Rent payment received",
+  "description": "Confirm rent was received on WhatsApp with amount, month and receipt number. Utility template for property managers and landlords.",
+  "industry": "real-estate",
+  "useCase": "payment-confirmation",
+  "keywords": [
+    "rent payment confirmation",
+    "rent received whatsapp",
+    "tenant payment receipt message"
+  ],
+  "notes": "Add a receipt ID and the period covered. Tenants keep these messages as proof of payment.",
+  "approvalRate": 71,
+  "template": {
+    "name": "real_estate_rent_payment_received",
+    "language": "en_US",
+    "category": "UTILITY",
+    "body": {
+      "text": "Hi {{first_name}}, we received your rent payment of *{{amount}}* for {{month}} on {{date}}. Receipt: {{receipt_id}}. Thank you!"
+    },
+    "footer": {
+      "text": "Acme Property Management"
+    },
+    "variables": {
+      "first_name": {
+        "example": "Sam"
+      },
+      "amount": {
+        "example": "$1,450.00"
+      },
+      "month": {
+        "example": "November"
+      },
+      "date": {
+        "example": "Nov 1"
+      },
+      "receipt_id": {
+        "example": "RR-3391"
+      }
+    }
+  }
+}

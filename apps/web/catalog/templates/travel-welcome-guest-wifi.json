@@ -1,0 +1,35 @@
+{
+  "title": "Welcome message with Wi-Fi details",
+  "description": "Welcome guests on arrival with Wi-Fi, breakfast hours and the front desk number. Utility WhatsApp template for hotels and rentals.",
+  "industry": "travel",
+  "useCase": "welcome",
+  "keywords": [
+    "hotel welcome message whatsapp",
+    "guest welcome template",
+    "airbnb welcome message"
+  ],
+  "notes": "Triggered at check-in and tied to a stay in progress, so it qualifies as utility. Skip spa or restaurant promotions here.",
+  "approvalRate": 89,
+  "template": {
+    "name": "travel_welcome_guest_wifi",
+    "language": "en_US",
+    "category": "UTILITY",
+    "body": {
+      "text": "Welcome to {{hotel}}, {{first_name}}! Wi-Fi network: *{{wifi_name}}*, password: *{{wifi_pass}}*. Breakfast is served from 7 to 10 AM. Dial 0 from your room for anything you need."
+    },
+    "variables": {
+      "hotel": {
+        "example": "Acme Grand Hotel"
+      },
+      "first_name": {
+        "example": "Emma"
+      },
+      "wifi_name": {
+        "example": "AcmeGuest"
+      },
+      "wifi_pass": {
+        "example": "welcome2024"
+      }
+    }
+  }
+}

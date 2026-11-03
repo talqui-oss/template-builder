@@ -1,0 +1,32 @@
+/* Editor page (`/editor`). Built on the landing tokens and atoms (lp-*, ct-*). */
+
+.ed-install {
+  margin-top: 28px;
+}
+
+.ed-install .lp-command {
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+.ed-demo__grid {
+  display: grid;
+  gap: 24px;
+  margin-top: 40px;
+}
+
+@media (min-width: 960px) {
+  .ed-demo__grid {
+    grid-template-columns: minmax(0, 1fr) 440px;
+    align-items: start;
+  }
+
+  .ed-demo__preview {
+    position: sticky;
+    top: 24px;
+  }
+}
+
+.ed-demo__preview .lp-screen {
+  max-width: 100%;
+}

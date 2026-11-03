@@ -1,0 +1,42 @@
+{
+  "title": "New arrivals announcement",
+  "description": "Announce fresh arrivals to subscribers who opted in to updates about new styles. Product launch WhatsApp template for retail stores.",
+  "industry": "retail",
+  "useCase": "product-launch",
+  "keywords": [
+    "new arrivals whatsapp template",
+    "new products announcement message",
+    "retail launch message"
+  ],
+  "notes": "Mention a specific item or category rather than just 'new arrivals'. Frequent generic blasts hurt your quality rating.",
+  "approvalRate": 70,
+  "template": {
+    "name": "retail_new_arrivals_launch",
+    "language": "en_US",
+    "category": "MARKETING",
+    "body": {
+      "text": "Hi {{first_name}}, new arrivals just landed at {{store_name}}, including the *{{product_name}}*. Come see them in store this week or browse online."
+    },
+    "footer": {
+      "text": "Reply STOP to opt out"
+    },
+    "buttons": [
+      {
+        "type": "URL",
+        "text": "Browse new arrivals",
+        "url": "https://acme.com/new"
+      }
+    ],
+    "variables": {
+      "first_name": {
+        "example": "Maria"
+      },
+      "store_name": {
+        "example": "Acme Store"
+      },
+      "product_name": {
+        "example": "Linen Shirt"
+      }
+    }
+  }
+}

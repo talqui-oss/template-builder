@@ -1,0 +1,48 @@
+{
+  "title": "Vehicle registration renewal reminder",
+  "description": "Remind drivers that their registration or inspection is about to expire. Utility WhatsApp template for dealers and service centers.",
+  "industry": "automotive",
+  "useCase": "renewal-reminder",
+  "keywords": [
+    "registration renewal reminder",
+    "vehicle inspection due whatsapp",
+    "car papers expiring message"
+  ],
+  "notes": "Use the plate number and exact expiry to keep it utility. Add a booking link as the single call to action.",
+  "approvalRate": 90,
+  "template": {
+    "name": "automotive_insurance_expiry_vehicle",
+    "language": "en_US",
+    "category": "UTILITY",
+    "body": {
+      "text": "Hi {{first_name}}, the {{document}} for your vehicle with plate *{{plate}}* expires on {{expiry_date}}. We can handle it for you."
+    },
+    "footer": {
+      "text": "Acme Auto"
+    },
+    "buttons": [
+      {
+        "type": "URL",
+        "text": "Book inspection",
+        "url": "https://acmeauto.com/inspection/{{ref}}"
+      }
+    ],
+    "variables": {
+      "first_name": {
+        "example": "Paul"
+      },
+      "document": {
+        "example": "annual inspection"
+      },
+      "plate": {
+        "example": "ABC-1234"
+      },
+      "expiry_date": {
+        "example": "Nov 28"
+      },
+      "ref": {
+        "example": "ABC1234"
+      }
+    }
+  }
+}

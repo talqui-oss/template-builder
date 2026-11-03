@@ -1,0 +1,53 @@
+{
+  "title": "Early bird enrollment offer",
+  "description": "Promote early bird pricing for the next intake. Promotion WhatsApp template for courses and schools. Free to copy and edit.",
+  "industry": "education",
+  "useCase": "promotion",
+  "keywords": [
+    "course discount whatsapp",
+    "early bird enrollment message",
+    "education promotion template"
+  ],
+  "notes": "State the deadline and the exact saving. Early deadlines create urgency without needing pressure language.",
+  "approvalRate": 89,
+  "template": {
+    "name": "education_early_bird_promo",
+    "language": "en_US",
+    "category": "MARKETING",
+    "header": {
+      "type": "TEXT",
+      "text": "Early bird pricing"
+    },
+    "body": {
+      "text": "Hi {{first_name}}, enroll in *{{course}}* before {{date}} and save {{percent}}% with early bird pricing. Seats are limited."
+    },
+    "footer": {
+      "text": "Reply STOP to opt out"
+    },
+    "buttons": [
+      {
+        "type": "COPY_CODE",
+        "example": "EARLY20"
+      },
+      {
+        "type": "URL",
+        "text": "Enroll now",
+        "url": "https://acmeacademy.example.com/enroll"
+      }
+    ],
+    "variables": {
+      "first_name": {
+        "example": "Maria"
+      },
+      "course": {
+        "example": "Intro to Design"
+      },
+      "date": {
+        "example": "March 14"
+      },
+      "percent": {
+        "example": "20"
+      }
+    }
+  }
+}

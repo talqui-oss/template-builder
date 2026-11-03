@@ -1,0 +1,42 @@
+{
+  "title": "Follow-up checkup reminder",
+  "description": "Prompt patients to schedule a follow-up or annual checkup. Re-engagement WhatsApp template for clinics. Free to copy and edit.",
+  "industry": "healthcare",
+  "useCase": "re-engagement",
+  "keywords": [
+    "checkup reminder whatsapp",
+    "follow up appointment message",
+    "patient recall template"
+  ],
+  "notes": "This is a proactive nudge, so classify it as marketing and include opt-out. Refer to the service type without medical detail.",
+  "approvalRate": 73,
+  "template": {
+    "name": "healthcare_follow_up_checkup",
+    "language": "en_US",
+    "category": "MARKETING",
+    "body": {
+      "text": "Hi {{first_name}}, it's time for your yearly checkup at {{clinic}}. Booking takes under a minute, and slots with {{doctor}} are open next week."
+    },
+    "footer": {
+      "text": "Reply STOP to opt out"
+    },
+    "buttons": [
+      {
+        "type": "URL",
+        "text": "Book a visit",
+        "url": "https://acmehealth.example.com/book"
+      }
+    ],
+    "variables": {
+      "first_name": {
+        "example": "Maria"
+      },
+      "clinic": {
+        "example": "Acme Health Clinic"
+      },
+      "doctor": {
+        "example": "Dr. Silva"
+      }
+    }
+  }
+}

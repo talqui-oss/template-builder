@@ -1,0 +1,45 @@
+{
+  "title": "Claim status update",
+  "description": "Share a status change on an open insurance claim over WhatsApp: approved, in review or more documents needed. Utility template.",
+  "industry": "insurance",
+  "useCase": "account-alert",
+  "keywords": [
+    "claim status update whatsapp",
+    "insurance claim approved message",
+    "claim update template"
+  ],
+  "notes": "Use a variable for the status instead of writing several templates. Do not promise payout timing the claims team cannot guarantee.",
+  "approvalRate": 87,
+  "template": {
+    "name": "insurance_claim_status_update",
+    "language": "en_US",
+    "category": "UTILITY",
+    "body": {
+      "text": "Hi {{first_name}}, there is an update on claim *{{claim_no}}*. Current status: *{{status}}*. Open your claim to see details and next steps."
+    },
+    "footer": {
+      "text": "Acme Insurance"
+    },
+    "buttons": [
+      {
+        "type": "URL",
+        "text": "View claim",
+        "url": "https://acmeinsurance.com/claims/{{ref}}"
+      }
+    ],
+    "variables": {
+      "first_name": {
+        "example": "Rita"
+      },
+      "claim_no": {
+        "example": "CL-558210"
+      },
+      "status": {
+        "example": "Approved"
+      },
+      "ref": {
+        "example": "CL558210"
+      }
+    }
+  }
+}

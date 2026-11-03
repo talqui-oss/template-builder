@@ -1,0 +1,45 @@
+{
+  "title": "Salon appointment reminder",
+  "description": "Remind clients 24 hours before their salon or spa visit. Appointment reminder WhatsApp template that cuts no-shows. Free to copy and edit.",
+  "industry": "beauty",
+  "useCase": "appointment-reminder",
+  "keywords": [
+    "salon appointment reminder whatsapp",
+    "beauty reminder message",
+    "reduce salon no shows"
+  ],
+  "notes": "Send one reminder a day ahead; two feels naggy. Quick replies let clients free up a slot early.",
+  "approvalRate": 73,
+  "template": {
+    "name": "beauty_appointment_reminder",
+    "language": "en_US",
+    "category": "UTILITY",
+    "body": {
+      "text": "Reminder, {{first_name}}: your {{service}} at {{studio}} is tomorrow at {{time}}. Please arrive a few minutes early."
+    },
+    "buttons": [
+      {
+        "type": "QUICK_REPLY",
+        "text": "I'll be there"
+      },
+      {
+        "type": "QUICK_REPLY",
+        "text": "Need to reschedule"
+      }
+    ],
+    "variables": {
+      "first_name": {
+        "example": "Maria"
+      },
+      "service": {
+        "example": "Haircut"
+      },
+      "studio": {
+        "example": "Bloom Studio"
+      },
+      "time": {
+        "example": "3:30 PM"
+      }
+    }
+  }
+}

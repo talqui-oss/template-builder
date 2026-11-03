@@ -1,0 +1,48 @@
+{
+  "title": "Class booking confirmed",
+  "description": "Confirm a gym or studio class spot with class name, trainer and time. Booking confirmation WhatsApp template for fitness studios.",
+  "industry": "fitness",
+  "useCase": "booking-confirmation",
+  "keywords": [
+    "fitness class booking whatsapp",
+    "gym class confirmation message",
+    "studio booking template"
+  ],
+  "notes": "Include your late-cancel window in the body; it is the most common support question.",
+  "approvalRate": 97,
+  "template": {
+    "name": "fitness_class_booking_confirmed",
+    "language": "en_US",
+    "category": "UTILITY",
+    "header": {
+      "type": "TEXT",
+      "text": "Class booked"
+    },
+    "body": {
+      "text": "You're in, {{first_name}}! Your spot in *{{class_name}}* with {{trainer}} is confirmed for {{day}} at {{time}}. We can't wait to see you, and we'll send a reminder before the day."
+    },
+    "buttons": [
+      {
+        "type": "QUICK_REPLY",
+        "text": "Cancel spot"
+      }
+    ],
+    "variables": {
+      "first_name": {
+        "example": "Maria"
+      },
+      "class_name": {
+        "example": "Morning Yoga"
+      },
+      "trainer": {
+        "example": "Marcus"
+      },
+      "day": {
+        "example": "Friday"
+      },
+      "time": {
+        "example": "3:30 PM"
+      }
+    }
+  }
+}

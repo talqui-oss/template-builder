@@ -1,7 +1,7 @@
 {
   "name": "@talqui-oss/template-builder-vue",
   "version": "0.0.0",
-  "description": "Vue components to preview WhatsApp message templates",
+  "description": "Vue components to preview and edit WhatsApp message templates",
   "license": "MIT",
   "repository": {
     "type": "git",
@@ -42,6 +42,10 @@
   "devDependencies": {
     "@template-builder/tsconfig": "workspace:*",
     "tsup": "^9.0.0",
-    "typescript": "^6.0.3"
+    "typescript": "^6.0.3",
+    "vue": "^3.5"
+  },
+  "dependencies": {
+    "@talqui-oss/template-builder": "workspace:*"
   }
 }

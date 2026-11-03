@@ -1,0 +1,41 @@
+{
+  "title": "Happy hour offer",
+  "description": "Drive weekday traffic with a happy hour announcement and a copyable code. Seasonal campaign WhatsApp template for bars and restaurants.",
+  "industry": "restaurants",
+  "useCase": "seasonal-campaign",
+  "keywords": [
+    "happy hour whatsapp message",
+    "bar promotion template",
+    "restaurant offer message"
+  ],
+  "notes": "Send early afternoon on the day. Make the time window explicit so the offer is verifiably real.",
+  "approvalRate": 91,
+  "template": {
+    "name": "restaurants_happy_hour_offer",
+    "language": "en_US",
+    "category": "MARKETING",
+    "body": {
+      "text": "Hi {{first_name}}, happy hour is on at {{restaurant}} from 5 to 7 PM. Show this code to get {{percent}}% off all drinks."
+    },
+    "footer": {
+      "text": "Reply STOP to opt out"
+    },
+    "buttons": [
+      {
+        "type": "COPY_CODE",
+        "example": "HAPPY20"
+      }
+    ],
+    "variables": {
+      "first_name": {
+        "example": "Maria"
+      },
+      "restaurant": {
+        "example": "Northwind Bistro"
+      },
+      "percent": {
+        "example": "20"
+      }
+    }
+  }
+}

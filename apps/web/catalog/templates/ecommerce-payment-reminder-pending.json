@@ -1,0 +1,45 @@
+{
+  "title": "Pending payment reminder",
+  "description": "Remind buyers that their order is waiting for payment, such as a boleto or bank transfer, with a link to complete it. Free to copy and edit.",
+  "industry": "ecommerce",
+  "useCase": "payment-reminder",
+  "keywords": [
+    "pending payment reminder whatsapp",
+    "unpaid order message",
+    "payment reminder template ecommerce"
+  ],
+  "notes": "Keep it a reminder about their own order, no discount offers. Include the order number so Meta sees a transactional context.",
+  "approvalRate": 74,
+  "template": {
+    "name": "ecommerce_payment_reminder_pending",
+    "language": "en_US",
+    "category": "UTILITY",
+    "body": {
+      "text": "Hi {{first_name}}, order *#{{order_id}}* for {{amount}} is still waiting for payment. We'll hold your items until {{date}}. Thank you, and reply here if you need anything."
+    },
+    "footer": {
+      "text": "Acme Store"
+    },
+    "buttons": [
+      {
+        "type": "URL",
+        "text": "Pay now",
+        "url": "https://acme.com/pay/{{order_id}}"
+      }
+    ],
+    "variables": {
+      "first_name": {
+        "example": "Maria"
+      },
+      "order_id": {
+        "example": "4512"
+      },
+      "amount": {
+        "example": "$49.90"
+      },
+      "date": {
+        "example": "March 14"
+      }
+    }
+  }
+}

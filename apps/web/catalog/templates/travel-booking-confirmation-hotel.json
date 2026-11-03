@@ -1,0 +1,58 @@
+{
+  "title": "Hotel booking confirmation",
+  "description": "Confirm a hotel reservation on WhatsApp with dates, room type and booking reference. Utility template for hotels and travel agencies.",
+  "industry": "travel",
+  "useCase": "booking-confirmation",
+  "keywords": [
+    "hotel booking confirmation whatsapp",
+    "reservation confirmation message",
+    "hotel reservation template"
+  ],
+  "notes": "Include check-in and check-out dates and a reference; booking details are the clearest utility signal.",
+  "approvalRate": 80,
+  "template": {
+    "name": "travel_booking_confirmation_hotel",
+    "language": "en_US",
+    "category": "UTILITY",
+    "header": {
+      "type": "TEXT",
+      "text": "Reservation confirmed"
+    },
+    "body": {
+      "text": "Hi {{first_name}}, your stay at *{{hotel}}* is confirmed. Check-in is on {{checkin}} and check-out on {{checkout}}, in a {{room}} room. Your booking reference is {{booking_ref}}. We look forward to hosting you!"
+    },
+    "footer": {
+      "text": "Acme Grand Hotel"
+    },
+    "buttons": [
+      {
+        "type": "URL",
+        "text": "Manage booking",
+        "url": "https://acmegrand.com/booking/{{ref}}"
+      }
+    ],
+    "variables": {
+      "first_name": {
+        "example": "Emma"
+      },
+      "hotel": {
+        "example": "Acme Grand Hotel"
+      },
+      "checkin": {
+        "example": "Dec 3"
+      },
+      "checkout": {
+        "example": "Dec 6"
+      },
+      "room": {
+        "example": "Deluxe King"
+      },
+      "booking_ref": {
+        "example": "AG-90412"
+      },
+      "ref": {
+        "example": "AG90412"
+      }
+    }
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "title": "Fitness challenge invitation",
+  "description": "Invite members to a community challenge with sign-up buttons. Event invitation WhatsApp template for gyms and studios. Free to copy and edit.",
+  "industry": "fitness",
+  "useCase": "event-invitation",
+  "keywords": [
+    "fitness challenge invitation whatsapp",
+    "gym event message",
+    "community challenge template"
+  ],
+  "notes": "Give the start date, duration and prize or benefit. A yes/no quick reply makes sign-ups easy to count.",
+  "approvalRate": 98,
+  "template": {
+    "name": "fitness_challenge_invite",
+    "language": "en_US",
+    "category": "MARKETING",
+    "body": {
+      "text": "Hi {{first_name}}, our {{days}}-day Summer Shred Challenge kicks off on {{date}}! Join the community, track your progress and win prizes."
+    },
+    "footer": {
+      "text": "Reply STOP to opt out"
+    },
+    "buttons": [
+      {
+        "type": "QUICK_REPLY",
+        "text": "Count me in"
+      },
+      {
+        "type": "QUICK_REPLY",
+        "text": "Maybe later"
+      }
+    ],
+    "variables": {
+      "first_name": {
+        "example": "Maria"
+      },
+      "days": {
+        "example": "7"
+      },
+      "date": {
+        "example": "March 14"
+      }
+    }
+  }
+}

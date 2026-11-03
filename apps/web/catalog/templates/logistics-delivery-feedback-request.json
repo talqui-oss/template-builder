@@ -1,0 +1,46 @@
+{
+  "title": "Delivery experience rating",
+  "description": "Ask recipients to rate their delivery with quick replies on WhatsApp. Marketing feedback template for carriers and delivery apps.",
+  "industry": "logistics",
+  "useCase": "feedback-request",
+  "keywords": [
+    "delivery feedback whatsapp",
+    "rate delivery message",
+    "courier satisfaction survey"
+  ],
+  "notes": "Send 1 to 2 hours after delivery. Short question plus three buttons gets the highest response.",
+  "approvalRate": 83,
+  "template": {
+    "name": "logistics_delivery_feedback_request",
+    "language": "en_US",
+    "category": "MARKETING",
+    "body": {
+      "text": "Hi {{first_name}}, how was your delivery from {{company}} today?"
+    },
+    "footer": {
+      "text": "Reply STOP to opt out"
+    },
+    "buttons": [
+      {
+        "type": "QUICK_REPLY",
+        "text": "Great"
+      },
+      {
+        "type": "QUICK_REPLY",
+        "text": "Fine"
+      },
+      {
+        "type": "QUICK_REPLY",
+        "text": "Poor"
+      }
+    ],
+    "variables": {
+      "first_name": {
+        "example": "Nora"
+      },
+      "company": {
+        "example": "Northwind Express"
+      }
+    }
+  }
+}

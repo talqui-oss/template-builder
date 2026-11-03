@@ -1,0 +1,51 @@
+{
+  "title": "Appointment booked confirmation",
+  "description": "Confirm a new clinic booking with the doctor, date and location. Booking confirmation WhatsApp template for healthcare providers.",
+  "industry": "healthcare",
+  "useCase": "booking-confirmation",
+  "keywords": [
+    "clinic booking confirmation whatsapp",
+    "appointment confirmed message",
+    "healthcare booking template"
+  ],
+  "notes": "Include how to cancel; patients expect it, and clear transactional intent helps utility approval.",
+  "approvalRate": 70,
+  "template": {
+    "name": "healthcare_appointment_booked",
+    "language": "en_US",
+    "category": "UTILITY",
+    "body": {
+      "text": "Hi {{first_name}}, your appointment with {{doctor}} is booked for {{date}} at {{time}} at {{clinic}}. We'll send a reminder the day before."
+    },
+    "footer": {
+      "text": "Acme Health Clinic"
+    },
+    "buttons": [
+      {
+        "type": "URL",
+        "text": "Manage appointment",
+        "url": "https://acmehealth.example.com/appointments/{{order_id}}"
+      }
+    ],
+    "variables": {
+      "first_name": {
+        "example": "Maria"
+      },
+      "doctor": {
+        "example": "Dr. Silva"
+      },
+      "date": {
+        "example": "March 14"
+      },
+      "time": {
+        "example": "3:30 PM"
+      },
+      "clinic": {
+        "example": "Acme Health Clinic"
+      },
+      "order_id": {
+        "example": "4512"
+      }
+    }
+  }
+}

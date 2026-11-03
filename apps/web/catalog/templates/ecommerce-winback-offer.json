@@ -1,0 +1,46 @@
+{
+  "title": "Win-back offer for lapsed buyers",
+  "description": "Win back customers who have not purchased in months with a personal offer. Re-engagement WhatsApp template for online stores.",
+  "industry": "ecommerce",
+  "useCase": "re-engagement",
+  "keywords": [
+    "whatsapp re-engagement template",
+    "win back customers message",
+    "inactive customer offer"
+  ],
+  "notes": "Target buyers inactive for 60 to 120 days and honor opt-outs strictly. Personalize with the last category they bought.",
+  "approvalRate": 91,
+  "template": {
+    "name": "ecommerce_winback_offer",
+    "language": "en_US",
+    "category": "MARKETING",
+    "body": {
+      "text": "We miss you, {{first_name}}! It's been a while, so here's *{{percent}}% off* your next order. New arrivals are waiting, and the code is valid for {{days}} days."
+    },
+    "footer": {
+      "text": "Reply STOP to opt out"
+    },
+    "buttons": [
+      {
+        "type": "COPY_CODE",
+        "example": "SAVE15"
+      },
+      {
+        "type": "URL",
+        "text": "Browse new arrivals",
+        "url": "https://acme.com/new"
+      }
+    ],
+    "variables": {
+      "first_name": {
+        "example": "Maria"
+      },
+      "percent": {
+        "example": "20"
+      },
+      "days": {
+        "example": "7"
+      }
+    }
+  }
+}

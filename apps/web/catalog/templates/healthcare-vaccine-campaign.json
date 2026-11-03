@@ -1,0 +1,42 @@
+{
+  "title": "Seasonal vaccine campaign",
+  "description": "Announce a seasonal flu vaccine or health campaign and invite patients to book. Seasonal campaign WhatsApp template for clinics.",
+  "industry": "healthcare",
+  "useCase": "seasonal-campaign",
+  "keywords": [
+    "flu shot campaign whatsapp",
+    "vaccination reminder message",
+    "health campaign template"
+  ],
+  "notes": "Public-health promotions are marketing. Keep claims factual and avoid medical advice in the template.",
+  "approvalRate": 77,
+  "template": {
+    "name": "healthcare_vaccine_campaign",
+    "language": "en_US",
+    "category": "MARKETING",
+    "body": {
+      "text": "Hi {{first_name}}, flu season is here. {{clinic}} is offering flu shots from {{date}}, no long waits. Book your slot today."
+    },
+    "footer": {
+      "text": "Reply STOP to opt out"
+    },
+    "buttons": [
+      {
+        "type": "URL",
+        "text": "Book flu shot",
+        "url": "https://acmehealth.example.com/flu"
+      }
+    ],
+    "variables": {
+      "first_name": {
+        "example": "Maria"
+      },
+      "clinic": {
+        "example": "Acme Health Clinic"
+      },
+      "date": {
+        "example": "March 14"
+      }
+    }
+  }
+}

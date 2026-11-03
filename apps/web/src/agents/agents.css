@@ -1,0 +1,226 @@
+/* Agents page (`/agents`): paper background, monospace text column, sticky figure on the right. */
+
+.ag-page {
+  --ag-bg: #fbfaf7;
+  --ag-panel: #f4f2ee;
+  --ag-text: #1c1a17;
+  --ag-muted: #8d877d;
+  --ag-accent: #ff5c30;
+  --ag-code-bg: #efe9e1;
+  --ag-mono: "Geist Mono", ui-monospace, Menlo, monospace;
+
+  display: grid;
+  min-height: 100dvh;
+  background: var(--ag-bg);
+  color: var(--ag-text);
+  font: 13px/1.6 var(--ag-mono);
+  color-scheme: light;
+}
+
+@media (min-width: 1100px) {
+  .ag-page {
+    grid-template-columns: minmax(0, 1fr) minmax(360px, 42%);
+  }
+}
+
+.ag-text {
+  min-width: 0;
+  max-width: 760px;
+  padding: 48px 20px 64px;
+}
+
+@media (min-width: 768px) {
+  .ag-text {
+    padding: 56px 56px 80px;
+  }
+}
+
+.ag-text p,
+.ag-text ul,
+.ag-text pre {
+  margin: 0 0 16px;
+}
+
+.ag-text > .ag-muted {
+  overflow: hidden;
+  white-space: nowrap;
+  margin: 0;
+}
+
+.ag-text h1,
+.ag-text h2 {
+  margin: 40px 0 16px;
+  font: inherit;
+  font-weight: 500;
+  font-size: 15px;
+}
+
+.ag-text h1 {
+  margin-top: 32px;
+}
+
+.ag-gap {
+  margin-top: 120px !important;
+}
+
+.ag-text a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: rgba(28, 26, 23, 0.35);
+  text-underline-offset: 3px;
+}
+
+.ag-text a:hover {
+  color: var(--ag-accent);
+}
+
+.ag-muted {
+  color: var(--ag-muted);
+}
+
+.ag-text code {
+  padding: 1px 4px;
+  border-radius: 3px;
+  background: var(--ag-code-bg);
+  font: inherit;
+}
+
+.ag-tabs button {
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--ag-muted);
+  font: inherit;
+  cursor: pointer;
+}
+
+.ag-tabs button[aria-selected="true"] {
+  color: var(--ag-text);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* Code on the left, its comment pushed to the right. */
+.ag-lines p {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0 24px;
+  margin: 0 0 6px;
+}
+
+.ag-code {
+  color: var(--ag-accent);
+  overflow-wrap: anywhere;
+}
+
+.ag-pre {
+  padding: 16px;
+  border-radius: 4px;
+  background: var(--ag-panel);
+  font: 12px/1.6 var(--ag-mono);
+  overflow-x: auto;
+}
+
+.ag-list {
+  padding: 0;
+  list-style: none;
+}
+
+.ag-list li {
+  position: relative;
+  margin-bottom: 12px;
+  padding-left: 24px;
+}
+
+.ag-list li::before {
+  content: "-";
+  position: absolute;
+  left: 0;
+}
+
+/* Right column: the figure stays in view while the text scrolls. */
+.ag-figure {
+  display: none;
+}
+
+@media (min-width: 1100px) {
+  .ag-figure {
+    position: sticky;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100dvh;
+    border-left: 1px solid rgba(28, 26, 23, 0.08);
+    background: var(--ag-panel);
+    overflow: hidden;
+  }
+}
+
+.ag-figure__art {
+  position: relative !important;
+  inset: auto !important;
+  height: 360px;
+  width: 100%;
+}
+
+.ag-figure__art .lp-ascii__layer {
+  margin: 0;
+  color: rgba(28, 26, 23, 0.4);
+  font: 6px/6px var(--ag-mono);
+  white-space: pre;
+}
+
+.ag-figure__art .lp-ascii__layer--accent {
+  color: var(--ag-accent);
+}
+
+.ag-figure__bubble {
+  margin: 24px 0 0;
+  padding: 10px 14px;
+  border: 1px solid rgba(28, 26, 23, 0.1);
+  border-radius: 4px;
+  background: #fff;
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+.ag-caret {
+  display: inline-block;
+  width: 7px;
+  height: 12px;
+  margin-left: 2px;
+  vertical-align: -2px;
+  background: var(--ag-accent);
+  animation: ag-blink 1s steps(1) infinite;
+}
+
+@keyframes ag-blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+.ag-figure__caption {
+  position: absolute;
+  color: var(--ag-muted);
+  font-size: 10px;
+  letter-spacing: 0.08em;
+}
+
+.ag-figure__caption--top {
+  top: 32px;
+  left: 40px;
+}
+
+.ag-figure__caption--bottom {
+  right: 40px;
+  bottom: 32px;
+}
+
+/* Overscroll shows the body, so match it to the page. */
+body:has(.ag-page) {
+  background: #fbfaf7;
+}

@@ -1,0 +1,46 @@
+{
+  "title": "New menu launch",
+  "description": "Announce a new seasonal menu or dish to past guests. Product launch WhatsApp template for restaurants. Free to copy and edit.",
+  "industry": "restaurants",
+  "useCase": "product-launch",
+  "keywords": [
+    "new menu announcement whatsapp",
+    "seasonal menu message",
+    "restaurant launch template"
+  ],
+  "notes": "Highlight one hero dish by name. Link to the menu rather than pasting it in full.",
+  "approvalRate": 98,
+  "template": {
+    "name": "restaurants_new_menu_launch",
+    "language": "en_US",
+    "category": "MARKETING",
+    "header": {
+      "type": "TEXT",
+      "text": "New autumn menu"
+    },
+    "body": {
+      "text": "Hi {{first_name}}, our new autumn menu is here at {{restaurant}}, led by the *{{item}}*. Come try it this week."
+    },
+    "footer": {
+      "text": "Reply STOP to opt out"
+    },
+    "buttons": [
+      {
+        "type": "URL",
+        "text": "See the menu",
+        "url": "https://northwind.example.com/menu"
+      }
+    ],
+    "variables": {
+      "first_name": {
+        "example": "Maria"
+      },
+      "restaurant": {
+        "example": "Northwind Bistro"
+      },
+      "item": {
+        "example": "Margherita Pizza"
+      }
+    }
+  }
+}

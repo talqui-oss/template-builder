@@ -1,0 +1,48 @@
+{
+  "title": "Booking deposit received",
+  "description": "Confirm a booking deposit payment and explain how it applies to the final bill. Payment confirmation template for beauty studios.",
+  "industry": "beauty",
+  "useCase": "payment-confirmation",
+  "keywords": [
+    "booking deposit confirmation whatsapp",
+    "deposit received message",
+    "salon payment confirmation"
+  ],
+  "notes": "Mention the amount, booking date and refund policy to keep it transactional.",
+  "approvalRate": 87,
+  "template": {
+    "name": "beauty_deposit_payment_confirmed",
+    "language": "en_US",
+    "category": "UTILITY",
+    "body": {
+      "text": "Hi {{first_name}}, we received your deposit of {{amount}} for your {{service}} on {{date}}. It will be deducted from your final bill."
+    },
+    "footer": {
+      "text": "Bloom Studio"
+    },
+    "buttons": [
+      {
+        "type": "URL",
+        "text": "View booking",
+        "url": "https://bloomstudio.example.com/bookings/{{order_id}}"
+      }
+    ],
+    "variables": {
+      "first_name": {
+        "example": "Maria"
+      },
+      "amount": {
+        "example": "$49.90"
+      },
+      "service": {
+        "example": "Haircut"
+      },
+      "date": {
+        "example": "March 14"
+      },
+      "order_id": {
+        "example": "4512"
+      }
+    }
+  }
+}

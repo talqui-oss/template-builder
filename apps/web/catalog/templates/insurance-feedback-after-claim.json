@@ -1,0 +1,46 @@
+{
+  "title": "Claim experience feedback request",
+  "description": "Ask for feedback after an insurance claim closes with a one-tap rating on WhatsApp. Great for NPS and service quality tracking.",
+  "industry": "insurance",
+  "useCase": "feedback-request",
+  "keywords": [
+    "insurance feedback request whatsapp",
+    "claim satisfaction survey message",
+    "nps whatsapp template"
+  ],
+  "notes": "Send within 48 hours of closing the claim. Quick replies keep the survey inside the chat, which lifts response rates.",
+  "approvalRate": 74,
+  "template": {
+    "name": "insurance_feedback_after_claim",
+    "language": "en_US",
+    "category": "MARKETING",
+    "body": {
+      "text": "Hi {{first_name}}, your claim {{claim_no}} has been closed. How would you rate your experience with us?"
+    },
+    "footer": {
+      "text": "Reply STOP to opt out"
+    },
+    "buttons": [
+      {
+        "type": "QUICK_REPLY",
+        "text": "Great"
+      },
+      {
+        "type": "QUICK_REPLY",
+        "text": "Okay"
+      },
+      {
+        "type": "QUICK_REPLY",
+        "text": "Needs work"
+      }
+    ],
+    "variables": {
+      "first_name": {
+        "example": "Grace"
+      },
+      "claim_no": {
+        "example": "CL-558210"
+      }
+    }
+  }
+}

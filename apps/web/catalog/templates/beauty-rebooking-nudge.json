@@ -1,0 +1,48 @@
+{
+  "title": "Time to rebook nudge",
+  "description": "Nudge clients to rebook around when their last service is due again. Re-engagement WhatsApp template for salons and spas.",
+  "industry": "beauty",
+  "useCase": "re-engagement",
+  "keywords": [
+    "salon rebooking message",
+    "time for a touch up whatsapp",
+    "beauty re-engagement template"
+  ],
+  "notes": "Trigger it from the service interval (for example 6 weeks after a colour). Timing matters more than discount.",
+  "approvalRate": 79,
+  "template": {
+    "name": "beauty_rebooking_nudge",
+    "language": "en_US",
+    "category": "MARKETING",
+    "body": {
+      "text": "Hi {{first_name}}, it's been {{days}} days since your last *{{service}}*. Time for a refresh? {{stylist}} has openings this week at {{studio}}. Thank you, and reply here if you need anything."
+    },
+    "footer": {
+      "text": "Reply STOP to opt out"
+    },
+    "buttons": [
+      {
+        "type": "URL",
+        "text": "Book now",
+        "url": "https://bloomstudio.example.com/book"
+      }
+    ],
+    "variables": {
+      "first_name": {
+        "example": "Maria"
+      },
+      "days": {
+        "example": "7"
+      },
+      "service": {
+        "example": "Haircut"
+      },
+      "stylist": {
+        "example": "Ana"
+      },
+      "studio": {
+        "example": "Bloom Studio"
+      }
+    }
+  }
+}

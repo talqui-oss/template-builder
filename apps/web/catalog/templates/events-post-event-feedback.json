@@ -1,0 +1,46 @@
+{
+  "title": "Post-event feedback",
+  "description": "Ask attendees how the event went within a day. Feedback request WhatsApp template for events. Free to copy and edit. Ready to use.",
+  "industry": "events",
+  "useCase": "feedback-request",
+  "keywords": [
+    "event feedback whatsapp",
+    "post event survey message",
+    "attendee rating template"
+  ],
+  "notes": "Send within 24 hours while memories are fresh. One tap beats a long form.",
+  "approvalRate": 90,
+  "template": {
+    "name": "events_post_event_feedback",
+    "language": "en_US",
+    "category": "MARKETING",
+    "body": {
+      "text": "Thanks for joining *{{event_name}}*, {{first_name}}! How was your experience?"
+    },
+    "footer": {
+      "text": "Reply STOP to opt out"
+    },
+    "buttons": [
+      {
+        "type": "QUICK_REPLY",
+        "text": "Great"
+      },
+      {
+        "type": "QUICK_REPLY",
+        "text": "Okay"
+      },
+      {
+        "type": "QUICK_REPLY",
+        "text": "Poor"
+      }
+    ],
+    "variables": {
+      "event_name": {
+        "example": "Summer Fest"
+      },
+      "first_name": {
+        "example": "Maria"
+      }
+    }
+  }
+}

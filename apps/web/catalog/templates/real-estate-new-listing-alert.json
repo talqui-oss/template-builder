@@ -1,0 +1,56 @@
+{
+  "title": "New listing matching your search",
+  "description": "Alert saved-search leads when a new property matches their criteria. Marketing WhatsApp template with price, size and link.",
+  "industry": "real-estate",
+  "useCase": "product-launch",
+  "keywords": [
+    "new listing alert whatsapp",
+    "real estate new property message",
+    "property alert template"
+  ],
+  "notes": "Reference the criteria the user saved so it feels relevant, and keep the opt-out. Include price and bedrooms for scannability.",
+  "approvalRate": 90,
+  "template": {
+    "name": "real_estate_new_listing_alert",
+    "language": "en_US",
+    "category": "MARKETING",
+    "header": {
+      "type": "TEXT",
+      "text": "New home for you"
+    },
+    "body": {
+      "text": "Hi {{first_name}}, a new listing matches your search: *{{bedrooms}} bed in {{neighborhood}}* for {{price}}. It just came on the market and viewings are filling up fast."
+    },
+    "footer": {
+      "text": "Reply STOP to opt out"
+    },
+    "buttons": [
+      {
+        "type": "URL",
+        "text": "View listing",
+        "url": "https://northwindhomes.com/listing/{{listing_id}}"
+      },
+      {
+        "type": "QUICK_REPLY",
+        "text": "Book a viewing"
+      }
+    ],
+    "variables": {
+      "first_name": {
+        "example": "Ravi"
+      },
+      "bedrooms": {
+        "example": "3"
+      },
+      "neighborhood": {
+        "example": "Riverside"
+      },
+      "price": {
+        "example": "$425,000"
+      },
+      "listing_id": {
+        "example": "L88210"
+      }
+    }
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "title": "Choose your delivery slot",
+  "description": "Let customers pick a delivery time slot over WhatsApp for large items or scheduled deliveries. Utility template with quick replies.",
+  "industry": "logistics",
+  "useCase": "appointment-reminder",
+  "keywords": [
+    "delivery slot whatsapp",
+    "schedule delivery message",
+    "delivery time window selection"
+  ],
+  "notes": "Offer up to three slots; the interaction is transactional so it stays utility.",
+  "approvalRate": 88,
+  "template": {
+    "name": "logistics_delivery_slot_selection",
+    "language": "en_US",
+    "category": "UTILITY",
+    "body": {
+      "text": "Hi {{first_name}}, your order {{order}} will be delivered on {{date}}. Please choose the time slot that suits you best."
+    },
+    "footer": {
+      "text": "Acme Logistics"
+    },
+    "buttons": [
+      {
+        "type": "QUICK_REPLY",
+        "text": "8 AM to 12 PM"
+      },
+      {
+        "type": "QUICK_REPLY",
+        "text": "12 PM to 4 PM"
+      },
+      {
+        "type": "QUICK_REPLY",
+        "text": "4 PM to 8 PM"
+      }
+    ],
+    "variables": {
+      "first_name": {
+        "example": "Tara"
+      },
+      "order": {
+        "example": "88123"
+      },
+      "date": {
+        "example": "Nov 9"
+      }
+    }
+  }
+}

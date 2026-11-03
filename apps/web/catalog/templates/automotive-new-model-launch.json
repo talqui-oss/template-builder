@@ -1,0 +1,53 @@
+{
+  "title": "New model launch invitation",
+  "description": "Announce a new car model to prior customers on WhatsApp with a launch event or test drive link. Marketing template for dealers.",
+  "industry": "automotive",
+  "useCase": "product-launch",
+  "keywords": [
+    "car launch whatsapp",
+    "new model announcement message",
+    "dealership product launch"
+  ],
+  "notes": "Show the model name and one differentiator (range, price, safety). Prior buyers respond better to launches.",
+  "approvalRate": 75,
+  "template": {
+    "name": "automotive_new_model_launch",
+    "language": "en_US",
+    "category": "MARKETING",
+    "header": {
+      "type": "TEXT",
+      "text": "Now at the showroom"
+    },
+    "body": {
+      "text": "Meet the all-new *{{model}}*, {{first_name}}. {{highlight}}. Be among the first to see it at Northwind Motors on {{date}}, or book a test drive today."
+    },
+    "footer": {
+      "text": "Reply STOP to opt out"
+    },
+    "buttons": [
+      {
+        "type": "URL",
+        "text": "Book a test drive",
+        "url": "https://northwindmotors.com/test-drive"
+      },
+      {
+        "type": "QUICK_REPLY",
+        "text": "Send brochure"
+      }
+    ],
+    "variables": {
+      "model": {
+        "example": "Northwind EV 3"
+      },
+      "first_name": {
+        "example": "Dana"
+      },
+      "highlight": {
+        "example": "Up to 320 miles of range and a starting price of $34,900"
+      },
+      "date": {
+        "example": "Nov 21"
+      }
+    }
+  }
+}

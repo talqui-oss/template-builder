@@ -1,0 +1,42 @@
+{
+  "title": "Viewing reminder the day before",
+  "description": "Send a day-before reminder for a property viewing on WhatsApp with time, address and what to bring. Cuts no-shows for agents.",
+  "industry": "real-estate",
+  "useCase": "appointment-reminder",
+  "keywords": [
+    "viewing reminder whatsapp",
+    "real estate appointment reminder",
+    "showing reminder template"
+  ],
+  "notes": "Send 18 to 24 hours ahead. Add parking or entry instructions; practical details keep it utility.",
+  "approvalRate": 93,
+  "template": {
+    "name": "real_estate_viewing_reminder_day_before",
+    "language": "en_US",
+    "category": "UTILITY",
+    "body": {
+      "text": "Reminder: your viewing at *{{address}}* is tomorrow at {{time}}. Please bring a photo ID. Reply here if you need to change the time."
+    },
+    "footer": {
+      "text": "Northwind Homes"
+    },
+    "buttons": [
+      {
+        "type": "QUICK_REPLY",
+        "text": "I will be there"
+      },
+      {
+        "type": "QUICK_REPLY",
+        "text": "Need to reschedule"
+      }
+    ],
+    "variables": {
+      "address": {
+        "example": "45 Lakeview Road"
+      },
+      "time": {
+        "example": "2:00 PM"
+      }
+    }
+  }
+}

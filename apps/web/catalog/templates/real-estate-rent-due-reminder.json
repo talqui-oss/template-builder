@@ -1,0 +1,48 @@
+{
+  "title": "Monthly rent due reminder",
+  "description": "Remind tenants that rent is due with amount, date and payment link. A utility WhatsApp template for landlords and property managers.",
+  "industry": "real-estate",
+  "useCase": "payment-reminder",
+  "keywords": [
+    "rent reminder whatsapp template",
+    "rent due message tenant",
+    "property management reminder"
+  ],
+  "notes": "Do not include late fee threats; state the amount and due date plainly. Send 3 days before the first of the month.",
+  "approvalRate": 91,
+  "template": {
+    "name": "real_estate_rent_due_reminder",
+    "language": "en_US",
+    "category": "UTILITY",
+    "body": {
+      "text": "Hi {{first_name}}, rent of *{{amount}}* for {{unit}} is due on {{due_date}}. You can pay online in a few clicks."
+    },
+    "footer": {
+      "text": "Acme Property Management"
+    },
+    "buttons": [
+      {
+        "type": "URL",
+        "text": "Pay rent",
+        "url": "https://acmepm.com/pay/{{ref}}"
+      }
+    ],
+    "variables": {
+      "first_name": {
+        "example": "Sam"
+      },
+      "amount": {
+        "example": "$1,450.00"
+      },
+      "unit": {
+        "example": "Apt 6C"
+      },
+      "due_date": {
+        "example": "Dec 1"
+      },
+      "ref": {
+        "example": "U6C"
+      }
+    }
+  }
+}

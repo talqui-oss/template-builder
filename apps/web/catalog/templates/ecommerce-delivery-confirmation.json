@@ -1,0 +1,45 @@
+{
+  "title": "Package delivered confirmation",
+  "description": "Confirm that a package was delivered and invite customers to report problems. Delivery confirmation WhatsApp template for stores.",
+  "industry": "ecommerce",
+  "useCase": "delivery-confirmation",
+  "keywords": [
+    "package delivered whatsapp",
+    "delivery confirmation message",
+    "order delivered notification"
+  ],
+  "notes": "Utility works here because it reports a completed event. Offer a quick reply for problems rather than a review ask, which is promotional.",
+  "approvalRate": 77,
+  "template": {
+    "name": "ecommerce_delivery_confirmation",
+    "language": "en_US",
+    "category": "UTILITY",
+    "body": {
+      "text": "Hi {{first_name}}, your order *#{{order_id}}* was delivered on {{date}}. If anything looks wrong, tell us and we'll sort it out."
+    },
+    "footer": {
+      "text": "Acme Store"
+    },
+    "buttons": [
+      {
+        "type": "QUICK_REPLY",
+        "text": "Everything is fine"
+      },
+      {
+        "type": "QUICK_REPLY",
+        "text": "Report a problem"
+      }
+    ],
+    "variables": {
+      "first_name": {
+        "example": "Maria"
+      },
+      "order_id": {
+        "example": "4512"
+      },
+      "date": {
+        "example": "March 14"
+      }
+    }
+  }
+}

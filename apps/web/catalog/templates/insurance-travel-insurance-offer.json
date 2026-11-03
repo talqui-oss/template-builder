@@ -1,0 +1,48 @@
+{
+  "title": "Travel insurance add-on offer",
+  "description": "Offer travel insurance to customers with an upcoming trip via WhatsApp, with price and coverage summary. Marketing template.",
+  "industry": "insurance",
+  "useCase": "promotion",
+  "keywords": [
+    "travel insurance whatsapp offer",
+    "insurance upsell message",
+    "trip protection template"
+  ],
+  "notes": "Tie the offer to the traveler's booking to feel relevant. Keep it to one price and one link.",
+  "approvalRate": 87,
+  "template": {
+    "name": "insurance_travel_insurance_offer",
+    "language": "en_US",
+    "category": "MARKETING",
+    "body": {
+      "text": "Hi {{first_name}}, heading to {{destination}} on {{departure_date}}? Protect your trip with travel insurance from *{{price}}*, covering medical costs, delays and lost luggage."
+    },
+    "footer": {
+      "text": "Reply STOP to opt out"
+    },
+    "buttons": [
+      {
+        "type": "URL",
+        "text": "Add coverage",
+        "url": "https://acmeinsurance.com/travel/{{trip_id}}"
+      }
+    ],
+    "variables": {
+      "first_name": {
+        "example": "Diego"
+      },
+      "destination": {
+        "example": "Lisbon"
+      },
+      "departure_date": {
+        "example": "Dec 12"
+      },
+      "price": {
+        "example": "$29"
+      },
+      "trip_id": {
+        "example": "TR4410"
+      }
+    }
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "title": "Ticket payment received",
+  "description": "Confirm payment received for an event ticket order. Payment confirmation WhatsApp template for event organizers. Free to copy and edit.",
+  "industry": "events",
+  "useCase": "payment-confirmation",
+  "keywords": [
+    "ticket payment confirmation whatsapp",
+    "event payment received",
+    "ticket receipt message"
+  ],
+  "notes": "Include amount and order number. Avoid add-on offers to keep it utility.",
+  "approvalRate": 70,
+  "template": {
+    "name": "events_ticket_transfer_payment",
+    "language": "en_US",
+    "category": "UTILITY",
+    "body": {
+      "text": "Hi {{first_name}}, we received your payment of {{amount}} for order *#{{order_id}}*. Your tickets will arrive shortly."
+    },
+    "footer": {
+      "text": "Acme Events"
+    },
+    "buttons": [
+      {
+        "type": "URL",
+        "text": "View order",
+        "url": "https://acmeevents.example.com/orders/{{order_id}}"
+      }
+    ],
+    "variables": {
+      "first_name": {
+        "example": "Maria"
+      },
+      "amount": {
+        "example": "$49.90"
+      },
+      "order_id": {
+        "example": "4512"
+      }
+    }
+  }
+}

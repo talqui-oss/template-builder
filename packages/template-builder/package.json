@@ -17,7 +17,9 @@
     "validation"
   ],
   "type": "module",
-  "sideEffects": false,
+  "sideEffects": [
+    "*.css"
+  ],
   "main": "./dist/index.cjs",
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -38,17 +40,19 @@
       "import": "./dist/adapters/talqui.js",
       "require": "./dist/adapters/talqui.cjs"
     },
+    "./styles.css": "./dist/styles.css",
     "./schema.json": "./dist/schema.json",
+    "./editor.css": "./dist/editor.css",
     "./package.json": "./package.json"
   },
   "files": [
     "dist"
   ],
   "scripts": {
-    "build": "tsup && pnpm schema",
+    "build": "tsup && pnpm schema && cp src/preview/styles.css dist/styles.css && cp src/editor/editor.css dist/editor.css",
     "dev": "tsup --watch",
     "typecheck": "tsc --noEmit",
-    "schema": "ts-json-schema-generator --path src/schema/types.ts --type Template --no-type-check --out dist/schema.json"
+    "schema": "ts-json-schema-generator --path src/schema/types.ts --type Template --id https://template-builder.dev/schema.json --no-type-check --out dist/schema.json"
   },
   "devDependencies": {
     "@template-builder/tsconfig": "workspace:*",

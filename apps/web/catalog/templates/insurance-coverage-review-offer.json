@@ -1,0 +1,42 @@
+{
+  "title": "Annual coverage review offer",
+  "description": "Invite customers to a free annual coverage review on WhatsApp to spot gaps and savings. Marketing template for insurance brokers.",
+  "industry": "insurance",
+  "useCase": "re-engagement",
+  "keywords": [
+    "insurance review offer whatsapp",
+    "coverage review invitation",
+    "broker re-engagement message"
+  ],
+  "notes": "Offer one clear action, like booking a 15-minute call. Mentioning that the review is free and non-binding lowers opt-out rates.",
+  "approvalRate": 87,
+  "template": {
+    "name": "insurance_coverage_review_offer",
+    "language": "en_US",
+    "category": "MARKETING",
+    "body": {
+      "text": "Hi {{first_name}}, it has been a year since your last coverage check. Life changes, and your protection should too. Book a free 15-minute review with {{agent_name}} to see if you can save or close any gaps."
+    },
+    "footer": {
+      "text": "Reply STOP to opt out"
+    },
+    "buttons": [
+      {
+        "type": "QUICK_REPLY",
+        "text": "Book my review"
+      },
+      {
+        "type": "QUICK_REPLY",
+        "text": "Not now"
+      }
+    ],
+    "variables": {
+      "first_name": {
+        "example": "Beth"
+      },
+      "agent_name": {
+        "example": "Jordan"
+      }
+    }
+  }
+}

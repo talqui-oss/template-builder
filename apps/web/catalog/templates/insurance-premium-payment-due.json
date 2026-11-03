@@ -1,0 +1,48 @@
+{
+  "title": "Premium payment due",
+  "description": "A WhatsApp premium reminder for insurers with amount, due date and pay link, so policies do not lapse. Utility category.",
+  "industry": "insurance",
+  "useCase": "payment-reminder",
+  "keywords": [
+    "insurance premium reminder whatsapp",
+    "premium due message",
+    "policy payment reminder template"
+  ],
+  "notes": "Mention the grace period if one exists; it explains the urgency without sounding promotional. Send 5 days and 1 day before due date.",
+  "approvalRate": 81,
+  "template": {
+    "name": "insurance_premium_payment_due",
+    "language": "en_US",
+    "category": "UTILITY",
+    "body": {
+      "text": "Hi {{first_name}}, your premium of *{{amount}}* for policy {{policy_no}} is due on {{due_date}}. Pay before then to keep your coverage active."
+    },
+    "footer": {
+      "text": "Northwind Insurance"
+    },
+    "buttons": [
+      {
+        "type": "URL",
+        "text": "Pay premium",
+        "url": "https://northwindinsurance.com/pay/{{ref}}"
+      }
+    ],
+    "variables": {
+      "first_name": {
+        "example": "Henry"
+      },
+      "amount": {
+        "example": "$98.40"
+      },
+      "policy_no": {
+        "example": "AU-77120"
+      },
+      "due_date": {
+        "example": "Nov 18"
+      },
+      "ref": {
+        "example": "AU77120"
+      }
+    }
+  }
+}

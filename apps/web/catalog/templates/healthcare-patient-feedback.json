@@ -1,0 +1,46 @@
+{
+  "title": "Patient satisfaction survey",
+  "description": "Ask patients to rate their recent visit with quick replies. Feedback request WhatsApp template for healthcare providers.",
+  "industry": "healthcare",
+  "useCase": "feedback-request",
+  "keywords": [
+    "patient feedback whatsapp",
+    "clinic satisfaction survey",
+    "visit rating message"
+  ],
+  "notes": "Send the next day. Ask only about the experience (wait time, staff), never about health outcomes.",
+  "approvalRate": 94,
+  "template": {
+    "name": "healthcare_patient_feedback",
+    "language": "en_US",
+    "category": "MARKETING",
+    "body": {
+      "text": "Hi {{first_name}}, thanks for visiting {{clinic}}. How was your experience with us?"
+    },
+    "footer": {
+      "text": "Reply STOP to opt out"
+    },
+    "buttons": [
+      {
+        "type": "QUICK_REPLY",
+        "text": "Excellent"
+      },
+      {
+        "type": "QUICK_REPLY",
+        "text": "Good"
+      },
+      {
+        "type": "QUICK_REPLY",
+        "text": "Could be better"
+      }
+    ],
+    "variables": {
+      "first_name": {
+        "example": "Maria"
+      },
+      "clinic": {
+        "example": "Acme Health Clinic"
+      }
+    }
+  }
+}

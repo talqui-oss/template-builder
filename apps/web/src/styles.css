@@ -451,6 +451,8 @@ code {
   flex: none;
   width: 440px;
   padding: 24px 0;
+  border-radius: 12px;
+  overflow: hidden;
   background: var(--tb-wallpaper, #f8f6f2);
   background-image: var(--tb-wallpaper-image, none);
   background-size: 640px auto;

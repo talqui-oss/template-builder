@@ -5,10 +5,13 @@ export type ImageFormat = "png" | "jpg" | "webp";
 // The preview is laid out in iOS points, so 3x gives the pixel size of a real iPhone screenshot.
 const SCALE = 3;
 
+// Square corners in the file: the rounded frame is only for the page.
+const OPTIONS = { scale: SCALE, style: { borderRadius: "0" } };
+
 const RENDERERS = {
-  png: (node: HTMLElement) => domToPng(node, { scale: SCALE }),
-  jpg: (node: HTMLElement) => domToJpeg(node, { scale: SCALE, quality: 0.95 }),
-  webp: (node: HTMLElement) => domToWebp(node, { scale: SCALE, quality: 0.95 }),
+  png: (node: HTMLElement) => domToPng(node, OPTIONS),
+  jpg: (node: HTMLElement) => domToJpeg(node, { ...OPTIONS, quality: 0.95 }),
+  webp: (node: HTMLElement) => domToWebp(node, { ...OPTIONS, quality: 0.95 }),
 };
 
 /** Renders the node to an image and starts a download. */

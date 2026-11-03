@@ -72,8 +72,8 @@ jobs:
           TAG: ${{ steps.version.outputs.tag }}
         run: |
           if [[ "$TAG" == *-* ]]; then
-            gh release create "$TAG" --verify-tag --prerelease --generate-notes
+            gh release create "$TAG" --title "$TAG" --verify-tag --prerelease --generate-notes
           else
             awk '/^##? \[?[0-9]/{if (found) exit; found=1; next} found' CHANGELOG.md > notes.md
-            gh release create "$TAG" --verify-tag --latest --notes-file notes.md
+            gh release create "$TAG" --title "$TAG" --verify-tag --latest --notes-file notes.md
           fi

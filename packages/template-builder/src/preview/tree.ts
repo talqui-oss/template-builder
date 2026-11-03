@@ -38,6 +38,7 @@ export function previewTree(
   { platform = "ios", time = "10:24" }: TreeOptions = {},
 ): PreviewNode {
   const content = node("div", "tb-bubble__content", [
+    ...(model.linkPreview ? [linkPreview(model.linkPreview.domain)] : []),
     ...(model.header ? [header(model.header)] : []),
     ...(model.limitedTimeOffer
       ? [node("div", "tb-offer", [model.limitedTimeOffer.text])]
@@ -78,6 +79,20 @@ export function previewTree(
     { "data-platform": platform },
   );
 }
+
+const linkPreview = (domain: string): PreviewNode =>
+  node("div", "tb-link", [
+    node(
+      "svg",
+      "tb-link__icon",
+      [node("path", undefined, [], { d: LINK_ICON })],
+      {
+        viewBox: "0 0 9 9.33",
+        "aria-hidden": "true",
+      },
+    ),
+    node("span", undefined, [domain]),
+  ]);
 
 function header(h: PreviewHeader): PreviewNode {
   switch (h.type) {
@@ -153,6 +168,10 @@ const icon = (name: ButtonIcon): PreviewNode => {
 // the bottom, reaches its tip 6pt out, then ramps up into the rounded corner.
 const TAIL = "M6.2 0C6.2 4.83 3.6 8.63 0 10.33H2Q6.7 9.83 9.8 7.33L12.2 0Z";
 
+// Two chain links, 9 x 9.33pt like the icon in WhatsApp's link preview.
+const LINK_ICON =
+  "M3.9 5.4a2 2 0 0 0 2.9.1l1.4-1.4a2 2 0 0 0-2.9-2.9l-.8.8M5.1 3.9a2 2 0 0 0-2.9-.1L.8 5.2a2 2 0 0 0 2.9 2.9l.8-.8";
+
 // Outline icons drawn for this project, in points. Their boxes match the icons
 // iOS shows, so labels land where they do on the phone.
 const ICONS: Record<
@@ -182,11 +201,13 @@ const ICONS: Record<
     ],
   },
   copy: {
-    width: 15,
-    height: 15,
+    width: 16.67,
+    height: 20.33,
     paths: [
-      "M5.6 5.6h7.8a1 1 0 0 1 1 1v6.8a1 1 0 0 1-1 1H6.6a1 1 0 0 1-1-1Z",
-      "M9.4 3V1.6a1 1 0 0 0-1-1H1.6a1 1 0 0 0-1 1v6.8a1 1 0 0 0 1 1H3",
+      "M1.6 4.8h6.6l3.9 3.9v10.1a1 1 0 0 1-1 1H1.6a1 1 0 0 1-1-1V5.8a1 1 0 0 1 1-1Z",
+      "M8.2 4.8v3.9h3.9",
+      "M4.6 4.8V1.6a1 1 0 0 1 1-1h6.6l3.9 3.9v10.1a1 1 0 0 1-1 1h-3",
+      "M12.2.6v3.9h3.9",
     ],
   },
   list: {

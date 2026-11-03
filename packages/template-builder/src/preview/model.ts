@@ -1,5 +1,13 @@
-import type { Button, CarouselCard, Header, Template } from "../schema/types";
+import type {
+  Button,
+  CarouselCard,
+  Header,
+  StandardTemplate,
+  Template,
+  UrlButton,
+} from "../schema/types";
 import { validate } from "../validate";
+import { replacePlaceholders } from "../variables";
 import type { Issue } from "../validate";
 import { parseText, type Line } from "./format";
 import { localeFor } from "./locale";
@@ -25,6 +33,8 @@ export type PreviewCard = {
 /** Everything a binding needs to draw a template, already resolved. */
 export type PreviewModel = {
   header?: PreviewHeader;
+  /** Shown by WhatsApp at the top when there is no header and a button links out. */
+  linkPreview?: { domain: string };
   limitedTimeOffer?: { text: string; hasExpiration: boolean };
   body: Line[];
   footer?: Line[];
@@ -39,6 +49,8 @@ export type PreviewModel = {
 export type PreviewOptions = {
   /** Values for `{{name}}` placeholders. Falls back to each variable's `example`. */
   values?: Record<string, string>;
+  /** Language of the phone, for the texts WhatsApp itself writes there. Default `en`. */
+  deviceLanguage?: string;
 };
 
 // WhatsApp shows up to 3 buttons; past that it shows 2 and a "See all options" row.
@@ -51,9 +63,10 @@ const SAMPLE_CODE = "123456";
  */
 export function toPreviewModel(
   template: Template,
-  { values = {} }: PreviewOptions = {},
+  { values = {}, deviceLanguage = "en" }: PreviewOptions = {},
 ): PreviewModel {
   const locale = localeFor(template.language);
+  const { seeAllOptions } = localeFor(deviceLanguage);
   const { issues } = validate(template);
 
   if (template.category === "AUTHENTICATION") {
@@ -73,7 +86,7 @@ export function toPreviewModel(
             ),
       ...groupButtons(
         [{ label: template.button.text ?? locale.copyCode, icon: "copy" }],
-        locale.seeAllOptions,
+        seeAllOptions,
       ),
       issues,
     };
@@ -86,13 +99,14 @@ export function toPreviewModel(
 
   return {
     header: template.header && toHeader(template.header, resolve),
+    linkPreview: template.header ? undefined : linkPreview(template, resolve),
     limitedTimeOffer: template.limitedTimeOffer && {
       text: template.limitedTimeOffer.text,
       hasExpiration: template.limitedTimeOffer.hasExpiration ?? false,
     },
     body: parseText(template.body.text, resolve),
     footer: template.footer && parseText(template.footer.text, resolve),
-    ...groupButtons(toButtons(template.buttons), locale.seeAllOptions),
+    ...groupButtons(toButtons(template.buttons), seeAllOptions),
     carousel: template.carousel?.cards.map(
       (card: CarouselCard): PreviewCard => ({
         header: toHeader(card.header, resolve),
@@ -147,6 +161,22 @@ function toButton(button: Button, copyOfferCode: string): PreviewButton {
       return { label: button.text, icon: "list" };
     default:
       return { label: button.text, icon: "reply" };
+  }
+}
+
+function linkPreview(
+  template: StandardTemplate,
+  resolve: (name: string) => string,
+) {
+  const button = template.buttons?.find(
+    (b): b is UrlButton => b.type === "URL",
+  );
+  if (!button) return undefined;
+  try {
+    const url = new URL(replacePlaceholders(button.url, resolve));
+    return { domain: url.hostname.replace(/^www\./, "") };
+  } catch {
+    return undefined;
   }
 }
 

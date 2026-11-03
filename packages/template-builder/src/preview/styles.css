@@ -24,6 +24,7 @@
   --tb-padding-right: 10.5px;
   --tb-padding-top: 6.5px;
   --tb-header-gap: 12px;
+  --tb-media-gap: 4.2px;
   --tb-footer-gap: 8.5px;
   --tb-padding-bottom: 6.33px;
   --tb-button-height: 44px;
@@ -82,6 +83,11 @@
 .tb-bubble__body {
   font-size: 16px;
   line-height: 21px;
+}
+
+/* Without a header the body starts 2pt closer to the top of the bubble. */
+.tb-bubble__content > .tb-bubble__body:first-child {
+  margin-top: -2px;
 }
 
 .tb-line {
@@ -196,17 +202,43 @@
   stroke-linejoin: round;
 }
 
-/* Headers with media */
+/* Media header and link preview: inset 3.33pt from the bubble edge, natural aspect ratio. */
+.tb-header--media,
+.tb-link {
+  display: block;
+  width: calc(100% + var(--tb-padding-x) + var(--tb-padding-right) - 6.67px);
+  margin: calc(3.33px - var(--tb-padding-top))
+    calc(3.33px - var(--tb-padding-right)) var(--tb-media-gap)
+    calc(3.33px - var(--tb-padding-x));
+  border-radius: calc(var(--tb-bubble-radius) - 3.33px);
+}
 
 .tb-header--media {
-  display: block;
-  width: calc(100% + 2 * var(--tb-padding-x) - 8px);
-  margin: calc(4px - var(--tb-padding-top)) calc(4px - var(--tb-padding-x))
-    var(--tb-header-gap);
-  aspect-ratio: 1.91;
-  object-fit: cover;
-  border-radius: calc(var(--tb-bubble-radius) - 4px);
+  height: auto;
   background: var(--tb-divider);
+}
+
+.tb-link {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+  height: 52px;
+  padding: 22.7px 0 0 8.67px;
+  background: #f6f5f5;
+  color: #393939;
+  font-size: 12px;
+  line-height: 16px;
+}
+
+.tb-link__icon {
+  flex: none;
+  width: 9px;
+  height: 9.33px;
+  margin-top: 2.97px;
+  fill: none;
+  stroke: var(--tb-text);
+  stroke-width: 1.1;
+  stroke-linecap: round;
 }
 
 .tb-header--document,

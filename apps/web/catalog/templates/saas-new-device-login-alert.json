@@ -1,0 +1,51 @@
+{
+  "title": "New sign-in security alert",
+  "description": "Alert users to a new device or location sign-in on WhatsApp with a button to secure their account. Utility security template.",
+  "industry": "saas",
+  "useCase": "account-alert",
+  "keywords": [
+    "login alert whatsapp",
+    "new device sign in message",
+    "account security notification"
+  ],
+  "notes": "Include device, city and time. Never include links that ask for a password.",
+  "template": {
+    "name": "saas_new_device_login_alert",
+    "language": "en_US",
+    "category": "UTILITY",
+    "header": {
+      "type": "TEXT",
+      "text": "New sign-in detected"
+    },
+    "body": {
+      "text": "Hi {{first_name}}, we noticed a new sign-in to your Lumen account from *{{device}}* in {{city}} on {{time}}. If this was you, no action is needed."
+    },
+    "footer": {
+      "text": "Lumen Security"
+    },
+    "buttons": [
+      {
+        "type": "QUICK_REPLY",
+        "text": "This was me"
+      },
+      {
+        "type": "QUICK_REPLY",
+        "text": "Secure my account"
+      }
+    ],
+    "variables": {
+      "first_name": {
+        "example": "Ana"
+      },
+      "device": {
+        "example": "Chrome on Windows"
+      },
+      "city": {
+        "example": "Austin"
+      },
+      "time": {
+        "example": "Nov 3, 9:42 AM"
+      }
+    }
+  }
+}

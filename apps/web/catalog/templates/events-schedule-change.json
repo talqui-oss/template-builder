@@ -1,0 +1,44 @@
+{
+  "title": "Schedule change notice",
+  "description": "Notify ticket holders about a change of time or venue. Account alert WhatsApp template for events. Free to copy and edit.",
+  "industry": "events",
+  "useCase": "account-alert",
+  "keywords": [
+    "event schedule change whatsapp",
+    "event update message",
+    "time change notification"
+  ],
+  "notes": "Say clearly what changed and what, if anything, attendees must do. Time-sensitive alerts suit utility.",
+  "template": {
+    "name": "events_schedule_change",
+    "language": "en_US",
+    "category": "UTILITY",
+    "body": {
+      "text": "Important update for *{{event_name}}*, {{first_name}}: the start time has changed to {{time}} on {{date}}. Your tickets remain valid."
+    },
+    "footer": {
+      "text": "Acme Events"
+    },
+    "buttons": [
+      {
+        "type": "URL",
+        "text": "See details",
+        "url": "https://acmeevents.example.com/updates"
+      }
+    ],
+    "variables": {
+      "event_name": {
+        "example": "Summer Fest"
+      },
+      "first_name": {
+        "example": "Maria"
+      },
+      "time": {
+        "example": "3:30 PM"
+      },
+      "date": {
+        "example": "March 14"
+      }
+    }
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "title": "Welcome to your new account",
+  "description": "Welcome new bank or fintech customers on WhatsApp with next steps after account opening. Includes a link to the app and support number.",
+  "industry": "finance",
+  "useCase": "welcome",
+  "keywords": [
+    "bank welcome message whatsapp",
+    "new account welcome template",
+    "fintech onboarding whatsapp"
+  ],
+  "notes": "Send it right after account approval, while the customer expects contact. Welcome messages tied to an account the user just opened are accepted as utility.",
+  "template": {
+    "name": "finance_welcome_new_account",
+    "language": "en_US",
+    "category": "UTILITY",
+    "body": {
+      "text": "Welcome to Lumen Bank, {{first_name}}! Your new account is active. Download the app, set up your card and turn on notifications to start. Our team is here if you need help."
+    },
+    "footer": {
+      "text": "Lumen Bank"
+    },
+    "buttons": [
+      {
+        "type": "URL",
+        "text": "Open the app",
+        "url": "https://lumenbank.com/app"
+      },
+      {
+        "type": "PHONE_NUMBER",
+        "text": "Talk to support",
+        "phoneNumber": "+15550101"
+      }
+    ],
+    "variables": {
+      "first_name": {
+        "example": "Elena"
+      }
+    }
+  }
+}

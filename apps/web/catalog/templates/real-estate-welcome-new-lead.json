@@ -1,0 +1,44 @@
+{
+  "title": "Welcome new property lead",
+  "description": "Reply to a new property enquiry on WhatsApp with the agent's name and next steps. Utility-leaning welcome template for agencies.",
+  "industry": "real-estate",
+  "useCase": "welcome",
+  "keywords": [
+    "real estate lead welcome",
+    "property enquiry reply whatsapp",
+    "agent introduction message"
+  ],
+  "notes": "Send within minutes of the enquiry form; it is a response to the user's own request and is typically approved as utility.",
+  "template": {
+    "name": "real_estate_welcome_new_lead",
+    "language": "en_US",
+    "category": "UTILITY",
+    "body": {
+      "text": "Hi {{first_name}}, thanks for your interest in *{{property}}*. I am {{agent}} from Acme Realty and I will help you with details, pricing and viewings. When would you like to visit?"
+    },
+    "footer": {
+      "text": "Acme Realty"
+    },
+    "buttons": [
+      {
+        "type": "QUICK_REPLY",
+        "text": "This weekend"
+      },
+      {
+        "type": "QUICK_REPLY",
+        "text": "Next week"
+      }
+    ],
+    "variables": {
+      "first_name": {
+        "example": "Mia"
+      },
+      "property": {
+        "example": "12 Maple Avenue"
+      },
+      "agent": {
+        "example": "Chris"
+      }
+    }
+  }
+}

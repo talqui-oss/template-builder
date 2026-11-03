@@ -1,0 +1,55 @@
+{
+  "title": "Property viewing confirmation",
+  "description": "Confirm a property viewing on WhatsApp with address, date, time and agent name. Utility template for agencies and brokers.",
+  "industry": "real-estate",
+  "useCase": "booking-confirmation",
+  "keywords": [
+    "property viewing confirmation whatsapp",
+    "real estate appointment message",
+    "house viewing template"
+  ],
+  "notes": "Include the exact address and agent contact. Quick replies for confirm and reschedule reduce no-shows.",
+  "template": {
+    "name": "real_estate_viewing_confirmation",
+    "language": "en_US",
+    "category": "UTILITY",
+    "header": {
+      "type": "TEXT",
+      "text": "Viewing confirmed"
+    },
+    "body": {
+      "text": "Hi {{first_name}}, your viewing of *{{property}}* is confirmed for {{date}} at {{time}}. Your agent {{agent}} will meet you at the entrance."
+    },
+    "footer": {
+      "text": "Acme Realty"
+    },
+    "buttons": [
+      {
+        "type": "QUICK_REPLY",
+        "text": "Reschedule"
+      },
+      {
+        "type": "PHONE_NUMBER",
+        "text": "Call agent",
+        "phoneNumber": "+15550188"
+      }
+    ],
+    "variables": {
+      "first_name": {
+        "example": "Julia"
+      },
+      "property": {
+        "example": "12 Maple Avenue, Unit 4B"
+      },
+      "date": {
+        "example": "Saturday, Nov 9"
+      },
+      "time": {
+        "example": "10:30 AM"
+      },
+      "agent": {
+        "example": "Ben"
+      }
+    }
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "title": "Pre-approved loan offer",
+  "description": "Promote a pre-approved personal loan on WhatsApp with limit, rate and a call to action. Marketing template for banks and lenders.",
+  "industry": "finance",
+  "useCase": "promotion",
+  "keywords": [
+    "pre approved loan whatsapp",
+    "loan offer message template",
+    "personal loan whatsapp marketing"
+  ],
+  "notes": "Disclose the key term (rate or APR) in the message and keep opt-out in the footer; credit offers with vague claims are often rejected.",
+  "template": {
+    "name": "finance_loan_offer_pre_approved",
+    "language": "en_US",
+    "category": "MARKETING",
+    "header": {
+      "type": "TEXT",
+      "text": "You are pre-approved"
+    },
+    "body": {
+      "text": "Good news, {{first_name}}! You have a pre-approved personal loan of up to *{{limit}}* with rates from {{rate}} per month. No paperwork, and the money can reach your account the same day."
+    },
+    "footer": {
+      "text": "Reply STOP to opt out"
+    },
+    "buttons": [
+      {
+        "type": "URL",
+        "text": "See my offer",
+        "url": "https://lumenbank.com/offers/{{offer_id}}"
+      },
+      {
+        "type": "QUICK_REPLY",
+        "text": "Not interested"
+      }
+    ],
+    "variables": {
+      "first_name": {
+        "example": "Sofia"
+      },
+      "limit": {
+        "example": "$15,000"
+      },
+      "rate": {
+        "example": "1.2%"
+      },
+      "offer_id": {
+        "example": "PA2291"
+      }
+    }
+  }
+}

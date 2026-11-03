@@ -1,0 +1,42 @@
+{
+  "title": "New collection launch",
+  "description": "Announce a new product collection to your subscribers with early access. Product launch WhatsApp template for ecommerce brands.",
+  "industry": "ecommerce",
+  "useCase": "product-launch",
+  "keywords": [
+    "product launch whatsapp template",
+    "new collection announcement",
+    "early access message ecommerce"
+  ],
+  "notes": "Lead with what is new and why they get early access. Send once; repeated launch blasts drive blocks and lower your quality rating.",
+  "template": {
+    "name": "ecommerce_new_collection_launch",
+    "language": "en_US",
+    "category": "MARKETING",
+    "header": {
+      "type": "TEXT",
+      "text": "Early access: new collection"
+    },
+    "body": {
+      "text": "Hi {{first_name}}, our *Spring Collection* just dropped, and you get early access before everyone else. Pieces like the {{product_name}} are already moving fast."
+    },
+    "footer": {
+      "text": "Reply STOP to opt out"
+    },
+    "buttons": [
+      {
+        "type": "URL",
+        "text": "Shop the collection",
+        "url": "https://acme.com/spring"
+      }
+    ],
+    "variables": {
+      "first_name": {
+        "example": "Maria"
+      },
+      "product_name": {
+        "example": "Linen Shirt"
+      }
+    }
+  }
+}

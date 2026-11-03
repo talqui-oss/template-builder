@@ -1,0 +1,48 @@
+{
+  "title": "Store visit feedback",
+  "description": "Ask shoppers to rate a recent store visit with one-tap replies. Feedback request WhatsApp template for retail experience.",
+  "industry": "retail",
+  "useCase": "feedback-request",
+  "keywords": [
+    "store visit feedback whatsapp",
+    "customer satisfaction message retail",
+    "rate your visit template"
+  ],
+  "notes": "Send the same day or the next morning while the visit is fresh. One question with button answers beats a long survey link.",
+  "template": {
+    "name": "retail_feedback_store_visit",
+    "language": "en_US",
+    "category": "MARKETING",
+    "body": {
+      "text": "Hi {{first_name}}, thanks for visiting {{store_name}} on {{date}}. How was your experience with us?"
+    },
+    "footer": {
+      "text": "Reply STOP to opt out"
+    },
+    "buttons": [
+      {
+        "type": "QUICK_REPLY",
+        "text": "Great"
+      },
+      {
+        "type": "QUICK_REPLY",
+        "text": "Good"
+      },
+      {
+        "type": "QUICK_REPLY",
+        "text": "Needs work"
+      }
+    ],
+    "variables": {
+      "first_name": {
+        "example": "Maria"
+      },
+      "store_name": {
+        "example": "Acme Store"
+      },
+      "date": {
+        "example": "March 14"
+      }
+    }
+  }
+}

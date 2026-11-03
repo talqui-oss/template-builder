@@ -1,0 +1,41 @@
+{
+  "title": "Holiday season campaign",
+  "description": "Fill the holiday calendar with a seasonal campaign for gift cards and party-ready services. Seasonal campaign WhatsApp template.",
+  "industry": "beauty",
+  "useCase": "seasonal-campaign",
+  "keywords": [
+    "holiday beauty promotion whatsapp",
+    "gift card campaign message",
+    "seasonal salon template"
+  ],
+  "notes": "Send 3 weeks before the holiday; calendars fill early. Mention gift cards as an easy last-minute option.",
+  "template": {
+    "name": "beauty_holiday_glow_campaign",
+    "language": "en_US",
+    "category": "MARKETING",
+    "body": {
+      "text": "Hi {{first_name}}, holiday bookings at {{studio}} are open! Get party-ready with a {{service}}, or give the gift of self-care with a gift card."
+    },
+    "footer": {
+      "text": "Reply STOP to opt out"
+    },
+    "buttons": [
+      {
+        "type": "URL",
+        "text": "Book or buy a gift card",
+        "url": "https://bloomstudio.example.com/holiday"
+      }
+    ],
+    "variables": {
+      "first_name": {
+        "example": "Maria"
+      },
+      "studio": {
+        "example": "Bloom Studio"
+      },
+      "service": {
+        "example": "Haircut"
+      }
+    }
+  }
+}

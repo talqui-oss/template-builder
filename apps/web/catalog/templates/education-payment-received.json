@@ -1,0 +1,44 @@
+{
+  "title": "Tuition payment received",
+  "description": "Confirm a tuition or fee payment with amount and receipt link. Payment confirmation WhatsApp template for education providers.",
+  "industry": "education",
+  "useCase": "payment-confirmation",
+  "keywords": [
+    "tuition payment confirmation whatsapp",
+    "school fee receipt message",
+    "payment received template"
+  ],
+  "notes": "Add the receipt number. Never use the confirmation to promote other courses.",
+  "template": {
+    "name": "education_payment_received",
+    "language": "en_US",
+    "category": "UTILITY",
+    "body": {
+      "text": "Hi {{first_name}}, we received your payment of {{amount}} on {{date}}. Thank you! Your receipt is available below."
+    },
+    "footer": {
+      "text": "Acme Academy"
+    },
+    "buttons": [
+      {
+        "type": "URL",
+        "text": "Download receipt",
+        "url": "https://acmeacademy.example.com/receipts/{{invoice_id}}"
+      }
+    ],
+    "variables": {
+      "first_name": {
+        "example": "Maria"
+      },
+      "amount": {
+        "example": "$49.90"
+      },
+      "date": {
+        "example": "March 14"
+      },
+      "invoice_id": {
+        "example": "INV-208"
+      }
+    }
+  }
+}

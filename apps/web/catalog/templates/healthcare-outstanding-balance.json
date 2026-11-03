@@ -1,0 +1,44 @@
+{
+  "title": "Outstanding balance reminder",
+  "description": "Gently remind patients about an unpaid balance with a secure payment link. Payment reminder WhatsApp template for clinics.",
+  "industry": "healthcare",
+  "useCase": "payment-reminder",
+  "keywords": [
+    "unpaid invoice reminder clinic",
+    "medical bill reminder whatsapp",
+    "payment reminder healthcare"
+  ],
+  "notes": "Use a courteous tone and cite the invoice and due date. Avoid threats; they hurt delivery and reviews.",
+  "template": {
+    "name": "healthcare_outstanding_balance",
+    "language": "en_US",
+    "category": "UTILITY",
+    "body": {
+      "text": "Hi {{first_name}}, invoice *{{invoice_id}}* for {{amount}} is due on {{date}}. You can pay securely online whenever it suits you."
+    },
+    "footer": {
+      "text": "Acme Health Clinic"
+    },
+    "buttons": [
+      {
+        "type": "URL",
+        "text": "Pay invoice",
+        "url": "https://acmehealth.example.com/pay/{{invoice_id}}"
+      }
+    ],
+    "variables": {
+      "first_name": {
+        "example": "Maria"
+      },
+      "invoice_id": {
+        "example": "INV-208"
+      },
+      "amount": {
+        "example": "$49.90"
+      },
+      "date": {
+        "example": "March 14"
+      }
+    }
+  }
+}

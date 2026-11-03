@@ -1,0 +1,44 @@
+{
+  "title": "Next event announcement",
+  "description": "Announce the next edition of a recurring event to past attendees. Product launch WhatsApp template for event organizers.",
+  "industry": "events",
+  "useCase": "product-launch",
+  "keywords": [
+    "next event announcement whatsapp",
+    "save the date message",
+    "recurring event template"
+  ],
+  "notes": "Past attendees convert best. Lead with date and city.",
+  "template": {
+    "name": "events_next_event_announcement",
+    "language": "en_US",
+    "category": "MARKETING",
+    "body": {
+      "text": "Hi {{first_name}}, save the date! *{{event_name}}* returns to {{city}} on {{date}}, and past attendees get first access to tickets."
+    },
+    "footer": {
+      "text": "Reply STOP to opt out"
+    },
+    "buttons": [
+      {
+        "type": "URL",
+        "text": "Get early access",
+        "url": "https://acmeevents.example.com/next"
+      }
+    ],
+    "variables": {
+      "first_name": {
+        "example": "Maria"
+      },
+      "event_name": {
+        "example": "Summer Fest"
+      },
+      "city": {
+        "example": "Austin"
+      },
+      "date": {
+        "example": "March 14"
+      }
+    }
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "title": "Bank login verification code",
+  "description": "Authentication template for sending one-time passcodes to verify a banking login or transaction on WhatsApp. Copy-code button included.",
+  "industry": "finance",
+  "useCase": "verification-code",
+  "keywords": [
+    "whatsapp otp message example",
+    "bank verification code template",
+    "one time passcode whatsapp"
+  ],
+  "notes": "Authentication templates take no custom text; Meta writes the body. Set a short expiry (5 to 10 minutes) for banking flows.",
+  "template": {
+    "name": "finance_login_verification_code",
+    "language": "en_US",
+    "category": "AUTHENTICATION",
+    "body": {
+      "addSecurityRecommendation": true
+    },
+    "footer": {
+      "codeExpirationMinutes": 10
+    },
+    "button": {
+      "type": "OTP",
+      "otpType": "COPY_CODE"
+    }
+  }
+}

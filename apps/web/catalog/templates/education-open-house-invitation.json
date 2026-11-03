@@ -1,0 +1,47 @@
+{
+  "title": "Open house invitation",
+  "description": "Invite prospective students to an open house or info session. Event invitation WhatsApp template for schools and colleges.",
+  "industry": "education",
+  "useCase": "event-invitation",
+  "keywords": [
+    "open house invitation whatsapp",
+    "school info session message",
+    "admissions event template"
+  ],
+  "notes": "Include date, time and venue. RSVP buttons help with headcount.",
+  "template": {
+    "name": "education_open_house_invitation",
+    "language": "en_US",
+    "category": "MARKETING",
+    "body": {
+      "text": "Hi {{first_name}}, you're invited to our Open House at {{school}} on {{date}} at {{time}}. Meet teachers, tour the campus and ask admissions anything."
+    },
+    "footer": {
+      "text": "Reply STOP to opt out"
+    },
+    "buttons": [
+      {
+        "type": "QUICK_REPLY",
+        "text": "RSVP yes"
+      },
+      {
+        "type": "QUICK_REPLY",
+        "text": "Send me details"
+      }
+    ],
+    "variables": {
+      "first_name": {
+        "example": "Maria"
+      },
+      "school": {
+        "example": "Acme Academy"
+      },
+      "date": {
+        "example": "March 14"
+      },
+      "time": {
+        "example": "3:30 PM"
+      }
+    }
+  }
+}

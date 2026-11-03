@@ -1,0 +1,55 @@
+{
+  "title": "Auto insurance quote follow-up",
+  "description": "Follow up an auto insurance quote on WhatsApp with price, coverage highlights and a button to buy. Marketing template for brokers.",
+  "industry": "insurance",
+  "useCase": "promotion",
+  "keywords": [
+    "insurance quote whatsapp template",
+    "car insurance quote follow up",
+    "insurance lead follow up message"
+  ],
+  "notes": "Quote follow-ups are marketing unless the user explicitly asked for a quote by message. Include the validity period to add urgency honestly.",
+  "template": {
+    "name": "insurance_auto_insurance_quote",
+    "language": "en_US",
+    "category": "MARKETING",
+    "header": {
+      "type": "TEXT",
+      "text": "Your quote is ready"
+    },
+    "body": {
+      "text": "Hi {{first_name}}, your car insurance quote for the {{vehicle}} is ready: *{{price}}* per month with full coverage. The quote is valid until {{valid_until}}, so review it soon."
+    },
+    "footer": {
+      "text": "Reply STOP to opt out"
+    },
+    "buttons": [
+      {
+        "type": "URL",
+        "text": "Get covered",
+        "url": "https://acmeinsurance.com/quote/{{quote_id}}"
+      },
+      {
+        "type": "QUICK_REPLY",
+        "text": "Adjust coverage"
+      }
+    ],
+    "variables": {
+      "first_name": {
+        "example": "Nina"
+      },
+      "vehicle": {
+        "example": "2021 Honda Civic"
+      },
+      "price": {
+        "example": "$74"
+      },
+      "valid_until": {
+        "example": "Nov 20"
+      },
+      "quote_id": {
+        "example": "Q90812"
+      }
+    }
+  }
+}

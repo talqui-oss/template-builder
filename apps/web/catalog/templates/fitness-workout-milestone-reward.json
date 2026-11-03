@@ -1,0 +1,34 @@
+{
+  "title": "Workout milestone reward",
+  "description": "Celebrate a member's visit milestone and give a perk. Loyalty reward WhatsApp template for fitness studios. Free to copy and edit.",
+  "industry": "fitness",
+  "useCase": "loyalty-reward",
+  "keywords": [
+    "gym rewards whatsapp",
+    "milestone reward message",
+    "fitness loyalty template"
+  ],
+  "notes": "Use the real visit count so it feels personal. Pair it with a small, concrete perk.",
+  "template": {
+    "name": "fitness_workout_milestone_reward",
+    "language": "en_US",
+    "category": "MARKETING",
+    "body": {
+      "text": "Amazing, {{first_name}}! You've hit *{{points}} workouts* at Acme Fitness. As a thank you, enjoy a free {{reward}} at the front desk."
+    },
+    "footer": {
+      "text": "Reply STOP to opt out"
+    },
+    "variables": {
+      "first_name": {
+        "example": "Maria"
+      },
+      "points": {
+        "example": "250"
+      },
+      "reward": {
+        "example": "$10 credit"
+      }
+    }
+  }
+}

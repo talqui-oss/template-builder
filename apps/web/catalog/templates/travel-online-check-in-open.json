@@ -1,0 +1,47 @@
+{
+  "title": "Online check-in is open",
+  "description": "Tell passengers that online check-in is open, with flight number and departure time. Utility WhatsApp template for airlines.",
+  "industry": "travel",
+  "useCase": "appointment-reminder",
+  "keywords": [
+    "online check in whatsapp",
+    "flight check in reminder",
+    "boarding pass message"
+  ],
+  "notes": "Send 24 hours before departure. A direct check-in link is the one call to action you need.",
+  "template": {
+    "name": "travel_online_check_in_open",
+    "language": "en_US",
+    "category": "UTILITY",
+    "body": {
+      "text": "Hi {{first_name}}, online check-in for flight *{{flight}}* departing {{date}} at {{time}} is now open. Check in now to pick your seat and get your boarding pass."
+    },
+    "footer": {
+      "text": "Northwind Air"
+    },
+    "buttons": [
+      {
+        "type": "URL",
+        "text": "Check in",
+        "url": "https://northwindair.com/checkin/{{ref}}"
+      }
+    ],
+    "variables": {
+      "first_name": {
+        "example": "Priya"
+      },
+      "flight": {
+        "example": "NW214"
+      },
+      "date": {
+        "example": "Nov 12"
+      },
+      "time": {
+        "example": "7:15 PM"
+      },
+      "ref": {
+        "example": "PNR8KD2"
+      }
+    }
+  }
+}

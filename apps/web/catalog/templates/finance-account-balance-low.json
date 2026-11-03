@@ -1,0 +1,40 @@
+{
+  "title": "Low balance alert",
+  "description": "Warn customers on WhatsApp when their account balance falls below a threshold they set. A short utility alert for banks and wallets.",
+  "industry": "finance",
+  "useCase": "account-alert",
+  "keywords": [
+    "low balance alert whatsapp",
+    "account balance notification",
+    "bank balance alert message"
+  ],
+  "notes": "This works as utility only because the customer opted into the alert; do not add loan or overdraft offers to the text.",
+  "template": {
+    "name": "finance_account_balance_low",
+    "language": "en_US",
+    "category": "UTILITY",
+    "body": {
+      "text": "Hi {{first_name}}, your {{account_type}} account ending in {{last4}} has a balance of *{{balance}}*, which is below the alert limit you set of {{threshold}}. Consider adding funds soon."
+    },
+    "footer": {
+      "text": "Acme Bank"
+    },
+    "variables": {
+      "first_name": {
+        "example": "Joel"
+      },
+      "account_type": {
+        "example": "checking"
+      },
+      "last4": {
+        "example": "2208"
+      },
+      "balance": {
+        "example": "$42.10"
+      },
+      "threshold": {
+        "example": "$100.00"
+      }
+    }
+  }
+}

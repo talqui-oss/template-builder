@@ -1,0 +1,47 @@
+{
+  "title": "Subscription renews soon",
+  "description": "Notify subscribers that their plan renews in a few days with amount and date. Utility renewal reminder template for SaaS.",
+  "industry": "saas",
+  "useCase": "renewal-reminder",
+  "keywords": [
+    "subscription renewal reminder whatsapp",
+    "saas billing reminder",
+    "annual plan renewal message"
+  ],
+  "notes": "Annual renewals should be sent 7 to 14 days ahead; monthly ones 3 days. Link to manage plan for easy cancellation.",
+  "template": {
+    "name": "saas_subscription_renewal_upcoming",
+    "language": "en_US",
+    "category": "UTILITY",
+    "body": {
+      "text": "Hi {{first_name}}, your {{plan}} subscription renews on *{{renewal_date}}* for {{amount}}. No action is needed. You can manage your plan any time."
+    },
+    "footer": {
+      "text": "Lumen Billing"
+    },
+    "buttons": [
+      {
+        "type": "URL",
+        "text": "Manage plan",
+        "url": "https://lumen.app/billing/{{ref}}"
+      }
+    ],
+    "variables": {
+      "first_name": {
+        "example": "Ben"
+      },
+      "plan": {
+        "example": "Lumen Pro annual"
+      },
+      "renewal_date": {
+        "example": "Dec 1"
+      },
+      "amount": {
+        "example": "$468.00"
+      },
+      "ref": {
+        "example": "acct_1021"
+      }
+    }
+  }
+}

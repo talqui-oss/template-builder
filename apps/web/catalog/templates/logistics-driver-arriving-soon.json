@@ -1,0 +1,44 @@
+{
+  "title": "Driver arriving soon",
+  "description": "Alert customers that their driver is a few minutes away with name and vehicle. Utility WhatsApp template for last-mile delivery.",
+  "industry": "logistics",
+  "useCase": "shipping-update",
+  "keywords": [
+    "driver arriving message",
+    "last mile delivery whatsapp",
+    "courier arriving soon template"
+  ],
+  "notes": "Send when the driver is 10 to 15 minutes away. Driver name and vehicle info build trust.",
+  "template": {
+    "name": "logistics_driver_arriving_soon",
+    "language": "en_US",
+    "category": "UTILITY",
+    "body": {
+      "text": "Hi {{first_name}}, your driver {{driver}} is about {{minutes}} minutes away with your order. Look out for the vehicle: {{vehicle}}. Please be ready to receive it."
+    },
+    "footer": {
+      "text": "Acme Logistics"
+    },
+    "buttons": [
+      {
+        "type": "PHONE_NUMBER",
+        "text": "Call driver",
+        "phoneNumber": "+15550155"
+      }
+    ],
+    "variables": {
+      "first_name": {
+        "example": "Ivy"
+      },
+      "driver": {
+        "example": "Marcos"
+      },
+      "minutes": {
+        "example": "12"
+      },
+      "vehicle": {
+        "example": "white van, plate KLM 482"
+      }
+    }
+  }
+}

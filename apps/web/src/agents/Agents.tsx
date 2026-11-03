@@ -112,6 +112,14 @@ export function Agents() {
           ))}
         </div>
 
+        <h2>* CATALOG</h2>
+        <p>
+          Hundreds of ready templates by industry and use case at{" "}
+          <a href="/catalog">/catalog</a>. Each one is also plain JSON at{" "}
+          <code>/catalog/&lt;slug&gt;.json</code>, listed in{" "}
+          <a href="/llms.txt">/llms.txt</a>.
+        </p>
+
         <h2>* SCHEMA</h2>
         <p>
           A template is one JSON document. Placeholders are named,{" "}
@@ -183,6 +191,9 @@ export function Agents() {
           <a href={NPM}>npm</a> <span className="ag-muted">|</span>{" "}
           <a href="/schema.json">schema.json</a>{" "}
           <span className="ag-muted">|</span> <a href="/llms.txt">llms.txt</a>{" "}
+          <span className="ag-muted">|</span>{" "}
+          <a href="/llms-full.txt">llms-full.txt</a>{" "}
+          <span className="ag-muted">|</span> <a href="/catalog">catalog</a>{" "}
           <span className="ag-muted">|</span>{" "}
           <a href="/playground">playground</a>{" "}
           <span className="ag-muted">|</span> <a href="/">for humans</a>

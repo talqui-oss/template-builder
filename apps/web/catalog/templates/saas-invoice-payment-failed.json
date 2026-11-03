@@ -1,0 +1,54 @@
+{
+  "title": "Payment failed notice",
+  "description": "Tell customers a subscription payment failed on WhatsApp, with next retry date and a link to update their card. Utility template.",
+  "industry": "saas",
+  "useCase": "payment-reminder",
+  "keywords": [
+    "payment failed whatsapp",
+    "subscription payment failed message",
+    "dunning message template"
+  ],
+  "notes": "State the amount, last 4 digits and retry date. A single update-card link is all you need.",
+  "template": {
+    "name": "saas_invoice_payment_failed",
+    "language": "en_US",
+    "category": "UTILITY",
+    "header": {
+      "type": "TEXT",
+      "text": "Payment failed"
+    },
+    "body": {
+      "text": "Hi {{first_name}}, we could not process your *{{amount}}* payment for {{plan}} using the card ending in {{last4}}. We will try again on {{retry_date}}. Update your card to avoid interruption."
+    },
+    "footer": {
+      "text": "Lumen Billing"
+    },
+    "buttons": [
+      {
+        "type": "URL",
+        "text": "Update card",
+        "url": "https://lumen.app/billing/{{ref}}"
+      }
+    ],
+    "variables": {
+      "first_name": {
+        "example": "Ben"
+      },
+      "amount": {
+        "example": "$49.00"
+      },
+      "plan": {
+        "example": "Lumen Pro"
+      },
+      "last4": {
+        "example": "4242"
+      },
+      "retry_date": {
+        "example": "Nov 8"
+      },
+      "ref": {
+        "example": "acct_1021"
+      }
+    }
+  }
+}

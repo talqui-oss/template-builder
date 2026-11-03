@@ -1,0 +1,49 @@
+{
+  "title": "New feature announcement",
+  "description": "Announce a product launch on WhatsApp with a one-line benefit and a link to try it. Marketing template for SaaS teams. Copy it and adapt the brand.",
+  "industry": "saas",
+  "useCase": "product-launch",
+  "keywords": [
+    "product update whatsapp",
+    "new feature announcement template",
+    "saas launch message"
+  ],
+  "notes": "Lead with the user benefit, not the feature name. Send only to users who opted in to product news.",
+  "template": {
+    "name": "saas_new_feature_launch",
+    "language": "en_US",
+    "category": "MARKETING",
+    "header": {
+      "type": "TEXT",
+      "text": "New in Lumen"
+    },
+    "body": {
+      "text": "Hi {{first_name}}, {{feature}} just landed in Lumen. {{benefit}}. It is live in your workspace today."
+    },
+    "footer": {
+      "text": "Reply STOP to opt out"
+    },
+    "buttons": [
+      {
+        "type": "URL",
+        "text": "Try it now",
+        "url": "https://lumen.app/whats-new"
+      },
+      {
+        "type": "QUICK_REPLY",
+        "text": "Not now"
+      }
+    ],
+    "variables": {
+      "first_name": {
+        "example": "Ana"
+      },
+      "feature": {
+        "example": "Smart Reports"
+      },
+      "benefit": {
+        "example": "Build a weekly summary in two clicks instead of two hours"
+      }
+    }
+  }
+}

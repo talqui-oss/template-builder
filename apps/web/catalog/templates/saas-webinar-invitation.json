@@ -1,0 +1,51 @@
+{
+  "title": "Product webinar invitation",
+  "description": "Invite customers to a live product webinar or training session over WhatsApp with date, topic and registration link. Marketing template.",
+  "industry": "saas",
+  "useCase": "event-invitation",
+  "keywords": [
+    "webinar invitation whatsapp",
+    "saas event invite",
+    "product training invitation"
+  ],
+  "notes": "Include date, time zone and the single outcome attendees get. Send once, then a reminder 1 hour before.",
+  "template": {
+    "name": "saas_webinar_invitation",
+    "language": "en_US",
+    "category": "MARKETING",
+    "header": {
+      "type": "TEXT",
+      "text": "Live webinar"
+    },
+    "body": {
+      "text": "Join our live session, {{first_name}}: *{{topic}}*. {{date}} at {{time}}. Learn practical tips from our product team and get your questions answered."
+    },
+    "footer": {
+      "text": "Reply STOP to opt out"
+    },
+    "buttons": [
+      {
+        "type": "URL",
+        "text": "Save my seat",
+        "url": "https://lumen.app/webinar/{{reg_id}}"
+      }
+    ],
+    "variables": {
+      "first_name": {
+        "example": "Ana"
+      },
+      "topic": {
+        "example": "Automating weekly reports in Lumen"
+      },
+      "date": {
+        "example": "Nov 19"
+      },
+      "time": {
+        "example": "11 AM ET"
+      },
+      "reg_id": {
+        "example": "wb1119"
+      }
+    }
+  }
+}

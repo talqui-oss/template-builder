@@ -1,0 +1,45 @@
+{
+  "title": "Enrollment confirmation",
+  "description": "Confirm a course enrollment with start date and access link. Booking confirmation WhatsApp template for schools and online courses.",
+  "industry": "education",
+  "useCase": "booking-confirmation",
+  "keywords": [
+    "course enrollment confirmation whatsapp",
+    "student enrollment message",
+    "school registration template"
+  ],
+  "notes": "Include start date and where classes happen. Utility approval relies on it confirming a student action.",
+  "template": {
+    "name": "education_enrollment_confirmed",
+    "language": "en_US",
+    "category": "UTILITY",
+    "header": {
+      "type": "TEXT",
+      "text": "Enrollment confirmed"
+    },
+    "body": {
+      "text": "Congratulations {{first_name}}, you're enrolled in *{{course}}* at {{school}}. Classes start on {{date}}, and your login details are on the way."
+    },
+    "buttons": [
+      {
+        "type": "URL",
+        "text": "Open student portal",
+        "url": "https://acmeacademy.example.com/portal"
+      }
+    ],
+    "variables": {
+      "first_name": {
+        "example": "Maria"
+      },
+      "course": {
+        "example": "Intro to Design"
+      },
+      "school": {
+        "example": "Acme Academy"
+      },
+      "date": {
+        "example": "March 14"
+      }
+    }
+  }
+}

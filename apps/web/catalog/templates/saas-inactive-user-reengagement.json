@@ -1,0 +1,44 @@
+{
+  "title": "Inactive user re-engagement",
+  "description": "Win back users who have not logged in lately with a short WhatsApp message and a quick reply. Marketing template for SaaS churn.",
+  "industry": "saas",
+  "useCase": "re-engagement",
+  "keywords": [
+    "saas reengagement whatsapp",
+    "inactive user message",
+    "churn prevention template"
+  ],
+  "notes": "Reference concrete progress (projects saved) to make it personal. Ask a question; it beats pushing a login.",
+  "template": {
+    "name": "saas_inactive_user_reengagement",
+    "language": "en_US",
+    "category": "MARKETING",
+    "body": {
+      "text": "Hi {{first_name}}, we have not seen you in Lumen for {{days}} days. Your {{projects}} projects are still waiting. Is there anything we can help you with?"
+    },
+    "footer": {
+      "text": "Reply STOP to opt out"
+    },
+    "buttons": [
+      {
+        "type": "QUICK_REPLY",
+        "text": "I need help"
+      },
+      {
+        "type": "QUICK_REPLY",
+        "text": "Show me what is new"
+      }
+    ],
+    "variables": {
+      "first_name": {
+        "example": "Ana"
+      },
+      "days": {
+        "example": "21"
+      },
+      "projects": {
+        "example": "4"
+      }
+    }
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "title": "Cashback rewards earned",
+  "description": "Let cardholders know the cashback they earned this month and how to redeem it. Marketing loyalty template for banks and card programs.",
+  "industry": "finance",
+  "useCase": "loyalty-reward",
+  "keywords": [
+    "cashback rewards whatsapp",
+    "credit card rewards message",
+    "loyalty points notification bank"
+  ],
+  "notes": "Rewards messaging counts as marketing, so keep the opt-out line. Showing the exact amount earned improves click-through more than generic copy.",
+  "template": {
+    "name": "finance_cashback_rewards_earned",
+    "language": "en_US",
+    "category": "MARKETING",
+    "body": {
+      "text": "Nice work, {{first_name}}! You earned *{{cashback}}* in cashback on your card spending this month. Redeem it as statement credit anytime in the app."
+    },
+    "footer": {
+      "text": "Reply STOP to opt out"
+    },
+    "buttons": [
+      {
+        "type": "URL",
+        "text": "Redeem cashback",
+        "url": "https://northwindcard.com/rewards/{{rewards_id}}"
+      }
+    ],
+    "variables": {
+      "first_name": {
+        "example": "Marta"
+      },
+      "cashback": {
+        "example": "$18.75"
+      },
+      "rewards_id": {
+        "example": "RW5521"
+      }
+    }
+  }
+}

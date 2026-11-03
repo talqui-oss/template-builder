@@ -1,0 +1,54 @@
+{
+  "title": "Vehicle inspection appointment reminder",
+  "description": "Remind customers of a property or vehicle inspection for their insurance claim, with date, time and address. Utility template.",
+  "industry": "insurance",
+  "useCase": "appointment-reminder",
+  "keywords": [
+    "inspection appointment reminder",
+    "insurance inspection whatsapp",
+    "claim inspection message"
+  ],
+  "notes": "Give a time window and ask for a reply to reschedule; Meta likes clear transactional actions tied to an existing claim.",
+  "template": {
+    "name": "insurance_appointment_inspection_reminder",
+    "language": "en_US",
+    "category": "UTILITY",
+    "header": {
+      "type": "TEXT",
+      "text": "Inspection reminder"
+    },
+    "body": {
+      "text": "Hi {{first_name}}, your inspection for claim {{claim_no}} is scheduled for *{{date}}* between {{window}} at {{address}}. Please make sure someone is available."
+    },
+    "footer": {
+      "text": "Acme Insurance"
+    },
+    "buttons": [
+      {
+        "type": "QUICK_REPLY",
+        "text": "Confirm"
+      },
+      {
+        "type": "QUICK_REPLY",
+        "text": "Reschedule"
+      }
+    ],
+    "variables": {
+      "first_name": {
+        "example": "Pablo"
+      },
+      "claim_no": {
+        "example": "CL-558210"
+      },
+      "date": {
+        "example": "Nov 8"
+      },
+      "window": {
+        "example": "9am and 11am"
+      },
+      "address": {
+        "example": "14 Oak Street"
+      }
+    }
+  }
+}

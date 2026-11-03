@@ -1,0 +1,45 @@
+{
+  "title": "Hotel check-in details",
+  "description": "Send check-in time, address and arrival instructions before a hotel stay. Utility WhatsApp template that cuts front-desk calls.",
+  "industry": "travel",
+  "useCase": "appointment-reminder",
+  "keywords": [
+    "hotel check in message whatsapp",
+    "pre arrival message hotel",
+    "check-in instructions template"
+  ],
+  "notes": "Send 24 hours before arrival. Practical info like late arrival and parking keeps it transactional.",
+  "template": {
+    "name": "travel_hotel_check_in_details",
+    "language": "en_US",
+    "category": "UTILITY",
+    "body": {
+      "text": "Hi {{first_name}}, we look forward to welcoming you tomorrow! Check-in starts at *{{checkin_time}}* at {{address}}. Reply here if you expect to arrive late and we will hold your room."
+    },
+    "footer": {
+      "text": "Acme Grand Hotel"
+    },
+    "buttons": [
+      {
+        "type": "QUICK_REPLY",
+        "text": "I will arrive late"
+      },
+      {
+        "type": "PHONE_NUMBER",
+        "text": "Call front desk",
+        "phoneNumber": "+15550133"
+      }
+    ],
+    "variables": {
+      "first_name": {
+        "example": "Emma"
+      },
+      "checkin_time": {
+        "example": "3:00 PM"
+      },
+      "address": {
+        "example": "200 Beach Boulevard"
+      }
+    }
+  }
+}

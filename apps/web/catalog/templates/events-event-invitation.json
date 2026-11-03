@@ -1,0 +1,51 @@
+{
+  "title": "Event invitation with RSVP",
+  "description": "Invite contacts to an event with RSVP buttons. Event invitation WhatsApp template for conferences and meetups. Free to copy and edit.",
+  "industry": "events",
+  "useCase": "event-invitation",
+  "keywords": [
+    "event invitation whatsapp template",
+    "rsvp message",
+    "conference invite message"
+  ],
+  "notes": "Give date, place and the value of attending. Quick replies simplify counting.",
+  "template": {
+    "name": "events_event_invitation",
+    "language": "en_US",
+    "category": "MARKETING",
+    "header": {
+      "type": "TEXT",
+      "text": "You're invited"
+    },
+    "body": {
+      "text": "Hi {{first_name}}, join us at *{{event_name}}* in {{city}} on {{date}}. Expect great talks, networking and surprises."
+    },
+    "footer": {
+      "text": "Reply STOP to opt out"
+    },
+    "buttons": [
+      {
+        "type": "QUICK_REPLY",
+        "text": "I'll attend"
+      },
+      {
+        "type": "QUICK_REPLY",
+        "text": "Not this time"
+      }
+    ],
+    "variables": {
+      "first_name": {
+        "example": "Maria"
+      },
+      "event_name": {
+        "example": "Summer Fest"
+      },
+      "city": {
+        "example": "Austin"
+      },
+      "date": {
+        "example": "March 14"
+      }
+    }
+  }
+}

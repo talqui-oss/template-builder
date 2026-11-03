@@ -1,0 +1,58 @@
+{
+  "title": "Flight schedule change notice",
+  "description": "Notify travelers about a flight time change on WhatsApp with old and new times. Utility template for airlines and travel agents.",
+  "industry": "travel",
+  "useCase": "account-alert",
+  "keywords": [
+    "flight change notification whatsapp",
+    "flight delay message template",
+    "airline schedule change"
+  ],
+  "notes": "Be exact about the new time and offer a way to rebook. Never mix promotions into disruption notices.",
+  "template": {
+    "name": "travel_flight_schedule_change",
+    "language": "en_US",
+    "category": "UTILITY",
+    "header": {
+      "type": "TEXT",
+      "text": "Flight schedule update"
+    },
+    "body": {
+      "text": "Hi {{first_name}}, the schedule for flight *{{flight}}* to {{destination}} has changed. New departure: {{new_time}} (was {{old_time}}). Please check the details and contact us if the new time does not work."
+    },
+    "footer": {
+      "text": "Northwind Air"
+    },
+    "buttons": [
+      {
+        "type": "URL",
+        "text": "View trip",
+        "url": "https://northwindair.com/trip/{{ref}}"
+      },
+      {
+        "type": "QUICK_REPLY",
+        "text": "I need to rebook"
+      }
+    ],
+    "variables": {
+      "first_name": {
+        "example": "Luis"
+      },
+      "flight": {
+        "example": "NW214"
+      },
+      "destination": {
+        "example": "Madrid"
+      },
+      "new_time": {
+        "example": "9:40 PM"
+      },
+      "old_time": {
+        "example": "7:15 PM"
+      },
+      "ref": {
+        "example": "NW214"
+      }
+    }
+  }
+}

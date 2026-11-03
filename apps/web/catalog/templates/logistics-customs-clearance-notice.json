@@ -1,0 +1,51 @@
+{
+  "title": "Customs clearance update",
+  "description": "Inform recipients that a shipment is held at customs and which document or fee is needed. Utility template for international carriers.",
+  "industry": "logistics",
+  "useCase": "account-alert",
+  "keywords": [
+    "customs notification whatsapp",
+    "shipment held at customs message",
+    "import duty notice template"
+  ],
+  "notes": "Name the exact action required and deadline. It is a high-value utility message because delays cost money.",
+  "template": {
+    "name": "logistics_customs_clearance_notice",
+    "language": "en_US",
+    "category": "UTILITY",
+    "header": {
+      "type": "TEXT",
+      "text": "Customs action needed"
+    },
+    "body": {
+      "text": "Hi {{first_name}}, shipment *{{tracking}}* is currently held at customs. To release it we need {{requirement}} by {{deadline}}. Please upload it as soon as you can."
+    },
+    "footer": {
+      "text": "Northwind Freight"
+    },
+    "buttons": [
+      {
+        "type": "URL",
+        "text": "Upload documents",
+        "url": "https://northwindfreight.com/customs/{{ref}}"
+      }
+    ],
+    "variables": {
+      "first_name": {
+        "example": "Hana"
+      },
+      "tracking": {
+        "example": "NW90112"
+      },
+      "requirement": {
+        "example": "the commercial invoice"
+      },
+      "deadline": {
+        "example": "Nov 10"
+      },
+      "ref": {
+        "example": "NW90112"
+      }
+    }
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "title": "Sign-up verification code",
+  "description": "Authentication template for verifying a phone number at SaaS signup with a one-time passcode on WhatsApp. Copy-code button.",
+  "industry": "saas",
+  "useCase": "verification-code",
+  "keywords": [
+    "whatsapp otp signup",
+    "phone verification message template",
+    "verify phone number whatsapp"
+  ],
+  "notes": "Rate-limit code requests to prevent abuse, and avoid sending marketing content in the same thread right after.",
+  "template": {
+    "name": "saas_signup_verification_code",
+    "language": "en_US",
+    "category": "AUTHENTICATION",
+    "body": {
+      "addSecurityRecommendation": true
+    },
+    "footer": {
+      "codeExpirationMinutes": 10
+    },
+    "button": {
+      "type": "OTP",
+      "otpType": "COPY_CODE"
+    }
+  }
+}

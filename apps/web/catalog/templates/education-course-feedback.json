@@ -1,0 +1,45 @@
+{
+  "title": "Course feedback request",
+  "description": "Ask students to rate a course after the final session. Feedback request WhatsApp template for education. Free to copy and edit.",
+  "industry": "education",
+  "useCase": "feedback-request",
+  "keywords": [
+    "course feedback whatsapp",
+    "student survey message",
+    "class rating template"
+  ],
+  "notes": "Send within 48 hours of the last class. Rating buttons raise response rates.",
+  "template": {
+    "name": "education_course_feedback",
+    "language": "en_US",
+    "category": "MARKETING",
+    "body": {
+      "text": "Hi {{first_name}}, congratulations on finishing *{{course}}*! How would you rate your experience?"
+    },
+    "footer": {
+      "text": "Reply STOP to opt out"
+    },
+    "buttons": [
+      {
+        "type": "QUICK_REPLY",
+        "text": "Excellent"
+      },
+      {
+        "type": "QUICK_REPLY",
+        "text": "Good"
+      },
+      {
+        "type": "QUICK_REPLY",
+        "text": "Needs work"
+      }
+    ],
+    "variables": {
+      "first_name": {
+        "example": "Maria"
+      },
+      "course": {
+        "example": "Intro to Design"
+      }
+    }
+  }
+}

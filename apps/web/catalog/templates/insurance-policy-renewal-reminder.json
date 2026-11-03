@@ -1,0 +1,58 @@
+{
+  "title": "Policy renewal reminder",
+  "description": "Remind policyholders that their insurance renews soon, with policy number, date and premium. Utility template with a renew link.",
+  "industry": "insurance",
+  "useCase": "renewal-reminder",
+  "keywords": [
+    "insurance renewal reminder whatsapp",
+    "policy renewal message template",
+    "insurance expiry notification"
+  ],
+  "notes": "Tie the message to a specific policy number and date to keep it utility. Add cross-sell and it becomes marketing.",
+  "template": {
+    "name": "insurance_policy_renewal_reminder",
+    "language": "en_US",
+    "category": "UTILITY",
+    "header": {
+      "type": "TEXT",
+      "text": "Policy renewal"
+    },
+    "body": {
+      "text": "Hi {{first_name}}, your {{policy_type}} policy *{{policy_no}}* renews on {{renewal_date}}. The premium is {{premium}}. Review and confirm to avoid a gap in coverage."
+    },
+    "footer": {
+      "text": "Northwind Insurance"
+    },
+    "buttons": [
+      {
+        "type": "URL",
+        "text": "Renew policy",
+        "url": "https://northwindinsurance.com/renew/{{ref}}"
+      },
+      {
+        "type": "QUICK_REPLY",
+        "text": "Talk to an agent"
+      }
+    ],
+    "variables": {
+      "first_name": {
+        "example": "Laura"
+      },
+      "policy_type": {
+        "example": "home"
+      },
+      "policy_no": {
+        "example": "HP-30912"
+      },
+      "renewal_date": {
+        "example": "Dec 1"
+      },
+      "premium": {
+        "example": "$612.00"
+      },
+      "ref": {
+        "example": "HP30912"
+      }
+    }
+  }
+}

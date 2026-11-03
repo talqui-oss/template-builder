@@ -1,0 +1,44 @@
+{
+  "title": "Item back in store",
+  "description": "Tell customers a requested item is available again at their local store. Back in stock WhatsApp template for physical retail.",
+  "industry": "retail",
+  "useCase": "back-in-stock",
+  "keywords": [
+    "item back in stock whatsapp",
+    "product available in store message",
+    "restock alert retail"
+  ],
+  "notes": "Name the specific item and store; generic restock notes get low engagement. Only send to people who requested the alert.",
+  "template": {
+    "name": "retail_back_in_stock_store",
+    "language": "en_US",
+    "category": "MARKETING",
+    "body": {
+      "text": "Hi {{first_name}}, the *{{product_name}}* you asked about is back in stock at {{store_name}}. We can set one aside for you."
+    },
+    "footer": {
+      "text": "Reply STOP to opt out"
+    },
+    "buttons": [
+      {
+        "type": "QUICK_REPLY",
+        "text": "Hold one for me"
+      },
+      {
+        "type": "QUICK_REPLY",
+        "text": "No thanks"
+      }
+    ],
+    "variables": {
+      "first_name": {
+        "example": "Maria"
+      },
+      "product_name": {
+        "example": "Linen Shirt"
+      },
+      "store_name": {
+        "example": "Acme Store"
+      }
+    }
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "title": "Package out for delivery",
+  "description": "Tell recipients their parcel is out for delivery with a delivery window and tracking link. Utility WhatsApp template for carriers.",
+  "industry": "logistics",
+  "useCase": "shipping-update",
+  "keywords": [
+    "out for delivery whatsapp",
+    "delivery notification template",
+    "parcel delivery message"
+  ],
+  "notes": "A time window is more useful than a date. Keep marketing out of it to stay in utility.",
+  "template": {
+    "name": "logistics_package_out_for_delivery",
+    "language": "en_US",
+    "category": "UTILITY",
+    "header": {
+      "type": "TEXT",
+      "text": "Out for delivery"
+    },
+    "body": {
+      "text": "Hi {{first_name}}, your package *{{tracking}}* is out for delivery today. Estimated arrival: {{window}}. Please make sure someone can receive it."
+    },
+    "footer": {
+      "text": "Northwind Express"
+    },
+    "buttons": [
+      {
+        "type": "URL",
+        "text": "Track package",
+        "url": "https://northwindexpress.com/track/{{tracking}}"
+      }
+    ],
+    "variables": {
+      "first_name": {
+        "example": "Nora"
+      },
+      "tracking": {
+        "example": "NW48210"
+      },
+      "window": {
+        "example": "1 PM to 5 PM"
+      }
+    }
+  }
+}

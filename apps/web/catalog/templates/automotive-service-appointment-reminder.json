@@ -1,0 +1,57 @@
+{
+  "title": "Service appointment reminder",
+  "description": "Remind customers of a car service appointment on WhatsApp with date, time and dealership address. Utility template for workshops.",
+  "industry": "automotive",
+  "useCase": "appointment-reminder",
+  "keywords": [
+    "car service reminder whatsapp",
+    "workshop appointment message",
+    "vehicle service reminder template"
+  ],
+  "notes": "Mention the vehicle and service type so it reads as booking-specific. Confirm and reschedule buttons cut no-shows.",
+  "template": {
+    "name": "automotive_service_appointment_reminder",
+    "language": "en_US",
+    "category": "UTILITY",
+    "header": {
+      "type": "TEXT",
+      "text": "Service tomorrow"
+    },
+    "body": {
+      "text": "Hi {{first_name}}, this is a friendly reminder that your *{{service}}* for the {{vehicle}} is booked for {{date}} at {{time}}. We will see you at Acme Auto, 77 Garage Street. Please reply if you need to change anything."
+    },
+    "footer": {
+      "text": "Acme Auto"
+    },
+    "buttons": [
+      {
+        "type": "QUICK_REPLY",
+        "text": "Confirm"
+      },
+      {
+        "type": "QUICK_REPLY",
+        "text": "Reschedule"
+      }
+    ],
+    "variables": {
+      "first_name": {
+        "example": "Paul"
+      },
+      "service": {
+        "example": "oil change"
+      },
+      "vehicle": {
+        "example": "Ford Focus"
+      },
+      "date": {
+        "example": "Nov 12"
+      },
+      "time": {
+        "example": "9:00 AM"
+      },
+      "address": {
+        "example": "77 Garage Street"
+      }
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "title": "Payment received confirmation",
+  "description": "Confirm a received payment on WhatsApp with amount, date and receipt number. A utility template for banks, lenders and fintechs.",
+  "industry": "finance",
+  "useCase": "payment-confirmation",
+  "keywords": [
+    "payment confirmation whatsapp",
+    "payment received message",
+    "payment receipt template"
+  ],
+  "notes": "Include a receipt or transaction ID as a variable; it makes the message clearly transactional and helps customers file support requests.",
+  "template": {
+    "name": "finance_payment_received_receipt",
+    "language": "en_US",
+    "category": "UTILITY",
+    "body": {
+      "text": "Hello {{first_name}}, we received your payment of *{{amount}}* on {{date}}. Your receipt number is *{{receipt_id}}*. Thank you for staying up to date."
+    },
+    "footer": {
+      "text": "Lumen Bank"
+    },
+    "variables": {
+      "first_name": {
+        "example": "Carlos"
+      },
+      "amount": {
+        "example": "$240.00"
+      },
+      "date": {
+        "example": "Nov 14"
+      },
+      "receipt_id": {
+        "example": "RC-20931"
+      }
+    }
+  }
+}

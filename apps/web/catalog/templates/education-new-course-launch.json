@@ -1,0 +1,41 @@
+{
+  "title": "New course launch",
+  "description": "Announce a new course to leads and alumni. Product launch WhatsApp template for education businesses. Free to copy and edit.",
+  "industry": "education",
+  "useCase": "product-launch",
+  "keywords": [
+    "new course announcement whatsapp",
+    "course launch message",
+    "education launch template"
+  ],
+  "notes": "Say who the course is for and when it starts. Send to people who showed interest in a related topic.",
+  "template": {
+    "name": "education_new_course_launch",
+    "language": "en_US",
+    "category": "MARKETING",
+    "body": {
+      "text": "Hi {{first_name}}, our new course *{{course}}* is now open for enrollment. It starts on {{date}} and is built for working professionals."
+    },
+    "footer": {
+      "text": "Reply STOP to opt out"
+    },
+    "buttons": [
+      {
+        "type": "URL",
+        "text": "See the syllabus",
+        "url": "https://acmeacademy.example.com/courses"
+      }
+    ],
+    "variables": {
+      "first_name": {
+        "example": "Maria"
+      },
+      "course": {
+        "example": "Intro to Design"
+      },
+      "date": {
+        "example": "March 14"
+      }
+    }
+  }
+}

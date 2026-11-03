@@ -1,0 +1,48 @@
+{
+  "title": "New treatment launch",
+  "description": "Introduce a new treatment or service to past clients. Product launch WhatsApp template for beauty and wellness studios. Free to copy and edit.",
+  "industry": "beauty",
+  "useCase": "product-launch",
+  "keywords": [
+    "new treatment announcement whatsapp",
+    "spa service launch message",
+    "beauty launch template"
+  ],
+  "notes": "Say what the treatment does in plain terms and give an introductory price. Avoid health claims.",
+  "template": {
+    "name": "beauty_new_service_launch",
+    "language": "en_US",
+    "category": "MARKETING",
+    "header": {
+      "type": "TEXT",
+      "text": "New at Bloom Studio"
+    },
+    "body": {
+      "text": "Hi {{first_name}}, meet our new *{{service}}* at {{studio}}. Book this month and enjoy an introductory price of {{amount}}. Thank you, and reply here if you need anything."
+    },
+    "footer": {
+      "text": "Reply STOP to opt out"
+    },
+    "buttons": [
+      {
+        "type": "URL",
+        "text": "Book the treatment",
+        "url": "https://bloomstudio.example.com/new"
+      }
+    ],
+    "variables": {
+      "first_name": {
+        "example": "Maria"
+      },
+      "service": {
+        "example": "Haircut"
+      },
+      "studio": {
+        "example": "Bloom Studio"
+      },
+      "amount": {
+        "example": "$49.90"
+      }
+    }
+  }
+}

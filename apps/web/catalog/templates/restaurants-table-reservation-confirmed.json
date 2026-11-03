@@ -1,0 +1,51 @@
+{
+  "title": "Table reservation confirmed",
+  "description": "Confirm a restaurant table booking with date, time and party size. Booking confirmation WhatsApp template for restaurants.",
+  "industry": "restaurants",
+  "useCase": "booking-confirmation",
+  "keywords": [
+    "restaurant reservation confirmation whatsapp",
+    "table booking message",
+    "reservation confirmed template"
+  ],
+  "notes": "Include a cancel or change option; it reduces no-shows and keeps the template clearly transactional.",
+  "template": {
+    "name": "restaurants_table_reservation_confirmed",
+    "language": "en_US",
+    "category": "UTILITY",
+    "header": {
+      "type": "TEXT",
+      "text": "Reservation confirmed"
+    },
+    "body": {
+      "text": "Hi {{first_name}}, your table at *{{restaurant}}* is confirmed for {{party_size}} guests on {{date}} at {{time}}. We look forward to seeing you."
+    },
+    "buttons": [
+      {
+        "type": "QUICK_REPLY",
+        "text": "Change booking"
+      },
+      {
+        "type": "QUICK_REPLY",
+        "text": "Cancel booking"
+      }
+    ],
+    "variables": {
+      "first_name": {
+        "example": "Maria"
+      },
+      "restaurant": {
+        "example": "Northwind Bistro"
+      },
+      "party_size": {
+        "example": "4"
+      },
+      "date": {
+        "example": "March 14"
+      },
+      "time": {
+        "example": "3:30 PM"
+      }
+    }
+  }
+}

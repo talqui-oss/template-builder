@@ -1,0 +1,54 @@
+{
+  "title": "Lease renewal reminder",
+  "description": "Tell tenants their lease is ending and invite them to renew on WhatsApp, with new rent and response deadline. Utility renewal template.",
+  "industry": "real-estate",
+  "useCase": "renewal-reminder",
+  "keywords": [
+    "lease renewal whatsapp",
+    "tenant lease expiry message",
+    "lease renewal reminder template"
+  ],
+  "notes": "Keep it about their existing lease. Do not advertise other units or promotions in the same message.",
+  "template": {
+    "name": "real_estate_lease_renewal_offer",
+    "language": "en_US",
+    "category": "UTILITY",
+    "header": {
+      "type": "TEXT",
+      "text": "Your lease is ending"
+    },
+    "body": {
+      "text": "Hi {{first_name}}, your lease for {{unit}} ends on {{end_date}}. We would love to have you stay. The renewal rent would be *{{new_rent}}* per month. Please let us know by {{deadline}} if you would like to renew."
+    },
+    "footer": {
+      "text": "Acme Property Management"
+    },
+    "buttons": [
+      {
+        "type": "QUICK_REPLY",
+        "text": "I want to renew"
+      },
+      {
+        "type": "QUICK_REPLY",
+        "text": "I am moving out"
+      }
+    ],
+    "variables": {
+      "first_name": {
+        "example": "Ana"
+      },
+      "unit": {
+        "example": "Apt 6C"
+      },
+      "end_date": {
+        "example": "Jan 31"
+      },
+      "new_rent": {
+        "example": "$1,495"
+      },
+      "deadline": {
+        "example": "Dec 15"
+      }
+    }
+  }
+}

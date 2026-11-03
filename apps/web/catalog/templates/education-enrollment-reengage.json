@@ -1,0 +1,45 @@
+{
+  "title": "Unfinished enrollment nudge",
+  "description": "Nudge prospects who started but did not finish enrollment. Re-engagement WhatsApp template for schools. Free to copy and edit.",
+  "industry": "education",
+  "useCase": "re-engagement",
+  "keywords": [
+    "incomplete enrollment whatsapp",
+    "abandoned application message",
+    "student re-engagement template"
+  ],
+  "notes": "Mention the exact course they started. Reach out within 48 hours of drop-off.",
+  "template": {
+    "name": "education_enrollment_reengage",
+    "language": "en_US",
+    "category": "MARKETING",
+    "body": {
+      "text": "Hi {{first_name}}, you started enrolling in *{{course}}* but didn't finish. Your spot is still reserved until {{date}}, and we're here if you have questions."
+    },
+    "footer": {
+      "text": "Reply STOP to opt out"
+    },
+    "buttons": [
+      {
+        "type": "URL",
+        "text": "Finish enrollment",
+        "url": "https://acmeacademy.example.com/enroll"
+      },
+      {
+        "type": "QUICK_REPLY",
+        "text": "I have a question"
+      }
+    ],
+    "variables": {
+      "first_name": {
+        "example": "Maria"
+      },
+      "course": {
+        "example": "Intro to Design"
+      },
+      "date": {
+        "example": "March 14"
+      }
+    }
+  }
+}

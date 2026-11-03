@@ -35,7 +35,9 @@ export function templateLink(template: Template) {
 }
 
 /** The template in the current URL hash, or the default one when missing or unreadable. */
-export function templateFromHash(hash = location.hash): Template {
+export function templateFromHash(
+  hash = typeof location === "undefined" ? "" : location.hash,
+): Template {
   const encoded = new URLSearchParams(hash.slice(1)).get("t");
   if (!encoded) return INITIAL_TEMPLATE;
   try {

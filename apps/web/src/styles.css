@@ -91,6 +91,16 @@ code {
   color: var(--pg-text);
 }
 
+.pg-share {
+  padding: 4px 10px;
+  border: 0;
+  border-radius: 4px;
+  background: var(--pg-accent);
+  color: #0b0a09;
+  font: inherit;
+  cursor: pointer;
+}
+
 /* Two columns: editor on the left, sticky preview on the right. */
 
 .pg-layout {

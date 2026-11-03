@@ -1,0 +1,55 @@
+{
+  "title": "Payment due date reminder",
+  "description": "A WhatsApp payment reminder template for banks and lenders: invoice amount, due date and a pay link. Utility category, ready to copy.",
+  "industry": "finance",
+  "useCase": "payment-reminder",
+  "keywords": [
+    "whatsapp payment reminder template",
+    "payment due reminder message",
+    "loan installment reminder whatsapp"
+  ],
+  "notes": "Keep it strictly informational: mention the amount and due date only, no cross-sell or discount, or Meta may move it to marketing. Send 2 to 3 days before the due date for best pay rates.",
+  "template": {
+    "name": "finance_payment_due_reminder",
+    "language": "en_US",
+    "category": "UTILITY",
+    "header": {
+      "type": "TEXT",
+      "text": "Payment due soon"
+    },
+    "body": {
+      "text": "Hi {{first_name}}, this is a reminder that your installment of *{{amount}}* for loan {{loan_id}} is due on _{{due_date}}_. Paying on time keeps your account in good standing."
+    },
+    "footer": {
+      "text": "Lumen Bank"
+    },
+    "buttons": [
+      {
+        "type": "URL",
+        "text": "Pay now",
+        "url": "https://lumenbank.com/pay/{{pay_ref}}"
+      },
+      {
+        "type": "QUICK_REPLY",
+        "text": "I already paid"
+      }
+    ],
+    "variables": {
+      "first_name": {
+        "example": "Ana"
+      },
+      "amount": {
+        "example": "$240.00"
+      },
+      "loan_id": {
+        "example": "LN-8841"
+      },
+      "due_date": {
+        "example": "Nov 15"
+      },
+      "pay_ref": {
+        "example": "LN8841"
+      }
+    }
+  }
+}

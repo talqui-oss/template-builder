@@ -1,0 +1,43 @@
+{
+  "title": "Pickup scheduled confirmation",
+  "description": "Confirm a scheduled pickup with date, window and address. Utility WhatsApp template for freight, couriers and moving companies.",
+  "industry": "logistics",
+  "useCase": "booking-confirmation",
+  "keywords": [
+    "pickup confirmation whatsapp",
+    "courier pickup scheduled message",
+    "freight pickup template"
+  ],
+  "notes": "Add the pickup address and a driver contact when available. Instructions about packaging are welcome if short.",
+  "template": {
+    "name": "logistics_pickup_scheduled_confirmation",
+    "language": "en_US",
+    "category": "UTILITY",
+    "body": {
+      "text": "Hi {{first_name}}, your pickup is booked for *{{date}}* between {{window}} at {{address}}. Please have the shipment packed and labeled."
+    },
+    "footer": {
+      "text": "Acme Logistics"
+    },
+    "buttons": [
+      {
+        "type": "QUICK_REPLY",
+        "text": "Reschedule"
+      }
+    ],
+    "variables": {
+      "first_name": {
+        "example": "Greg"
+      },
+      "date": {
+        "example": "Nov 7"
+      },
+      "window": {
+        "example": "10 AM and 12 PM"
+      },
+      "address": {
+        "example": "500 Industrial Way"
+      }
+    }
+  }
+}

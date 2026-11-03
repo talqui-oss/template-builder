@@ -1,0 +1,44 @@
+{
+  "title": "Membership payment failed",
+  "description": "Alert members that a recurring payment failed and how to fix it. Payment reminder WhatsApp template for gyms. Free to copy and edit.",
+  "industry": "fitness",
+  "useCase": "payment-reminder",
+  "keywords": [
+    "failed payment gym whatsapp",
+    "membership billing reminder",
+    "payment failed message"
+  ],
+  "notes": "Keep it factual and give a direct update-payment link. Utility only if there is no promotional text.",
+  "template": {
+    "name": "fitness_payment_failed",
+    "language": "en_US",
+    "category": "UTILITY",
+    "body": {
+      "text": "Hi {{first_name}}, your {{plan}} payment of {{amount}} didn't go through on {{date}}. Please update your card to keep your access active."
+    },
+    "footer": {
+      "text": "Acme Fitness"
+    },
+    "buttons": [
+      {
+        "type": "URL",
+        "text": "Update payment",
+        "url": "https://acmefit.example.com/billing"
+      }
+    ],
+    "variables": {
+      "first_name": {
+        "example": "Maria"
+      },
+      "plan": {
+        "example": "Monthly"
+      },
+      "amount": {
+        "example": "$49.90"
+      },
+      "date": {
+        "example": "March 14"
+      }
+    }
+  }
+}

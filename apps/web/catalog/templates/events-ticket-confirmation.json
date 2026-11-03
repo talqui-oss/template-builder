@@ -1,0 +1,51 @@
+{
+  "title": "Ticket purchase confirmation",
+  "description": "Confirm ticket purchase with event name, date and ticket link. Order confirmation WhatsApp template for events and venues.",
+  "industry": "events",
+  "useCase": "order-confirmation",
+  "keywords": [
+    "event ticket confirmation whatsapp",
+    "ticket purchase message",
+    "booking confirmation event template"
+  ],
+  "notes": "List ticket count and event date so the message is clearly transactional.",
+  "template": {
+    "name": "events_ticket_confirmation",
+    "language": "en_US",
+    "category": "UTILITY",
+    "header": {
+      "type": "TEXT",
+      "text": "Tickets confirmed"
+    },
+    "body": {
+      "text": "You're going, {{first_name}}! We confirmed {{ticket_count}} tickets for *{{event_name}}* at {{venue}} on {{date}}. We can't wait to see you, and we'll send a reminder before the day."
+    },
+    "buttons": [
+      {
+        "type": "URL",
+        "text": "View tickets",
+        "url": "https://acmeevents.example.com/tickets/{{order_id}}"
+      }
+    ],
+    "variables": {
+      "first_name": {
+        "example": "Maria"
+      },
+      "ticket_count": {
+        "example": "2"
+      },
+      "event_name": {
+        "example": "Summer Fest"
+      },
+      "venue": {
+        "example": "Harbor Hall"
+      },
+      "date": {
+        "example": "March 14"
+      },
+      "order_id": {
+        "example": "4512"
+      }
+    }
+  }
+}

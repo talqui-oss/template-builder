@@ -1,0 +1,46 @@
+{
+  "title": "Loyalty free meal reward",
+  "description": "Tell diners they earned a free meal or dessert in your loyalty program. Loyalty reward WhatsApp template for restaurants.",
+  "industry": "restaurants",
+  "useCase": "loyalty-reward",
+  "keywords": [
+    "restaurant loyalty whatsapp",
+    "free meal reward message",
+    "dining rewards template"
+  ],
+  "notes": "State how to redeem and when it expires. Rewards messages do best right after a visit.",
+  "template": {
+    "name": "restaurants_loyalty_free_meal",
+    "language": "en_US",
+    "category": "MARKETING",
+    "body": {
+      "text": "You did it, {{first_name}}! After {{points}} points at {{restaurant}} you've earned a free {{item}}. Show this message to your server by {{date}}. Thank you, and reply here if you need anything."
+    },
+    "footer": {
+      "text": "Reply STOP to opt out"
+    },
+    "buttons": [
+      {
+        "type": "QUICK_REPLY",
+        "text": "Book a table"
+      }
+    ],
+    "variables": {
+      "first_name": {
+        "example": "Maria"
+      },
+      "points": {
+        "example": "250"
+      },
+      "restaurant": {
+        "example": "Northwind Bistro"
+      },
+      "item": {
+        "example": "Margherita Pizza"
+      },
+      "date": {
+        "example": "March 14"
+      }
+    }
+  }
+}

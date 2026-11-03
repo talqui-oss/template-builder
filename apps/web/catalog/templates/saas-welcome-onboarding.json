@@ -1,0 +1,46 @@
+{
+  "title": "Welcome and getting started",
+  "description": "Welcome new users on WhatsApp after sign-up with a first step and help link. Utility onboarding template for SaaS products.",
+  "industry": "saas",
+  "useCase": "welcome",
+  "keywords": [
+    "saas welcome message whatsapp",
+    "onboarding whatsapp template",
+    "new user welcome message"
+  ],
+  "notes": "Keep it to one action. Welcome messages triggered by sign-up are typically utility, but extra feature promotion can flip them to marketing.",
+  "template": {
+    "name": "saas_welcome_onboarding",
+    "language": "en_US",
+    "category": "UTILITY",
+    "header": {
+      "type": "TEXT",
+      "text": "Your account is ready"
+    },
+    "body": {
+      "text": "Welcome to Lumen, {{first_name}}! Your workspace *{{workspace}}* is ready. Start by inviting your team or connecting your first data source."
+    },
+    "footer": {
+      "text": "Lumen Software"
+    },
+    "buttons": [
+      {
+        "type": "URL",
+        "text": "Open workspace",
+        "url": "https://lumen.app/start"
+      },
+      {
+        "type": "QUICK_REPLY",
+        "text": "Talk to support"
+      }
+    ],
+    "variables": {
+      "first_name": {
+        "example": "Ana"
+      },
+      "workspace": {
+        "example": "Acme Studio"
+      }
+    }
+  }
+}

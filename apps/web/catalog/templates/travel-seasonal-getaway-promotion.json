@@ -1,0 +1,55 @@
+{
+  "title": "Seasonal getaway promotion",
+  "description": "Promote a limited-time seasonal travel deal over WhatsApp with destination, discount and a coupon code. Marketing template for agencies.",
+  "industry": "travel",
+  "useCase": "seasonal-campaign",
+  "keywords": [
+    "travel promotion whatsapp",
+    "holiday deal message template",
+    "vacation offer whatsapp"
+  ],
+  "notes": "A copy-code button with a real-looking code improves redemption. State the offer end date in the body.",
+  "template": {
+    "name": "travel_seasonal_getaway_promotion",
+    "language": "en_US",
+    "category": "MARKETING",
+    "header": {
+      "type": "TEXT",
+      "text": "Winter getaway sale"
+    },
+    "body": {
+      "text": "Winter escapes are here, {{first_name}}! Save *{{discount}}* on beach getaways to {{destination}} when you book before {{end_date}}. Use the code below at checkout."
+    },
+    "footer": {
+      "text": "Reply STOP to opt out"
+    },
+    "buttons": [
+      {
+        "type": "COPY_CODE",
+        "example": "WINTER20"
+      },
+      {
+        "type": "URL",
+        "text": "Browse deals",
+        "url": "https://acmetravel.com/deals/{{trip_slug}}"
+      }
+    ],
+    "variables": {
+      "first_name": {
+        "example": "Lucy"
+      },
+      "discount": {
+        "example": "20%"
+      },
+      "destination": {
+        "example": "Cancun"
+      },
+      "end_date": {
+        "example": "Nov 30"
+      },
+      "trip_slug": {
+        "example": "cancun"
+      }
+    }
+  }
+}

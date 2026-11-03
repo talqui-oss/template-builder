@@ -1,0 +1,41 @@
+{
+  "title": "Takeout order received",
+  "description": "Confirm that a takeout or delivery order was received with the total and pickup time. Order confirmation WhatsApp template for restaurants.",
+  "industry": "restaurants",
+  "useCase": "order-confirmation",
+  "keywords": [
+    "restaurant order confirmation whatsapp",
+    "takeout order message",
+    "food order received template"
+  ],
+  "notes": "List the items summary or order number so the template reads as a receipt, not an ad.",
+  "template": {
+    "name": "restaurants_order_received",
+    "language": "en_US",
+    "category": "UTILITY",
+    "header": {
+      "type": "TEXT",
+      "text": "Order received"
+    },
+    "body": {
+      "text": "Thanks {{first_name}}! We received your order *#{{order_id}}* ({{item}} and more) for {{amount}}. It will be ready for pickup at {{time}}. Thank you, and reply here if you need anything."
+    },
+    "variables": {
+      "first_name": {
+        "example": "Maria"
+      },
+      "order_id": {
+        "example": "4512"
+      },
+      "item": {
+        "example": "Margherita Pizza"
+      },
+      "amount": {
+        "example": "$49.90"
+      },
+      "time": {
+        "example": "3:30 PM"
+      }
+    }
+  }
+}

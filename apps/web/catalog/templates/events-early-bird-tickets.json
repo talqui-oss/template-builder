@@ -1,0 +1,48 @@
+{
+  "title": "Early bird tickets",
+  "description": "Promote discounted early bird tickets for an upcoming event. Promotion WhatsApp template for event organizers. Free to copy and edit.",
+  "industry": "events",
+  "useCase": "promotion",
+  "keywords": [
+    "early bird tickets whatsapp",
+    "ticket promotion message",
+    "event discount template"
+  ],
+  "notes": "State when the price rises. A real deadline is the strongest, compliant urgency.",
+  "template": {
+    "name": "events_early_bird_tickets",
+    "language": "en_US",
+    "category": "MARKETING",
+    "body": {
+      "text": "Hi {{first_name}}, early bird tickets for *{{event_name}}* are {{percent}}% off until {{date}}. After that, prices go up."
+    },
+    "footer": {
+      "text": "Reply STOP to opt out"
+    },
+    "buttons": [
+      {
+        "type": "COPY_CODE",
+        "example": "EARLY20"
+      },
+      {
+        "type": "URL",
+        "text": "Get tickets",
+        "url": "https://acmeevents.example.com/tickets"
+      }
+    ],
+    "variables": {
+      "first_name": {
+        "example": "Maria"
+      },
+      "event_name": {
+        "example": "Summer Fest"
+      },
+      "percent": {
+        "example": "20"
+      },
+      "date": {
+        "example": "March 14"
+      }
+    }
+  }
+}

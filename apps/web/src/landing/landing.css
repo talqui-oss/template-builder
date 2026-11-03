@@ -896,9 +896,10 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 16px;
-  min-height: 300px;
-  padding: 16px 0 0;
+  justify-content: safe center;
+  height: 300px;
+  padding: 48px 0 16px;
+  overflow: hidden;
   border-bottom: 1px solid var(--lp-border);
   background: radial-gradient(
     50% 60% at 50% 0%,
@@ -908,10 +909,11 @@
 }
 
 .lp-template__tags {
+  position: absolute;
+  top: 16px;
+  left: 20px;
   display: flex;
   gap: 6px;
-  align-self: flex-start;
-  padding: 0 20px;
 }
 
 .lp-template__code {
@@ -923,9 +925,19 @@
   letter-spacing: 0.08em;
 }
 
+/* Messages sit centered in a fixed-height frame; long ones are cut and fade out. */
 .lp-template .lp-screen {
-  margin-top: auto;
-  border-radius: 10px 10px 0 0;
+  flex: none;
+  border-radius: 10px;
+}
+
+.lp-template__visual::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 0;
+  height: 64px;
+  background: linear-gradient(transparent, var(--lp-card));
+  pointer-events: none;
 }
 
 .lp-template__body {
@@ -941,9 +953,17 @@
 
 .lp-carousel__controls {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
   margin-top: 20px;
+}
+
+.lp-carousel__all {
+  order: 3;
+  flex-basis: 100%;
+  justify-content: center;
+  margin-top: 24px;
 }
 
 .lp-progress {

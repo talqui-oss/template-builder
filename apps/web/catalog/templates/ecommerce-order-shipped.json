@@ -1,0 +1,38 @@
+{
+  "title": "Order shipped with tracking link",
+  "description": "Tell customers their order left the warehouse, with a dynamic tracking link and delivery estimate. Approved as a utility template.",
+  "industry": "ecommerce",
+  "useCase": "shipping-update",
+  "keywords": ["order shipped", "tracking link", "shipping notification"],
+  "notes": "Utility templates must stay transactional: no discount or upsell in the text, or Meta recategorizes them as marketing.",
+  "template": {
+    "name": "order_shipped",
+    "language": "en_US",
+    "category": "UTILITY",
+    "header": {
+      "type": "TEXT",
+      "text": "Order {{order}} shipped"
+    },
+    "body": {
+      "text": "Hi {{name}}, your order *{{order}}* left our warehouse today and arrives within _3 business days_."
+    },
+    "footer": {
+      "text": "Acme Store"
+    },
+    "buttons": [
+      {
+        "type": "URL",
+        "text": "Track order",
+        "url": "https://acme.com/track/{{order}}"
+      }
+    ],
+    "variables": {
+      "name": {
+        "example": "Maria"
+      },
+      "order": {
+        "example": "4512"
+      }
+    }
+  }
+}

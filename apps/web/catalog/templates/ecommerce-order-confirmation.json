@@ -1,0 +1,45 @@
+{
+  "title": "Order confirmation message",
+  "description": "Confirm a new order on WhatsApp with order number, total and a link to the receipt. Utility template for online stores. Free to copy and edit.",
+  "industry": "ecommerce",
+  "useCase": "order-confirmation",
+  "keywords": [
+    "whatsapp order confirmation template",
+    "order confirmed message",
+    "ecommerce order confirmation whatsapp"
+  ],
+  "notes": "Keep it strictly transactional; adding a coupon or cross-sell flips Meta's classifier to marketing. Trigger it right after payment clears.",
+  "template": {
+    "name": "ecommerce_order_confirmation",
+    "language": "en_US",
+    "category": "UTILITY",
+    "header": {
+      "type": "TEXT",
+      "text": "Order #{{order_id}} confirmed"
+    },
+    "body": {
+      "text": "Thanks for your order, {{first_name}}! We received order *#{{order_id}}* totaling {{amount}} and we're getting it ready now."
+    },
+    "footer": {
+      "text": "Acme Store"
+    },
+    "buttons": [
+      {
+        "type": "URL",
+        "text": "View receipt",
+        "url": "https://acme.com/orders/{{order_id}}"
+      }
+    ],
+    "variables": {
+      "order_id": {
+        "example": "4512"
+      },
+      "first_name": {
+        "example": "Maria"
+      },
+      "amount": {
+        "example": "$49.90"
+      }
+    }
+  }
+}

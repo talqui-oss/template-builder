@@ -1,0 +1,45 @@
+{
+  "title": "Feedback after dining",
+  "description": "Ask guests how their meal went right after dining. Feedback request WhatsApp template for restaurants with quick replies.",
+  "industry": "restaurants",
+  "useCase": "feedback-request",
+  "keywords": [
+    "restaurant feedback whatsapp",
+    "dining review request",
+    "guest satisfaction message"
+  ],
+  "notes": "Send within a few hours. Route happy guests to a review link in the next message to stay compliant with in-template rules.",
+  "template": {
+    "name": "restaurants_feedback_after_dining",
+    "language": "en_US",
+    "category": "MARKETING",
+    "body": {
+      "text": "Hi {{first_name}}, thanks for dining at {{restaurant}} today! How was your meal?"
+    },
+    "footer": {
+      "text": "Reply STOP to opt out"
+    },
+    "buttons": [
+      {
+        "type": "QUICK_REPLY",
+        "text": "Delicious"
+      },
+      {
+        "type": "QUICK_REPLY",
+        "text": "It was fine"
+      },
+      {
+        "type": "QUICK_REPLY",
+        "text": "Not great"
+      }
+    ],
+    "variables": {
+      "first_name": {
+        "example": "Maria"
+      },
+      "restaurant": {
+        "example": "Northwind Bistro"
+      }
+    }
+  }
+}

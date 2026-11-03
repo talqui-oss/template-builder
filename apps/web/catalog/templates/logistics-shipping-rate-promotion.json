@@ -1,0 +1,49 @@
+{
+  "title": "Shipping discount promotion",
+  "description": "Promote discounted shipping rates to small business senders on WhatsApp with a coupon. Marketing template for couriers. Copy it and adapt the brand.",
+  "industry": "logistics",
+  "useCase": "promotion",
+  "keywords": [
+    "shipping discount whatsapp",
+    "courier promotion message",
+    "logistics marketing template"
+  ],
+  "notes": "Lead with a number (percent or amount) and an end date. Offer a coupon code via copy-code button.",
+  "template": {
+    "name": "logistics_shipping_rate_promotion",
+    "language": "en_US",
+    "category": "MARKETING",
+    "header": {
+      "type": "TEXT",
+      "text": "Cheaper shipping this month"
+    },
+    "body": {
+      "text": "Ship more for less, {{first_name}}! Get *{{discount}} off* all domestic shipments until {{end_date}}. Apply the code at checkout in your dashboard."
+    },
+    "footer": {
+      "text": "Reply STOP to opt out"
+    },
+    "buttons": [
+      {
+        "type": "COPY_CODE",
+        "example": "SHIP15"
+      },
+      {
+        "type": "URL",
+        "text": "Create shipment",
+        "url": "https://acmelogistics.com/ship"
+      }
+    ],
+    "variables": {
+      "first_name": {
+        "example": "Greg"
+      },
+      "discount": {
+        "example": "15%"
+      },
+      "end_date": {
+        "example": "Nov 30"
+      }
+    }
+  }
+}

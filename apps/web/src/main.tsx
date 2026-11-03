@@ -5,28 +5,16 @@ import "@talqui-oss/template-builder/styles.css";
 import "./styles.css";
 import "./landing/landing.css";
 import "./agents/agents.css";
+import "./catalog/catalog.css";
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-import { Agents } from "./agents/Agents";
-import { App } from "./App";
-import { Landing } from "./landing/Landing";
+import { resolveRoute } from "./routes";
 
-// Three pages, picked by path; the static host serves index.html for each of them.
-const ROUTES = {
-  "/": {
-    page: Landing,
-    title: "template-builder: WhatsApp templates, exactly as they arrive",
-  },
-  "/playground": { page: App, title: "Playground · template-builder" },
-  "/agents": { page: Agents, title: "template-builder for agents" },
-};
+const { head, element } = resolveRoute(location.pathname);
+document.title = head.title;
 
-const path = location.pathname.replace(/\/+$/, "") || "/";
-const route = ROUTES[path as keyof typeof ROUTES] ?? ROUTES["/"];
-document.title = route.title;
-
+// shortcut: the static HTML is replaced, not hydrated, because the playground reads the URL
+// hash on first render; hydrate once pages render the same on server and client.
 createRoot(document.getElementById("root")!).render(
-  <StrictMode>
-    <route.page />
-  </StrictMode>,
+  <StrictMode>{element}</StrictMode>,
 );

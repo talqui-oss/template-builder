@@ -1,0 +1,41 @@
+{
+  "title": "Loyalty tier upgrade",
+  "description": "Congratulate shoppers on reaching a new loyalty tier and list the perks they unlock. Loyalty reward WhatsApp template for stores.",
+  "industry": "retail",
+  "useCase": "loyalty-reward",
+  "keywords": [
+    "loyalty program whatsapp message",
+    "tier upgrade notification",
+    "retail rewards template"
+  ],
+  "notes": "Spell out the new perks in the body. Reviewers approve concrete benefit statements faster than vague congratulations.",
+  "template": {
+    "name": "retail_loyalty_tier_upgrade",
+    "language": "en_US",
+    "category": "MARKETING",
+    "body": {
+      "text": "Congratulations {{first_name}}! You've reached *{{tier}}* status. Enjoy free alterations, early sale access and a {{reward}} on your birthday."
+    },
+    "footer": {
+      "text": "Reply STOP to opt out"
+    },
+    "buttons": [
+      {
+        "type": "URL",
+        "text": "View my perks",
+        "url": "https://acme.com/loyalty"
+      }
+    ],
+    "variables": {
+      "first_name": {
+        "example": "Maria"
+      },
+      "tier": {
+        "example": "Gold"
+      },
+      "reward": {
+        "example": "$10 credit"
+      }
+    }
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "title": "Late checkout upgrade offer",
+  "description": "Offer in-stay upgrades like late checkout on WhatsApp for guests currently at the hotel. Marketing template with a quick reply to accept.",
+  "industry": "travel",
+  "useCase": "promotion",
+  "keywords": [
+    "hotel upsell whatsapp",
+    "late checkout offer message",
+    "hotel upgrade template"
+  ],
+  "notes": "Time it the evening before checkout. Quick-reply acceptance keeps the experience conversational and easy to track.",
+  "template": {
+    "name": "travel_late_checkout_upsell",
+    "language": "en_US",
+    "category": "MARKETING",
+    "body": {
+      "text": "Hi {{first_name}}, would you like to sleep in? Extend your checkout to *{{late_time}}* for just {{price}}. Reply below and we will confirm right away."
+    },
+    "footer": {
+      "text": "Reply STOP to opt out"
+    },
+    "buttons": [
+      {
+        "type": "QUICK_REPLY",
+        "text": "Yes, extend"
+      },
+      {
+        "type": "QUICK_REPLY",
+        "text": "No thanks"
+      }
+    ],
+    "variables": {
+      "first_name": {
+        "example": "Emma"
+      },
+      "late_time": {
+        "example": "2:00 PM"
+      },
+      "price": {
+        "example": "$25"
+      }
+    }
+  }
+}

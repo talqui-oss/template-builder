@@ -1,16 +1,20 @@
-import type { Template } from "@talqui-oss/template-builder";
-import { TemplatePreview } from "@talqui-oss/template-builder-react";
-import { useEffect, useRef, useState, type ReactNode } from "react";
+import { useEffect, useRef, useState } from "react";
+import { CATALOG } from "../catalog/data";
 import { EXAMPLES } from "../examples";
 import { templateLink } from "../state";
 import { AsciiArt } from "./AsciiArt";
-import { CopyIcon, GitHubIcon, ArrowIcon } from "./icons";
-
-const GITHUB = "https://github.com/talqui-oss/template-builder";
-const NPM = "https://www.npmjs.com/package/@talqui-oss/template-builder";
-const TALQUI =
-  "https://talqui.chat?utm_source=template-builder&utm_medium=site&utm_campaign=footer";
-const INSTALL = "npm i @talqui-oss/template-builder";
+import { ArrowIcon, GitHubIcon } from "./icons";
+import {
+  ChatScreen,
+  Eyebrow,
+  Footer,
+  GITHUB,
+  Header,
+  InstallCommand,
+  Joint,
+  TALQUI,
+  useCopy,
+} from "./parts";
 
 /** The human landing page at `/`. */
 export function Landing() {
@@ -50,103 +54,6 @@ export function Landing() {
   );
 }
 
-/** The horizontal rule between sections, with a small square where it meets each rail. */
-function Joint() {
-  return (
-    <div className="lp-joint" aria-hidden="true">
-      <span />
-      <span />
-    </div>
-  );
-}
-
-function Brand() {
-  return (
-    <a className="lp-brand" href="/">
-      <span className="lp-brand__mark" aria-hidden="true" />
-      <span className="lp-chip">template-builder</span>
-    </a>
-  );
-}
-
-function Header() {
-  return (
-    <header className="lp-rails lp-header">
-      <Brand />
-      <nav className="lp-header__nav">
-        <a className="lp-chip lp-chip--outline" href="/agents">
-          for agents
-        </a>
-        <a className="lp-chip" href={GITHUB}>
-          github
-        </a>
-        <a className="lp-chip" href={NPM}>
-          npm
-        </a>
-        <a className="lp-chip lp-chip--strong" href="/playground">
-          Open Playground
-        </a>
-      </nav>
-    </header>
-  );
-}
-
-function Eyebrow({ index, children }: { index: string; children: ReactNode }) {
-  return (
-    <p className="lp-eyebrow">
-      <span className="lp-square" aria-hidden="true" />
-      <span className="lp-eyebrow__index">{index}</span>
-      {children}
-    </p>
-  );
-}
-
-/** Copies `text` and shows a short confirmation on the button that asked for it. */
-function useCopy() {
-  const [copied, setCopied] = useState(false);
-  const copy = (text: string) => {
-    void navigator.clipboard.writeText(text);
-    setCopied(true);
-    setTimeout(() => setCopied(false), 1500);
-  };
-  return { copied, copy };
-}
-
-function InstallCommand() {
-  const { copied, copy } = useCopy();
-  return (
-    <div className="lp-command">
-      <code>
-        <span className="lp-command__prompt">$</span> {INSTALL}
-      </code>
-      <button
-        type="button"
-        className="lp-command__copy"
-        aria-label={copied ? "Copied" : "Copy install command"}
-        onClick={() => copy(INSTALL)}
-      >
-        <CopyIcon />
-      </button>
-    </div>
-  );
-}
-
-/** A slice of the WhatsApp chat: doodle wallpaper plus the rendered template. */
-function ChatScreen({
-  template,
-  className,
-}: {
-  template: Template;
-  className?: string;
-}) {
-  return (
-    <div className={`lp-screen ${className ?? ""}`}>
-      <div className="lp-screen__wallpaper" aria-hidden="true" />
-      <TemplatePreview template={template} time="09:41" />
-    </div>
-  );
-}
-
 const PROVIDERS = ["Meta", "Twilio", "Talqui"];
 
 function Hero() {
@@ -164,7 +71,7 @@ function Hero() {
     <section className="lp-rails lp-hero">
       <h1 className="lp-hero__title">
         <span>
-          Build WhatsApp templates for{" "}
+          Free WhatsApp template builder for{" "}
           <span className="lp-token" key={provider}>
             {PROVIDERS[provider]}
           </span>
@@ -172,9 +79,9 @@ function Hero() {
         <em className="lp-serif">exactly as they arrive</em>
       </h1>
       <p className="lp-hero__lead">
-        Write the template once, as JSON. See it on the phone, check it
+        Add template creation, preview and validation to your product, and
         <br />
-        against WhatsApp's review rules and create it on any provider.
+        create templates on Meta from your backend. One open-source library.
       </p>
       <div className="lp-hero__actions">
         <InstallCommand />
@@ -222,13 +129,13 @@ function PreviewSection() {
       <div className="lp-split__text">
         <Eyebrow index="01">The preview</Eyebrow>
         <h2 className="lp-h2">
-          One JSON.
+          Free WhatsApp preview,
           <br />
-          <em className="lp-serif">Every screen.</em>
+          <em className="lp-serif">inside your app</em>
         </h2>
         <p className="lp-lead">
-          The bubble, line breaks and buttons match a real iPhone, measured
-          point by point. What you see is what your customer gets.
+          Show your users the exact message their customers will get: the
+          bubble, line breaks and buttons match a real iPhone, point by point.
         </p>
         <ul className="lp-tabs" role="tablist" aria-label="Examples">
           {PREVIEW_TABS.map((tab, index) => (
@@ -265,8 +172,8 @@ function PreviewSection() {
 
 const BLOCKS = [
   {
-    title: "Pixel-true preview",
-    text: "Bubble, fonts and spacing calibrated against screenshots of a real iPhone.",
+    title: "Preview in your frontend",
+    text: "Drop <TemplatePreview> into your React or Vue app, next to the editor your users already have.",
     rows: [
       ["React and Vue components", "ssr"],
       ["Download as PNG, JPG or WEBP", "3x"],
@@ -281,8 +188,8 @@ const BLOCKS = [
     ),
   },
   {
-    title: "Review rules, locally",
-    text: "73 checks WhatsApp applies before approval, each with a stable code you can test for.",
+    title: "Validate in the browser and the API",
+    text: "Run the 73 checks Meta applies at review while users type, and again on your server before submitting.",
     rows: [
       ["Typed issues with a path", "ts"],
       ["Errors and warnings", "73"],
@@ -303,8 +210,8 @@ const BLOCKS = [
     ),
   },
   {
-    title: "Create anywhere",
-    text: "Adapters turn the same template into the request each provider expects, or a cURL.",
+    title: "Create on Meta from your backend",
+    text: "Turn the template into the Cloud API request in your Node backend, or into the call your provider expects.",
     rows: [
       ["Meta Cloud API", "verified"],
       ["Talqui", "verified"],
@@ -325,16 +232,16 @@ function BuildingBlocks() {
     <section className="lp-rails lp-section">
       <div className="lp-section__head">
         <div>
-          <Eyebrow index="02">Building blocks</Eyebrow>
+          <Eyebrow index="02">In your product</Eyebrow>
           <h2 className="lp-h2">
-            The template
+            Add WhatsApp templates
             <br />
-            <em className="lp-serif">building blocks</em>
+            <em className="lp-serif">to your product, free</em>
           </h2>
         </div>
         <p className="lp-lead lp-lead--side">
-          Everything between writing a template and getting it approved, in one
-          small package.
+          Template creation, preview and validation for your users, and the Meta
+          integration for your backend. Free and MIT licensed.
         </p>
       </div>
       <div className="lp-blocks">
@@ -397,7 +304,7 @@ function Templates() {
         <div>
           <Eyebrow index="03">Templates</Eyebrow>
           <h2 className="lp-h2">
-            Ready-made <em className="lp-serif">templates</em>
+            Free ready-made <em className="lp-serif">templates</em>
             <br />
             for real conversations
           </h2>
@@ -442,6 +349,9 @@ function Templates() {
         ))}
       </ul>
       <div className="lp-carousel__controls">
+        <a className="lp-link lp-carousel__all" href="/catalog">
+          Browse {CATALOG.length} free templates <ArrowIcon />
+        </a>
         <p className="lp-progress">
           <span>
             0{Math.min(page + 1, EXAMPLES.length)} / 0{EXAMPLES.length}
@@ -624,8 +534,9 @@ function OpenSource() {
         <div className="lp-open__rays" aria-hidden="true" />
         <Eyebrow index="05">Open source</Eyebrow>
         <h2 className="lp-h2 lp-h2--center">
-          <span className="lp-dim">Start with one template.</span>{" "}
-          <em className="lp-serif">Ship thousands</em> with confidence.
+          <span className="lp-dim">Free and open source.</span>{" "}
+          <em className="lp-serif">Ship thousands</em> of templates with
+          confidence.
         </h2>
         <p className="lp-lead lp-lead--center">
           template-builder is maintained by{" "}
@@ -654,6 +565,10 @@ function OpenSource() {
 }
 
 const QUESTIONS = [
+  [
+    "Why does this exist?",
+    "Talqui is a multichannel inbox, and our customers create and send WhatsApp templates every day. We kept paying for the same problems: previews that did not match the phone, templates rejected for rules nobody had written down, and a different API for each provider. Every team that sends WhatsApp at scale runs into the same wall, so we turned our solution into a free, open-source library the whole market can use.",
+  ],
   [
     "What is template-builder?",
     "An open-source SDK to preview, validate and create WhatsApp message templates. You describe the template as JSON and get a pixel-true preview, the review rules WhatsApp applies and the request for your provider.",
@@ -710,7 +625,7 @@ function GetStarted() {
         <h2 className="lp-h2">
           Preview your first
           <br />
-          template. <em className="lp-serif">Today</em>
+          template. <em className="lp-serif">Free, today</em>
         </h2>
         <p className="lp-muted">
           Free and open source.
@@ -730,30 +645,5 @@ function GetStarted() {
         />
       </div>
     </section>
-  );
-}
-
-function Footer() {
-  return (
-    <footer className="lp-rails lp-footer">
-      <div className="lp-footer__left">
-        <Brand />
-        <span className="lp-footer__meta">© 2026</span>
-        <a className="lp-footer__meta lp-accent" href={TALQUI}>
-          built by Talqui
-        </a>
-      </div>
-      <nav className="lp-header__nav">
-        <a className="lp-chip lp-chip--outline" href="/agents">
-          for agents
-        </a>
-        <a className="lp-chip" href={NPM}>
-          npm
-        </a>
-        <a className="lp-chip" href={GITHUB}>
-          github
-        </a>
-      </nav>
-    </footer>
   );
 }

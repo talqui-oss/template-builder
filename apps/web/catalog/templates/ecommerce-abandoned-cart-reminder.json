@@ -1,0 +1,41 @@
+{
+  "title": "Abandoned cart reminder",
+  "description": "WhatsApp abandoned cart template that reminds shoppers about items left in their cart and links straight back to checkout.",
+  "industry": "ecommerce",
+  "useCase": "abandoned-cart",
+  "keywords": [
+    "whatsapp abandoned cart template",
+    "cart recovery message",
+    "abandoned cart whatsapp example"
+  ],
+  "notes": "Send 1 to 3 hours after abandonment; later messages feel stale. Only message shoppers who opted in at checkout, and keep it free of fake urgency.",
+  "template": {
+    "name": "ecommerce_abandoned_cart_reminder",
+    "language": "en_US",
+    "category": "MARKETING",
+    "body": {
+      "text": "Hi {{first_name}}, you left *{{product_name}}* in your cart. It's still waiting for you, and we saved your spot so you can finish in one tap."
+    },
+    "footer": {
+      "text": "Reply STOP to opt out"
+    },
+    "buttons": [
+      {
+        "type": "URL",
+        "text": "Return to cart",
+        "url": "https://acme.com/cart/{{order_id}}"
+      }
+    ],
+    "variables": {
+      "first_name": {
+        "example": "Maria"
+      },
+      "product_name": {
+        "example": "Linen Shirt"
+      },
+      "order_id": {
+        "example": "4512"
+      }
+    }
+  }
+}

@@ -1,0 +1,101 @@
+{
+  "industries": [
+    {
+      "slug": "ecommerce",
+      "label": "E-commerce",
+      "description": "Order updates, abandoned carts and promotions for online stores."
+    },
+    {
+      "slug": "retail",
+      "label": "Retail",
+      "description": "In-store pickups, loyalty programs and offers for physical stores."
+    },
+    {
+      "slug": "restaurants",
+      "label": "Restaurants",
+      "description": "Reservations, delivery updates and menu promotions for food businesses."
+    },
+    {
+      "slug": "healthcare",
+      "label": "Healthcare",
+      "description": "Appointment reminders, test results and follow-ups for clinics and hospitals."
+    },
+    {
+      "slug": "beauty",
+      "label": "Beauty and wellness",
+      "description": "Bookings, reminders and offers for salons, spas and studios."
+    },
+    {
+      "slug": "fitness",
+      "label": "Fitness",
+      "description": "Class bookings, membership renewals and check-ins for gyms and studios."
+    },
+    {
+      "slug": "education",
+      "label": "Education",
+      "description": "Enrollment, class reminders and payment notices for schools and courses."
+    },
+    {
+      "slug": "finance",
+      "label": "Finance and banking",
+      "description": "Payment reminders, account alerts and confirmations for financial services."
+    },
+    {
+      "slug": "insurance",
+      "label": "Insurance",
+      "description": "Policy renewals, claim updates and quotes for insurers and brokers."
+    },
+    {
+      "slug": "real-estate",
+      "label": "Real estate",
+      "description": "Viewing confirmations, new listings and rent reminders for agencies."
+    },
+    {
+      "slug": "travel",
+      "label": "Travel and hospitality",
+      "description": "Booking confirmations, check-in details and trip updates for hotels and agencies."
+    },
+    {
+      "slug": "logistics",
+      "label": "Logistics and delivery",
+      "description": "Pickup notices, delivery windows and proof of delivery for carriers."
+    },
+    {
+      "slug": "automotive",
+      "label": "Automotive",
+      "description": "Service reminders, test drives and parts updates for dealers and workshops."
+    },
+    {
+      "slug": "saas",
+      "label": "SaaS and software",
+      "description": "Onboarding, trial ends, billing and security codes for software products."
+    },
+    {
+      "slug": "events",
+      "label": "Events",
+      "description": "Tickets, reminders and last-minute changes for events and venues."
+    }
+  ],
+  "useCases": [
+    { "slug": "welcome", "label": "Welcome message" },
+    { "slug": "order-confirmation", "label": "Order confirmation" },
+    { "slug": "shipping-update", "label": "Shipping update" },
+    { "slug": "delivery-confirmation", "label": "Delivery confirmation" },
+    { "slug": "abandoned-cart", "label": "Abandoned cart" },
+    { "slug": "back-in-stock", "label": "Back in stock" },
+    { "slug": "promotion", "label": "Promotion" },
+    { "slug": "seasonal-campaign", "label": "Seasonal campaign" },
+    { "slug": "product-launch", "label": "Product launch" },
+    { "slug": "payment-reminder", "label": "Payment reminder" },
+    { "slug": "payment-confirmation", "label": "Payment confirmation" },
+    { "slug": "appointment-reminder", "label": "Appointment reminder" },
+    { "slug": "booking-confirmation", "label": "Booking confirmation" },
+    { "slug": "verification-code", "label": "Verification code" },
+    { "slug": "account-alert", "label": "Account alert" },
+    { "slug": "feedback-request", "label": "Feedback request" },
+    { "slug": "re-engagement", "label": "Re-engagement" },
+    { "slug": "event-invitation", "label": "Event invitation" },
+    { "slug": "loyalty-reward", "label": "Loyalty reward" },
+    { "slug": "renewal-reminder", "label": "Renewal reminder" }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "title": "Failed delivery attempt notice",
+  "description": "Notify recipients that a delivery attempt failed and let them reschedule via WhatsApp. Utility template for couriers. Copy it and adapt the brand.",
+  "industry": "logistics",
+  "useCase": "shipping-update",
+  "keywords": [
+    "failed delivery whatsapp",
+    "missed delivery message",
+    "reschedule delivery template"
+  ],
+  "notes": "Say why it failed and offer concrete reschedule choices through quick replies.",
+  "template": {
+    "name": "logistics_failed_delivery_attempt",
+    "language": "en_US",
+    "category": "UTILITY",
+    "header": {
+      "type": "TEXT",
+      "text": "Delivery attempt missed"
+    },
+    "body": {
+      "text": "Hi {{first_name}}, we tried to deliver package *{{tracking}}* today but nobody was available. When would you like us to try again?"
+    },
+    "footer": {
+      "text": "Northwind Express"
+    },
+    "buttons": [
+      {
+        "type": "QUICK_REPLY",
+        "text": "Tomorrow morning"
+      },
+      {
+        "type": "QUICK_REPLY",
+        "text": "Tomorrow afternoon"
+      },
+      {
+        "type": "QUICK_REPLY",
+        "text": "Pick up at depot"
+      }
+    ],
+    "variables": {
+      "first_name": {
+        "example": "Nora"
+      },
+      "tracking": {
+        "example": "NW48210"
+      }
+    }
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "title": "Test results ready",
+  "description": "Notify patients that lab results are available in the secure portal without sharing the results. Account alert WhatsApp template.",
+  "industry": "healthcare",
+  "useCase": "account-alert",
+  "keywords": [
+    "lab results ready whatsapp",
+    "test results notification",
+    "patient portal message"
+  ],
+  "notes": "Never put results in the message. Point to the secure portal only; this is also a privacy requirement.",
+  "template": {
+    "name": "healthcare_test_results_ready",
+    "language": "en_US",
+    "category": "UTILITY",
+    "body": {
+      "text": "Hi {{first_name}}, your test results from {{date}} are now available in the {{clinic}} patient portal. Log in securely to view them."
+    },
+    "buttons": [
+      {
+        "type": "URL",
+        "text": "Open patient portal",
+        "url": "https://acmehealth.example.com/portal"
+      }
+    ],
+    "variables": {
+      "first_name": {
+        "example": "Maria"
+      },
+      "date": {
+        "example": "March 14"
+      },
+      "clinic": {
+        "example": "Acme Health Clinic"
+      }
+    }
+  }
+}

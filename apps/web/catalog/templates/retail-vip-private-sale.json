@@ -1,0 +1,52 @@
+{
+  "title": "VIP private sale access",
+  "description": "Give VIP customers early access to a private sale with an exclusive code. Promotion WhatsApp template for retail loyalty members.",
+  "industry": "retail",
+  "useCase": "promotion",
+  "keywords": [
+    "vip sale whatsapp template",
+    "exclusive offer message",
+    "early access sale retail"
+  ],
+  "notes": "Exclusivity wording is fine when true; make sure the segment really is VIP-only. Include the offer end date.",
+  "template": {
+    "name": "retail_vip_private_sale",
+    "language": "en_US",
+    "category": "MARKETING",
+    "header": {
+      "type": "TEXT",
+      "text": "VIP early access"
+    },
+    "body": {
+      "text": "Hi {{first_name}}, as a valued {{tier}} member you get first access to our private sale. Take *{{percent}}% off* before it opens to everyone on {{date}}. Thank you, and reply here if you need anything."
+    },
+    "footer": {
+      "text": "Reply STOP to opt out"
+    },
+    "buttons": [
+      {
+        "type": "COPY_CODE",
+        "example": "VIP20"
+      },
+      {
+        "type": "URL",
+        "text": "Shop early access",
+        "url": "https://acme.com/vip"
+      }
+    ],
+    "variables": {
+      "first_name": {
+        "example": "Maria"
+      },
+      "tier": {
+        "example": "Gold"
+      },
+      "percent": {
+        "example": "20"
+      },
+      "date": {
+        "example": "March 14"
+      }
+    }
+  }
+}

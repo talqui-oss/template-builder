@@ -1,0 +1,45 @@
+{
+  "title": "Free trial ending soon",
+  "description": "Warn users on WhatsApp that their free trial ends in a few days, with a link to pick a plan. Marketing template for SaaS conversion.",
+  "industry": "saas",
+  "useCase": "renewal-reminder",
+  "keywords": [
+    "trial ending whatsapp",
+    "free trial expiry message",
+    "saas trial reminder template"
+  ],
+  "notes": "Treat as marketing since it nudges a purchase. State the exact end date and what the user will lose.",
+  "template": {
+    "name": "saas_trial_ending_soon",
+    "language": "en_US",
+    "category": "MARKETING",
+    "body": {
+      "text": "Hi {{first_name}}, your free trial of Lumen ends on *{{end_date}}*. Choose a plan to keep your {{projects}} projects and data, or reply if you need more time."
+    },
+    "footer": {
+      "text": "Reply STOP to opt out"
+    },
+    "buttons": [
+      {
+        "type": "URL",
+        "text": "Choose a plan",
+        "url": "https://lumen.app/pricing"
+      },
+      {
+        "type": "QUICK_REPLY",
+        "text": "I need more time"
+      }
+    ],
+    "variables": {
+      "first_name": {
+        "example": "Ana"
+      },
+      "end_date": {
+        "example": "Nov 10"
+      },
+      "projects": {
+        "example": "4"
+      }
+    }
+  }
+}

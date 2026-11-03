@@ -1,0 +1,34 @@
+{
+  "title": "Class starting soon reminder",
+  "description": "Remind members about a class starting in a few hours. Appointment reminder WhatsApp template for gyms and yoga studios. Free to copy and edit.",
+  "industry": "fitness",
+  "useCase": "appointment-reminder",
+  "keywords": [
+    "gym class reminder whatsapp",
+    "yoga class reminder message",
+    "fitness reminder template"
+  ],
+  "notes": "Send 2 to 3 hours before. Short messages are read; long ones are skipped.",
+  "template": {
+    "name": "fitness_class_reminder",
+    "language": "en_US",
+    "category": "UTILITY",
+    "body": {
+      "text": "Hi {{first_name}}, your *{{class_name}}* class starts today at {{time}}. Bring a towel and water, and arrive 5 minutes early."
+    },
+    "footer": {
+      "text": "Acme Fitness"
+    },
+    "variables": {
+      "first_name": {
+        "example": "Maria"
+      },
+      "class_name": {
+        "example": "Morning Yoga"
+      },
+      "time": {
+        "example": "3:30 PM"
+      }
+    }
+  }
+}

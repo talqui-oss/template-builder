@@ -1,0 +1,37 @@
+{
+  "title": "Claim received confirmation",
+  "description": "Confirm that an insurance claim was received on WhatsApp, with claim number and expected review time. Reassuring utility template.",
+  "industry": "insurance",
+  "useCase": "booking-confirmation",
+  "keywords": [
+    "insurance claim received whatsapp",
+    "claim confirmation message",
+    "claim submitted template"
+  ],
+  "notes": "Always include the claim number; it is the strongest signal that this is transactional. Set a realistic review time to cut follow-up chats.",
+  "template": {
+    "name": "insurance_claim_received_confirmation",
+    "language": "en_US",
+    "category": "UTILITY",
+    "body": {
+      "text": "Hello {{first_name}}, we received your claim *{{claim_no}}* on {{date}}. An adjuster will review it within {{days}} business days and contact you if we need more information."
+    },
+    "footer": {
+      "text": "Acme Insurance"
+    },
+    "variables": {
+      "first_name": {
+        "example": "Tom"
+      },
+      "claim_no": {
+        "example": "CL-558210"
+      },
+      "date": {
+        "example": "Nov 3"
+      },
+      "days": {
+        "example": "3"
+      }
+    }
+  }
+}

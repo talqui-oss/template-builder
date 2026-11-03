@@ -14,6 +14,8 @@ export function PhoneView({ template, platform, screenRef }: Props) {
   return (
     <div className="pg-phone">
       <div className="pg-phone__screen" ref={screenRef}>
+        {/* A real element, not ::before: image capture skips pseudo-element backgrounds. */}
+        <div className="pg-phone__wallpaper" aria-hidden="true" />
         <TemplatePreview
           template={template}
           platform={platform}

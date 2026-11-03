@@ -476,17 +476,15 @@ code {
 }
 
 /*
- * WhatsApp's doodle wallpaper, loaded from its public URL (not stored in this
- * repository). The file is drawn on the classic #e5ddd5 beige; the filter lifts
- * it to the lighter iOS tone measured on device.
+ * WhatsApp's doodle wallpaper, served from public/ so image downloads can embed it.
+ * The file is drawn on the classic #e5ddd5 beige; the filter lifts it to the
+ * lighter iOS tone measured on device.
  */
-.pg-phone__screen::before {
-  content: "";
+.pg-phone__wallpaper {
   position: absolute;
   inset: 0;
   z-index: -1;
-  background: url("https://user-images.githubusercontent.com/15075759/28719144-86dc0f70-73b1-11e7-911d-60d70fcded21.png")
-    0 0 / 640px auto repeat;
+  background: url("/wallpaper.png") 0 0 / 640px auto repeat;
   filter: saturate(0.55) brightness(1.1);
 }
 

@@ -557,7 +557,8 @@
   position: absolute;
   inset: 0;
   z-index: -1;
-  background: url("/wallpaper.png") 0 0 / 640px auto repeat;
+  /* 360px tile: doodles match their size on an iPhone screenshot (measured on the mic, ~27pt). */
+  background: url("/wallpaper.png") 0 0 / 360px auto repeat;
   filter: saturate(0.55) brightness(1.1);
 }
 

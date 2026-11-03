@@ -58,3 +58,14 @@ for package in "${packages[@]}"; do
 done
 
 echo "published $version as '$dist_tag'"
+
+# A copy on GitHub Packages lists the packages on the repository page. npm stays the source of
+# truth, so a failure here only warns. The npmrc reads the token from the environment.
+if [[ -n "${GITHUB_PACKAGES_TOKEN:-}" ]]; then
+  echo '//npm.pkg.github.com/:_authToken=${GITHUB_PACKAGES_TOKEN}' >"$out/.npmrc"
+  for package in "${packages[@]}"; do
+    npm publish "$out/talqui-oss-$package-$version.tgz" "${flags[@]}" \
+      --registry https://npm.pkg.github.com --userconfig "$out/.npmrc" --provenance=false ||
+      echo "::warning::GitHub Packages publish failed for $package"
+  done
+fi

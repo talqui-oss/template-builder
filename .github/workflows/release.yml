@@ -12,6 +12,7 @@ on:
 permissions:
   contents: write
   id-token: write
+  packages: write
 
 concurrency:
   group: release
@@ -56,9 +57,23 @@ jobs:
         run: pnpm lint && pnpm typecheck
       - if: steps.version.outputs.tag
         run: scripts/release.sh "${{ steps.version.outputs.tag }}"
+        env:
+          GITHUB_PACKAGES_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       # Tagged after publishing, so a failed publish can be retried by re-running the job.
       # A tag pushed with GITHUB_TOKEN does not start this workflow again.
       - if: steps.version.outputs.new
         run: |
           git tag "${{ steps.version.outputs.tag }}"
           git push origin "${{ steps.version.outputs.tag }}"
+      # Stable releases use their CHANGELOG.md section; prereleases list the commits since the last tag.
+      - if: steps.version.outputs.tag
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TAG: ${{ steps.version.outputs.tag }}
+        run: |
+          if [[ "$TAG" == *-* ]]; then
+            gh release create "$TAG" --verify-tag --prerelease --generate-notes
+          else
+            awk '/^##? \[?[0-9]/{if (found) exit; found=1; next} found' CHANGELOG.md > notes.md
+            gh release create "$TAG" --verify-tag --latest --notes-file notes.md
+          fi

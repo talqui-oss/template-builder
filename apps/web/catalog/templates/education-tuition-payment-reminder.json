@@ -1,0 +1,48 @@
+{
+  "title": "Tuition payment reminder",
+  "description": "Remind students or parents about an upcoming tuition payment. Payment reminder WhatsApp template for schools. Free to copy and edit.",
+  "industry": "education",
+  "useCase": "payment-reminder",
+  "keywords": [
+    "tuition reminder whatsapp",
+    "school fee payment message",
+    "payment due template education"
+  ],
+  "notes": "Use the amount, due date and invoice reference. Be courteous and avoid late-fee threats in the first reminder.",
+  "approvalRate": 98,
+  "template": {
+    "name": "education_tuition_payment_reminder",
+    "language": "en_US",
+    "category": "UTILITY",
+    "body": {
+      "text": "Hi {{first_name}}, a friendly reminder that your tuition installment of {{amount}} for *{{course}}* is due on {{date}}. Thank you, and reply here if you need anything."
+    },
+    "footer": {
+      "text": "Acme Academy"
+    },
+    "buttons": [
+      {
+        "type": "URL",
+        "text": "Pay now",
+        "url": "https://acmeacademy.example.com/pay/{{invoice_id}}"
+      }
+    ],
+    "variables": {
+      "first_name": {
+        "example": "Maria"
+      },
+      "amount": {
+        "example": "$49.90"
+      },
+      "course": {
+        "example": "Intro to Design"
+      },
+      "date": {
+        "example": "March 14"
+      },
+      "invoice_id": {
+        "example": "INV-208"
+      }
+    }
+  }
+}

@@ -228,8 +228,12 @@ const cases: Record<Code, unknown> = {
     callPermissionRequest: true,
   },
   ORDER_DETAILS_MISMATCH: withButtons([
-    { type: "ORDER_DETAILS", text: "See order" },
+    { type: "ORDER_DETAILS", text: "Copy Pix code" },
   ]),
+  BUTTON_ORDER_DETAILS_TEXT: {
+    ...withButtons([{ type: "ORDER_DETAILS", text: "See order" }]),
+    displayFormat: "ORDER_DETAILS",
+  },
   OTP_CODE_EXPIRATION_RANGE: auth(
     { otpType: "COPY_CODE" },
     { footer: { codeExpirationMinutes: 120 } },

@@ -1,0 +1,52 @@
+{
+  "title": "Suspicious transaction alert",
+  "description": "Alert customers about an unusual card transaction on WhatsApp and let them confirm or block it in one tap. Utility fraud alert template.",
+  "industry": "finance",
+  "useCase": "account-alert",
+  "keywords": [
+    "fraud alert whatsapp template",
+    "suspicious transaction message",
+    "card transaction alert"
+  ],
+  "notes": "Never ask for a PIN, password or full card number in the message. Quick replies like It was me / Not me give a fast, safe response path.",
+  "approvalRate": 81,
+  "template": {
+    "name": "finance_suspicious_transaction_alert",
+    "language": "en_US",
+    "category": "UTILITY",
+    "header": {
+      "type": "TEXT",
+      "text": "Unusual card activity"
+    },
+    "body": {
+      "text": "Hi {{first_name}}, we noticed a transaction of *{{amount}}* at {{merchant}} on your card ending in {{last4}}. Was this you?"
+    },
+    "footer": {
+      "text": "Lumen Bank Security"
+    },
+    "buttons": [
+      {
+        "type": "QUICK_REPLY",
+        "text": "Yes, it was me"
+      },
+      {
+        "type": "QUICK_REPLY",
+        "text": "No, block my card"
+      }
+    ],
+    "variables": {
+      "first_name": {
+        "example": "Priya"
+      },
+      "amount": {
+        "example": "$489.99"
+      },
+      "merchant": {
+        "example": "Globex Electronics"
+      },
+      "last4": {
+        "example": "4417"
+      }
+    }
+  }
+}

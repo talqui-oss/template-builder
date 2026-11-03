@@ -1,0 +1,441 @@
+/* Playground chrome. The phone preview itself is styled by the package's styles.css. */
+
+:root {
+  --pg-bg: #0b0a09;
+  --pg-surface: #161412;
+  --pg-surface-raised: #1f1d1b;
+  --pg-surface-hover: #2a2724;
+  --pg-text: #eee5d8;
+  --pg-text-muted: rgba(238, 229, 216, 0.55);
+  --pg-text-faint: rgba(238, 229, 216, 0.35);
+  --pg-border: rgba(238, 229, 216, 0.08);
+  --pg-border-strong: rgba(238, 229, 216, 0.16);
+  --pg-accent: #ff5c30;
+  --pg-warning: #f2b544;
+  --pg-success: #6fcf97;
+  --pg-radius: 16px;
+  --pg-radius-control: 7px;
+  --pg-font: "Inter Variable", "Inter", system-ui, sans-serif;
+  --pg-mono: "Geist Mono", ui-monospace, Menlo, monospace;
+
+  color-scheme: dark;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--pg-bg);
+  color: var(--pg-text);
+  font: 14px/1.5 var(--pg-font);
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: inherit;
+}
+
+code {
+  font-family: var(--pg-mono);
+  font-size: 0.92em;
+}
+
+/* Top bar */
+
+.pg-topbar {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+  padding: 0 24px;
+  border-bottom: 1px solid var(--pg-border);
+  background: rgba(11, 10, 9, 0.85);
+  backdrop-filter: blur(12px);
+}
+
+.pg-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.pg-brand__mark {
+  width: 14px;
+  height: 14px;
+  border-radius: 3px;
+  background: var(--pg-accent);
+  box-shadow: 5px 5px 0 -1px var(--pg-surface-hover);
+}
+
+.pg-topbar__links {
+  display: flex;
+  gap: 20px;
+  font: 12px var(--pg-mono);
+  color: var(--pg-text-muted);
+}
+
+.pg-topbar__links a {
+  text-decoration: none;
+}
+
+.pg-topbar__links a:hover {
+  color: var(--pg-text);
+}
+
+.pg-share {
+  padding: 4px 10px;
+  border: 0;
+  border-radius: 4px;
+  background: var(--pg-accent);
+  color: #0b0a09;
+  font: inherit;
+  cursor: pointer;
+}
+
+/* Two columns: editor on the left, sticky preview on the right. */
+
+.pg-layout {
+  display: flex;
+  gap: 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 32px 24px 64px;
+}
+
+.pg-layout__editor {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 16px;
+  min-width: 0;
+}
+
+.pg-layout__preview {
+  position: sticky;
+  top: 80px;
+  align-self: flex-start;
+  width: 520px;
+  flex: none;
+}
+
+@media (max-width: 960px) {
+  .pg-layout {
+    flex-direction: column;
+  }
+
+  .pg-layout__preview {
+    position: static;
+    width: 100%;
+  }
+}
+
+.pg-intro {
+  padding: 8px 0 16px;
+}
+
+.pg-overline {
+  margin: 0 0 12px;
+  font: 12px var(--pg-mono);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--pg-text-muted);
+}
+
+.pg-overline::before {
+  content: "";
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  margin-right: 8px;
+  vertical-align: 2px;
+  background: var(--pg-accent);
+}
+
+.pg-title {
+  margin: 0;
+  font-size: 32px;
+  font-weight: 500;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+
+.pg-title em {
+  font-style: italic;
+  font-weight: 400;
+  color: var(--pg-accent);
+}
+
+.pg-lead {
+  max-width: 560px;
+  margin: 12px 0 0;
+  font-size: 15px;
+  color: var(--pg-text-muted);
+}
+
+/* Cards */
+
+.pg-card {
+  border: 1px solid var(--pg-border);
+  border-radius: var(--pg-radius);
+  background: var(--pg-surface);
+}
+
+.pg-card__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  min-height: 52px;
+  padding: 10px 12px 10px 20px;
+  border-bottom: 1px solid var(--pg-border);
+}
+
+.pg-card__title {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  margin: 0;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.pg-card__index,
+.pg-card__meta {
+  font: 12px var(--pg-mono);
+  color: var(--pg-text-faint);
+}
+
+.pg-card__meta {
+  padding-right: 8px;
+}
+
+.pg-card__body {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 20px;
+}
+
+/* The template editor comes from the package; these variables give it the playground theme. */
+
+.pg-editor {
+  --tb-editor-font: var(--pg-font);
+  --tb-editor-mono: var(--pg-mono);
+  --tb-editor-text: var(--pg-text);
+  --tb-editor-muted: var(--pg-text-muted);
+  --tb-editor-faint: var(--pg-text-faint);
+  --tb-editor-surface: var(--pg-surface);
+  --tb-editor-control: var(--pg-bg);
+  --tb-editor-hover: var(--pg-surface-hover);
+  --tb-editor-border: var(--pg-border);
+  --tb-editor-border-strong: var(--pg-border-strong);
+  --tb-editor-accent: var(--pg-accent);
+  --tb-editor-radius: var(--pg-radius);
+  --tb-editor-radius-control: var(--pg-radius-control);
+}
+
+.pg-chip {
+  height: 28px;
+  padding: 0 10px;
+  border: 1px solid var(--pg-border-strong);
+  border-radius: var(--pg-radius-control);
+  background: transparent;
+  color: var(--pg-text-muted);
+  font: 11px var(--pg-mono);
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  transition:
+    background-color 0.2s cubic-bezier(0.4, 0, 0.2, 1),
+    color 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.pg-chip:hover:not(:disabled) {
+  background: var(--pg-surface-hover);
+  color: var(--pg-text);
+}
+
+.pg-chip:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
+/* Segmented control */
+
+.pg-segment {
+  display: inline-flex;
+  gap: 2px;
+  padding: 2px;
+  border-radius: 8px;
+  background: var(--pg-bg);
+  border: 1px solid var(--pg-border);
+}
+
+.pg-segment__item {
+  flex: 1 1 0;
+  justify-content: center;
+  height: 100%;
+  border-radius: 5px;
+}
+
+.pg-segment__item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  height: 26px;
+  padding: 0 10px;
+  border: 0;
+  border-radius: 6px;
+  background: transparent;
+  color: var(--pg-text-muted);
+  font: 500 12px var(--pg-font);
+  cursor: pointer;
+  transition:
+    background-color 0.2s cubic-bezier(0.4, 0, 0.2, 1),
+    color 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.pg-segment__item:hover:not(:disabled) {
+  color: var(--pg-text);
+}
+
+.pg-segment__item[aria-checked="true"] {
+  background: var(--pg-surface-hover);
+  color: var(--pg-text);
+}
+
+.pg-segment__item:disabled {
+  opacity: 0.45;
+  cursor: default;
+}
+
+.pg-segment__item:focus-visible {
+  outline: 2px solid var(--pg-accent);
+  outline-offset: 1px;
+}
+
+.pg-segment__badge {
+  padding: 0 5px;
+  border-radius: 999px;
+  background: var(--pg-surface-raised);
+  font: 10px var(--pg-mono);
+  color: var(--pg-text-faint);
+}
+
+/* Preview */
+
+.pg-preview__toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.pg-preview__downloads {
+  display: flex;
+  gap: 6px;
+}
+
+.pg-phone {
+  display: flex;
+  justify-content: center;
+  overflow-x: auto;
+  padding: 24px 0;
+  border-radius: 12px;
+  background:
+    radial-gradient(circle, var(--pg-border-strong) 1px, transparent 1.2px) 0
+      0 / 20px 20px,
+    var(--pg-bg);
+}
+
+/* Chat wallpaper behind the message; this node is what gets exported. */
+.pg-phone__screen {
+  position: relative;
+  isolation: isolate;
+  flex: none;
+  width: 440px;
+  padding: 24px 0;
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--tb-wallpaper, #f8f6f2);
+}
+
+/*
+ * WhatsApp's doodle wallpaper, served from public/ so image downloads can embed it.
+ * The file is drawn on the classic #e5ddd5 beige; the filter lifts it to the
+ * lighter iOS tone measured on device.
+ */
+.pg-phone__wallpaper {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  /* 360px tile: doodles match their size on an iPhone screenshot (measured on the mic, ~27pt). */
+  background: url("/wallpaper.png") 0 0 / 360px auto repeat;
+  filter: saturate(0.55) brightness(1.1);
+}
+
+.pg-code {
+  position: relative;
+}
+
+.pg-code__copy {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.pg-code__pre {
+  max-height: 520px;
+  margin: 0;
+  overflow: auto;
+  padding: 16px;
+  border: 1px solid var(--pg-border);
+  border-radius: 12px;
+  background: var(--pg-bg);
+  font: 12px/1.6 var(--pg-mono);
+  color: var(--pg-text-muted);
+  white-space: pre;
+}
+
+.pg-issues {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 12px;
+}
+
+.pg-issues--ok {
+  color: var(--pg-success);
+  font-family: var(--pg-mono);
+}
+
+.pg-issue {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 10px 12px;
+  border-left: 2px solid var(--pg-accent);
+  border-radius: 0 var(--pg-radius-control) var(--pg-radius-control) 0;
+  background: var(--pg-bg);
+  color: var(--pg-text-muted);
+}
+
+.pg-issue--warning {
+  border-left-color: var(--pg-warning);
+}
+
+.pg-issue__code {
+  color: var(--pg-text);
+  font-size: 11px;
+}

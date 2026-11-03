@@ -1,0 +1,49 @@
+{
+  "title": "Store pickup order ready",
+  "description": "Let customers know their click-and-collect order is ready at the store, with pickup hours. Utility WhatsApp template for retail.",
+  "industry": "retail",
+  "useCase": "order-confirmation",
+  "keywords": [
+    "click and collect whatsapp template",
+    "order ready for pickup message",
+    "store pickup notification"
+  ],
+  "notes": "State the pickup deadline and what to bring. No promotions in the text so it stays utility.",
+  "approvalRate": 78,
+  "template": {
+    "name": "retail_store_pickup_ready",
+    "language": "en_US",
+    "category": "UTILITY",
+    "header": {
+      "type": "TEXT",
+      "text": "Your order is ready"
+    },
+    "body": {
+      "text": "Hi {{first_name}}, your order *#{{order_id}}* is ready for pickup at {{store_name}}. Please bring a photo ID and collect it by {{date}}. Thank you, and reply here if you need anything."
+    },
+    "footer": {
+      "text": "Acme Retail"
+    },
+    "buttons": [
+      {
+        "type": "PHONE_NUMBER",
+        "text": "Call the store",
+        "phoneNumber": "+15550100"
+      }
+    ],
+    "variables": {
+      "first_name": {
+        "example": "Maria"
+      },
+      "order_id": {
+        "example": "4512"
+      },
+      "store_name": {
+        "example": "Acme Store"
+      },
+      "date": {
+        "example": "March 14"
+      }
+    }
+  }
+}

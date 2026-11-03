@@ -1,0 +1,51 @@
+{
+  "title": "Vehicle recall notice",
+  "description": "Notify owners of a safety recall on WhatsApp with the affected model and how to book a free repair. Utility safety alert for dealers.",
+  "industry": "automotive",
+  "useCase": "account-alert",
+  "keywords": [
+    "vehicle recall notification whatsapp",
+    "car recall message",
+    "safety recall template"
+  ],
+  "notes": "Recalls are safety-critical and not promotional, so utility fits. State the free repair and avoid sales language.",
+  "approvalRate": 90,
+  "template": {
+    "name": "automotive_recall_notice",
+    "language": "en_US",
+    "category": "UTILITY",
+    "header": {
+      "type": "TEXT",
+      "text": "Safety recall"
+    },
+    "body": {
+      "text": "Important safety notice for your {{vehicle}} (VIN ending {{vin_end}}). The manufacturer issued a recall for {{issue}}. The repair is free of charge. Please book your appointment as soon as possible."
+    },
+    "footer": {
+      "text": "Northwind Motors"
+    },
+    "buttons": [
+      {
+        "type": "URL",
+        "text": "Book free repair",
+        "url": "https://northwindmotors.com/recall"
+      },
+      {
+        "type": "PHONE_NUMBER",
+        "text": "Call us",
+        "phoneNumber": "+15550122"
+      }
+    ],
+    "variables": {
+      "vehicle": {
+        "example": "2020 Northwind Sedan"
+      },
+      "vin_end": {
+        "example": "4821"
+      },
+      "issue": {
+        "example": "a faulty airbag sensor"
+      }
+    }
+  }
+}

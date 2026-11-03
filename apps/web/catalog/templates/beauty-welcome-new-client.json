@@ -1,0 +1,36 @@
+{
+  "title": "New client welcome",
+  "description": "Welcome new clients with what to expect at the first appointment. Welcome WhatsApp template for salons and spas. Free to copy and edit.",
+  "industry": "beauty",
+  "useCase": "welcome",
+  "keywords": [
+    "salon welcome message whatsapp",
+    "new client welcome template",
+    "spa first visit message"
+  ],
+  "notes": "Offer one useful tip (arrival time, patch test). A warm, practical tone helps utility approval.",
+  "approvalRate": 75,
+  "template": {
+    "name": "beauty_welcome_new_client",
+    "language": "en_US",
+    "category": "UTILITY",
+    "body": {
+      "text": "Welcome to {{studio}}, {{first_name}}! For your first visit, arrive 10 minutes early and tell us about any allergies. We can't wait to meet you."
+    },
+    "buttons": [
+      {
+        "type": "PHONE_NUMBER",
+        "text": "Call the studio",
+        "phoneNumber": "+15550145"
+      }
+    ],
+    "variables": {
+      "studio": {
+        "example": "Bloom Studio"
+      },
+      "first_name": {
+        "example": "Maria"
+      }
+    }
+  }
+}

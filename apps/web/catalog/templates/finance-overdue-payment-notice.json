@@ -1,0 +1,54 @@
+{
+  "title": "Overdue payment notice",
+  "description": "Notify customers of an overdue balance on WhatsApp with the amount, days late and a link to settle. Polite utility template for collections.",
+  "industry": "finance",
+  "useCase": "payment-reminder",
+  "keywords": [
+    "overdue payment message whatsapp",
+    "late payment reminder template",
+    "collections whatsapp message"
+  ],
+  "notes": "Keep the tone neutral and avoid threats or legal wording; Meta rejects aggressive collection copy. Offer a human contact button so customers can negotiate.",
+  "approvalRate": 71,
+  "template": {
+    "name": "finance_overdue_payment_notice",
+    "language": "en_US",
+    "category": "UTILITY",
+    "header": {
+      "type": "TEXT",
+      "text": "Overdue balance"
+    },
+    "body": {
+      "text": "Hi {{first_name}}, our records show that your payment of *{{amount}}* is {{days_late}} days overdue. You can settle it now or talk to our team to review your options."
+    },
+    "footer": {
+      "text": "Northwind Credit"
+    },
+    "buttons": [
+      {
+        "type": "URL",
+        "text": "Settle balance",
+        "url": "https://northwindcredit.com/settle/{{pay_ref}}"
+      },
+      {
+        "type": "PHONE_NUMBER",
+        "text": "Call us",
+        "phoneNumber": "+15550142"
+      }
+    ],
+    "variables": {
+      "first_name": {
+        "example": "Marcus"
+      },
+      "amount": {
+        "example": "$310.50"
+      },
+      "days_late": {
+        "example": "5"
+      },
+      "pay_ref": {
+        "example": "INV7710"
+      }
+    }
+  }
+}

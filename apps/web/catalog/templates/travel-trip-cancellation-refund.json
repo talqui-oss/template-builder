@@ -1,0 +1,38 @@
+{
+  "title": "Trip cancellation and refund",
+  "description": "Confirm a cancelled booking on WhatsApp with refund amount and timing. Utility template for hotels, airlines and tour operators.",
+  "industry": "travel",
+  "useCase": "payment-confirmation",
+  "keywords": [
+    "booking cancellation whatsapp",
+    "refund confirmation message",
+    "travel refund template"
+  ],
+  "notes": "State the refund amount and expected days to arrive; vague refund copy drives support tickets.",
+  "approvalRate": 72,
+  "template": {
+    "name": "travel_trip_cancellation_refund",
+    "language": "en_US",
+    "category": "UTILITY",
+    "body": {
+      "text": "Hi {{first_name}}, your booking *{{booking_ref}}* has been cancelled as requested. A refund of {{refund}} will go to your original payment method within {{days}} business days."
+    },
+    "footer": {
+      "text": "Acme Travel"
+    },
+    "variables": {
+      "first_name": {
+        "example": "Sara"
+      },
+      "booking_ref": {
+        "example": "AG-90412"
+      },
+      "refund": {
+        "example": "$420.00"
+      },
+      "days": {
+        "example": "5"
+      }
+    }
+  }
+}

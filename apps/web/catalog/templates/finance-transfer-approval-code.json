@@ -1,0 +1,28 @@
+{
+  "title": "Transfer approval one-time code",
+  "description": "Authentication template that sends a one-time code to approve a money transfer or new payee. Copy-code button, expiry and security note.",
+  "industry": "finance",
+  "useCase": "verification-code",
+  "keywords": [
+    "transaction otp whatsapp",
+    "transfer verification code",
+    "2fa code whatsapp template"
+  ],
+  "notes": "Send the code only after the user starts the transfer, and invalidate it on expiry. Use a separate template from login codes so you can track them.",
+  "approvalRate": 75,
+  "template": {
+    "name": "finance_transfer_approval_code",
+    "language": "en_US",
+    "category": "AUTHENTICATION",
+    "body": {
+      "addSecurityRecommendation": true
+    },
+    "footer": {
+      "codeExpirationMinutes": 10
+    },
+    "button": {
+      "type": "OTP",
+      "otpType": "COPY_CODE"
+    }
+  }
+}

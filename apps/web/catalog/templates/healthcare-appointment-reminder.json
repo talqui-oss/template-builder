@@ -1,0 +1,55 @@
+{
+  "title": "Medical appointment reminder",
+  "description": "Remind patients about an upcoming appointment with date, time and doctor. Appointment reminder WhatsApp template for clinics.",
+  "industry": "healthcare",
+  "useCase": "appointment-reminder",
+  "keywords": [
+    "medical appointment reminder whatsapp",
+    "clinic appointment reminder template",
+    "patient reminder message"
+  ],
+  "notes": "Never include diagnosis or treatment details in the message; keep it to logistics. Send 24 hours before.",
+  "approvalRate": 78,
+  "template": {
+    "name": "healthcare_appointment_reminder",
+    "language": "en_US",
+    "category": "UTILITY",
+    "header": {
+      "type": "TEXT",
+      "text": "Appointment reminder"
+    },
+    "body": {
+      "text": "Hi {{first_name}}, this is a reminder of your appointment with {{doctor}} at {{clinic}} on {{date}} at {{time}}. Thank you, and reply here if you need anything."
+    },
+    "footer": {
+      "text": "Please arrive 10 minutes early"
+    },
+    "buttons": [
+      {
+        "type": "QUICK_REPLY",
+        "text": "Confirm"
+      },
+      {
+        "type": "QUICK_REPLY",
+        "text": "Reschedule"
+      }
+    ],
+    "variables": {
+      "first_name": {
+        "example": "Maria"
+      },
+      "doctor": {
+        "example": "Dr. Silva"
+      },
+      "clinic": {
+        "example": "Acme Health Clinic"
+      },
+      "date": {
+        "example": "March 14"
+      },
+      "time": {
+        "example": "3:30 PM"
+      }
+    }
+  }
+}

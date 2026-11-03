@@ -1,0 +1,42 @@
+{
+  "title": "Delivery order on the way",
+  "description": "Tell customers their food order left the kitchen with a live ETA. Shipping update WhatsApp template for restaurant delivery.",
+  "industry": "restaurants",
+  "useCase": "shipping-update",
+  "keywords": [
+    "food delivery update whatsapp",
+    "order on the way message",
+    "restaurant delivery notification"
+  ],
+  "notes": "Keep the ETA in minutes and the order number visible. Do not add upsells, which would reclassify it.",
+  "approvalRate": 94,
+  "template": {
+    "name": "restaurants_delivery_order_on_the_way",
+    "language": "en_US",
+    "category": "UTILITY",
+    "body": {
+      "text": "Hi {{first_name}}, your order *#{{order_id}}* from {{restaurant}} is on its way and should arrive in about {{eta}} minutes."
+    },
+    "buttons": [
+      {
+        "type": "URL",
+        "text": "Track my order",
+        "url": "https://northwind.example.com/track/{{order_id}}"
+      }
+    ],
+    "variables": {
+      "first_name": {
+        "example": "Maria"
+      },
+      "order_id": {
+        "example": "4512"
+      },
+      "restaurant": {
+        "example": "Northwind Bistro"
+      },
+      "eta": {
+        "example": "25"
+      }
+    }
+  }
+}

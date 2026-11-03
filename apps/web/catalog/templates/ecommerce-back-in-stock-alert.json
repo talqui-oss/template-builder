@@ -1,0 +1,45 @@
+{
+  "title": "Back in stock alert",
+  "description": "Notify customers who asked to be alerted when a sold-out product returns. Back in stock WhatsApp template with a buy link.",
+  "industry": "ecommerce",
+  "useCase": "back-in-stock",
+  "keywords": [
+    "back in stock whatsapp message",
+    "restock notification template",
+    "product available again message"
+  ],
+  "notes": "Only send to people who explicitly subscribed to that product alert and say so in the text. Stock sells out fast, so send immediately.",
+  "approvalRate": 80,
+  "template": {
+    "name": "ecommerce_back_in_stock_alert",
+    "language": "en_US",
+    "category": "MARKETING",
+    "body": {
+      "text": "Good news, {{first_name}}! *{{product_name}}* in size {{size}} is back in stock. Quantities are limited, so grab yours while it lasts."
+    },
+    "footer": {
+      "text": "Reply STOP to opt out"
+    },
+    "buttons": [
+      {
+        "type": "URL",
+        "text": "Shop now",
+        "url": "https://acme.com/products/{{order_id}}"
+      }
+    ],
+    "variables": {
+      "first_name": {
+        "example": "Maria"
+      },
+      "product_name": {
+        "example": "Linen Shirt"
+      },
+      "size": {
+        "example": "M"
+      },
+      "order_id": {
+        "example": "4512"
+      }
+    }
+  }
+}

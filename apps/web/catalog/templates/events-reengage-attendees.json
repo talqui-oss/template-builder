@@ -1,0 +1,45 @@
+{
+  "title": "Reconnect with past attendees",
+  "description": "Re-engage past attendees with a thank-you and a new event they may like. Re-engagement WhatsApp template. Free to copy and edit.",
+  "industry": "events",
+  "useCase": "re-engagement",
+  "keywords": [
+    "event re-engagement whatsapp",
+    "past attendee message",
+    "event marketing template"
+  ],
+  "notes": "Reference the event they attended. Personal context beats generic announcements.",
+  "approvalRate": 89,
+  "template": {
+    "name": "events_reengage_attendees",
+    "language": "en_US",
+    "category": "MARKETING",
+    "body": {
+      "text": "Hi {{first_name}}, we loved having you at *{{event_name}}* last time. We have something new planned for {{date}} in {{city}} and think you'll enjoy it."
+    },
+    "footer": {
+      "text": "Reply STOP to opt out"
+    },
+    "buttons": [
+      {
+        "type": "URL",
+        "text": "See what's next",
+        "url": "https://acmeevents.example.com"
+      }
+    ],
+    "variables": {
+      "first_name": {
+        "example": "Maria"
+      },
+      "event_name": {
+        "example": "Summer Fest"
+      },
+      "date": {
+        "example": "March 14"
+      },
+      "city": {
+        "example": "Austin"
+      }
+    }
+  }
+}

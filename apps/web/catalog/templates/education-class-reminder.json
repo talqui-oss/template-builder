@@ -1,0 +1,42 @@
+{
+  "title": "Class reminder for students",
+  "description": "Remind students about a class or live session starting soon. Appointment reminder WhatsApp template for education. Free to copy and edit.",
+  "industry": "education",
+  "useCase": "appointment-reminder",
+  "keywords": [
+    "class reminder whatsapp students",
+    "live session reminder message",
+    "school reminder template"
+  ],
+  "notes": "Send 1 hour before online classes and the evening before in-person ones.",
+  "approvalRate": 92,
+  "template": {
+    "name": "education_class_reminder",
+    "language": "en_US",
+    "category": "UTILITY",
+    "body": {
+      "text": "Hi {{first_name}}, your *{{course}}* class begins today at {{time}}. Join on time so you don't miss the start."
+    },
+    "footer": {
+      "text": "Acme Academy"
+    },
+    "buttons": [
+      {
+        "type": "URL",
+        "text": "Join class",
+        "url": "https://acmeacademy.example.com/live"
+      }
+    ],
+    "variables": {
+      "first_name": {
+        "example": "Maria"
+      },
+      "course": {
+        "example": "Intro to Design"
+      },
+      "time": {
+        "example": "3:30 PM"
+      }
+    }
+  }
+}

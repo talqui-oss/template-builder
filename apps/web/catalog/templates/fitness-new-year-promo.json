@@ -1,0 +1,50 @@
+{
+  "title": "New year membership offer",
+  "description": "Run a January membership campaign with a joining discount. Seasonal campaign WhatsApp template for gyms. Free to copy and edit.",
+  "industry": "fitness",
+  "useCase": "seasonal-campaign",
+  "keywords": [
+    "new year gym promotion whatsapp",
+    "membership offer message",
+    "january fitness campaign"
+  ],
+  "notes": "Be specific about the discount and sign-up deadline. January is your highest-volume window, so segment past leads.",
+  "approvalRate": 85,
+  "template": {
+    "name": "fitness_new_year_promo",
+    "language": "en_US",
+    "category": "MARKETING",
+    "header": {
+      "type": "TEXT",
+      "text": "New year offer"
+    },
+    "body": {
+      "text": "New year, new you, {{first_name}}! Join Acme Fitness before {{date}} and get *{{percent}}% off* your first 3 months, with no joining fee."
+    },
+    "footer": {
+      "text": "Reply STOP to opt out"
+    },
+    "buttons": [
+      {
+        "type": "COPY_CODE",
+        "example": "NEWYEAR"
+      },
+      {
+        "type": "URL",
+        "text": "Join now",
+        "url": "https://acmefit.example.com/join"
+      }
+    ],
+    "variables": {
+      "first_name": {
+        "example": "Maria"
+      },
+      "date": {
+        "example": "March 14"
+      },
+      "percent": {
+        "example": "20"
+      }
+    }
+  }
+}

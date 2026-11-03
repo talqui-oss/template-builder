@@ -23,8 +23,28 @@ Thanks for helping improve Template Builder. Bug reports, new validation rules, 
 - Open an issue first for large changes, so we can agree on the approach.
 - Keep one change per pull request.
 - Use [Conventional Commits](https://www.conventionalcommits.org/) for commit messages (`feat:`, `fix:`, `docs:`, `chore:`).
-- If your change affects a published package, run `pnpm changeset` and commit the generated file.
 - Make sure `pnpm lint`, `pnpm typecheck` and `pnpm build` pass.
+
+## Releasing
+
+The [release workflow](.github/workflows/release.yml) publishes to npm through [trusted publishing](https://docs.npmjs.com/trusted-publishers), with provenance and no npm token. The three packages always share one version.
+
+**Stable release**
+
+1. On a branch from `main`, run `pnpm release`. It reads the Conventional Commits since the last tag, bumps the version (`fix` → patch, `feat` → minor, breaking change → major), updates `CHANGELOG.md` and commits `release: vX.Y.Z`. Use `pnpm release --release-as 1.0.0` to choose the version.
+2. Open a pull request and merge it.
+3. On `main`, the workflow sees a version without a tag, publishes it to `latest` and pushes the `vX.Y.Z` tag.
+
+**Test release**
+
+Push a prerelease tag from any branch. The workflow publishes that version under the prerelease name, so `npm i` keeps installing `latest`.
+
+```bash
+git tag v0.2.0-beta.1 && git push origin v0.2.0-beta.1
+npm i @talqui-oss/template-builder@beta
+```
+
+Run `DRY_RUN=1 scripts/release.sh v0.2.0-beta.1` to see what would be published.
 
 ## Meta rule changes
 

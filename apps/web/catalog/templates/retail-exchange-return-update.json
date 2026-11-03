@@ -1,0 +1,45 @@
+{
+  "title": "Return processed update",
+  "description": "Confirm that a returned item was received and the refund is on its way. Utility WhatsApp template for retail returns. Free to copy and edit.",
+  "industry": "retail",
+  "useCase": "delivery-confirmation",
+  "keywords": [
+    "return confirmation whatsapp",
+    "refund processed message",
+    "retail return notification"
+  ],
+  "notes": "Include the refund amount and expected timing; these are the details customers ask support about afterward.",
+  "approvalRate": 72,
+  "template": {
+    "name": "retail_exchange_return_update",
+    "language": "en_US",
+    "category": "UTILITY",
+    "body": {
+      "text": "Hi {{first_name}}, we received your return for order *#{{order_id}}*. Your refund of {{amount}} will reach your original payment method within {{days}} business days."
+    },
+    "footer": {
+      "text": "Acme Retail"
+    },
+    "buttons": [
+      {
+        "type": "URL",
+        "text": "Track refund",
+        "url": "https://acme.com/returns/{{order_id}}"
+      }
+    ],
+    "variables": {
+      "first_name": {
+        "example": "Maria"
+      },
+      "order_id": {
+        "example": "4512"
+      },
+      "amount": {
+        "example": "$49.90"
+      },
+      "days": {
+        "example": "7"
+      }
+    }
+  }
+}

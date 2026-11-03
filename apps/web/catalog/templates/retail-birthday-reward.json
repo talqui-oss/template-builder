@@ -1,0 +1,45 @@
+{
+  "title": "Birthday reward",
+  "description": "Send loyalty members a birthday treat that can be redeemed in store or online. Birthday reward WhatsApp template for retail.",
+  "industry": "retail",
+  "useCase": "loyalty-reward",
+  "keywords": [
+    "birthday offer whatsapp",
+    "birthday discount message",
+    "loyalty birthday template"
+  ],
+  "notes": "Birthday offers have strong open rates. State the validity window clearly and how to redeem it.",
+  "approvalRate": 92,
+  "template": {
+    "name": "retail_birthday_reward",
+    "language": "en_US",
+    "category": "MARKETING",
+    "header": {
+      "type": "TEXT",
+      "text": "A birthday gift for you"
+    },
+    "body": {
+      "text": "Happy birthday, {{first_name}}! As a thank you, enjoy a *{{reward}}* to use on anything in store or online until {{date}}. Thank you, and reply here if you need anything."
+    },
+    "footer": {
+      "text": "Reply STOP to opt out"
+    },
+    "buttons": [
+      {
+        "type": "COPY_CODE",
+        "example": "BDAY10"
+      }
+    ],
+    "variables": {
+      "first_name": {
+        "example": "Maria"
+      },
+      "reward": {
+        "example": "$10 credit"
+      },
+      "date": {
+        "example": "March 14"
+      }
+    }
+  }
+}

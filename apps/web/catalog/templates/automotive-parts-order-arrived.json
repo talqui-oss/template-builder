@@ -1,0 +1,41 @@
+{
+  "title": "Parts order arrived",
+  "description": "Tell customers that ordered auto parts have arrived and are ready for installation. Utility WhatsApp template for shops and dealers.",
+  "industry": "automotive",
+  "useCase": "delivery-confirmation",
+  "keywords": [
+    "auto parts arrived whatsapp",
+    "parts order ready message",
+    "car parts notification"
+  ],
+  "notes": "Reference the order and part name; follow up with an installation slot via a quick reply.",
+  "approvalRate": 70,
+  "template": {
+    "name": "automotive_parts_order_arrived",
+    "language": "en_US",
+    "category": "UTILITY",
+    "body": {
+      "text": "Hi {{first_name}}, the *{{part}}* you ordered (order {{order}}) has arrived. We can install it this week. Pick a day that works for you."
+    },
+    "footer": {
+      "text": "Acme Auto"
+    },
+    "buttons": [
+      {
+        "type": "QUICK_REPLY",
+        "text": "Book installation"
+      }
+    ],
+    "variables": {
+      "first_name": {
+        "example": "Paul"
+      },
+      "part": {
+        "example": "front brake pad set"
+      },
+      "order": {
+        "example": "PT-9021"
+      }
+    }
+  }
+}

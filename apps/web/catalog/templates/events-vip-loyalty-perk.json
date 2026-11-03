@@ -1,0 +1,32 @@
+{
+  "title": "VIP perk for repeat attendees",
+  "description": "Reward repeat attendees with a VIP perk such as priority entry. Loyalty reward WhatsApp template for event organizers. Free to copy and edit.",
+  "industry": "events",
+  "useCase": "loyalty-reward",
+  "keywords": [
+    "event loyalty whatsapp",
+    "vip perk message",
+    "repeat attendee reward"
+  ],
+  "notes": "Name the perk and how to claim it. Reward programs are marketing, so keep the opt-out.",
+  "approvalRate": 93,
+  "template": {
+    "name": "events_vip_loyalty_perk",
+    "language": "en_US",
+    "category": "MARKETING",
+    "body": {
+      "text": "Thanks for coming back, {{first_name}}! As a repeat guest you've unlocked *priority entry* and a {{reward}} at your next event."
+    },
+    "footer": {
+      "text": "Reply STOP to opt out"
+    },
+    "variables": {
+      "first_name": {
+        "example": "Maria"
+      },
+      "reward": {
+        "example": "$10 credit"
+      }
+    }
+  }
+}

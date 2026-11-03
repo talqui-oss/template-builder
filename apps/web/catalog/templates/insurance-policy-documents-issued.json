@@ -1,0 +1,53 @@
+{
+  "title": "Policy issued and welcome",
+  "description": "Welcome new policyholders on WhatsApp once a policy is issued, with policy number and start date. Transactional utility template.",
+  "industry": "insurance",
+  "useCase": "welcome",
+  "keywords": [
+    "insurance welcome message whatsapp",
+    "new policy issued notification",
+    "policy confirmation template"
+  ],
+  "notes": "Link to the document portal instead of attaching files; media headers need an approved sample and slow review.",
+  "approvalRate": 88,
+  "template": {
+    "name": "insurance_policy_documents_issued",
+    "language": "en_US",
+    "category": "UTILITY",
+    "body": {
+      "text": "Welcome, {{first_name}}! Your {{policy_type}} policy *{{policy_no}}* is active from {{start_date}}. Your documents are ready to download any time."
+    },
+    "footer": {
+      "text": "Northwind Insurance"
+    },
+    "buttons": [
+      {
+        "type": "URL",
+        "text": "Download documents",
+        "url": "https://northwindinsurance.com/docs/{{ref}}"
+      },
+      {
+        "type": "PHONE_NUMBER",
+        "text": "Contact support",
+        "phoneNumber": "+15550177"
+      }
+    ],
+    "variables": {
+      "first_name": {
+        "example": "Omar"
+      },
+      "policy_type": {
+        "example": "life"
+      },
+      "policy_no": {
+        "example": "LF-20455"
+      },
+      "start_date": {
+        "example": "Nov 1"
+      },
+      "ref": {
+        "example": "LF20455"
+      }
+    }
+  }
+}

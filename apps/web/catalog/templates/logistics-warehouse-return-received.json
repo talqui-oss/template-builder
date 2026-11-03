@@ -1,0 +1,38 @@
+{
+  "title": "Return received at warehouse",
+  "description": "Confirm a returned parcel arrived at the warehouse and when the refund will be processed. Utility WhatsApp template. Copy it and adapt the brand.",
+  "industry": "logistics",
+  "useCase": "delivery-confirmation",
+  "keywords": [
+    "return received whatsapp",
+    "returned package confirmation",
+    "reverse logistics message"
+  ],
+  "notes": "Use the return reference number and set a timeframe; do not mention exchange deals.",
+  "approvalRate": 93,
+  "template": {
+    "name": "logistics_warehouse_return_received",
+    "language": "en_US",
+    "category": "UTILITY",
+    "body": {
+      "text": "Hi {{first_name}}, we received your return *{{return_id}}* at our warehouse on {{date}}. It will be inspected and processed within {{days}} business days."
+    },
+    "footer": {
+      "text": "Acme Logistics"
+    },
+    "variables": {
+      "first_name": {
+        "example": "Tara"
+      },
+      "return_id": {
+        "example": "RT-5521"
+      },
+      "date": {
+        "example": "Nov 6"
+      },
+      "days": {
+        "example": "2"
+      }
+    }
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "title": "Seasonal sale announcement",
+  "description": "Promote a seasonal in-store and online sale such as end-of-season or holiday offers. Seasonal campaign WhatsApp template for retailers.",
+  "industry": "retail",
+  "useCase": "seasonal-campaign",
+  "keywords": [
+    "seasonal sale whatsapp template",
+    "end of season sale message",
+    "retail promotion whatsapp"
+  ],
+  "notes": "Put the sale dates and discount range up front. Seasonal blasts do best when sent in the morning of the first day.",
+  "approvalRate": 82,
+  "template": {
+    "name": "retail_seasonal_sale_banner",
+    "language": "en_US",
+    "category": "MARKETING",
+    "header": {
+      "type": "TEXT",
+      "text": "End of Season Sale"
+    },
+    "body": {
+      "text": "Hi {{first_name}}, our End of Season Sale starts today! Save up to *{{percent}}%* in store and online through {{date}}. Hurry, sizes go quickly."
+    },
+    "footer": {
+      "text": "Reply STOP to opt out"
+    },
+    "buttons": [
+      {
+        "type": "URL",
+        "text": "See the sale",
+        "url": "https://acme.com/sale"
+      }
+    ],
+    "variables": {
+      "first_name": {
+        "example": "Maria"
+      },
+      "percent": {
+        "example": "20"
+      },
+      "date": {
+        "example": "March 14"
+      }
+    }
+  }
+}

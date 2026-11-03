@@ -1,0 +1,42 @@
+{
+  "title": "Test drive follow-up",
+  "description": "Follow up after a test drive on WhatsApp with a quote link and a salesperson contact. Marketing template for car dealerships.",
+  "industry": "automotive",
+  "useCase": "feedback-request",
+  "keywords": [
+    "test drive follow up whatsapp",
+    "car dealer follow up message",
+    "dealership lead nurturing"
+  ],
+  "notes": "Send within 24 hours. Ask how it felt before pitching; one question beats a hard sell.",
+  "approvalRate": 91,
+  "template": {
+    "name": "automotive_test_drive_follow_up",
+    "language": "en_US",
+    "category": "MARKETING",
+    "body": {
+      "text": "Hi {{first_name}}, thanks for taking the {{model}} for a spin! What did you think? If you want, I can prepare a personalized quote with financing options."
+    },
+    "footer": {
+      "text": "Reply STOP to opt out"
+    },
+    "buttons": [
+      {
+        "type": "QUICK_REPLY",
+        "text": "Send me a quote"
+      },
+      {
+        "type": "QUICK_REPLY",
+        "text": "I have questions"
+      }
+    ],
+    "variables": {
+      "first_name": {
+        "example": "Dana"
+      },
+      "model": {
+        "example": "Northwind EV 3"
+      }
+    }
+  }
+}

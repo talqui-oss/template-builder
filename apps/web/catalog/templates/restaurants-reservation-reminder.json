@@ -1,0 +1,45 @@
+{
+  "title": "Reservation reminder",
+  "description": "Remind diners about an upcoming reservation and ask them to confirm. Appointment reminder WhatsApp template for restaurants.",
+  "industry": "restaurants",
+  "useCase": "appointment-reminder",
+  "keywords": [
+    "restaurant reservation reminder whatsapp",
+    "reduce no shows restaurant",
+    "booking reminder message"
+  ],
+  "notes": "Send 3 to 24 hours ahead. A confirm button gives you time to release tables that will not show.",
+  "approvalRate": 75,
+  "template": {
+    "name": "restaurants_reservation_reminder",
+    "language": "en_US",
+    "category": "UTILITY",
+    "body": {
+      "text": "Hi {{first_name}}, a reminder that your table for {{party_size}} at {{restaurant}} is today at {{time}}. Can we count on you?"
+    },
+    "buttons": [
+      {
+        "type": "QUICK_REPLY",
+        "text": "Yes, confirmed"
+      },
+      {
+        "type": "QUICK_REPLY",
+        "text": "I need to cancel"
+      }
+    ],
+    "variables": {
+      "first_name": {
+        "example": "Maria"
+      },
+      "party_size": {
+        "example": "4"
+      },
+      "restaurant": {
+        "example": "Northwind Bistro"
+      },
+      "time": {
+        "example": "3:30 PM"
+      }
+    }
+  }
+}

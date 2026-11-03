@@ -1,0 +1,50 @@
+{
+  "title": "Flash sale announcement",
+  "description": "Announce a limited flash sale with a discount code customers can copy. Promotional WhatsApp template for online stores. Free to copy and edit.",
+  "industry": "ecommerce",
+  "useCase": "promotion",
+  "keywords": [
+    "whatsapp flash sale template",
+    "ecommerce promotion message",
+    "discount code whatsapp message"
+  ],
+  "notes": "Name the real end date and percentage in the body so reviewers see a concrete offer. COPY_CODE buttons are marketing-only.",
+  "approvalRate": 80,
+  "template": {
+    "name": "ecommerce_flash_sale_promo",
+    "language": "en_US",
+    "category": "MARKETING",
+    "header": {
+      "type": "TEXT",
+      "text": "Flash sale: {{percent}}% off"
+    },
+    "body": {
+      "text": "Hi {{first_name}}, our flash sale is on! Take *{{percent}}% off* everything until {{date}}. Use your code at checkout."
+    },
+    "footer": {
+      "text": "Reply STOP to opt out"
+    },
+    "buttons": [
+      {
+        "type": "COPY_CODE",
+        "example": "SAVE15"
+      },
+      {
+        "type": "URL",
+        "text": "Shop the sale",
+        "url": "https://acme.com/sale"
+      }
+    ],
+    "variables": {
+      "percent": {
+        "example": "20"
+      },
+      "first_name": {
+        "example": "Maria"
+      },
+      "date": {
+        "example": "March 14"
+      }
+    }
+  }
+}

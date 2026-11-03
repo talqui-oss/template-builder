@@ -1,0 +1,45 @@
+{
+  "title": "Policy change confirmation",
+  "description": "Confirm a change to an insurance policy, like a new address, driver or coverage level, with effective date. Utility WhatsApp template.",
+  "industry": "insurance",
+  "useCase": "account-alert",
+  "keywords": [
+    "policy change confirmation",
+    "insurance update notification whatsapp",
+    "policy amendment message"
+  ],
+  "notes": "List exactly what changed and the effective date; summaries that read like a receipt are reliably categorized as utility.",
+  "approvalRate": 95,
+  "template": {
+    "name": "insurance_policy_change_confirmation",
+    "language": "en_US",
+    "category": "UTILITY",
+    "body": {
+      "text": "Hi {{first_name}}, we updated policy *{{policy_no}}*: {{change}}. The change takes effect on {{effective_date}}. If this was not you, call us right away."
+    },
+    "footer": {
+      "text": "Northwind Insurance"
+    },
+    "buttons": [
+      {
+        "type": "PHONE_NUMBER",
+        "text": "Call us",
+        "phoneNumber": "+15550177"
+      }
+    ],
+    "variables": {
+      "first_name": {
+        "example": "Kim"
+      },
+      "policy_no": {
+        "example": "HP-30912"
+      },
+      "change": {
+        "example": "added Alex Kim as a driver"
+      },
+      "effective_date": {
+        "example": "Nov 10"
+      }
+    }
+  }
+}

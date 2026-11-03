@@ -1,0 +1,45 @@
+{
+  "title": "Loyalty points earned",
+  "description": "Tell shoppers how many reward points they earned and how close they are to the next perk. Loyalty reward WhatsApp template.",
+  "industry": "ecommerce",
+  "useCase": "loyalty-reward",
+  "keywords": [
+    "loyalty points whatsapp message",
+    "rewards program notification",
+    "customer loyalty template"
+  ],
+  "notes": "Mention the actual balance and what it unlocks. Loyalty updates count as marketing, so include an opt-out footer.",
+  "approvalRate": 77,
+  "template": {
+    "name": "ecommerce_loyalty_points_earned",
+    "language": "en_US",
+    "category": "MARKETING",
+    "body": {
+      "text": "Nice one, {{first_name}}! Your latest order earned you *{{points}} points*. You're now {{tier}} status, and a {{reward}} is close."
+    },
+    "footer": {
+      "text": "Reply STOP to opt out"
+    },
+    "buttons": [
+      {
+        "type": "URL",
+        "text": "See my rewards",
+        "url": "https://acme.com/rewards"
+      }
+    ],
+    "variables": {
+      "first_name": {
+        "example": "Maria"
+      },
+      "points": {
+        "example": "250"
+      },
+      "tier": {
+        "example": "Gold"
+      },
+      "reward": {
+        "example": "$10 credit"
+      }
+    }
+  }
+}

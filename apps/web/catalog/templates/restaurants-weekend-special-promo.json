@@ -1,0 +1,45 @@
+{
+  "title": "Weekend special promotion",
+  "description": "Promote a weekend special or chef's menu with a booking link. Promotion WhatsApp template for restaurants and cafes. Free to copy and edit.",
+  "industry": "restaurants",
+  "useCase": "promotion",
+  "keywords": [
+    "restaurant promotion whatsapp template",
+    "weekend special message",
+    "menu offer whatsapp"
+  ],
+  "notes": "Name the dish and price in the body. Food photos cannot be included in the header here, so describe the dish vividly.",
+  "approvalRate": 94,
+  "template": {
+    "name": "restaurants_weekend_special_promo",
+    "language": "en_US",
+    "category": "MARKETING",
+    "body": {
+      "text": "Hi {{first_name}}, this {{day}} only: our chef's *{{item}}* with a free dessert for every table at {{restaurant}}. Book now, spots fill quickly."
+    },
+    "footer": {
+      "text": "Reply STOP to opt out"
+    },
+    "buttons": [
+      {
+        "type": "URL",
+        "text": "Book a table",
+        "url": "https://northwind.example.com/book"
+      }
+    ],
+    "variables": {
+      "first_name": {
+        "example": "Maria"
+      },
+      "day": {
+        "example": "Friday"
+      },
+      "item": {
+        "example": "Margherita Pizza"
+      },
+      "restaurant": {
+        "example": "Northwind Bistro"
+      }
+    }
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "title": "Digital purchase receipt",
+  "description": "Send a digital receipt after an in-store purchase with the total and a link to the full invoice. Payment confirmation template for retail.",
+  "industry": "retail",
+  "useCase": "payment-confirmation",
+  "keywords": [
+    "whatsapp digital receipt template",
+    "purchase receipt message",
+    "in store receipt whatsapp"
+  ],
+  "notes": "Only send it to customers who gave their number at checkout and agreed to receive receipts. Keep marketing out of it.",
+  "approvalRate": 86,
+  "template": {
+    "name": "retail_purchase_receipt",
+    "language": "en_US",
+    "category": "UTILITY",
+    "body": {
+      "text": "Thanks for shopping at {{store_name}}, {{first_name}}. We received your payment of {{amount}} on {{date}}. Your receipt is ready below."
+    },
+    "buttons": [
+      {
+        "type": "URL",
+        "text": "View receipt",
+        "url": "https://acme.com/receipts/{{order_id}}"
+      }
+    ],
+    "variables": {
+      "store_name": {
+        "example": "Acme Store"
+      },
+      "first_name": {
+        "example": "Maria"
+      },
+      "amount": {
+        "example": "$49.90"
+      },
+      "date": {
+        "example": "March 14"
+      },
+      "order_id": {
+        "example": "4512"
+      }
+    }
+  }
+}

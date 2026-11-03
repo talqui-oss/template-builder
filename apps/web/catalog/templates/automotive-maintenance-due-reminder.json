@@ -1,0 +1,46 @@
+{
+  "title": "Maintenance due reminder",
+  "description": "Remind drivers their vehicle is due for maintenance by mileage or date. Marketing WhatsApp template that drives service bookings.",
+  "industry": "automotive",
+  "useCase": "re-engagement",
+  "keywords": [
+    "car maintenance reminder whatsapp",
+    "service due message",
+    "vehicle maintenance template"
+  ],
+  "notes": "Because it invites a booking not yet made, treat it as marketing and include opt-out. Use last service date to show relevance.",
+  "approvalRate": 85,
+  "template": {
+    "name": "automotive_maintenance_due_reminder",
+    "language": "en_US",
+    "category": "MARKETING",
+    "body": {
+      "text": "Hi {{first_name}}, your {{vehicle}} is due for its {{interval}} service. Regular maintenance keeps it safe and protects resale value. Book a slot that fits your week."
+    },
+    "footer": {
+      "text": "Reply STOP to opt out"
+    },
+    "buttons": [
+      {
+        "type": "URL",
+        "text": "Book service",
+        "url": "https://acmeauto.com/service"
+      },
+      {
+        "type": "QUICK_REPLY",
+        "text": "Remind me later"
+      }
+    ],
+    "variables": {
+      "first_name": {
+        "example": "Paul"
+      },
+      "vehicle": {
+        "example": "Ford Focus"
+      },
+      "interval": {
+        "example": "30,000 mile"
+      }
+    }
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "title": "Free trial welcome",
+  "description": "Welcome new members to their free trial pass with first-visit tips. Welcome WhatsApp template for gyms and studios. Free to copy and edit.",
+  "industry": "fitness",
+  "useCase": "welcome",
+  "keywords": [
+    "gym welcome message whatsapp",
+    "free trial welcome template",
+    "new member message fitness"
+  ],
+  "notes": "Tell them what to bring and how to book their first class. Mention expiry of the trial.",
+  "approvalRate": 97,
+  "template": {
+    "name": "fitness_trial_welcome",
+    "language": "en_US",
+    "category": "UTILITY",
+    "body": {
+      "text": "Welcome to Acme Fitness, {{first_name}}! Your free {{days}}-day pass is active. Book your first class and bring a water bottle."
+    },
+    "buttons": [
+      {
+        "type": "URL",
+        "text": "Book a class",
+        "url": "https://acmefit.example.com/classes"
+      }
+    ],
+    "variables": {
+      "first_name": {
+        "example": "Maria"
+      },
+      "days": {
+        "example": "7"
+      }
+    }
+  }
+}

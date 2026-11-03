@@ -1,0 +1,43 @@
+{
+  "title": "Product feedback request",
+  "description": "Ask users for a quick score about your product on WhatsApp with quick replies. Marketing feedback template for SaaS customer success.",
+  "industry": "saas",
+  "useCase": "feedback-request",
+  "keywords": [
+    "nps whatsapp",
+    "saas feedback request",
+    "customer satisfaction message"
+  ],
+  "notes": "Trigger after a meaningful milestone, such as 30 days of use. Keep it to one question.",
+  "approvalRate": 88,
+  "template": {
+    "name": "saas_nps_feedback_request",
+    "language": "en_US",
+    "category": "MARKETING",
+    "body": {
+      "text": "Hi {{first_name}}, you have used Lumen for a month now. How likely are you to recommend it to a colleague?"
+    },
+    "footer": {
+      "text": "Reply STOP to opt out"
+    },
+    "buttons": [
+      {
+        "type": "QUICK_REPLY",
+        "text": "Very likely"
+      },
+      {
+        "type": "QUICK_REPLY",
+        "text": "Maybe"
+      },
+      {
+        "type": "QUICK_REPLY",
+        "text": "Unlikely"
+      }
+    ],
+    "variables": {
+      "first_name": {
+        "example": "Ana"
+      }
+    }
+  }
+}

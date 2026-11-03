@@ -1,0 +1,53 @@
+{
+  "title": "Open house invitation",
+  "description": "Invite leads to an open house with date, time and address. Marketing WhatsApp template for real estate agents and developers.",
+  "industry": "real-estate",
+  "useCase": "event-invitation",
+  "keywords": [
+    "open house invitation whatsapp",
+    "open house message template",
+    "real estate event invite"
+  ],
+  "notes": "Opt-in matters: only send to leads who asked for listing updates. Mention light refreshments or tours to add a reason to come.",
+  "approvalRate": 74,
+  "template": {
+    "name": "real_estate_open_house_invitation",
+    "language": "en_US",
+    "category": "MARKETING",
+    "header": {
+      "type": "TEXT",
+      "text": "Open house this weekend"
+    },
+    "body": {
+      "text": "You are invited! Join us for an open house at *{{address}}* on {{date}} from {{start}} to {{end}}. Tour the property, meet the agent and ask any questions."
+    },
+    "footer": {
+      "text": "Reply STOP to opt out"
+    },
+    "buttons": [
+      {
+        "type": "QUICK_REPLY",
+        "text": "I will attend"
+      },
+      {
+        "type": "URL",
+        "text": "See photos",
+        "url": "https://northwindhomes.com/open-house"
+      }
+    ],
+    "variables": {
+      "address": {
+        "example": "88 Harbor Lane"
+      },
+      "date": {
+        "example": "Sunday, Nov 17"
+      },
+      "start": {
+        "example": "1 PM"
+      },
+      "end": {
+        "example": "4 PM"
+      }
+    }
+  }
+}

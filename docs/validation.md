@@ -99,6 +99,7 @@ Some rules depend on your WhatsApp account: business accounts can be exempt from
 | `CAROUSEL_CARD_BUTTONS_TOO_MANY`    | error    | Each card can have at most 2 buttons.                                                                                             |
 | `CALL_PERMISSION_NOT_COMBINABLE`    | error    | Call permission requests cannot be combined with buttons, carousels or limited-time offers.                                       |
 | `ORDER_DETAILS_MISMATCH`            | error    | Order details templates need `displayFormat: "ORDER_DETAILS"` and exactly one ORDER_DETAILS button.                               |
+| `BUTTON_ORDER_DETAILS_TEXT`         | error    | The ORDER_DETAILS button text is fixed by WhatsApp: use "Copy Pix code".                                                          |
 | `OTP_CODE_EXPIRATION_RANGE`         | error    | The code expiration must be a whole number of minutes from 1 to 90.                                                               |
 | `OTP_BUTTON_TEXT_TOO_LONG`          | error    | OTP button text can have at most 25 characters.                                                                                   |
 | `OTP_BUTTON_TEXT_URL`               | error    | OTP button text cannot contain a link.                                                                                            |

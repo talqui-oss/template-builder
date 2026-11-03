@@ -1,0 +1,39 @@
+{
+  "title": "We miss you, regular guests",
+  "description": "Invite past regulars back with a small incentive. Re-engagement WhatsApp template for restaurants and cafes. Free to copy and edit.",
+  "industry": "restaurants",
+  "useCase": "re-engagement",
+  "keywords": [
+    "restaurant re-engagement message",
+    "win back diners whatsapp",
+    "we miss you template"
+  ],
+  "notes": "Segment guests who have not visited in 45 days or more. A small, specific perk beats a deep discount.",
+  "approvalRate": 90,
+  "template": {
+    "name": "restaurants_winback_regulars",
+    "language": "en_US",
+    "category": "MARKETING",
+    "body": {
+      "text": "We miss you, {{first_name}}! It's been a while since your last visit to {{restaurant}}. Come back this month and enjoy a free coffee with any main."
+    },
+    "footer": {
+      "text": "Reply STOP to opt out"
+    },
+    "buttons": [
+      {
+        "type": "URL",
+        "text": "Reserve a table",
+        "url": "https://northwind.example.com/book"
+      }
+    ],
+    "variables": {
+      "first_name": {
+        "example": "Maria"
+      },
+      "restaurant": {
+        "example": "Northwind Bistro"
+      }
+    }
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "title": "Delivery completed with proof",
+  "description": "Confirm a successful delivery on WhatsApp with time, receiver name and a link to proof of delivery. Utility template. Copy it and adapt the brand.",
+  "industry": "logistics",
+  "useCase": "delivery-confirmation",
+  "keywords": [
+    "proof of delivery whatsapp",
+    "delivery confirmed message",
+    "parcel delivered notification"
+  ],
+  "notes": "Include who signed and when. It reduces not-received claims.",
+  "approvalRate": 79,
+  "template": {
+    "name": "logistics_delivery_confirmation_proof",
+    "language": "en_US",
+    "category": "UTILITY",
+    "body": {
+      "text": "Hi {{first_name}}, good news! Your package *{{tracking}}* was delivered on {{date}} at {{time}} and signed by {{receiver}}. You can open the proof of delivery below if you need it."
+    },
+    "footer": {
+      "text": "Northwind Express"
+    },
+    "buttons": [
+      {
+        "type": "URL",
+        "text": "View proof of delivery",
+        "url": "https://northwindexpress.com/pod/{{pod_id}}"
+      }
+    ],
+    "variables": {
+      "first_name": {
+        "example": "Nora"
+      },
+      "tracking": {
+        "example": "NW48210"
+      },
+      "date": {
+        "example": "Nov 5"
+      },
+      "time": {
+        "example": "2:14 PM"
+      },
+      "receiver": {
+        "example": "J. Alvarez"
+      },
+      "pod_id": {
+        "example": "NW48210"
+      }
+    }
+  }
+}

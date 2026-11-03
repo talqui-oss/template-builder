@@ -1,0 +1,51 @@
+{
+  "title": "Salon booking confirmed",
+  "description": "Confirm a salon or spa booking with service, stylist and time. Booking confirmation WhatsApp template for beauty businesses.",
+  "industry": "beauty",
+  "useCase": "booking-confirmation",
+  "keywords": [
+    "salon booking confirmation whatsapp",
+    "spa appointment confirmed",
+    "beauty booking message"
+  ],
+  "notes": "Add your cancellation policy window; it sets expectations and lowers no-shows.",
+  "approvalRate": 88,
+  "template": {
+    "name": "beauty_booking_confirmed",
+    "language": "en_US",
+    "category": "UTILITY",
+    "header": {
+      "type": "TEXT",
+      "text": "Booking confirmed"
+    },
+    "body": {
+      "text": "Hi {{first_name}}, you're booked for a *{{service}}* with {{stylist}} at {{studio}} on {{date}} at {{time}}. Please arrive a few minutes early so we can start on time and make the most of your visit."
+    },
+    "buttons": [
+      {
+        "type": "QUICK_REPLY",
+        "text": "Reschedule"
+      }
+    ],
+    "variables": {
+      "first_name": {
+        "example": "Maria"
+      },
+      "service": {
+        "example": "Haircut"
+      },
+      "stylist": {
+        "example": "Ana"
+      },
+      "studio": {
+        "example": "Bloom Studio"
+      },
+      "date": {
+        "example": "March 14"
+      },
+      "time": {
+        "example": "3:30 PM"
+      }
+    }
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "title": "Birthday treat",
+  "description": "Give clients a birthday treat such as a free add-on service. Loyalty reward WhatsApp template for beauty studios. Free to copy and edit.",
+  "industry": "beauty",
+  "useCase": "loyalty-reward",
+  "keywords": [
+    "birthday offer salon whatsapp",
+    "spa birthday gift message",
+    "beauty loyalty template"
+  ],
+  "notes": "Send a few days before the birthday so they can book. Keep the expiry visible.",
+  "approvalRate": 73,
+  "template": {
+    "name": "beauty_birthday_treat",
+    "language": "en_US",
+    "category": "MARKETING",
+    "header": {
+      "type": "TEXT",
+      "text": "Happy birthday from Bloom"
+    },
+    "body": {
+      "text": "Happy birthday, {{first_name}}! Treat yourself with a complimentary {{reward}} on any service at {{studio}} until {{date}}. Thank you, and reply here if you need anything."
+    },
+    "footer": {
+      "text": "Reply STOP to opt out"
+    },
+    "buttons": [
+      {
+        "type": "COPY_CODE",
+        "example": "BDAY10"
+      },
+      {
+        "type": "URL",
+        "text": "Book now",
+        "url": "https://bloomstudio.example.com/book"
+      }
+    ],
+    "variables": {
+      "first_name": {
+        "example": "Maria"
+      },
+      "reward": {
+        "example": "$10 credit"
+      },
+      "studio": {
+        "example": "Bloom Studio"
+      },
+      "date": {
+        "example": "March 14"
+      }
+    }
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "title": "Event day reminder",
+  "description": "Remind attendees the day before an event with doors time and venue. Appointment reminder WhatsApp template for events. Free to copy and edit.",
+  "industry": "events",
+  "useCase": "appointment-reminder",
+  "keywords": [
+    "event reminder whatsapp",
+    "event day message",
+    "attendee reminder template"
+  ],
+  "notes": "Include doors-open time and venue. Send the evening before for the best read rate.",
+  "approvalRate": 81,
+  "template": {
+    "name": "events_event_reminder",
+    "language": "en_US",
+    "category": "UTILITY",
+    "body": {
+      "text": "Hi {{first_name}}, *{{event_name}}* is tomorrow at {{venue}}. Doors open at {{time}}. Have your tickets ready on your phone."
+    },
+    "footer": {
+      "text": "Acme Events"
+    },
+    "buttons": [
+      {
+        "type": "URL",
+        "text": "Get directions",
+        "url": "https://acmeevents.example.com/venue"
+      }
+    ],
+    "variables": {
+      "first_name": {
+        "example": "Maria"
+      },
+      "event_name": {
+        "example": "Summer Fest"
+      },
+      "venue": {
+        "example": "Harbor Hall"
+      },
+      "time": {
+        "example": "3:30 PM"
+      }
+    }
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "title": "Membership renewal reminder",
+  "description": "Warn members that their membership renews soon, with the date and amount. Renewal reminder WhatsApp template for gyms. Free to copy and edit.",
+  "industry": "fitness",
+  "useCase": "renewal-reminder",
+  "keywords": [
+    "gym membership renewal whatsapp",
+    "membership expiring message",
+    "fitness renewal template"
+  ],
+  "notes": "Renewal notices tied to an existing plan are utility when they avoid upsell wording. State the amount and date.",
+  "approvalRate": 83,
+  "template": {
+    "name": "fitness_membership_renewal",
+    "language": "en_US",
+    "category": "UTILITY",
+    "body": {
+      "text": "Hi {{first_name}}, your {{plan}} membership renews on {{date}} for {{amount}}. No action needed, or you can update your plan anytime."
+    },
+    "footer": {
+      "text": "Acme Fitness"
+    },
+    "buttons": [
+      {
+        "type": "URL",
+        "text": "Manage membership",
+        "url": "https://acmefit.example.com/account"
+      }
+    ],
+    "variables": {
+      "first_name": {
+        "example": "Maria"
+      },
+      "plan": {
+        "example": "Monthly"
+      },
+      "date": {
+        "example": "March 14"
+      },
+      "amount": {
+        "example": "$49.90"
+      }
+    }
+  }
+}

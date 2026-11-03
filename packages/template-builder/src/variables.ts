@@ -33,6 +33,12 @@ export function textFields(template: Template): TextField[] {
   return fields;
 }
 
+/** Rewrites each `{{name}}` placeholder, e.g. to `{{1}}` for positional providers. */
+export const replacePlaceholders = (
+  text: string,
+  replace: (name: string) => string,
+) => text.replace(/\{\{(.*?)\}\}/g, (_, name: string) => replace(name));
+
 /** Variable names in order of first appearance: header, body, carousel cards, then button URLs. */
 export function extractVariables(template: Template): string[] {
   const names = textFields(template).flatMap((field) =>

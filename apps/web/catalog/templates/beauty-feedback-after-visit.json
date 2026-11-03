@@ -1,0 +1,48 @@
+{
+  "title": "Feedback after visit",
+  "description": "Ask clients to rate their visit right after the appointment. Feedback request WhatsApp template for beauty businesses. Free to copy and edit.",
+  "industry": "beauty",
+  "useCase": "feedback-request",
+  "keywords": [
+    "salon feedback whatsapp",
+    "spa review request message",
+    "client satisfaction template"
+  ],
+  "notes": "Send a few hours after the visit. Ask for a rating first; ask for a public review only to happy clients.",
+  "approvalRate": 71,
+  "template": {
+    "name": "beauty_feedback_after_visit",
+    "language": "en_US",
+    "category": "MARKETING",
+    "body": {
+      "text": "Hi {{first_name}}, thanks for visiting {{studio}} today. How did you like your {{service}} with {{stylist}}? Thank you, and reply here if you need anything."
+    },
+    "footer": {
+      "text": "Reply STOP to opt out"
+    },
+    "buttons": [
+      {
+        "type": "QUICK_REPLY",
+        "text": "Loved it"
+      },
+      {
+        "type": "QUICK_REPLY",
+        "text": "It was okay"
+      }
+    ],
+    "variables": {
+      "first_name": {
+        "example": "Maria"
+      },
+      "studio": {
+        "example": "Bloom Studio"
+      },
+      "service": {
+        "example": "Haircut"
+      },
+      "stylist": {
+        "example": "Ana"
+      }
+    }
+  }
+}

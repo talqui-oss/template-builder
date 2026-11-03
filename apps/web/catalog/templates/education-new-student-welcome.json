@@ -1,0 +1,42 @@
+{
+  "title": "New student welcome",
+  "description": "Welcome new students with first-day instructions. Welcome WhatsApp template for schools and training providers. Free to copy and edit.",
+  "industry": "education",
+  "useCase": "welcome",
+  "keywords": [
+    "student welcome whatsapp",
+    "first day instructions message",
+    "school welcome template"
+  ],
+  "notes": "Include where to be, when, and who to contact. Practical information keeps it utility.",
+  "approvalRate": 76,
+  "template": {
+    "name": "education_new_student_welcome",
+    "language": "en_US",
+    "category": "UTILITY",
+    "body": {
+      "text": "Welcome to {{school}}, {{first_name}}! Your first day is {{date}} at {{time}}. Please bring your ID and arrive 15 minutes early."
+    },
+    "buttons": [
+      {
+        "type": "PHONE_NUMBER",
+        "text": "Call admissions",
+        "phoneNumber": "+15550167"
+      }
+    ],
+    "variables": {
+      "school": {
+        "example": "Acme Academy"
+      },
+      "first_name": {
+        "example": "Maria"
+      },
+      "date": {
+        "example": "March 14"
+      },
+      "time": {
+        "example": "3:30 PM"
+      }
+    }
+  }
+}

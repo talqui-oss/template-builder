@@ -135,6 +135,6 @@ export const orderDetails = {
   body: {
     text: "Olá {{name}}, seu pedido {{order}} está pronto para pagamento.",
   },
-  buttons: [{ type: "ORDER_DETAILS", text: "Ver pedido" }],
+  buttons: [{ type: "ORDER_DETAILS", text: "Copy Pix code" }],
   variables: { name: { example: "Maria" }, order: { example: "4512" } },
 } satisfies Template;

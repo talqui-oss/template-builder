@@ -1,0 +1,45 @@
+{
+  "title": "Appointment cancelled notice",
+  "description": "Inform a patient that an appointment was cancelled and offer to rebook. Account alert WhatsApp template for healthcare. Free to copy and edit.",
+  "industry": "healthcare",
+  "useCase": "account-alert",
+  "keywords": [
+    "appointment cancelled whatsapp",
+    "doctor cancellation message",
+    "reschedule appointment template"
+  ],
+  "notes": "Apologize briefly and offer a one-tap path to rebook. Avoid reasons that reveal health information.",
+  "approvalRate": 76,
+  "template": {
+    "name": "healthcare_appointment_cancelled",
+    "language": "en_US",
+    "category": "UTILITY",
+    "body": {
+      "text": "Hi {{first_name}}, your appointment with {{doctor}} on {{date}} at {{time}} was cancelled. We're sorry for the inconvenience, and we'd like to find you a new time."
+    },
+    "footer": {
+      "text": "Acme Health Clinic"
+    },
+    "buttons": [
+      {
+        "type": "URL",
+        "text": "Rebook",
+        "url": "https://acmehealth.example.com/book"
+      }
+    ],
+    "variables": {
+      "first_name": {
+        "example": "Maria"
+      },
+      "doctor": {
+        "example": "Dr. Silva"
+      },
+      "date": {
+        "example": "March 14"
+      },
+      "time": {
+        "example": "3:30 PM"
+      }
+    }
+  }
+}

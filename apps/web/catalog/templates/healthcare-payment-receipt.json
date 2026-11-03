@@ -1,0 +1,45 @@
+{
+  "title": "Consultation payment receipt",
+  "description": "Confirm payment for a consultation or procedure with the amount and invoice link. Payment confirmation WhatsApp template for healthcare.",
+  "industry": "healthcare",
+  "useCase": "payment-confirmation",
+  "keywords": [
+    "medical payment receipt whatsapp",
+    "clinic invoice message",
+    "payment confirmed template"
+  ],
+  "notes": "Reference the invoice number, not the treatment. Keeps the message transactional and privacy-friendly.",
+  "approvalRate": 92,
+  "template": {
+    "name": "healthcare_payment_receipt",
+    "language": "en_US",
+    "category": "UTILITY",
+    "body": {
+      "text": "Hi {{first_name}}, we received your payment of {{amount}} for invoice *{{invoice_id}}* on {{date}}. Thank you."
+    },
+    "footer": {
+      "text": "Acme Health Clinic"
+    },
+    "buttons": [
+      {
+        "type": "URL",
+        "text": "View invoice",
+        "url": "https://acmehealth.example.com/invoices/{{invoice_id}}"
+      }
+    ],
+    "variables": {
+      "first_name": {
+        "example": "Maria"
+      },
+      "amount": {
+        "example": "$49.90"
+      },
+      "invoice_id": {
+        "example": "INV-208"
+      },
+      "date": {
+        "example": "March 14"
+      }
+    }
+  }
+}

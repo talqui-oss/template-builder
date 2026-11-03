@@ -1,0 +1,36 @@
+{
+  "title": "New patient welcome",
+  "description": "Welcome a new patient with first-visit instructions and contact options. Welcome WhatsApp template for clinics. Free to copy and edit.",
+  "industry": "healthcare",
+  "useCase": "welcome",
+  "keywords": [
+    "new patient welcome message",
+    "clinic welcome whatsapp",
+    "first visit instructions template"
+  ],
+  "notes": "Add practical items to bring. Phone button lets patients reach reception without leaving WhatsApp.",
+  "approvalRate": 90,
+  "template": {
+    "name": "healthcare_welcome_new_patient",
+    "language": "en_US",
+    "category": "UTILITY",
+    "body": {
+      "text": "Welcome to {{clinic}}, {{first_name}}! For your first visit, please bring a photo ID and your insurance card. Questions? Our reception team is happy to help."
+    },
+    "buttons": [
+      {
+        "type": "PHONE_NUMBER",
+        "text": "Call reception",
+        "phoneNumber": "+15550123"
+      }
+    ],
+    "variables": {
+      "clinic": {
+        "example": "Acme Health Clinic"
+      },
+      "first_name": {
+        "example": "Maria"
+      }
+    }
+  }
+}

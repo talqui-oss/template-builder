@@ -1,0 +1,45 @@
+{
+  "title": "Treatment package promotion",
+  "description": "Promote a multi-session treatment package at a bundle price. Promotion WhatsApp template for spas and salons. Free to copy and edit.",
+  "industry": "beauty",
+  "useCase": "promotion",
+  "keywords": [
+    "spa package promotion whatsapp",
+    "beauty offer message",
+    "salon promotion template"
+  ],
+  "notes": "Show the price and the number of sessions in the body. Reviewers favor clear offers over vague 'special deals'.",
+  "approvalRate": 87,
+  "template": {
+    "name": "beauty_package_promo",
+    "language": "en_US",
+    "category": "MARKETING",
+    "body": {
+      "text": "Hi {{first_name}}, our *{{service}} package* (5 sessions) is {{percent}}% off until {{date}}. Spots are limited, so reserve yours."
+    },
+    "footer": {
+      "text": "Reply STOP to opt out"
+    },
+    "buttons": [
+      {
+        "type": "URL",
+        "text": "See package",
+        "url": "https://bloomstudio.example.com/packages"
+      }
+    ],
+    "variables": {
+      "first_name": {
+        "example": "Maria"
+      },
+      "service": {
+        "example": "Haircut"
+      },
+      "percent": {
+        "example": "20"
+      },
+      "date": {
+        "example": "March 14"
+      }
+    }
+  }
+}

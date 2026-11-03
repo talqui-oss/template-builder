@@ -1,0 +1,49 @@
+{
+  "title": "Tour itinerary and meeting point",
+  "description": "Share tour meeting point, time and what to bring on WhatsApp the day before. Utility reminder for tour operators and activities.",
+  "industry": "travel",
+  "useCase": "appointment-reminder",
+  "keywords": [
+    "tour reminder whatsapp",
+    "excursion meeting point message",
+    "activity booking reminder"
+  ],
+  "notes": "Include a phone number for the guide. Meeting-point info is what customers search for, so put it in the first line.",
+  "approvalRate": 88,
+  "template": {
+    "name": "travel_tour_itinerary_reminder",
+    "language": "en_US",
+    "category": "UTILITY",
+    "header": {
+      "type": "TEXT",
+      "text": "Tour tomorrow"
+    },
+    "body": {
+      "text": "Hi {{first_name}}, your *{{tour}}* is tomorrow. Meet your guide at {{meeting_point}} at {{time}}. Wear comfortable shoes and bring water and sun protection."
+    },
+    "footer": {
+      "text": "Acme Tours"
+    },
+    "buttons": [
+      {
+        "type": "PHONE_NUMBER",
+        "text": "Call your guide",
+        "phoneNumber": "+15550166"
+      }
+    ],
+    "variables": {
+      "first_name": {
+        "example": "Jake"
+      },
+      "tour": {
+        "example": "Old Town walking tour"
+      },
+      "meeting_point": {
+        "example": "Central Plaza fountain"
+      },
+      "time": {
+        "example": "9:30 AM"
+      }
+    }
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "title": "Price drop on saved property",
+  "description": "Notify interested buyers when a saved property's price drops. A marketing WhatsApp template with old and new price and link.",
+  "industry": "real-estate",
+  "useCase": "promotion",
+  "keywords": [
+    "price drop alert real estate",
+    "property price reduction whatsapp",
+    "real estate promotion message"
+  ],
+  "notes": "Show both prices so the saving is concrete. Honest urgency like viewings scheduled this week works better than vague pressure.",
+  "approvalRate": 79,
+  "template": {
+    "name": "real_estate_price_drop_alert",
+    "language": "en_US",
+    "category": "MARKETING",
+    "body": {
+      "text": "Good news, {{first_name}}! The price of *{{address}}* just dropped from {{old_price}} to {{new_price}}. It is one of the properties you saved."
+    },
+    "footer": {
+      "text": "Reply STOP to opt out"
+    },
+    "buttons": [
+      {
+        "type": "URL",
+        "text": "View property",
+        "url": "https://acmerealty.com/listing/{{listing_id}}"
+      }
+    ],
+    "variables": {
+      "first_name": {
+        "example": "Lena"
+      },
+      "address": {
+        "example": "21 Pine Court"
+      },
+      "old_price": {
+        "example": "$510,000"
+      },
+      "new_price": {
+        "example": "$485,000"
+      },
+      "listing_id": {
+        "example": "L77310"
+      }
+    }
+  }
+}

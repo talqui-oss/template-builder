@@ -1,0 +1,43 @@
+{
+  "title": "Missed you at the gym",
+  "description": "Re-engage members who have not visited in weeks with a friendly check-in. Re-engagement WhatsApp template for fitness. Free to copy and edit.",
+  "industry": "fitness",
+  "useCase": "re-engagement",
+  "keywords": [
+    "gym re-engagement whatsapp",
+    "inactive member message",
+    "win back gym members"
+  ],
+  "notes": "Send around 14 to 21 days of inactivity. Supportive wording works far better than guilt.",
+  "approvalRate": 89,
+  "template": {
+    "name": "fitness_inactive_member_checkin",
+    "language": "en_US",
+    "category": "MARKETING",
+    "body": {
+      "text": "Hi {{first_name}}, we haven't seen you in a while at Acme Fitness. Ready to get back into it? A {{class_name}} session this week is a great restart."
+    },
+    "footer": {
+      "text": "Reply STOP to opt out"
+    },
+    "buttons": [
+      {
+        "type": "URL",
+        "text": "See this week's classes",
+        "url": "https://acmefit.example.com/classes"
+      },
+      {
+        "type": "QUICK_REPLY",
+        "text": "Not right now"
+      }
+    ],
+    "variables": {
+      "first_name": {
+        "example": "Maria"
+      },
+      "class_name": {
+        "example": "Morning Yoga"
+      }
+    }
+  }
+}

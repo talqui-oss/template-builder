@@ -1,5 +1,6 @@
 // Runs after `vite build` and the SSR build: writes one static HTML file per page, plus the
-// files crawlers and AI agents look for (sitemap.xml, robots.txt, llms.txt, llms-full.txt).
+// files crawlers and AI agents look for (sitemap.xml, robots.txt, llms.txt, Markdown pages,
+// Open Graph images).
 import {
   copyFileSync,
   mkdirSync,
@@ -9,6 +10,8 @@ import {
 } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
+import { markdownSite } from "./markdown.mjs";
+import { ogImage } from "./og.mjs";
 
 const app = join(dirname(fileURLToPath(import.meta.url)), "..");
 const dist = join(app, "dist");
@@ -16,12 +19,18 @@ const server = await import(join(app, "dist-ssr/entry-server.js"));
 const {
   SITE,
   CATALOG,
-  INDUSTRIES,
-  USE_CASES,
   CATEGORIES,
-  templateText,
-  templatePath,
+  INDUSTRIES,
+  TEMPLATE_BASE,
+  entryBySlug,
+  facetLabel,
 } = server;
+
+const write = (path, content) => {
+  const target = join(dist, path);
+  mkdirSync(dirname(target), { recursive: true });
+  writeFileSync(target, content);
+};
 
 const shell = readFileSync(join(dist, "index.html"), "utf8");
 const escape = (text) =>
@@ -31,21 +40,76 @@ const escape = (text) =>
     .replace(/>/g, "&gt;")
     .replace(/"/g, "&quot;");
 
-function headTags(head) {
+const markdown = markdownSite(server);
+for (const [path, content] of Object.entries(markdown.files))
+  write(path, content);
+
+/** The Markdown twin of a page: its own `.md` when there is one, the llms.txt index otherwise. */
+const markdownFor = (path) =>
+  markdown.files[`${path}.md`] ? `${path}.md` : "/llms.txt";
+
+const ogPath = (path) => `/og${path === "/" ? "/index" : path}.png`;
+
+/** The card drawn for a page: the template bubble on template pages, the title split elsewhere. */
+function ogCard(path, head) {
+  const slug = path.startsWith(`${TEMPLATE_BASE}/`)
+    ? path.slice(TEMPLATE_BASE.length + 1)
+    : "";
+  const entry = slug && entryBySlug(slug);
+  if (entry) {
+    const { template } = entry;
+    const category = CATEGORIES.find(
+      (item) => item.category === template.category,
+    ).label;
+    return {
+      eyebrow: `${facetLabel(INDUSTRIES, entry.industry)} · ${category}`,
+      title: `${entry.title} WhatsApp template`,
+      accent: "free example",
+      badge:
+        entry.approvalRate !== undefined
+          ? `${entry.approvalRate}% approval rate`
+          : undefined,
+      bubble:
+        template.category === "AUTHENTICATION"
+          ? {
+              body: "123456 is your verification code. For your security, do not share this code.",
+            }
+          : {
+              header:
+                template.header?.type === "TEXT"
+                  ? template.header.text
+                  : undefined,
+              body: template.body.text,
+              footer: template.footer?.text,
+            },
+    };
+  }
+  const [title, accent = "free and open source"] = head.title.split(": ");
+  return { eyebrow: "template-builder", title, accent };
+}
+
+function headTags(head, path) {
   const url = SITE + (head.path === "/" ? "/" : head.path);
+  const image = SITE + ogPath(path);
   return [
     `<title>${escape(head.title)}</title>`,
     `<meta name="description" content="${escape(head.description)}" />`,
+    `<meta name="theme-color" content="#000000" />`,
     head.noindex
       ? `<meta name="robots" content="noindex" />`
       : `<link rel="canonical" href="${url}" />`,
     `<meta property="og:type" content="website" />`,
     `<meta property="og:site_name" content="template-builder" />`,
+    `<meta property="og:locale" content="en_US" />`,
     `<meta property="og:title" content="${escape(head.title)}" />`,
     `<meta property="og:description" content="${escape(head.description)}" />`,
     `<meta property="og:url" content="${url}" />`,
+    `<meta property="og:image" content="${image}" />`,
+    `<meta property="og:image:width" content="1200" />`,
+    `<meta property="og:image:height" content="630" />`,
     `<meta name="twitter:card" content="summary_large_image" />`,
-    `<link rel="alternate" type="text/plain" title="llms.txt" href="${SITE}/llms.txt" />`,
+    `<meta name="twitter:image" content="${image}" />`,
+    `<link rel="alternate" type="text/markdown" href="${SITE}${markdownFor(path)}" />`,
     // `<` is escaped so a value can never close the script tag.
     ...(head.jsonLd ?? []).map(
       (data) =>
@@ -54,27 +118,25 @@ function headTags(head) {
   ].join("\n    ");
 }
 
-function writePage(path, file) {
+async function writePage(path, file) {
   const { head, html } = server.render(path);
-  const page = shell
-    .replace("<!--head-->", headTags(head))
-    .replace("<!--app-->", html);
-  const target = join(
-    dist,
+  write(
     file ?? (path === "/" ? "index.html" : `${path.slice(1)}/index.html`),
+    shell
+      .replace("<!--head-->", headTags(head, path))
+      .replace("<!--app-->", html),
   );
-  mkdirSync(dirname(target), { recursive: true });
-  writeFileSync(target, page);
+  if (!head.noindex) write(ogPath(path), await ogImage(ogCard(path, head)));
 }
 
 const paths = server.allPaths();
-for (const path of paths) writePage(path);
-writePage("/404", "404.html");
+for (const path of paths) await writePage(path);
+await writePage("/404", "404.html");
 
 // Raw JSON next to each template page, for agents and scripts.
 for (const entry of CATALOG)
-  writeFileSync(
-    join(dist, `${templatePath(entry.slug).slice(1)}.json`),
+  write(
+    `${server.templatePath(entry.slug)}.json`,
     JSON.stringify(entry.template, null, 2),
   );
 
@@ -84,116 +146,56 @@ copyFileSync(
 );
 
 const today = new Date().toISOString().slice(0, 10);
-writeFileSync(
-  join(dist, "sitemap.xml"),
+const priority = (path) =>
+  path === "/"
+    ? "1.0"
+    : path === "/playground" || path === TEMPLATE_BASE
+      ? "0.9"
+      : "0.7";
+write(
+  "sitemap.xml",
   `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 ${paths
-  .map((path) => {
-    const priority =
-      path === "/"
-        ? "1.0"
-        : path === "/playground" || path === "/whatsapp-template"
-          ? "0.9"
-          : "0.7";
-    return `  <url><loc>${SITE}${path === "/" ? "/" : path}</loc><lastmod>${today}</lastmod><priority>${priority}</priority></url>`;
-  })
+  .map(
+    (path) =>
+      `  <url><loc>${SITE}${path === "/" ? "/" : path}</loc><lastmod>${today}</lastmod><priority>${priority(path)}</priority></url>`,
+  )
   .join("\n")}
 </urlset>
 `,
 );
 
 // AI crawlers are named explicitly: some only crawl when their agent is allowed by name.
-writeFileSync(
-  join(dist, "robots.txt"),
-  `${[
-    "*",
-    "GPTBot",
-    "OAI-SearchBot",
-    "ChatGPT-User",
-    "ClaudeBot",
-    "Claude-User",
-    "PerplexityBot",
-    "Google-Extended",
-    "Applebot-Extended",
-  ]
-    .map((agent) => `User-agent: ${agent}\nAllow: /`)
-    .join("\n\n")}
+// Content-Signal states what the content may be used for (contentsignals.org).
+write(
+  "robots.txt",
+  `User-agent: *
+Allow: /
+Content-Signal: ai-train=yes, search=yes, ai-input=yes
+
+${[
+  "GPTBot",
+  "OAI-SearchBot",
+  "ChatGPT-User",
+  "ClaudeBot",
+  "Claude-User",
+  "anthropic-ai",
+  "PerplexityBot",
+  "Google-Extended",
+  "Applebot-Extended",
+]
+  .map((agent) => `User-agent: ${agent}\nAllow: /`)
+  .join("\n\n")}
 
 Sitemap: ${SITE}/sitemap.xml
 `,
 );
 
-const label = (facets, slug) =>
-  facets.find((facet) => facet.slug === slug)?.label ?? slug;
-const category = (template) =>
-  CATEGORIES.find((item) => item.category === template.category).label;
-
-const intro = `# template-builder
-
-> Free, open-source SDK to preview, validate and create WhatsApp message templates. One JSON schema; a pixel-true iPhone preview for React and Vue; the review rules Meta applies, as typed issue codes; adapters that build the create request for the Meta Cloud API, Twilio and Talqui. MIT licensed, maintained by Talqui.
-
-Install: \`npm i @talqui-oss/template-builder\` (preview components: \`@talqui-oss/template-builder-react\` or \`-vue\`).
-`;
-
-writeFileSync(
-  join(dist, "llms.txt"),
-  `${intro}
-## Docs
-
-- [Agent quickstart](${SITE}/agents): install, validate, build the create request
-- [JSON Schema](${SITE}/schema.json): every field a template accepts
-- [Playground](${SITE}/playground): free online WhatsApp template builder and preview
-- [Source and README](https://github.com/talqui-oss/template-builder)
-- [Full text for LLMs](${SITE}/llms-full.txt): this index plus every catalog template
-
-## Catalog
-
-${CATALOG.map((entry) => `- [${entry.title}](${SITE}${templatePath(entry.slug)}): ${entry.description} JSON: ${SITE}${templatePath(entry.slug)}.json`).join("\n")}
-`,
-);
-
-writeFileSync(
-  join(dist, "llms-full.txt"),
-  `${intro}
-## Usage
-
-\`\`\`ts
-import { validate, toRequests, toCurl } from "@talqui-oss/template-builder";
-import { meta } from "@talqui-oss/template-builder/adapters/meta";
-
-const { valid, issues } = validate(template); // errors are rejections at review
-const requests = toRequests(template, meta({ wabaId: "123" })); // throws on invalid templates
-console.log(toCurl(requests));
-\`\`\`
-
-\`\`\`tsx
-import { TemplatePreview } from "@talqui-oss/template-builder-react";
-import "@talqui-oss/template-builder/styles.css";
-
-<TemplatePreview template={template} time="09:41" />
-\`\`\`
-
-## Catalog
-
-${CATALOG.map(
-  (entry) => `### ${entry.title}
-
-URL: ${SITE}${templatePath(entry.slug)}
-Category: ${category(entry.template)} · Industry: ${label(INDUSTRIES, entry.industry)} · Use case: ${label(USE_CASES, entry.useCase)}
-${entry.description}
-${entry.notes ? `Tip: ${entry.notes}\n` : ""}
-Text:
-${templateText(entry.template)}
-
-\`\`\`json
-${JSON.stringify(entry.template, null, 2)}
-\`\`\`
-`,
-).join("\n")}`,
-);
+write("llms.txt", markdown.llms);
+write("llms-full.txt", markdown.full);
 
 rmSync(join(app, "dist-ssr"), { recursive: true, force: true });
 console.log(
-  `prerendered ${paths.length} pages, ${CATALOG.length} catalog templates`,
+  `prerendered ${paths.length} pages, ${Object.keys(markdown.files).length} markdown files, ${CATALOG.length} catalog templates`,
 );

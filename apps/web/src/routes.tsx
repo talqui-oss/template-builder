@@ -35,6 +35,10 @@ const ORGANIZATION = {
   "@type": "Organization",
   name: "Talqui",
   url: "https://talqui.chat",
+  sameAs: [
+    "https://github.com/talqui-oss/template-builder",
+    "https://www.npmjs.com/package/@talqui-oss/template-builder",
+  ],
 };
 
 const SOFTWARE = {
@@ -150,7 +154,18 @@ export function resolveRoute(rawPath: string): Route {
         description:
           "Free, open-source WhatsApp template builder. Preview templates exactly as they arrive on the phone, check Meta's review rules and create them on any provider.",
         path,
-        jsonLd: [SOFTWARE],
+        jsonLd: [
+          SOFTWARE,
+          {
+            "@context": "https://schema.org",
+            "@type": "WebSite",
+            name: "template-builder",
+            url: SITE,
+            description:
+              "Free, open-source SDK to preview, validate and create WhatsApp message templates.",
+            publisher: ORGANIZATION,
+          },
+        ],
       },
       element: <Landing />,
     };

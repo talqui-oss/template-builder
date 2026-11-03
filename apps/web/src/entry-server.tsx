@@ -10,7 +10,11 @@ export {
   CATEGORIES,
   templateText,
   templatePath,
+  TEMPLATE_BASE,
+  entryBySlug,
+  facetLabel,
 } from "./catalog/data";
+export { templateLink } from "./state";
 
 export function render(path: string) {
   const { head, element } = resolveRoute(path);

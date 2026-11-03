@@ -10,3 +10,4 @@ coverage/
 
 TALQUI_GUIDELINES.md
 .release/
+.vercel/

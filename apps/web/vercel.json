@@ -4,6 +4,7 @@
   "buildCommand": "cd ../.. && pnpm turbo run build --filter=web...",
   "outputDirectory": "dist",
   "trailingSlash": false,
+  "git": { "deploymentEnabled": false },
   "headers": [
     {
       "source": "/assets/(.*)",

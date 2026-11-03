@@ -44,7 +44,7 @@ git tag v0.2.0-beta.1 && git push origin v0.2.0-beta.1
 npm i @talqui-oss/template-builder@beta
 ```
 
-Every release also gets a GitHub Release (notes from `CHANGELOG.md`, or the commit list for a prerelease) and a copy on GitHub Packages, so both show on the repository page.
+A stable release also deploys [template-builder.dev](https://template-builder.dev) from the same commit, so the site shows the published version. Every release also gets a GitHub Release (notes from `CHANGELOG.md`, or the commit list for a prerelease) and a copy on GitHub Packages, so both show on the repository page.
 
 Run `DRY_RUN=1 scripts/release.sh v0.2.0-beta.1` to see what would be published.
 

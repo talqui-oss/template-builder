@@ -26,7 +26,7 @@ export function AuthenticationCard({ template, onChange }: Props) {
         Add “do not share this code”
       </label>
       <div className="pg-row">
-        <Field label="Expires after (minutes)" hint="1 to 90, empty for none">
+        <Field label="Expires after" hint="minutes, 1 to 90">
           {(id) => (
             <input
               id={id}

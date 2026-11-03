@@ -234,15 +234,20 @@ code {
   display: flex;
   justify-content: space-between;
   gap: 8px;
+  /* One line only, so every control in a row starts at the same height. */
+  white-space: nowrap;
 }
 
 .pg-field__label {
+  overflow: hidden;
+  text-overflow: ellipsis;
   font-size: 12px;
   font-weight: 500;
   color: var(--pg-text-muted);
 }
 
 .pg-field__hint {
+  flex: none;
   font: 11px var(--pg-mono);
   color: var(--pg-text-faint);
 }

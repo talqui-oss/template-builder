@@ -1,0 +1,22 @@
+{
+  "packageFiles": ["packages/template-builder/package.json"],
+  "bumpFiles": [
+    "packages/template-builder/package.json",
+    "packages/template-builder-react/package.json",
+    "packages/template-builder-vue/package.json"
+  ],
+  "types": [
+    { "type": "feat", "section": "Features" },
+    { "type": "fix", "section": "Bug Fixes" },
+    { "type": "imp", "section": "Improvements" },
+    { "type": "wip", "hidden": true },
+    { "type": "chore", "hidden": true },
+    { "type": "docs", "hidden": true },
+    { "type": "style", "hidden": true },
+    { "type": "refactor", "hidden": true },
+    { "type": "test", "hidden": true },
+    { "type": "ci", "hidden": true },
+    { "type": "release", "hidden": true }
+  ],
+  "releaseCommitMessageFormat": "release: v{{currentTag}}"
+}

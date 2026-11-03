@@ -1,13 +1,16 @@
 name: release
 
-# Pushing a tag publishes it: `v0.1.0` goes to `latest`, `v0.2.0-beta.1` to `beta`.
-# npm trusts this workflow through OIDC (trusted publishing), so there is no npm token anywhere.
+# Two ways to publish, both through npm trusted publishing (OIDC), with no npm token anywhere:
+# - main: when the packages carry a version that has no tag yet (a merged `pnpm release`),
+#   publish it to `latest` and tag the commit.
+# - a pushed `v*` tag: publish that version, so `v0.2.0-beta.1` from any branch goes to `beta`.
 on:
   push:
+    branches: [main]
     tags: ["v*"]
 
 permissions:
-  contents: read
+  contents: write
   id-token: write
 
 concurrency:
@@ -22,15 +25,40 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
-      - uses: pnpm/action-setup@v4
-      - uses: actions/setup-node@v4
+      - name: Resolve the version to publish
+        id: version
+        run: |
+          if [[ "$GITHUB_REF" == refs/tags/* ]]; then
+            echo "tag=$GITHUB_REF_NAME" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          tag="v$(node -p 'require("./packages/template-builder/package.json").version')"
+          if [[ "$tag" == "v0.0.0" ]] || git rev-parse -q --verify "refs/tags/$tag" >/dev/null; then
+            echo "Nothing to release: $tag is already tagged"
+          else
+            echo "tag=$tag" >> "$GITHUB_OUTPUT"
+            echo "new=true" >> "$GITHUB_OUTPUT"
+          fi
+      - if: steps.version.outputs.tag
+        uses: pnpm/action-setup@v4
+      - if: steps.version.outputs.tag
+        uses: actions/setup-node@v4
         with:
           node-version-file: .nvmrc
           cache: pnpm
           registry-url: https://registry.npmjs.org
       # Trusted publishing needs npm 11.5.1 or later.
-      - run: npm install --global npm@^11.5.1
-      - run: pnpm install --frozen-lockfile
-      - run: pnpm lint
-      - run: pnpm typecheck
-      - run: scripts/release.sh "$GITHUB_REF_NAME"
+      - if: steps.version.outputs.tag
+        run: npm install --global npm@^11.5.1
+      - if: steps.version.outputs.tag
+        run: pnpm install --frozen-lockfile
+      - if: steps.version.outputs.tag
+        run: pnpm lint && pnpm typecheck
+      - if: steps.version.outputs.tag
+        run: scripts/release.sh "${{ steps.version.outputs.tag }}"
+      # Tagged after publishing, so a failed publish can be retried by re-running the job.
+      # A tag pushed with GITHUB_TOKEN does not start this workflow again.
+      - if: steps.version.outputs.new
+        run: |
+          git tag "${{ steps.version.outputs.tag }}"
+          git push origin "${{ steps.version.outputs.tag }}"

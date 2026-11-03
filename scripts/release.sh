@@ -34,7 +34,7 @@ out="$root/.release"
 rm -rf "$out"
 mkdir -p "$out"
 
-# The repository keeps 0.0.0; the version only exists in the published tarballs.
+# The tarballs carry the tag's version, so a test tag needs no release commit.
 packages=(template-builder template-builder-react template-builder-vue)
 trap 'git checkout --quiet -- "${packages[@]/#/packages/}"' EXIT
 

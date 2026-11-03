@@ -15,6 +15,7 @@ pnpm dev         # rebuild on change
 pnpm lint        # ESLint
 pnpm typecheck   # TypeScript
 pnpm format      # Prettier
+pnpm release     # bump version and CHANGELOG from Conventional Commits (see CONTRIBUTING.md)
 ```
 
 ## Layout

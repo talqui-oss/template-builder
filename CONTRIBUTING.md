@@ -27,17 +27,21 @@ Thanks for helping improve Template Builder. Bug reports, new validation rules, 
 
 ## Releasing
 
-Maintainers publish by pushing a tag. The [release workflow](.github/workflows/release.yml) builds the packages at the tag's version and publishes them to npm through [trusted publishing](https://docs.npmjs.com/trusted-publishers), with provenance and no npm token.
+The [release workflow](.github/workflows/release.yml) publishes to npm through [trusted publishing](https://docs.npmjs.com/trusted-publishers), with provenance and no npm token. The three packages always share one version.
 
-| Tag             | npm dist-tag | Install with                              |
-| --------------- | ------------ | ----------------------------------------- |
-| `v0.2.0`        | `latest`     | `npm i @talqui-oss/template-builder`      |
-| `v0.2.0-beta.1` | `beta`       | `npm i @talqui-oss/template-builder@beta` |
+**Stable release**
 
-Prerelease tags can point to any branch, to try a version before merging. Stable tags must point to a commit on `main`. The `version` field in each `package.json` stays `0.0.0`; the version lives in the tag.
+1. On a branch from `main`, run `pnpm release`. It reads the Conventional Commits since the last tag, bumps the version (`fix` → patch, `feat` → minor, breaking change → major), updates `CHANGELOG.md` and commits `release: vX.Y.Z`. Use `pnpm release --release-as 1.0.0` to choose the version.
+2. Open a pull request and merge it.
+3. On `main`, the workflow sees a version without a tag, publishes it to `latest` and pushes the `vX.Y.Z` tag.
+
+**Test release**
+
+Push a prerelease tag from any branch. The workflow publishes that version under the prerelease name, so `npm i` keeps installing `latest`.
 
 ```bash
 git tag v0.2.0-beta.1 && git push origin v0.2.0-beta.1
+npm i @talqui-oss/template-builder@beta
 ```
 
 Run `DRY_RUN=1 scripts/release.sh v0.2.0-beta.1` to see what would be published.

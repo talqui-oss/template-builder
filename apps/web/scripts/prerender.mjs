@@ -10,7 +10,7 @@ import {
 } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
-import { markdownSite } from "./markdown.mjs";
+import { textFiles } from "./text-files.mjs";
 import { ogImage } from "./og.mjs";
 
 const app = join(dirname(fileURLToPath(import.meta.url)), "..");
@@ -40,13 +40,14 @@ const escape = (text) =>
     .replace(/>/g, "&gt;")
     .replace(/"/g, "&quot;");
 
-const markdown = markdownSite(server);
-for (const [path, content] of Object.entries(markdown.files))
-  write(path, content);
+const files = textFiles(server);
+const markdownCount = Object.keys(files).filter((path) =>
+  path.endsWith(".md"),
+).length;
 
 /** The Markdown twin of a page: its own `.md` when there is one, the llms.txt index otherwise. */
 const markdownFor = (path) =>
-  markdown.files[`${path}.md`] ? `${path}.md` : "/llms.txt";
+  files[`${path}.md`] ? `${path}.md` : "/llms.txt";
 
 const ogPath = (path) => `/og${path === "/" ? "/index" : path}.png`;
 
@@ -133,69 +134,14 @@ const paths = server.allPaths();
 for (const path of paths) await writePage(path);
 await writePage("/404", "404.html");
 
-// Raw JSON next to each template page, for agents and scripts.
-for (const entry of CATALOG)
-  write(
-    `${server.templatePath(entry.slug)}.json`,
-    JSON.stringify(entry.template, null, 2),
-  );
-
 copyFileSync(
   join(app, "node_modules/@talqui-oss/template-builder/dist/schema.json"),
   join(dist, "schema.json"),
 );
 
-const today = new Date().toISOString().slice(0, 10);
-const priority = (path) =>
-  path === "/"
-    ? "1.0"
-    : path === "/playground" || path === TEMPLATE_BASE
-      ? "0.9"
-      : "0.7";
-write(
-  "sitemap.xml",
-  `<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-${paths
-  .map(
-    (path) =>
-      `  <url><loc>${SITE}${path === "/" ? "/" : path}</loc><lastmod>${today}</lastmod><priority>${priority(path)}</priority></url>`,
-  )
-  .join("\n")}
-</urlset>
-`,
-);
-
-// AI crawlers are named explicitly: some only crawl when their agent is allowed by name.
-// Content-Signal states what the content may be used for (contentsignals.org).
-write(
-  "robots.txt",
-  `User-agent: *
-Allow: /
-Content-Signal: ai-train=yes, search=yes, ai-input=yes
-
-${[
-  "GPTBot",
-  "OAI-SearchBot",
-  "ChatGPT-User",
-  "ClaudeBot",
-  "Claude-User",
-  "anthropic-ai",
-  "PerplexityBot",
-  "Google-Extended",
-  "Applebot-Extended",
-]
-  .map((agent) => `User-agent: ${agent}\nAllow: /`)
-  .join("\n\n")}
-
-Sitemap: ${SITE}/sitemap.xml
-`,
-);
-
-write("llms.txt", markdown.llms);
-write("llms-full.txt", markdown.full);
+for (const [path, content] of Object.entries(files)) write(path, content);
 
 rmSync(join(app, "dist-ssr"), { recursive: true, force: true });
 console.log(
-  `prerendered ${paths.length} pages, ${Object.keys(markdown.files).length} markdown files, ${CATALOG.length} catalog templates`,
+  `prerendered ${paths.length} pages, ${markdownCount} markdown files, ${CATALOG.length} catalog templates`,
 );

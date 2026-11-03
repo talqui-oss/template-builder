@@ -13,6 +13,7 @@ import { EXAMPLES } from "../examples";
 import { templateLink } from "../state";
 import { AsciiArt } from "./AsciiArt";
 import { HeroStack } from "./HeroStack";
+import { MetaLogo, TalquiWordmark, TwilioLogo } from "./logos";
 import { ArrowIcon, GitHubIcon } from "./icons";
 import {
   ChatScreen,
@@ -68,7 +69,13 @@ export function Landing() {
   );
 }
 
-const PROVIDERS = ["Meta", "Twilio", "Talqui"];
+/** The rotating name in the hero title, each with its mark. */
+const PROVIDERS = [
+  { name: "Meta", mark: <MetaLogo /> },
+  { name: "Twilio", mark: <TwilioLogo /> },
+  // The wordmark already spells the name.
+  { name: "Talqui", mark: <TalquiWordmark /> },
+];
 
 function Hero() {
   const [provider, setProvider] = useState(0);
@@ -85,7 +92,9 @@ function Hero() {
         <span>
           Free WhatsApp template builder for{" "}
           <span className="lp-token" key={provider}>
-            {PROVIDERS[provider]}
+            {PROVIDERS[provider]!.mark}
+            {PROVIDERS[provider]!.name !== "Talqui" &&
+              PROVIDERS[provider]!.name}
           </span>
         </span>
         <em className="lp-serif">exactly as they arrive</em>

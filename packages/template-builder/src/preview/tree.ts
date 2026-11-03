@@ -62,7 +62,7 @@ export function previewTree(
           "tb-bubble__tail",
           [node("path", undefined, [], { d: TAIL })],
           {
-            viewBox: "0 0 6.17 10.33",
+            viewBox: "0 0 12.4 10.33",
             "aria-hidden": "true",
           },
         ),
@@ -148,10 +148,10 @@ const icon = (name: ButtonIcon): PreviewNode => {
   );
 };
 
-// Bubble tail measured on a native 3x iOS screenshot: it leaves the bubble edge
-// 10.33pt above the bottom and reaches 5.67pt out. The extra 0.5pt overlaps the
-// bubble so no seam shows between them.
-const TAIL = "M5.67 0C5.67 2.5 3 6 0 10.33H6.17V0Z";
+// Bubble tail measured on a native 3x iOS screenshot, in points from the bubble's
+// bottom-left corner shifted 6.2pt left. It leaves the bubble edge 10.33pt above
+// the bottom, reaches its tip 6pt out, then ramps up into the rounded corner.
+const TAIL = "M6.2 0C6.2 4.83 3.6 8.63 0 10.33H2Q6.7 9.83 9.8 7.33L12.2 0Z";
 
 // Outline icons drawn for this project, in points. Their boxes match the icons
 // iOS shows, so labels land where they do on the phone.

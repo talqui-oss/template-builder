@@ -47,20 +47,19 @@
   margin: 0;
 }
 
-/* Bubble: fixed width, square bottom-left corner where the tail joins. */
+/* Bubble: fixed width, four rounded corners; the tail hangs off the bottom-left one. */
 .tb-bubble {
   position: relative;
   width: var(--tb-bubble-width);
   background: var(--tb-bubble-bg);
-  border-radius: var(--tb-bubble-radius) var(--tb-bubble-radius)
-    var(--tb-bubble-radius) 0;
+  border-radius: var(--tb-bubble-radius);
 }
 
 .tb-bubble__tail {
   position: absolute;
   bottom: 0;
-  left: -5.67px;
-  width: 6.17px;
+  left: -6.2px;
+  width: 12.4px;
   height: 10.33px;
   fill: var(--tb-bubble-bg);
 }
@@ -180,6 +179,11 @@
   color: var(--tb-action);
   font-size: 14px;
   line-height: 18px;
+}
+
+/* The last row is 0.67pt shorter: the bubble's rounded bottom eats into it. */
+.tb-button:last-of-type {
+  height: calc(var(--tb-button-height) - 0.67px);
 }
 
 .tb-button__icon {

@@ -134,6 +134,9 @@ export function Footer() {
         <a className="lp-chip" href="/whatsapp-template">
           catalog
         </a>
+        <a className="lp-chip" href="/editor">
+          editor
+        </a>
         <a className="lp-chip" href={NPM}>
           npm
         </a>

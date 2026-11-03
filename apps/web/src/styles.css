@@ -225,161 +225,47 @@ code {
   padding: 20px;
 }
 
-/* Form controls */
+/* The template editor comes from the package; these variables give it the playground theme. */
 
-.pg-row {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 16px;
+.pg-editor {
+  --tb-editor-font: var(--pg-font);
+  --tb-editor-mono: var(--pg-mono);
+  --tb-editor-text: var(--pg-text);
+  --tb-editor-muted: var(--pg-text-muted);
+  --tb-editor-faint: var(--pg-text-faint);
+  --tb-editor-surface: var(--pg-surface);
+  --tb-editor-control: var(--pg-bg);
+  --tb-editor-hover: var(--pg-surface-hover);
+  --tb-editor-border: var(--pg-border);
+  --tb-editor-border-strong: var(--pg-border-strong);
+  --tb-editor-accent: var(--pg-accent);
+  --tb-editor-radius: var(--pg-radius);
+  --tb-editor-radius-control: var(--pg-radius-control);
 }
 
-.pg-field {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-  min-width: 0;
-}
-
-.pg-field__head {
-  display: flex;
-  justify-content: space-between;
-  gap: 8px;
-  /* One line only, so every control in a row starts at the same height. */
-  white-space: nowrap;
-}
-
-.pg-field__label {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  font-size: 12px;
-  font-weight: 500;
-  color: var(--pg-text-muted);
-}
-
-.pg-field__hint {
-  flex: none;
-  font: 11px var(--pg-mono);
-  color: var(--pg-text-faint);
-}
-
-.pg-input {
-  width: 100%;
-  /* 18px line + 16px padding + 2px border = 36px, the height every control shares. */
-  min-height: 36px;
-  padding: 8px 10px;
-  border: 1px solid var(--pg-border-strong);
-  border-radius: var(--pg-radius-control);
-  background: var(--pg-bg);
-  color: var(--pg-text);
-  font: inherit;
-  line-height: 18px;
-  outline: none;
-  transition: border-color 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.pg-input:hover {
-  border-color: rgba(238, 229, 216, 0.28);
-}
-
-.pg-input:focus-visible {
-  border-color: var(--pg-accent);
-}
-
-.pg-input--mono {
-  font-family: var(--pg-mono);
-  font-size: 13px;
-}
-
-.pg-input--area {
-  min-height: 140px;
-  resize: vertical;
-  line-height: 1.55;
-}
-
-.pg-input--select {
-  appearance: none;
-  padding-right: 28px;
-  background-image:
-    linear-gradient(45deg, transparent 50%, currentColor 50%),
-    linear-gradient(135deg, currentColor 50%, transparent 50%);
-  background-position:
-    calc(100% - 15px) 50%,
-    calc(100% - 10px) 50%;
-  background-size: 5px 5px;
-  background-repeat: no-repeat;
-}
-
-.pg-note {
-  margin: -8px 0 0;
-  font-size: 12px;
-  color: var(--pg-text-faint);
-}
-
-.pg-check {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 13px;
-}
-
-.pg-check input {
-  accent-color: var(--pg-accent);
-}
-
-/* Buttons editor */
-
-.pg-button-row {
-  display: grid;
-  grid-template-columns: 132px 1fr 1fr 32px;
-  gap: 8px;
-}
-
-.pg-button-row > .pg-input:nth-child(2):last-of-type {
-  grid-column: span 2;
-}
-
-.pg-icon-button,
-.pg-add,
 .pg-chip {
+  height: 28px;
+  padding: 0 10px;
   border: 1px solid var(--pg-border-strong);
   border-radius: var(--pg-radius-control);
   background: transparent;
   color: var(--pg-text-muted);
-  font: inherit;
+  font: 11px var(--pg-mono);
+  letter-spacing: 0.04em;
   cursor: pointer;
   transition:
     background-color 0.2s cubic-bezier(0.4, 0, 0.2, 1),
     color 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.pg-icon-button:hover,
-.pg-add:hover:not(:disabled),
 .pg-chip:hover:not(:disabled) {
   background: var(--pg-surface-hover);
   color: var(--pg-text);
 }
 
-.pg-icon-button {
-  font-size: 18px;
-  line-height: 1;
-}
-
-.pg-add {
-  height: 36px;
-  border-style: dashed;
-}
-
-.pg-add:disabled,
 .pg-chip:disabled {
   opacity: 0.4;
   cursor: default;
-}
-
-.pg-chip {
-  height: 28px;
-  padding: 0 10px;
-  font: 11px var(--pg-mono);
-  letter-spacing: 0.04em;
 }
 
 /* Segmented control */
@@ -393,15 +279,7 @@ code {
   border: 1px solid var(--pg-border);
 }
 
-/* Form variant: same 36px height as .pg-input, items share the width. */
-.pg-segment--block {
-  display: flex;
-  height: 36px;
-  border-color: var(--pg-border-strong);
-  border-radius: var(--pg-radius-control);
-}
-
-.pg-segment--block .pg-segment__item {
+.pg-segment__item {
   flex: 1 1 0;
   justify-content: center;
   height: 100%;

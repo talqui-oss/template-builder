@@ -16,6 +16,7 @@ import {
   templateText,
 } from "./catalog/data";
 import { TemplatePage } from "./catalog/TemplatePage";
+import { EditorPage } from "./editor/EditorPage";
 import { Landing } from "./landing/Landing";
 
 export const SITE = "https://template-builder.dev";
@@ -186,6 +187,17 @@ export function resolveRoute(rawPath: string): Route {
       },
       element: <App />,
     };
+  if (path === "/editor")
+    return {
+      head: {
+        title: "Free WhatsApp template editor for React and Vue apps",
+        description:
+          "Add a WhatsApp template editor to your product: a free React and Vue component with the phone preview, Meta's review rules and the create request for your backend.",
+        path,
+        jsonLd: [{ ...SOFTWARE, name: "template-builder editor" }],
+      },
+      element: <EditorPage />,
+    };
   if (path === "/agents")
     return {
       head: {
@@ -238,6 +250,7 @@ export function allPaths() {
     "/",
     "/playground",
     "/agents",
+    "/editor",
     "/whatsapp-template",
     ...(Object.keys(FACETS) as FacetKind[]).flatMap((kind) =>
       FACETS[kind]

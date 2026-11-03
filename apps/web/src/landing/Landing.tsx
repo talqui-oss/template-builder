@@ -243,7 +243,10 @@ function BuildingBlocks() {
         </div>
         <p className="lp-lead lp-lead--side">
           Template creation, preview and validation for your users, and the Meta
-          integration for your backend. Free and MIT licensed.
+          integration for your backend. Free and MIT licensed.{" "}
+          <a className="lp-accent" href="/editor">
+            See the editor →
+          </a>
         </p>
       </div>
       <div className="lp-blocks">

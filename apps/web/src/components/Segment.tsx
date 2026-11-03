@@ -13,8 +13,6 @@ type SegmentProps<T extends string> = {
   value: T;
   onChange: (value: T) => void;
   label: string;
-  /** Fills the width and matches the height of text inputs, for use inside forms. */
-  block?: boolean;
 };
 
 /**
@@ -26,7 +24,6 @@ export function Segment<T extends string>({
   value,
   onChange,
   label,
-  block,
 }: SegmentProps<T>) {
   const refs = useRef<(HTMLButtonElement | null)[]>([]);
   const enabled = items.filter((item) => !item.disabled);
@@ -50,7 +47,7 @@ export function Segment<T extends string>({
 
   return (
     <div
-      className={block ? "pg-segment pg-segment--block" : "pg-segment"}
+      className="pg-segment"
       role="radiogroup"
       aria-label={label}
       onKeyDown={onKeyDown}

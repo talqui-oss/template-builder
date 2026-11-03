@@ -124,6 +124,7 @@ One JSON schema describes a template. The core package validates it against the 
 - [JSON Schema](${SITE}/schema.json): every field a template accepts
 - [Template catalog](${SITE}${TEMPLATE_BASE}.md): ${CATALOG.length} free templates by industry, as Markdown
 - [Playground](${SITE}/playground): free online WhatsApp template builder and preview
+- [Editor](${SITE}/editor): embeddable template editor for React and Vue apps
 - [GitHub](${GITHUB})
 - [npm](https://www.npmjs.com/package/@talqui-oss/template-builder)
 
@@ -143,7 +144,7 @@ console.log(toCurl(toRequests(template, meta({ wabaId: "123" }))));
 
 ## Integrations
 
-Meta Cloud API (verified), Talqui (verified), Twilio Content API (beta), any other provider through \`defineAdapter\`. Preview components for React and Vue.
+Meta Cloud API (verified), Talqui (verified), Twilio Content API (beta), any other provider through \`defineAdapter\`. Preview and editor components for React and Vue (\`TemplatePreview\`, \`TemplateEditor\`).
 
 ## Skills
 

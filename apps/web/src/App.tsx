@@ -1,10 +1,6 @@
 import type { Template } from "@talqui-oss/template-builder";
+import { TemplateEditor } from "@talqui-oss/template-builder-react";
 import { useEffect, useState } from "react";
-import { AuthenticationCard } from "./editor/AuthenticationCard";
-import { BasicsCard } from "./editor/BasicsCard";
-import { ButtonsCard } from "./editor/ButtonsCard";
-import { ContentCard } from "./editor/ContentCard";
-import { VariablesCard } from "./editor/VariablesCard";
 import { PreviewCard } from "./preview/PreviewCard";
 import { templateFromHash, templateLink } from "./state";
 
@@ -57,16 +53,11 @@ export function App() {
               your browser.
             </p>
           </div>
-          <BasicsCard template={template} onChange={setTemplate} />
-          {template.category === "AUTHENTICATION" ? (
-            <AuthenticationCard template={template} onChange={setTemplate} />
-          ) : (
-            <>
-              <ContentCard template={template} onChange={setTemplate} />
-              <ButtonsCard template={template} onChange={setTemplate} />
-              <VariablesCard template={template} onChange={setTemplate} />
-            </>
-          )}
+          <TemplateEditor
+            template={template}
+            onChange={setTemplate}
+            className="pg-editor"
+          />
         </div>
         <aside className="pg-layout__preview">
           <PreviewCard template={template} />

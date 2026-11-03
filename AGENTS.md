@@ -15,7 +15,7 @@ pnpm dev         # rebuild on change
 pnpm lint        # ESLint
 pnpm typecheck   # TypeScript
 pnpm format      # Prettier
-pnpm changeset   # describe a change to a published package
+pnpm release     # bump version and CHANGELOG from Conventional Commits (see CONTRIBUTING.md)
 ```
 
 ## Layout
@@ -36,5 +36,5 @@ pnpm changeset   # describe a change to a published package
 - Use the names from Meta's template API (`QUICK_REPLY`, `MARKETING`, `pt_BR`). No DSL, no builder classes.
 - The core package has no runtime dependencies. React and Vue are peer dependencies of their own packages.
 - The SDK never calls provider APIs and never stores credentials. Generated `curl` commands use placeholders.
-- Conventional Commits (`feat`, `fix`, `docs`, `chore`, `refactor`, `test`, `ci`). Add a changeset when a published package changes.
+- Conventional Commits (`feat`, `fix`, `docs`, `chore`, `refactor`, `test`, `ci`).
 - Tests only when a task asks for them.

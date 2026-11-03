@@ -9,3 +9,4 @@ dist-ssr/
 coverage/
 
 TALQUI_GUIDELINES.md
+.release/

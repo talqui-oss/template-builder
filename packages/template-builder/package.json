@@ -51,7 +51,7 @@
     "build": "tsup && pnpm schema && cp src/preview/styles.css dist/styles.css",
     "dev": "tsup --watch",
     "typecheck": "tsc --noEmit",
-    "schema": "ts-json-schema-generator --path src/schema/types.ts --type Template --no-type-check --out dist/schema.json"
+    "schema": "ts-json-schema-generator --path src/schema/types.ts --type Template --id https://template-builder.dev/schema.json --no-type-check --out dist/schema.json"
   },
   "devDependencies": {
     "@template-builder/tsconfig": "workspace:*",

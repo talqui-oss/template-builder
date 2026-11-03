@@ -6,10 +6,10 @@ import { ButtonsCard } from "./editor/ButtonsCard";
 import { ContentCard } from "./editor/ContentCard";
 import { VariablesCard } from "./editor/VariablesCard";
 import { PreviewCard } from "./preview/PreviewCard";
-import { INITIAL_TEMPLATE } from "./state";
+import { templateFromHash } from "./state";
 
 export function App() {
-  const [template, setTemplate] = useState<Template>(INITIAL_TEMPLATE);
+  const [template, setTemplate] = useState<Template>(templateFromHash);
 
   return (
     <div className="pg-app">
@@ -19,6 +19,7 @@ export function App() {
           Template Builder
         </a>
         <nav className="pg-topbar__links">
+          <a href="/agents">For agents</a>
           <a href="https://github.com/talqui-oss/template-builder">GitHub</a>
           <a href="https://www.npmjs.com/package/@talqui-oss/template-builder">
             npm

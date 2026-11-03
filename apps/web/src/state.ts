@@ -27,6 +27,26 @@ export const INITIAL_TEMPLATE: StandardTemplate = {
   variables: { name: { example: "Maria" }, order: { example: "4512" } },
 };
 
+/** `#t=<base64url JSON>`: the playground link that carries a template. */
+export function templateLink(template: Template) {
+  const bytes = new TextEncoder().encode(JSON.stringify(template));
+  const base64 = btoa(String.fromCharCode(...bytes));
+  return `/playground#t=${base64.replace(/\+/g, "-").replace(/\//g, "_").replace(/=+$/, "")}`;
+}
+
+/** The template in the current URL hash, or the default one when missing or unreadable. */
+export function templateFromHash(hash = location.hash): Template {
+  const encoded = new URLSearchParams(hash.slice(1)).get("t");
+  if (!encoded) return INITIAL_TEMPLATE;
+  try {
+    const binary = atob(encoded.replace(/-/g, "+").replace(/_/g, "/"));
+    const bytes = Uint8Array.from(binary, (char) => char.charCodeAt(0));
+    return JSON.parse(new TextDecoder().decode(bytes)) as Template;
+  } catch {
+    return INITIAL_TEMPLATE;
+  }
+}
+
 const AUTHENTICATION_DEFAULTS: Omit<
   AuthenticationTemplate,
   "name" | "language"

@@ -191,6 +191,14 @@ export function validateStandard(template: StandardTemplate, ctx: Context) {
       'Order details templates need `displayFormat: "ORDER_DETAILS"` and exactly one ORDER_DETAILS button.',
     );
   }
+  buttons?.forEach((b, index) => {
+    if (b.type === "ORDER_DETAILS" && b.text !== "Copy Pix code")
+      report(
+        "BUTTON_ORDER_DETAILS_TEXT",
+        `buttons.${index}.text`,
+        'The ORDER_DETAILS button text is fixed by WhatsApp: use "Copy Pix code".',
+      );
+  });
 }
 
 function validateParams(text: string, path: string, { report }: Context) {

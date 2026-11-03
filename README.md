@@ -56,13 +56,13 @@ export default function App() {
 Then validate it and generate the request for your provider.
 
 ```ts
-import { validate, toRequest, toCurl } from "@talqui-oss/template-builder";
-import { meta } from "@talqui-oss/template-builder/adapters";
+import { validate, toRequests, toCurl } from "@talqui-oss/template-builder";
+import { meta } from "@talqui-oss/template-builder/adapters/meta";
 
 const result = validate(template);
 if (!result.valid) console.log(result.issues);
 
-console.log(toCurl(toRequest(template, meta)));
+console.log(toCurl(toRequests(template, meta())));
 ```
 
 ## Using with AI
@@ -82,7 +82,7 @@ A few functions and one component, all typed end to end.
 - [TemplatePreview for React](https://github.com/talqui-oss/template-builder/tree/main/packages/template-builder-react)
 - [TemplatePreview for Vue](https://github.com/talqui-oss/template-builder/tree/main/packages/template-builder-vue)
 - [validate](https://github.com/talqui-oss/template-builder/tree/main/packages/template-builder)
-- [toRequest](https://github.com/talqui-oss/template-builder/tree/main/packages/template-builder)
+- [toRequests](https://github.com/talqui-oss/template-builder/tree/main/packages/template-builder)
 - [toCurl](https://github.com/talqui-oss/template-builder/tree/main/packages/template-builder)
 - [defineAdapter](https://github.com/talqui-oss/template-builder/tree/main/packages/template-builder)
 - [JSON Schema](https://github.com/talqui-oss/template-builder/tree/main/packages/template-builder)
@@ -91,19 +91,19 @@ A few functions and one component, all typed end to end.
 
 Templates built with Template Builder can be created on any provider through an adapter. These ship with the package:
 
-- [Meta Cloud API](https://github.com/talqui-oss/template-builder/tree/main/examples)
-- [Twilio](https://github.com/talqui-oss/template-builder/tree/main/examples)
-- [Talqui](https://github.com/talqui-oss/template-builder/tree/main/examples)
+- [Meta Cloud API](https://github.com/talqui-oss/template-builder/tree/main/examples/meta)
+- [Twilio](https://github.com/talqui-oss/template-builder/tree/main/examples/twilio)
+- [Talqui](https://github.com/talqui-oss/template-builder/tree/main/examples/talqui)
 
-Missing yours? [Request an adapter](https://github.com/talqui-oss/template-builder/issues/new?template=adapter_request.yml) or write one with `defineAdapter`.
+Missing yours? [Request an adapter](https://github.com/talqui-oss/template-builder/issues/new?template=adapter_request.yml) or write one with [`defineAdapter`](https://github.com/talqui-oss/template-builder/tree/main/examples/custom-adapter).
 
 ## Support
 
 Every template type is checked against the rules Meta applies before review, and every preview is compared with the real app.
 
-| Android    | iOS        | Web        | Desktop    | Meta       | Twilio     | Talqui     |
-| ---------- | ---------- | ---------- | ---------- | ---------- | ---------- | ---------- |
-| In testing | In testing | In testing | In testing | In testing | In testing | In testing |
+| Android    | iOS        | Web        | Desktop    | Meta     | Twilio     | Talqui   |
+| ---------- | ---------- | ---------- | ---------- | -------- | ---------- | -------- |
+| In testing | In testing | In testing | In testing | Verified | Unverified | Verified |
 
 ## Development workflow
 

@@ -39,6 +39,30 @@ importers:
         specifier: ^6.0.3
         version: 6.0.3
 
+  examples/custom-adapter:
+    dependencies:
+      '@talqui-oss/template-builder':
+        specifier: workspace:*
+        version: link:../../packages/template-builder
+
+  examples/meta:
+    dependencies:
+      '@talqui-oss/template-builder':
+        specifier: workspace:*
+        version: link:../../packages/template-builder
+
+  examples/talqui:
+    dependencies:
+      '@talqui-oss/template-builder':
+        specifier: workspace:*
+        version: link:../../packages/template-builder
+
+  examples/twilio:
+    dependencies:
+      '@talqui-oss/template-builder':
+        specifier: workspace:*
+        version: link:../../packages/template-builder
+
   examples/validate:
     dependencies:
       '@talqui-oss/template-builder':

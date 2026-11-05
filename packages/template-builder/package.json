@@ -1,6 +1,6 @@
 {
   "name": "@talqui-oss/template-builder",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Preview, validate and create WhatsApp message templates",
   "license": "MIT",
   "repository": {

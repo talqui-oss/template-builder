@@ -1,6 +1,6 @@
 {
   "name": "@talqui-oss/template-builder-react",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "React components to preview and edit WhatsApp message templates",
   "license": "MIT",
   "repository": {

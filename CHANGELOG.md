@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.1.3](https://github.com/talqui-oss/template-builder/compare/v0.1.2...v0.1.3) (2026-11-05)
+
+### Features
+
+* **web:** load Google Tag Manager on every page ([56d4f72](https://github.com/talqui-oss/template-builder/commit/56d4f726247ce0fc46d5c3a83f381e853d1ab260))
+
 ## [0.1.2](https://github.com/talqui-oss/template-builder/compare/v0.1.1...v0.1.2) (2026-11-03)
 
 ## [0.1.1](https://github.com/talqui-oss/template-builder/compare/v0.1.0...v0.1.1) (2026-11-03)

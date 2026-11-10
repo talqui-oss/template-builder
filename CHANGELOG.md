@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.1.4](https://github.com/talqui-oss/template-builder/compare/v0.1.3...v0.1.4) (2026-11-10)
+
+### Features
+
+* **editor:** labels option to translate the template editor ([9d0959a](https://github.com/talqui-oss/template-builder/commit/9d0959af45f82e8e43b05be61b9bf2f3f61bbfef))
+
 ## [0.1.3](https://github.com/talqui-oss/template-builder/compare/v0.1.2...v0.1.3) (2026-11-05)
 
 ### Features

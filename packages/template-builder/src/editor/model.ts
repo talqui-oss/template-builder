@@ -56,9 +56,66 @@ export type EditorSection = {
   note?: string;
 };
 
+/** Every text the editor shows, so it can be translated. */
+export type EditorLabels = typeof EDITOR_LABELS;
+
+/** The editor texts in English, the default. */
+export const EDITOR_LABELS = {
+  basics: "Basics",
+  name: "Name",
+  nameHint: "lowercase, numbers and _",
+  language: "Language",
+  category: "Category",
+  utility: "Utility",
+  marketing: "Marketing",
+  authentication: "Authentication",
+  content: "Content",
+  header: "Header",
+  headerNone: "None",
+  headerText: "Text",
+  headerImage: "Image",
+  headerVideo: "Video",
+  headerDocument: "Document",
+  headerTextField: "Header text",
+  sampleFileUrl: "Sample file URL",
+  body: "Body",
+  footer: "Footer",
+  formattingNote:
+    "Use {{name}} for variables and *bold*, _italic_, ~strike~ for formatting.",
+  buttons: "Buttons",
+  buttonType: "Type",
+  quickReply: "Quick reply",
+  link: "Link",
+  phone: "Phone",
+  copyCode: "Copy code",
+  buttonText: "Button text",
+  url: "URL",
+  phoneNumber: "Phone number",
+  sampleCode: "Sample code",
+  removeButton: "Remove button",
+  addButton: "Add button",
+  variables: "Variables",
+  /** Followed by the variable's number, e.g. "position 1". */
+  variablePosition: "position",
+  exampleValue: "Example value",
+  noVariables:
+    "Type a placeholder such as {{first_name}} in the text to add one.",
+  codeMessage: "Code message",
+  securityRecommendation: "Add “do not share this code”",
+  expiresAfter: "Expires after",
+  expiresHint: "minutes, 1 to 90",
+  optional: "optional",
+  /** Default text of new buttons. */
+  newQuickReply: "Reply",
+  newLinkButton: "Open link",
+  newPhoneButton: "Call us",
+};
+
 export type EditorOptions = {
   /** Languages offered in the language select. Default: English (US), Portuguese (BR), Spanish. */
   languages?: EditorOption[];
+  /** Texts to replace, e.g. to show the editor in another language. Default: English. */
+  labels?: Partial<EditorLabels>;
 };
 
 const LANGUAGES: EditorOption[] = [
@@ -67,26 +124,28 @@ const LANGUAGES: EditorOption[] = [
   { value: "es", label: "Spanish" },
 ];
 
-const CATEGORIES: EditorOption[] = [
-  { value: "UTILITY", label: "Utility" },
-  { value: "MARKETING", label: "Marketing" },
-  { value: "AUTHENTICATION", label: "Authentication" },
+const categories = (l: EditorLabels): EditorOption[] => [
+  { value: "UTILITY", label: l.utility },
+  { value: "MARKETING", label: l.marketing },
+  { value: "AUTHENTICATION", label: l.authentication },
 ];
 
-const HEADER_KINDS: EditorOption[] = [
-  { value: "NONE", label: "None" },
-  { value: "TEXT", label: "Text" },
-  { value: "IMAGE", label: "Image" },
-  { value: "VIDEO", label: "Video" },
-  { value: "DOCUMENT", label: "Document" },
+const headerKinds = (l: EditorLabels): EditorOption[] => [
+  { value: "NONE", label: l.headerNone },
+  { value: "TEXT", label: l.headerText },
+  { value: "IMAGE", label: l.headerImage },
+  { value: "VIDEO", label: l.headerVideo },
+  { value: "DOCUMENT", label: l.headerDocument },
 ];
 
 /** Button types the editor creates. Others (flows, catalogs) are kept but shown as quick replies. */
-const BUTTON_TYPES: EditorOption[] = [
-  { value: "QUICK_REPLY", label: "Quick reply" },
-  { value: "URL", label: "Link" },
-  { value: "PHONE_NUMBER", label: "Phone" },
-  { value: "COPY_CODE", label: "Copy code" },
+const BUTTON_TYPES = ["QUICK_REPLY", "URL", "PHONE_NUMBER", "COPY_CODE"];
+
+const buttonTypes = (l: EditorLabels): EditorOption[] => [
+  { value: "QUICK_REPLY", label: l.quickReply },
+  { value: "URL", label: l.link },
+  { value: "PHONE_NUMBER", label: l.phone },
+  { value: "COPY_CODE", label: l.copyCode },
 ];
 
 const MAX_BUTTONS = 10;
@@ -98,17 +157,18 @@ export function editorSections(
   template: Template,
   options: EditorOptions = {},
 ): EditorSection[] {
+  const l = { ...EDITOR_LABELS, ...options.labels };
   const basics: EditorSection = {
     id: "basics",
-    title: "Basics",
+    title: l.basics,
     rows: [
       {
         fields: [
           {
             kind: "text",
             id: "name",
-            label: "Name",
-            hint: "lowercase, numbers and _",
+            label: l.name,
+            hint: l.nameHint,
             value: template.name,
             mono: true,
           },
@@ -119,51 +179,55 @@ export function editorSections(
           {
             kind: "select",
             id: "language",
-            label: "Language",
+            label: l.language,
             value: template.language,
             options: options.languages ?? LANGUAGES,
           },
           {
             kind: "segment",
             id: "category",
-            label: "Category",
+            label: l.category,
             value: template.category,
-            options: CATEGORIES,
+            options: categories(l),
           },
         ],
       },
     ],
   };
   if (template.category === "AUTHENTICATION")
-    return [basics, codeSection(template)];
+    return [basics, codeSection(template, l)];
   return [
     basics,
-    contentSection(template),
-    buttonsSection(template),
-    variablesSection(template),
+    contentSection(template, l),
+    buttonsSection(template, l),
+    variablesSection(template, l),
   ];
 }
 
-function contentSection(template: StandardTemplate): EditorSection {
+function contentSection(
+  template: StandardTemplate,
+  l: EditorLabels,
+): EditorSection {
   const header = template.header;
   // Location and product headers are kept as they are but show as "None": not editable yet.
-  const kind = HEADER_KINDS.some((option) => option.value === header?.type)
+  const kinds = headerKinds(l);
+  const kind = kinds.some((option) => option.value === header?.type)
     ? header!.type
     : "NONE";
   const headerRow: EditorField[] = [
     {
       kind: "select",
       id: "header.kind",
-      label: "Header",
+      label: l.header,
       value: kind,
-      options: HEADER_KINDS,
+      options: kinds,
     },
   ];
   if (header?.type === "TEXT")
     headerRow.push({
       kind: "text",
       id: "header.text",
-      label: "Header text",
+      label: l.headerTextField,
       hint: count(header.text, 60),
       value: header.text,
     });
@@ -171,14 +235,14 @@ function contentSection(template: StandardTemplate): EditorSection {
     headerRow.push({
       kind: "text",
       id: "header.url",
-      label: "Sample file URL",
+      label: l.sampleFileUrl,
       value: header.url,
       mono: true,
     });
 
   return {
     id: "content",
-    title: "Content",
+    title: l.content,
     rows: [
       { fields: headerRow },
       {
@@ -186,7 +250,7 @@ function contentSection(template: StandardTemplate): EditorSection {
           {
             kind: "textarea",
             id: "body",
-            label: "Body",
+            label: l.body,
             hint: count(template.body.text, 1024),
             value: template.body.text,
           },
@@ -197,38 +261,41 @@ function contentSection(template: StandardTemplate): EditorSection {
           {
             kind: "text",
             id: "footer",
-            label: "Footer",
+            label: l.footer,
             hint: count(template.footer?.text ?? "", 60),
             value: template.footer?.text ?? "",
           },
         ],
       },
     ],
-    note: "Use {{name}} for variables and *bold*, _italic_, ~strike~ for formatting.",
+    note: l.formattingNote,
   };
 }
 
-function buttonsSection(template: StandardTemplate): EditorSection {
+function buttonsSection(
+  template: StandardTemplate,
+  l: EditorLabels,
+): EditorSection {
   const buttons = template.buttons ?? [];
   const rows: EditorRow[] = buttons.map((button, index) => {
     const at = `buttons.${index}`;
-    const type = BUTTON_TYPES.some((option) => option.value === button.type)
+    const type = BUTTON_TYPES.includes(button.type)
       ? button.type
       : "QUICK_REPLY";
     const fields: EditorField[] = [
       {
         kind: "select",
         id: `${at}.type`,
-        label: "Type",
+        label: l.buttonType,
         value: type,
-        options: BUTTON_TYPES,
+        options: buttonTypes(l),
       },
     ];
     if ("text" in button && button.text !== undefined)
       fields.push({
         kind: "text",
         id: `${at}.text`,
-        label: "Button text",
+        label: l.buttonText,
         hint: count(button.text, 25),
         value: button.text,
       });
@@ -236,7 +303,7 @@ function buttonsSection(template: StandardTemplate): EditorSection {
       fields.push({
         kind: "text",
         id: `${at}.url`,
-        label: "URL",
+        label: l.url,
         value: button.url,
         mono: true,
       });
@@ -244,7 +311,7 @@ function buttonsSection(template: StandardTemplate): EditorSection {
       fields.push({
         kind: "text",
         id: `${at}.phoneNumber`,
-        label: "Phone number",
+        label: l.phoneNumber,
         value: button.phoneNumber,
         mono: true,
       });
@@ -252,14 +319,14 @@ function buttonsSection(template: StandardTemplate): EditorSection {
       fields.push({
         kind: "text",
         id: `${at}.example`,
-        label: "Sample code",
+        label: l.sampleCode,
         value: button.example,
         mono: true,
       });
     fields.push({
       kind: "action",
       id: `${at}.remove`,
-      label: "Remove button",
+      label: l.removeButton,
       icon: "remove",
     });
     return { fields, list: true };
@@ -269,7 +336,7 @@ function buttonsSection(template: StandardTemplate): EditorSection {
       {
         kind: "action",
         id: "buttons.add",
-        label: "Add button",
+        label: l.addButton,
         icon: "add",
         disabled: buttons.length >= MAX_BUTTONS,
       },
@@ -277,46 +344,50 @@ function buttonsSection(template: StandardTemplate): EditorSection {
   });
   return {
     id: "buttons",
-    title: `Buttons ${buttons.length}/${MAX_BUTTONS}`,
+    title: `${l.buttons} ${buttons.length}/${MAX_BUTTONS}`,
     rows,
   };
 }
 
-function variablesSection(template: StandardTemplate): EditorSection {
+function variablesSection(
+  template: StandardTemplate,
+  l: EditorLabels,
+): EditorSection {
   const variables = Object.entries(template.variables ?? {});
   return {
     id: "variables",
-    title: "Variables",
+    title: l.variables,
     rows: variables.map(([name, variable], index) => ({
       fields: [
         {
           kind: "text",
           id: `variables.${name}`,
           label: `{{${name}}}`,
-          hint: `position ${index + 1}`,
+          hint: `${l.variablePosition} ${index + 1}`,
           value: variable.example,
-          placeholder: "Example value",
+          placeholder: l.exampleValue,
         },
       ],
     })),
-    note: variables.length
-      ? undefined
-      : "Type a placeholder such as {{first_name}} in the text to add one.",
+    note: variables.length ? undefined : l.noVariables,
   };
 }
 
-function codeSection(template: AuthenticationTemplate): EditorSection {
+function codeSection(
+  template: AuthenticationTemplate,
+  l: EditorLabels,
+): EditorSection {
   const minutes = template.footer?.codeExpirationMinutes;
   return {
     id: "code",
-    title: "Code message",
+    title: l.codeMessage,
     rows: [
       {
         fields: [
           {
             kind: "checkbox",
             id: "body.addSecurityRecommendation",
-            label: "Add “do not share this code”",
+            label: l.securityRecommendation,
             checked: template.body?.addSecurityRecommendation ?? false,
           },
         ],
@@ -326,18 +397,18 @@ function codeSection(template: AuthenticationTemplate): EditorSection {
           {
             kind: "text",
             id: "footer.codeExpirationMinutes",
-            label: "Expires after",
-            hint: "minutes, 1 to 90",
+            label: l.expiresAfter,
+            hint: l.expiresHint,
             value: minutes === undefined ? "" : String(minutes),
             mono: true,
           },
           {
             kind: "text",
             id: "button.text",
-            label: "Button text",
-            hint: "optional",
+            label: l.buttonText,
+            hint: l.optional,
             value: template.button.text ?? "",
-            placeholder: "Copy code",
+            placeholder: l.copyCode,
           },
         ],
       },
@@ -352,12 +423,15 @@ function codeSection(template: AuthenticationTemplate): EditorSection {
  *
  * `remembered` holds examples of variables seen earlier: while someone types `{{name}}` the
  * placeholder is briefly incomplete, and its example comes back from here once it is whole.
+ *
+ * `labels` gives new buttons their default text in the editor's language.
  */
 export function applyEdit(
   template: Template,
   id: string,
   value?: string | boolean,
   remembered: Variables = {},
+  labels: Partial<EditorLabels> = {},
 ): Template {
   const text = typeof value === "string" ? value : "";
   if (id === "name") return { ...template, name: text };
@@ -393,13 +467,17 @@ export function applyEdit(
         [id.slice("variables.".length)]: { example: text },
       },
     };
-  return syncVariables(editStandard(template, id, text), remembered);
+  return syncVariables(
+    editStandard(template, id, text, { ...EDITOR_LABELS, ...labels }),
+    remembered,
+  );
 }
 
 function editStandard(
   template: StandardTemplate,
   id: string,
   text: string,
+  l: EditorLabels,
 ): StandardTemplate {
   if (id === "header.kind") return { ...template, header: newHeader(text) };
   if (id === "header.text")
@@ -418,7 +496,7 @@ function editStandard(
   if (id === "buttons.add")
     return buttons.length >= MAX_BUTTONS
       ? template
-      : withButtons([...buttons, newButton("QUICK_REPLY")]);
+      : withButtons([...buttons, newButton(l, "QUICK_REPLY")]);
 
   const match = /^buttons\.(\d+)\.(\w+)$/.exec(id);
   if (!match) return template;
@@ -431,6 +509,7 @@ function editStandard(
   const next =
     field === "type"
       ? newButton(
+          l,
           text as Button["type"],
           "text" in button ? (button.text ?? "") : "",
         )
@@ -489,11 +568,11 @@ function newHeader(kind: string): Header | undefined {
 }
 
 /** A new button of the given type, keeping the label when the type changes. */
-function newButton(type: Button["type"], label = ""): Button {
+function newButton(l: EditorLabels, type: Button["type"], label = ""): Button {
   if (type === "URL")
-    return { type, text: label || "Open link", url: "https://" };
+    return { type, text: label || l.newLinkButton, url: "https://" };
   if (type === "PHONE_NUMBER")
-    return { type, text: label || "Call us", phoneNumber: "+" };
+    return { type, text: label || l.newPhoneButton, phoneNumber: "+" };
   if (type === "COPY_CODE") return { type, example: "CODE10" };
-  return { type: "QUICK_REPLY", text: label || "Reply" };
+  return { type: "QUICK_REPLY", text: label || l.newQuickReply };
 }

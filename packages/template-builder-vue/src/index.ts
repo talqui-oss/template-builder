@@ -3,6 +3,7 @@ import {
   editorTree,
   previewTree,
   toPreviewModel,
+  type EditorLabels,
   type EditorOption,
   type Issue,
   type Platform,
@@ -71,6 +72,8 @@ export const TemplateEditor = defineComponent({
     template: { type: Object as PropType<Template>, required: true },
     /** Languages offered in the language select. */
     languages: { type: Array as PropType<EditorOption[]> },
+    /** Texts to replace, e.g. to show the editor in another language. */
+    labels: { type: Object as PropType<Partial<EditorLabels>> },
   },
   data() {
     // Element ids for label/input pairs, unique per editor on the page.
@@ -86,7 +89,7 @@ export const TemplateEditor = defineComponent({
     edit(id: string, value?: string | boolean) {
       this.$emit(
         "update:template",
-        applyEdit(this.template, id, value, this.remembered()),
+        applyEdit(this.template, id, value, this.remembered(), this.labels),
       );
     },
     remembered(): Variables {
@@ -99,6 +102,7 @@ export const TemplateEditor = defineComponent({
     const tree = editorTree(this.template, {
       idPrefix: this.idPrefix,
       languages: this.languages,
+      labels: this.labels,
     });
     return toEditorVNode(tree, this.edit);
   },
@@ -154,4 +158,4 @@ function moveRadio(event: KeyboardEvent, edit: Edit) {
   edit(target.dataset.edit!, target.dataset.value);
 }
 
-export type { EditorOption, Issue, Platform, Template };
+export type { EditorLabels, EditorOption, Issue, Platform, Template };

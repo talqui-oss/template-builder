@@ -26,11 +26,13 @@ export type { Platform, PreviewNode, TreeOptions } from "./preview/tree";
 export {
   applyEdit,
   changeCategory,
+  EDITOR_LABELS,
   editorSections,
   syncVariables,
 } from "./editor/model";
 export type {
   EditorField,
+  EditorLabels,
   EditorOption,
   EditorOptions,
   EditorRow,

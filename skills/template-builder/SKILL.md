@@ -120,7 +120,7 @@ const [template, setTemplate] = useState(initial);
 <TemplatePreview template={template} />
 ```
 
-In Vue: `<TemplateEditor v-model:template="template" />`. Theme it with the `--tb-editor-*` custom properties. Without a UI framework, `editorSections(template)` and `applyEdit(template, id, value)` from the core package give the same form as data.
+In Vue: `<TemplateEditor v-model:template="template" />`. Theme it with the `--tb-editor-*` custom properties. To show the editor in another language, pass `labels` with the texts to replace (the keys and English defaults are in `EDITOR_LABELS`), e.g. `<TemplateEditor labels={{ basics: "Básico", body: "Corpo" }} />`. Without a UI framework, `editorSections(template)` and `applyEdit(template, id, value)` from the core package give the same form as data.
 
 ## Links
 

@@ -3,6 +3,7 @@ import {
   editorTree,
   previewTree,
   toPreviewModel,
+  type EditorLabels,
   type EditorOption,
   type Issue,
   type Platform,
@@ -81,6 +82,8 @@ export type TemplateEditorProps = {
   onChange: (template: Template) => void;
   /** Languages offered in the language select. */
   languages?: EditorOption[];
+  /** Texts to replace, e.g. to show the editor in another language. */
+  labels?: Partial<EditorLabels>;
   className?: string;
 };
 
@@ -89,6 +92,7 @@ export function TemplateEditor({
   template,
   onChange,
   languages,
+  labels,
   className,
 }: TemplateEditorProps) {
   const idPrefix = `tb${useId().replace(/[^a-zA-Z0-9]/g, "")}`;
@@ -96,9 +100,9 @@ export function TemplateEditor({
   const remembered = useRef<Variables>({});
   if (template.category !== "AUTHENTICATION")
     Object.assign(remembered.current, template.variables);
-  const tree = editorTree(template, { idPrefix, languages });
+  const tree = editorTree(template, { idPrefix, languages, labels });
   const edit = (id: string, value?: string | boolean) =>
-    onChange(applyEdit(template, id, value, remembered.current));
+    onChange(applyEdit(template, id, value, remembered.current, labels));
   return toEditorElement(
     { ...tree, class: [tree.class, className].filter(Boolean).join(" ") },
     edit,
@@ -182,4 +186,4 @@ function moveRadio(event: KeyboardEvent<HTMLElement>, edit: Edit) {
   edit(target.dataset.edit!, target.dataset.value);
 }
 
-export type { EditorOption, Issue, Platform, Template };
+export type { EditorLabels, EditorOption, Issue, Platform, Template };
